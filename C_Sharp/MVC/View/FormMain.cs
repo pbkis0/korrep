@@ -30,12 +30,19 @@ namespace MVC.View
 
         private void ButtonFilterManufacturer_Click(object sender, EventArgs e)
         {
+            string manufacturer = comboBoxManufacturer.SelectedItem.ToString();
 
+
+            listBoxData.DataSource = null;
+            listBoxData.DataSource = controller.FilterManufacturer(manufacturer);
         }
 
         private void ButtonFilterAlcohol_Click(object sender, EventArgs e)
         {
+            string alcohol = comboBoxAlcohol.SelectedItem.ToString();
 
+            listBoxData.DataSource = null;
+            listBoxData.DataSource = controller.FilterAlcohol(alcohol);
         }
     }
 }
