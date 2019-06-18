@@ -39,6 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxManufacturer = new System.Windows.Forms.ComboBox();
             this.comboBoxAlcohol = new System.Windows.Forms.ComboBox();
+            this.buttonFilterManufacturer = new System.Windows.Forms.Button();
+            this.buttonFilterAlcohol = new System.Windows.Forms.Button();
             this.groupBoxCRUD.SuspendLayout();
             this.groupBoxFilter.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +53,7 @@
             this.listBoxData.FormattingEnabled = true;
             this.listBoxData.Location = new System.Drawing.Point(12, 12);
             this.listBoxData.Name = "listBoxData";
-            this.listBoxData.Size = new System.Drawing.Size(662, 316);
+            this.listBoxData.Size = new System.Drawing.Size(662, 342);
             this.listBoxData.TabIndex = 0;
             // 
             // buttonCreate
@@ -88,7 +90,7 @@
             this.groupBoxCRUD.Controls.Add(this.buttonCreate);
             this.groupBoxCRUD.Controls.Add(this.buttonUpdate);
             this.groupBoxCRUD.Controls.Add(this.buttonDelete);
-            this.groupBoxCRUD.Location = new System.Drawing.Point(12, 333);
+            this.groupBoxCRUD.Location = new System.Drawing.Point(12, 366);
             this.groupBoxCRUD.Name = "groupBoxCRUD";
             this.groupBoxCRUD.Size = new System.Drawing.Size(662, 92);
             this.groupBoxCRUD.TabIndex = 4;
@@ -99,11 +101,13 @@
             // 
             this.groupBoxFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxFilter.Controls.Add(this.buttonFilterAlcohol);
+            this.groupBoxFilter.Controls.Add(this.buttonFilterManufacturer);
             this.groupBoxFilter.Controls.Add(this.labelAlcohol);
             this.groupBoxFilter.Controls.Add(this.label1);
             this.groupBoxFilter.Controls.Add(this.comboBoxManufacturer);
             this.groupBoxFilter.Controls.Add(this.comboBoxAlcohol);
-            this.groupBoxFilter.Location = new System.Drawing.Point(12, 432);
+            this.groupBoxFilter.Location = new System.Drawing.Point(12, 465);
             this.groupBoxFilter.Name = "groupBoxFilter";
             this.groupBoxFilter.Size = new System.Drawing.Size(662, 99);
             this.groupBoxFilter.TabIndex = 5;
@@ -114,7 +118,7 @@
             // 
             this.labelAlcohol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAlcohol.AutoSize = true;
-            this.labelAlcohol.Location = new System.Drawing.Point(306, 49);
+            this.labelAlcohol.Location = new System.Drawing.Point(306, 25);
             this.labelAlcohol.Name = "labelAlcohol";
             this.labelAlcohol.Size = new System.Drawing.Size(85, 13);
             this.labelAlcohol.TabIndex = 3;
@@ -123,7 +127,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 49);
+            this.label1.Location = new System.Drawing.Point(68, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 2;
@@ -133,7 +137,7 @@
             // 
             this.comboBoxManufacturer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxManufacturer.FormattingEnabled = true;
-            this.comboBoxManufacturer.Location = new System.Drawing.Point(115, 46);
+            this.comboBoxManufacturer.Location = new System.Drawing.Point(115, 22);
             this.comboBoxManufacturer.Name = "comboBoxManufacturer";
             this.comboBoxManufacturer.Size = new System.Drawing.Size(179, 21);
             this.comboBoxManufacturer.TabIndex = 1;
@@ -143,16 +147,36 @@
             this.comboBoxAlcohol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxAlcohol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAlcohol.FormattingEnabled = true;
-            this.comboBoxAlcohol.Location = new System.Drawing.Point(397, 46);
+            this.comboBoxAlcohol.Location = new System.Drawing.Point(397, 22);
             this.comboBoxAlcohol.Name = "comboBoxAlcohol";
             this.comboBoxAlcohol.Size = new System.Drawing.Size(179, 21);
             this.comboBoxAlcohol.TabIndex = 0;
+            // 
+            // buttonFilterManufacturer
+            // 
+            this.buttonFilterManufacturer.Location = new System.Drawing.Point(115, 49);
+            this.buttonFilterManufacturer.Name = "buttonFilterManufacturer";
+            this.buttonFilterManufacturer.Size = new System.Drawing.Size(179, 23);
+            this.buttonFilterManufacturer.TabIndex = 4;
+            this.buttonFilterManufacturer.Text = "Szűrés gyártóra";
+            this.buttonFilterManufacturer.UseVisualStyleBackColor = true;
+            this.buttonFilterManufacturer.Click += new System.EventHandler(this.ButtonFilterManufacturer_Click);
+            // 
+            // buttonFilterAlcohol
+            // 
+            this.buttonFilterAlcohol.Location = new System.Drawing.Point(397, 49);
+            this.buttonFilterAlcohol.Name = "buttonFilterAlcohol";
+            this.buttonFilterAlcohol.Size = new System.Drawing.Size(179, 23);
+            this.buttonFilterAlcohol.TabIndex = 5;
+            this.buttonFilterAlcohol.Text = "Szűrés alkoholtartalomra";
+            this.buttonFilterAlcohol.UseVisualStyleBackColor = true;
+            this.buttonFilterAlcohol.Click += new System.EventHandler(this.ButtonFilterAlcohol_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 543);
+            this.ClientSize = new System.Drawing.Size(686, 576);
             this.Controls.Add(this.groupBoxFilter);
             this.Controls.Add(this.groupBoxCRUD);
             this.Controls.Add(this.listBoxData);
@@ -180,6 +204,8 @@
         private System.Windows.Forms.ComboBox comboBoxAlcohol;
         private System.Windows.Forms.Label labelAlcohol;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonFilterAlcohol;
+        private System.Windows.Forms.Button buttonFilterManufacturer;
     }
 }
 

@@ -24,6 +24,18 @@ namespace MVC.View
         private void FormMain_Load(object sender, EventArgs e)
         {
             listBoxData.DataSource = controller.GetBeers();
+            comboBoxManufacturer.DataSource = controller.GetManufacturers();
+            comboBoxAlcohol.DataSource = controller.GetAlcohol();
+        }
+
+        private void ButtonFilterManufacturer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonFilterAlcohol_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
