@@ -111,9 +111,14 @@ namespace MVC.Model
 
         #region toString
 
+        /// <summary>
+        /// Stringre alakítja az adott objektumot (kimenetet határozza meg !!!)
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-            return azonosito + " " + marka + " " + alkoholTartalom + " " + ar + " " + gyarto;
+
+            return "Azonosító: "+azonosito + ", márka: " + marka + ", alkoholtartalom: " + alkoholTartalom + ", ára: " + ar + ", gyártója: " +gyarto;
             //return $"{azonosito} {marka} {alkoholTartalom} {ar} {gyarto}";
         }
 

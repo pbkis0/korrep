@@ -35,10 +35,10 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.groupBoxCRUD = new System.Windows.Forms.GroupBox();
             this.groupBoxFilter = new System.Windows.Forms.GroupBox();
-            this.comboBoxAlcohol = new System.Windows.Forms.ComboBox();
-            this.comboBoxManufacturer = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.labelAlcohol = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxManufacturer = new System.Windows.Forms.ComboBox();
+            this.comboBoxAlcohol = new System.Windows.Forms.ComboBox();
             this.groupBoxCRUD.SuspendLayout();
             this.groupBoxFilter.SuspendLayout();
             this.SuspendLayout();
@@ -110,24 +110,15 @@
             this.groupBoxFilter.TabStop = false;
             this.groupBoxFilter.Text = "Szűrés";
             // 
-            // comboBoxAlcohol
+            // labelAlcohol
             // 
-            this.comboBoxAlcohol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxAlcohol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAlcohol.FormattingEnabled = true;
-            this.comboBoxAlcohol.Location = new System.Drawing.Point(397, 46);
-            this.comboBoxAlcohol.Name = "comboBoxAlcohol";
-            this.comboBoxAlcohol.Size = new System.Drawing.Size(179, 21);
-            this.comboBoxAlcohol.TabIndex = 0;
-            // 
-            // comboBoxManufacturer
-            // 
-            this.comboBoxManufacturer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxManufacturer.FormattingEnabled = true;
-            this.comboBoxManufacturer.Location = new System.Drawing.Point(115, 46);
-            this.comboBoxManufacturer.Name = "comboBoxManufacturer";
-            this.comboBoxManufacturer.Size = new System.Drawing.Size(179, 21);
-            this.comboBoxManufacturer.TabIndex = 1;
+            this.labelAlcohol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelAlcohol.AutoSize = true;
+            this.labelAlcohol.Location = new System.Drawing.Point(306, 49);
+            this.labelAlcohol.Name = "labelAlcohol";
+            this.labelAlcohol.Size = new System.Drawing.Size(85, 13);
+            this.labelAlcohol.TabIndex = 3;
+            this.labelAlcohol.Text = "Alkohol tartalom:";
             // 
             // label1
             // 
@@ -138,15 +129,24 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Gyártó:";
             // 
-            // labelAlcohol
+            // comboBoxManufacturer
             // 
-            this.labelAlcohol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAlcohol.AutoSize = true;
-            this.labelAlcohol.Location = new System.Drawing.Point(306, 49);
-            this.labelAlcohol.Name = "labelAlcohol";
-            this.labelAlcohol.Size = new System.Drawing.Size(85, 13);
-            this.labelAlcohol.TabIndex = 3;
-            this.labelAlcohol.Text = "Alkohol tartalom:";
+            this.comboBoxManufacturer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxManufacturer.FormattingEnabled = true;
+            this.comboBoxManufacturer.Location = new System.Drawing.Point(115, 46);
+            this.comboBoxManufacturer.Name = "comboBoxManufacturer";
+            this.comboBoxManufacturer.Size = new System.Drawing.Size(179, 21);
+            this.comboBoxManufacturer.TabIndex = 1;
+            // 
+            // comboBoxAlcohol
+            // 
+            this.comboBoxAlcohol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxAlcohol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAlcohol.FormattingEnabled = true;
+            this.comboBoxAlcohol.Location = new System.Drawing.Point(397, 46);
+            this.comboBoxAlcohol.Name = "comboBoxAlcohol";
+            this.comboBoxAlcohol.Size = new System.Drawing.Size(179, 21);
+            this.comboBoxAlcohol.TabIndex = 0;
             // 
             // FormMain
             // 
@@ -160,6 +160,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MVC Gyakorló Projekt";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.groupBoxCRUD.ResumeLayout(false);
             this.groupBoxFilter.ResumeLayout(false);
             this.groupBoxFilter.PerformLayout();
