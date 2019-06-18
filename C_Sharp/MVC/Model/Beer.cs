@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -117,8 +116,7 @@ namespace MVC.Model
         /// <returns></returns>
         public override string ToString()
         {
-
-            return "Azonosító: "+azonosito + ", márka: " + marka + ", alkoholtartalom: " + alkoholTartalom + ", ára: " + ar + ", gyártója: " +gyarto;
+            return "Azonosító: " + azonosito + ", márka: " + marka + ", alkoholtartalom: " + alkoholTartalom + ", ára: " + ar + ", gyártója: " + gyarto;
             //return $"{azonosito} {marka} {alkoholTartalom} {ar} {gyarto}";
         }
 
