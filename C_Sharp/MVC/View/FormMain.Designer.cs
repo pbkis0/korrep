@@ -31,16 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.listBoxData = new System.Windows.Forms.ListBox();
             this.buttonCreate = new System.Windows.Forms.Button();
-            this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.groupBoxCRUD = new System.Windows.Forms.GroupBox();
             this.groupBoxFilter = new System.Windows.Forms.GroupBox();
+            this.buttonFilterAlcohol = new System.Windows.Forms.Button();
+            this.buttonFilterManufacturer = new System.Windows.Forms.Button();
             this.labelAlcohol = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxManufacturer = new System.Windows.Forms.ComboBox();
             this.comboBoxAlcohol = new System.Windows.Forms.ComboBox();
-            this.buttonFilterManufacturer = new System.Windows.Forms.Button();
-            this.buttonFilterAlcohol = new System.Windows.Forms.Button();
             this.groupBoxCRUD.SuspendLayout();
             this.groupBoxFilter.SuspendLayout();
             this.SuspendLayout();
@@ -64,15 +63,7 @@
             this.buttonCreate.TabIndex = 1;
             this.buttonCreate.Text = "Új";
             this.buttonCreate.UseVisualStyleBackColor = true;
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.Location = new System.Drawing.Point(256, 37);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(135, 23);
-            this.buttonUpdate.TabIndex = 2;
-            this.buttonUpdate.Text = "Módosítás";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
             // 
             // buttonDelete
             // 
@@ -82,13 +73,13 @@
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "Törlés";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
             // groupBoxCRUD
             // 
             this.groupBoxCRUD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxCRUD.Controls.Add(this.buttonCreate);
-            this.groupBoxCRUD.Controls.Add(this.buttonUpdate);
             this.groupBoxCRUD.Controls.Add(this.buttonDelete);
             this.groupBoxCRUD.Location = new System.Drawing.Point(12, 366);
             this.groupBoxCRUD.Name = "groupBoxCRUD";
@@ -113,6 +104,26 @@
             this.groupBoxFilter.TabIndex = 5;
             this.groupBoxFilter.TabStop = false;
             this.groupBoxFilter.Text = "Szűrés";
+            // 
+            // buttonFilterAlcohol
+            // 
+            this.buttonFilterAlcohol.Location = new System.Drawing.Point(397, 49);
+            this.buttonFilterAlcohol.Name = "buttonFilterAlcohol";
+            this.buttonFilterAlcohol.Size = new System.Drawing.Size(179, 23);
+            this.buttonFilterAlcohol.TabIndex = 5;
+            this.buttonFilterAlcohol.Text = "Szűrés alkoholtartalomra";
+            this.buttonFilterAlcohol.UseVisualStyleBackColor = true;
+            this.buttonFilterAlcohol.Click += new System.EventHandler(this.ButtonFilterAlcohol_Click);
+            // 
+            // buttonFilterManufacturer
+            // 
+            this.buttonFilterManufacturer.Location = new System.Drawing.Point(115, 49);
+            this.buttonFilterManufacturer.Name = "buttonFilterManufacturer";
+            this.buttonFilterManufacturer.Size = new System.Drawing.Size(179, 23);
+            this.buttonFilterManufacturer.TabIndex = 4;
+            this.buttonFilterManufacturer.Text = "Szűrés gyártóra";
+            this.buttonFilterManufacturer.UseVisualStyleBackColor = true;
+            this.buttonFilterManufacturer.Click += new System.EventHandler(this.ButtonFilterManufacturer_Click);
             // 
             // labelAlcohol
             // 
@@ -152,26 +163,6 @@
             this.comboBoxAlcohol.Size = new System.Drawing.Size(179, 21);
             this.comboBoxAlcohol.TabIndex = 0;
             // 
-            // buttonFilterManufacturer
-            // 
-            this.buttonFilterManufacturer.Location = new System.Drawing.Point(115, 49);
-            this.buttonFilterManufacturer.Name = "buttonFilterManufacturer";
-            this.buttonFilterManufacturer.Size = new System.Drawing.Size(179, 23);
-            this.buttonFilterManufacturer.TabIndex = 4;
-            this.buttonFilterManufacturer.Text = "Szűrés gyártóra";
-            this.buttonFilterManufacturer.UseVisualStyleBackColor = true;
-            this.buttonFilterManufacturer.Click += new System.EventHandler(this.ButtonFilterManufacturer_Click);
-            // 
-            // buttonFilterAlcohol
-            // 
-            this.buttonFilterAlcohol.Location = new System.Drawing.Point(397, 49);
-            this.buttonFilterAlcohol.Name = "buttonFilterAlcohol";
-            this.buttonFilterAlcohol.Size = new System.Drawing.Size(179, 23);
-            this.buttonFilterAlcohol.TabIndex = 5;
-            this.buttonFilterAlcohol.Text = "Szűrés alkoholtartalomra";
-            this.buttonFilterAlcohol.UseVisualStyleBackColor = true;
-            this.buttonFilterAlcohol.Click += new System.EventHandler(this.ButtonFilterAlcohol_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,7 +187,6 @@
 
         private System.Windows.Forms.ListBox listBoxData;
         private System.Windows.Forms.Button buttonCreate;
-        private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.GroupBox groupBoxCRUD;
         private System.Windows.Forms.GroupBox groupBoxFilter;

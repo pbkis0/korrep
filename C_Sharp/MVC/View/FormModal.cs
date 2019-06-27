@@ -1,20 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MVC.Controller;
 using System.Windows.Forms;
 
 namespace MVC.View
 {
     public partial class FormModal : Form
     {
+        private BeerController controller;
+
         public FormModal()
         {
             InitializeComponent();
+            controller = new BeerController(true);
+        }
+
+        private void FormModal_Load(object sender, EventArgs e)
+        {
+            textBoxID.Text = controller.GetNextID();
+            comboBoxManufacturer.DataSource = controller.GetManufacturers();
         }
     }
 }

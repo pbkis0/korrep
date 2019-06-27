@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controller\BeerController.cs" />
     <Compile Include="Model\Beer.cs" />
+    <Compile Include="Model\Manufacturer.cs" />
     <Compile Include="View\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>

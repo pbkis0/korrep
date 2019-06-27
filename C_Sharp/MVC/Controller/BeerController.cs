@@ -12,20 +12,26 @@ namespace MVC.Controller
 {
     public class BeerController
     {
-        private List<Beer> beers;
+        private static List<Beer> beers;
+        private static List<Manufacturer> manufacturers;
 
         public BeerController()
         {
             beers = new List<Beer>();
+            manufacturers = new List<Manufacturer>();
             beolvasSoroket();
+        }
+
+        public BeerController(bool modal)
+        {
+            // Kamu konstruktor
         }
 
         public void beolvasSoroket()
         {
             // var: fordítás időben kitalálja a változó típusát
 
-            var sorok = File.ReadAllLines("../../Datasources/beer.txt", Encoding.UTF8)
-                .Skip(1); // Skip(2) -> 1 sort ugrik a fájl olvasó
+            var sorok = File.ReadAllLines("../../Datasources/beer.txt", Encoding.UTF8).Skip(1); // Skip(2) -> 1 sort ugrik a fájl olvasó
 
             foreach (var sor in sorok)
             {
@@ -36,13 +42,16 @@ namespace MVC.Controller
                 string marka = data[1];
                 double alkoholTartalom = Convert.ToDouble(data[2]);
                 int ar = Convert.ToInt32(data[3]);
-                string gyarto = data[4];
+                Manufacturer gyarto = new Manufacturer(data[4]);
 
                 //új példányt hozunk létre a modellből.
                 Beer beer = new Beer(azonosito, marka, alkoholTartalom, ar, gyarto);
 
                 //Adott ciklusfutás során a settelt modellt listához hozzáadjuk
                 beers.Add(beer);
+
+                //Adott ciklusfutás során a settelt modellt listához hozzáadjuk
+                manufacturers.Add(gyarto);
             }
         }
 
@@ -67,11 +76,11 @@ namespace MVC.Controller
             foreach (var beer in beers
             ) // végig megyek Beer típussal a Beer listán (List<Beer>): ez tárolja minden beolvasott adatunkat a fájlból
             {
-                if (!gyartok.Contains(beer.getGyarto())
+                if (!gyartok.Contains(beer.getGyarto().getName())
                 ) // megvizsgálom, hogy adott objektum gyártó adattagja (string) szerepel-e a gyartok (List<string> gyartok) listában?
                 {
                     gyartok.Add(beer
-                        .getGyarto()); // Ha nem, akkor belefut ebbe a blokkba (itt hozzáadom getter elkéréssel az adott gyártót (string) a List<sting> gyartok listába, ha nem, akkor nem fut be a blokkba
+                        .getGyarto().getName()); // Ha nem, akkor belefut ebbe a blokkba (itt hozzáadom getter elkéréssel az adott gyártót (string) a List<sting> gyartok listába, ha nem, akkor nem fut be a blokkba
                 }
             }
 
@@ -124,13 +133,13 @@ namespace MVC.Controller
              */
         }
 
-        public List<Beer> FilterManufacturer(string manufacturer)
+        public List<Beer> FilterManufacturer(string manufacturerName)
         {
             List<Beer> manufacterBeers = new List<Beer>();
 
             foreach (var beer in beers)
             {
-                if (beer.getGyarto() == manufacturer)
+                if (beer.getGyarto().getName() == manufacturerName)
                 {
                     manufacterBeers.Add(beer);
                 }
@@ -152,6 +161,35 @@ namespace MVC.Controller
             }
 
             return alcoholBeers;
+        }
+
+        public string GetNextID()
+        {
+            return (SearchMaxID() + 1).ToString(); // Nem szabad függni a lista hosszától
+        }
+
+        /// <summary>
+        /// Maximum keresés prog. tétel
+        /// </summary>
+        /// <returns></returns>
+        private int SearchMaxID()
+        {
+            int max = 0;
+
+            foreach (Beer beer in beers)
+            {
+                if (beer.GetAzonosito() > max)
+                {
+                    max = beer.GetAzonosito();
+                }
+            }
+
+            return max;
+        }
+
+        public void Delete(int index)
+        {
+            beers.RemoveAt(index);
         }
     }
 }

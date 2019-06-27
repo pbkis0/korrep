@@ -44,5 +44,21 @@ namespace MVC.View
             listBoxData.DataSource = null;
             listBoxData.DataSource = controller.FilterAlcohol(alcohol);
         }
+
+        private void ButtonCreate_Click(object sender, EventArgs e)
+        {
+            FormModal formModal = new FormModal();
+            //formModal.Show(); // Nem-modális megjelenített: ki lehet kattintani a felugró ablakból
+            formModal.ShowDialog(); // modálisan megjelenített: nem kattinthatsz ki ebből az aktív ablakból
+        }
+
+        private void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            int index = listBoxData.SelectedIndex;
+            controller.Delete(index); //back-end oldalon törlünk index alapján objektumot
+
+            listBoxData.DataSource = null;
+            listBoxData.DataSource = controller.GetBeers();
+        }
     }
 }

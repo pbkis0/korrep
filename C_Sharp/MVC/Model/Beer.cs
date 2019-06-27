@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace MVC.Model
+﻿namespace MVC.Model
 {
     public class Beer
     {
@@ -15,7 +8,7 @@ namespace MVC.Model
         private string marka;
         private double alkoholTartalom;
         private int ar;
-        private string gyarto;
+        private Manufacturer gyarto;
 
         #endregion
 
@@ -29,7 +22,7 @@ namespace MVC.Model
         /// <param name="alkoholTartalom"></param>
         /// <param name="ar"></param>
         /// <param name="gyarto"></param>
-        public Beer(int azonosito, string marka, double alkoholTartalom, int ar, string gyarto)
+        public Beer(int azonosito, string marka, double alkoholTartalom, int ar, Manufacturer gyarto)
         {
             this.azonosito = azonosito;
             this.marka = marka;
@@ -96,12 +89,12 @@ namespace MVC.Model
         }
 
         //Gyártó
-        public string getGyarto()
+        public Manufacturer getGyarto()
         {
             return gyarto;
         }
 
-        public void setGyarto(string gyarto)
+        public void setGyarto(Manufacturer gyarto)
         {
             this.gyarto = gyarto;
         }

@@ -164,7 +164,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormModal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Új / Hozzáadás";
+            this.Load += new System.EventHandler(this.FormModal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
