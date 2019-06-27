@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BeerController.cs" />
+    <Compile Include="exceptions\DeleteException.cs" />
     <Compile Include="Model\Beer.cs" />
     <Compile Include="Model\Manufacturer.cs" />
     <Compile Include="View\FormMain.cs">

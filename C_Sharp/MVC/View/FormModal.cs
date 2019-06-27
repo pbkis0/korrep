@@ -17,7 +17,7 @@ namespace MVC.View
         private void FormModal_Load(object sender, EventArgs e)
         {
             textBoxID.Text = controller.GetNextID();
-            comboBoxManufacturer.DataSource = controller.GetManufacturers();
+            comboBoxManufacturer.DataSource = controller.GetManufacturerNames();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.listBoxData = new System.Windows.Forms.ListBox();
             this.buttonCreate = new System.Windows.Forms.Button();
@@ -40,8 +41,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxManufacturer = new System.Windows.Forms.ComboBox();
             this.comboBoxAlcohol = new System.Windows.Forms.ComboBox();
+            this.errorProviderTorlesHiba = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBoxCRUD.SuspendLayout();
             this.groupBoxFilter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTorlesHiba)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxData
@@ -163,6 +166,10 @@
             this.comboBoxAlcohol.Size = new System.Drawing.Size(179, 21);
             this.comboBoxAlcohol.TabIndex = 0;
             // 
+            // errorProviderTorlesHiba
+            // 
+            this.errorProviderTorlesHiba.ContainerControl = this;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +186,7 @@
             this.groupBoxCRUD.ResumeLayout(false);
             this.groupBoxFilter.ResumeLayout(false);
             this.groupBoxFilter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTorlesHiba)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -196,6 +204,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonFilterAlcohol;
         private System.Windows.Forms.Button buttonFilterManufacturer;
+        private System.Windows.Forms.ErrorProvider errorProviderTorlesHiba;
     }
 }
 

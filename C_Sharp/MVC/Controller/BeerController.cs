@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using MVC.Model;
 using System.IO;
-using System.Text.RegularExpressions;
+using MVC.exceptions;
 
 namespace MVC.Controller
 {
@@ -64,23 +62,27 @@ namespace MVC.Controller
             return beers;
         }
 
+        public List<Manufacturer> GetManufacturers()
+        {
+            return manufacturers;
+        }
+
         /// <summary>
         /// Szűrés foreach-if (linerális kereső algoritmussal)
         /// </summary>
         /// <returns></returns>
-        public List<string> GetManufacturers()
+        public List<string> GetManufacturerNames()
         {
             List<string>
                 gyartok = new List<string>(); // GUI-n combobox-ba string listát tudok "adatkötni", ezt itt létrehozom
 
-            foreach (var beer in beers
+            foreach (var manufacturer in manufacturers
             ) // végig megyek Beer típussal a Beer listán (List<Beer>): ez tárolja minden beolvasott adatunkat a fájlból
             {
-                if (!gyartok.Contains(beer.getGyarto().getName())
+                if (!gyartok.Contains(manufacturer.getName())
                 ) // megvizsgálom, hogy adott objektum gyártó adattagja (string) szerepel-e a gyartok (List<string> gyartok) listában?
                 {
-                    gyartok.Add(beer
-                        .getGyarto().getName()); // Ha nem, akkor belefut ebbe a blokkba (itt hozzáadom getter elkéréssel az adott gyártót (string) a List<sting> gyartok listába, ha nem, akkor nem fut be a blokkba
+                    gyartok.Add(manufacturer.getName()); // Ha nem, akkor belefut ebbe a blokkba (itt hozzáadom getter elkéréssel az adott gyártót (string) a List<sting> gyartok listába, ha nem, akkor nem fut be a blokkba
                 }
             }
 
@@ -189,6 +191,11 @@ namespace MVC.Controller
 
         public void Delete(int index)
         {
+            if (index < 0)
+            {
+                throw new DeleteException("Törlési hiba");
+            }
+
             beers.RemoveAt(index);
         }
     }

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MVC.exceptions;
 using System.Windows.Forms;
 using MVC.Controller;
 
@@ -24,7 +18,7 @@ namespace MVC.View
         private void FormMain_Load(object sender, EventArgs e)
         {
             listBoxData.DataSource = controller.GetBeers();
-            comboBoxManufacturer.DataSource = controller.GetManufacturers();
+            comboBoxManufacturer.DataSource = controller.GetManufacturerNames();
             comboBoxAlcohol.DataSource = controller.GetAlcohol();
         }
 
@@ -55,7 +49,15 @@ namespace MVC.View
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
             int index = listBoxData.SelectedIndex;
-            controller.Delete(index); //back-end oldalon törlünk index alapján objektumot
+
+            try
+            {
+                controller.Delete(index); //back-end oldalon törlünk index alapján objektumot
+            }
+            catch (DeleteException ex)
+            {
+                errorProviderTorlesHiba.SetError(buttonDelete, ex.Message);
+            }
 
             listBoxData.DataSource = null;
             listBoxData.DataSource = controller.GetBeers();
