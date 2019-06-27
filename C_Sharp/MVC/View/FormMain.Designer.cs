@@ -42,6 +42,7 @@
             this.comboBoxManufacturer = new System.Windows.Forms.ComboBox();
             this.comboBoxAlcohol = new System.Windows.Forms.ComboBox();
             this.errorProviderTorlesHiba = new System.Windows.Forms.ErrorProvider(this.components);
+            this.buttonFileWriter = new System.Windows.Forms.Button();
             this.groupBoxCRUD.SuspendLayout();
             this.groupBoxFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTorlesHiba)).BeginInit();
@@ -82,6 +83,7 @@
             // 
             this.groupBoxCRUD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxCRUD.Controls.Add(this.buttonFileWriter);
             this.groupBoxCRUD.Controls.Add(this.buttonCreate);
             this.groupBoxCRUD.Controls.Add(this.buttonDelete);
             this.groupBoxCRUD.Location = new System.Drawing.Point(12, 366);
@@ -170,6 +172,16 @@
             // 
             this.errorProviderTorlesHiba.ContainerControl = this;
             // 
+            // buttonFileWriter
+            // 
+            this.buttonFileWriter.Location = new System.Drawing.Point(256, 37);
+            this.buttonFileWriter.Name = "buttonFileWriter";
+            this.buttonFileWriter.Size = new System.Drawing.Size(135, 23);
+            this.buttonFileWriter.TabIndex = 4;
+            this.buttonFileWriter.Text = "Fájlba írás";
+            this.buttonFileWriter.UseVisualStyleBackColor = true;
+            this.buttonFileWriter.Click += new System.EventHandler(this.ButtonFileWriter_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,6 +217,7 @@
         private System.Windows.Forms.Button buttonFilterAlcohol;
         private System.Windows.Forms.Button buttonFilterManufacturer;
         private System.Windows.Forms.ErrorProvider errorProviderTorlesHiba;
+        private System.Windows.Forms.Button buttonFileWriter;
     }
 }
 

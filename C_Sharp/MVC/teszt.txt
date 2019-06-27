@@ -1,0 +1,15 @@
+﻿Azonosító: 1, márka: Borsodi Világos, alkoholtartalom: 4,5, ára: 180, gyártója: Borsodi Sörgyár Kft.
+Azonosító: 2, márka: Borsodi Bivaly, alkoholtartalom: 6,5, ára: 250, gyártója: Borsodi Sörgyár Kft.
+Azonosító: 3, márka: Soproni 1895, alkoholtartalom: 5,3, ára: 300, gyártója: Heineken Hungária Sörgyárak Kft.
+Azonosító: 4, márka: Soproni, alkoholtartalom: 4,5, ára: 230, gyártója: Heineken Hungária Sörgyárak Kft.
+Azonosító: 5, márka: Arany Ászok, alkoholtartalom: 4,3, ára: 230, gyártója: Dreher Sörgyárak Kft.
+Azonosító: 6, márka: Dreher Bak, alkoholtartalom: 7,3, ára: 450, gyártója: Dreher Sörgyárak Kft.
+Azonosító: 7, márka: Balatoni Világos, alkoholtartalom: 3, ára: 300, gyártója: Dreher Sörgyárak Kft.
+Azonosító: 8, márka: Miller Genuine Draft, alkoholtartalom: 4,7, ára: 350, gyártója: Dreher Sörgyárak Kft.
+Azonosító: 9, márka: Szalon Barna, alkoholtartalom: 5,8, ára: 250, gyártója: Pécsi Sörfőzde Zrt.
+Azonosító: 10, márka: Radler, alkoholtartalom: 2,5, ára: 480, gyártója: Pécsi Sörfőzde Zrt.
+Azonosító: 11, márka: Heineken, alkoholtartalom: 5, ára: 260, gyártója: Heineken Hungária Sörgyárak Kft.
+Azonosító: 12, márka: Soproni Fekete Démon, alkoholtartalom: 5,2, ára: 340, gyártója: Heineken Hungária Sörgyárak Kft.
+Azonosító: 13, márka: Dreher Alkoholmentes, alkoholtartalom: 0,5, ára: 200, gyártója: Dreher Sörgyárak Kft.
+Azonosító: 14, márka: Pilsner Urquell, alkoholtartalom: 4,4, ára: 220, gyártója: Dreher Sörgyárak Kft.
+Azonosító: 15, márka: Dreher Classic, alkoholtartalom: 5,2, ára: 320, gyártója: Dreher Sörgyárak Kft.

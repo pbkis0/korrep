@@ -54,6 +54,20 @@ namespace MVC.Controller
         }
 
         /// <summary>
+        /// Fájlbaíró metódus
+        /// </summary>
+        public void fajlbaIras()
+        {
+            string tartalom = "hihih";
+
+            foreach (var beer in beers)
+            {
+                tartalom += beer + "\n";
+                File.WriteAllText("../../teszt.txt", tartalom, Encoding.UTF8);
+            }
+        }
+
+        /// <summary>
         /// Sörlista gettere
         /// </summary>
         /// <returns></returns>

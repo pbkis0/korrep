@@ -62,5 +62,10 @@ namespace MVC.View
             listBoxData.DataSource = null;
             listBoxData.DataSource = controller.GetBeers();
         }
+
+        private void ButtonFileWriter_Click(object sender, EventArgs e)
+        {
+            controller.fajlbaIras();
+        }
     }
 }
