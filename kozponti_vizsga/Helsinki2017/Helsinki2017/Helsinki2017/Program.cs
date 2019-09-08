@@ -10,7 +10,7 @@ namespace Helsinki2017
 
         static void FileBeolvasas()
         {
-            var sorok = File.ReadAllLines("../../", Encoding.UTF8).ToList();
+            var sorok = File.ReadAllLines("../../donto.csv", Encoding.UTF8).ToList();
 
             foreach (var sor in sorok)
             {
