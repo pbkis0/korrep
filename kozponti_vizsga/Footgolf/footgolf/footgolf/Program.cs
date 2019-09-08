@@ -93,6 +93,63 @@ namespace footgolf
             Console.WriteLine("4. feladat: A női versenyzők aránya: " + arany.ToString("0.00") + "%");
 
             //5.feladat
+            //Nem kell kiiratni az 5. feladatot
+
+            //6. feladat (Maximum keresés tétele!
+            Console.WriteLine("6. feladat: A bajnok női versenyző \n ");
+
+            Versenyzo legjobbNoi = null;
+            int max = 0;
+            foreach (Versenyzo v in versenyzok)
+            {
+                if (v.Kategoria == "Noi")
+                {
+                    if (max < EgyeniOsszpontszam(v))
+                    {
+                        max = EgyeniOsszpontszam(v);
+                        legjobbNoi = v;
+                    }
+                }
+            }
+
+            Console.WriteLine("\nNév: " + legjobbNoi.Nev + "\nEgyesület: " + legjobbNoi.Egyesulet + "\nÖsszpontszám: " + max);
+
+            //7.feladat
+
+            string fajlba = null;
+
+            foreach (Versenyzo v in versenyzok)
+            {
+                if (v.Kategoria == "Felnott ferfi")
+                {
+                    fajlba += v.Nev +";" + EgyeniOsszpontszam(v) + "\n";
+                }
+            }
+
+            File.WriteAllText("../../osszpontFF.txt", fajlba, Encoding.UTF8);
+
+            //8. feladat
+
+            SortedDictionary<string, int> statisztika = new SortedDictionary<string, int>();
+
+            int i = 0;
+            foreach (Versenyzo v in versenyzok)
+            {
+                statisztika.Add(v.Egyesulet, i++);
+            }
+
+            statisztika.Remove("n.a.");
+
+            foreach (KeyValuePair<string, int> v in statisztika)
+            {
+                if (v.Value >= 3)
+                {
+                    Console.WriteLine("\t" + v.Key + " - " + v.Value);
+                }
+            }
+
+
+            Console.WriteLine("8. feladat: Egyesület statisztika");
 
 
             Console.ReadKey();

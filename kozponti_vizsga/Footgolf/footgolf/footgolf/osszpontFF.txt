@@ -1,4 +1,4 @@
-Albert Laszlo;30
+﻿Albert Laszlo;30
 Bacskai Bence;541
 Bado Szilard;288
 Bak Balazs;10
