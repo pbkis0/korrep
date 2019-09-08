@@ -10,26 +10,26 @@ namespace Helsinki2017
 
         public string Orszag { get; set; }
 
-        public string Techinikai { get; set; }
+        public double Techinikai { get; set; }
 
-        public string Komponens { get; set; }
+        public double Komponens { get; set; }
 
-        public List<int> levonas { get; set; }
+        public int Levonas { get; set; }
 
-        public Versenyzo(string nev, string orszag, string technikai, string komponens, List<int> levonas)
+        public Versenyzo(string nev, string orszag, double technikai, double komponens, int levonas)
         {
-            Nev = new;
+            Nev = nev;
             Orszag = orszag;
             Techinikai = technikai;
             Komponens = komponens;
-            this.levonas = levonas;
+            Levonas = levonas;
             //Kivülről jövő lista, egyenlő a belső listával.
             //A kintről jövő adatot adja értékül a listának.
         }
 
         public override string ToString()
         {
-            return Nev + " " + Orszag + " " + Techinikai + " " + Komponens;
+            return Nev + " " + Orszag + " " + Techinikai + " " + Komponens + " " + Levonas;
 
         }
 
