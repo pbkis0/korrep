@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Helsinki2017
+namespace helsinki
 {
     class Program
     {
@@ -47,12 +47,21 @@ namespace Helsinki2017
                 Versenyzo v = new Versenyzo(nev, orszag, technikai, komponens, levonas);
                 donto.Add(v);
             }
-
+        }
         static void Main(string[] args)
         {
-            versenyzok = new List<Versenyzo>();
-            FileBeolvasas();
-            Console.WriteLine("Hello World!");
+            rovidProgram = new List<Versenyzo>();
+            donto = new List<Versenyzo>();
+
+            FileBeolvasasDonto();
+            FileBeolvasasRovidProgram();
+
+
+            //2. feladat
+            Console.WriteLine("2. feladat\tA rövid programban " + rovidProgram.Count + "induló volt.");
+
+
+            Console.ReadKey();
         }
     }
 }

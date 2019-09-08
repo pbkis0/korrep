@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Helsinki2017
+namespace helsinki
 {
     public class Versenyzo
     {
