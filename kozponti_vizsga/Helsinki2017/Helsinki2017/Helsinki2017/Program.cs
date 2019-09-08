@@ -21,12 +21,15 @@ namespace Helsinki2017
                 string technikai = adat[2];
                 string komponens = adat[3];
 
-                Versenyzo v = new Versenyzo()
+                Versenyzo v = new Versenyzo(nev, orszag, technikai, komponens);
+                versenyzok.Add(v);
             }
         }
 
         static void Main(string[] args)
         {
+            versenyzok = new List<Versenyzo>();
+            FileBeolvasas();
             Console.WriteLine("Hello World!");x
         }
     }
