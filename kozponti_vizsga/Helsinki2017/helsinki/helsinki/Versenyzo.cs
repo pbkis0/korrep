@@ -10,7 +10,7 @@ namespace helsinki
 
         public string Orszag { get; set; }
 
-        public double Techinikai { get; set; }
+        public double Technikai { get; set; }
 
         public double Komponens { get; set; }
 
@@ -20,7 +20,7 @@ namespace helsinki
         {
             Nev = nev;
             Orszag = orszag;
-            Techinikai = technikai;
+            Technikai = technikai;
             Komponens = komponens;
             Levonas = levonas;
             //Kivülről jövő lista, egyenlő a belső listával.
@@ -29,7 +29,7 @@ namespace helsinki
 
         public override string ToString()
         {
-            return Nev + " " + Orszag + " " + Techinikai + " " + Komponens + " " + Levonas;
+            return Nev + " " + Orszag + " " + Technikai + " " + Komponens + " " + Levonas;
 
         }
 
