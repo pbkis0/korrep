@@ -13,7 +13,7 @@ namespace balatonkor
 
     static void FileBeolvasas()
     {
-        var sorok = File.ReadAllLines("../../kerekpar.csv", Encoding.UTF8).ToList();
+        var sorok = File.ReadAllLines("../../kerekpar.csv", Encoding.UTF8).Skip(1);
 
         foreach (var sor in sorok)
         {
