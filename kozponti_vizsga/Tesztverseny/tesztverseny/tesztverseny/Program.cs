@@ -149,17 +149,13 @@ namespace tesztverseny
 
             Console.WriteLine("7. feladat: A verseny legjobbjai:");
 
-            int elozoPont = 0;
+            int kor = 1;
 
-            foreach (var v in versenyzoPontok)
+            foreach (var v in versenyzoPontok.OrderByDescending(dictionary => dictionary.Value))
             {
-                if (v.Value > elozoPont)
-                {
-                    elozoPont = v.Value;
-                }
+                Console.WriteLine($"{kor}. díj ({v.Value} pont): {v.Key}");
+                kor++;
             }
-
-            // Nincs kész
 
             Console.ReadKey();
         }
