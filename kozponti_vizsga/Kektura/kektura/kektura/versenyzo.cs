@@ -4,7 +4,7 @@ using System.Text;
 
 namespace kektura
 {
-    public class versenyzo
+    public class Versenyzo
     {
         public string TuraKiinduloPont { get; set; }
 
@@ -16,9 +16,9 @@ namespace kektura
 
         public double LejtesekOsszege { get; set; }
 
-        public bool Pecsetelohely { get; set; }
+        public string Pecsetelohely { get; set; }
 
-        public versenyzo(string turaKiinduloPont, string turaVegPont, double turaszakaszHossz, double emelkedesOsszege, double lejtesekOsszege, bool pecsetelohely)
+        public Versenyzo(string turaKiinduloPont, string turaVegPont, double turaszakaszHossz, double emelkedesOsszege, double lejtesekOsszege, string pecsetelohely)
         {
             TuraKiinduloPont = turaKiinduloPont;
             TuraVegPont = turaVegPont;
@@ -28,9 +28,11 @@ namespace kektura
             Pecsetelohely = pecsetelohely;
         }
 
+        // Az adott példánynak megjeleniti az adat tagjait! 
+        //Mindig kötelező kiirni !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         public override string ToString()
         {
-            return base.ToString();
+            return TuraKiinduloPont + " " + TuraVegPont + " " + TuraszakaszHossza + " " + EmelkedesOsszege + " " + LejtesekOsszege + " " + Pecsetelohely;
         }
 
     }
