@@ -54,6 +54,7 @@ namespace tesztverseny
                 if (v.Kod == kod)
                 {
                     valasz = v.Valaszok;
+                    break;
                 }
             }
 
@@ -65,6 +66,84 @@ namespace tesztverseny
             string helyesValasz = File.ReadAllLines("../../valaszok.txt", Encoding.UTF8)[0];
             Console.WriteLine("4. feladat:\n" + helyesValasz + "\t(a helyes megoldás)");
 
+            string osszehasonlitas = "";
+
+            for (int i = 0; i < valasz.Length; i++)
+            {
+                if (valasz[i] == helyesValasz[i])
+                {
+                    osszehasonlitas += "+";
+                }
+                else
+                {
+                    osszehasonlitas += " ";
+                }
+            }
+
+            Console.WriteLine(osszehasonlitas + "\t(a versenyző helyes válaszai)");
+
+            // 5. feladat
+
+            int sorszam = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("5. feladat: A feladat sorszáma = " + sorszam);
+
+            int hanyEmbernekLettJo = 0;
+
+            foreach (var v in versenyzok)
+            {
+                if (v.Valaszok[sorszam - 1] == helyesValasz[sorszam - 1])
+                {
+                    hanyEmbernekLettJo++;
+                }
+            }
+
+
+            double szazalekosEredmeny = hanyEmbernekLettJo / (double)versenyzok.Count * 100;
+
+            Console.WriteLine("A feladatra " + hanyEmbernekLettJo + " fő, a versenyzők " + szazalekosEredmeny.ToString("0.00") + "% adott helyes választ.");
+
+            // 6. feladat
+
+            Dictionary<string, int> versenyzoPontok = new Dictionary<string, int>();
+
+            for (int i = 0; i < versenyzok.Count; i++)
+            {
+                int pontszam = 0;
+
+                for (int j = 0; j < helyesValasz.Length; j++)
+                {
+                    if (versenyzok[i].Valaszok[j] == helyesValasz[j])
+                    {
+                        if (j <= 4)
+                        {
+                            pontszam += 3;
+                        }
+                        else if (j <= 9)
+                        {
+                            pontszam += 4;
+                        }
+                        else if (j <= 12)
+                        {
+                            pontszam += 5;
+                        }
+                        else
+                        {
+                            pontszam += 6;
+                        }
+                    }
+                }
+
+                versenyzoPontok.Add(versenyzok[i].Kod, pontszam);
+            }
+
+            string fajlba = "";
+
+            foreach (var pont in versenyzoPontok)
+            {
+                fajlba += pont.Key + " " + pont.Value + "\n";
+            }
+
+            File.WriteAllText("../../pontok.txt", fajlba, Encoding.UTF8);
 
             Console.ReadKey();
         }
