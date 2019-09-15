@@ -104,6 +104,8 @@ namespace tesztverseny
 
             // 6. feladat
 
+            Console.WriteLine("A versenyzők pontszámának meghatározása");
+
             Dictionary<string, int> versenyzoPontok = new Dictionary<string, int>();
 
             for (int i = 0; i < versenyzok.Count; i++)
@@ -153,7 +155,7 @@ namespace tesztverseny
 
             foreach (var v in versenyzoPontok.OrderByDescending(dictionary => dictionary.Value))
             {
-                Console.WriteLine($"{kor}. díj ({v.Value} pont): {v.Key}");
+                Console.WriteLine(kor + ". díj (" + v.Value + " pont): " + v.Key);
                 kor++;
             }
 
