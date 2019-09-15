@@ -145,6 +145,22 @@ namespace tesztverseny
 
             File.WriteAllText("../../pontok.txt", fajlba, Encoding.UTF8);
 
+            // 7. feladat
+
+            Console.WriteLine("7. feladat: A verseny legjobbjai:");
+
+            int elozoPont = 0;
+
+            foreach (var v in versenyzoPontok)
+            {
+                if (v.Value > elozoPont)
+                {
+                    elozoPont = v.Value;
+                }
+            }
+
+            // Nincs kész
+
             Console.ReadKey();
         }
     }
