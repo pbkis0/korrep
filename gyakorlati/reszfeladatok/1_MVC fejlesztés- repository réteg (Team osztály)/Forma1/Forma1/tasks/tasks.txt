@@ -1,7 +1,55 @@
 ﻿Team.cs
-1. public Team(string name)
+1. public Team(string name) //
 2. public string getName()
 3. public void deleteAllRacersInTeam()
 4. public int getTeamSalary()
 5. public void update(string newName)
 6. public List<string> getRacerNames()
+
+Megoldások:
+ 1,   public Team(string name) 
+        {
+            racers = new List<Racer>();
+            this.name = name;
+			//be setteltem a nevet
+
+        }
+2, public string getName()
+        {
+            return name; //visszaadtuk a nevet
+        }
+
+3, public void deleteAllRacersInTeam()
+        {
+            racers.Clear(); //Kitöröltük  a versenyző lista tartalmát.
+        }
+
+4, public int getTeamSalary()
+        {
+            int osszber = 0; //Összegzés tétel
+            foreach (var r in racers) // var =az objektuk tipusa, amin végig megyek; r= azonosító amibe belemásolja az értékeket; racers - a listán amin végig megyek, in- a listának a neve amin végig megyek
+            {
+                osszber += r.getSalary();
+            }
+            return osszber;
+        }
+/A versenyzőt fizetését összegzés tételével összesítettük.
+
+5,public void update(string newName)
+        {
+            this.name = newName; //set name ; a csapat nevét a jelenlegiről pl:_Mercedes, átírja a paratéterben megadottal pl: Ferreari
+        }
+
+6,public List<string> getRacerNames()
+        {
+            //String lista ami a neveket fogja tárolni.
+            List<string> racerNamesList = new List<string>();
+
+            foreach (var r in racers)
+            {
+                racerNamesList.Add(r.getName());
+            }
+
+            return racerNamesList;
+        }
+Foreach -el végig megyünk a versenyző listán, és a versenyzők neveit get-teljük, és hozzá adjuk a string listához

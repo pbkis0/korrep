@@ -18,6 +18,8 @@ namespace Forma1.repository
         public Team(string name)
         {
             racers = new List<Racer>();
+            this.name = name;
+
         }
         /// <summary>
         /// getter
@@ -25,7 +27,7 @@ namespace Forma1.repository
         /// <returns>A csapat neve</returns>
         public string getName()
         {
-            return "";
+            return name;
         }
         /// <summary>
         /// Csapat törlésének előkészítése
@@ -33,7 +35,7 @@ namespace Forma1.repository
         /// </summary>
         public void deleteAllRacersInTeam()
         {
-            
+            racers.Clear();
         }
         /// <summary>
         /// A csapat versenyzőinak összbére
@@ -41,14 +43,20 @@ namespace Forma1.repository
         /// <returns>Csapat bérkifezése</returns>
         public int getTeamSalary()
         {
-            return 0;
+            int osszber = 0; //Összegzés tétel
+            foreach (var r in racers) // var =az objektuk tipusa, amin végig megyek; r= azonosító amibe belemásolja az értékeket; racers - a listán amin végig megyek, in- a listának a neve amin végig megyek
+            {
+                osszber += r.getSalary();
+            }
+            return osszber;
         }
         /// <summary>
         /// Módosítja a csapat nevét
         /// </summary>
         /// <param name="newName">Csapat új neve</param>
         public void update(string newName)
-        {           
+        {
+            this.name = newName; //set name ; a csapat nevét a jelenlegiről pl:_Mercedes, átírja a paratéterben megadottal pl: Ferreari
         }
         /// <summary>
         /// A csapat versenyzőinek nevének listája
@@ -56,7 +64,14 @@ namespace Forma1.repository
         /// <returns>A versenyzők neveinek listája</returns>
         public List<string> getRacerNames()
         {
+            //String lista ami a neveket fogja tárolni.
             List<string> racerNamesList = new List<string>();
+
+            foreach (var r in racers)
+            {
+                racerNamesList.Add(r.getName());
+            }
+
             return racerNamesList;
         }
     }
