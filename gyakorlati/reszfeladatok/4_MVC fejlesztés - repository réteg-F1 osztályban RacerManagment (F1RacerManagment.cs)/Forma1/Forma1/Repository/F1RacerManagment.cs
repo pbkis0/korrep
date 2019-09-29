@@ -18,7 +18,16 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">Ha nem találja az adott nevű csapatot</exception>
         public int getNumberOfRacers(string teamName)
         {
-            return 0;
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return t.getNumberOfRacers();
+                }
+                
+
+            }
+            throw new F1Exception("Ha nem találja az adott nevű csapatot");
         }
 
         /// <summary>
@@ -28,6 +37,14 @@ namespace Forma1.repository
         /// <returns>Lista, amely tartalmazza a csapat versenyzőinek nevét</returns>
         public List<string> getRacerNameFromTheTeam(string teamName)
         {
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return t.getRacerNames();
+                }
+
+            }
             return null;
         }
 
@@ -40,7 +57,20 @@ namespace Forma1.repository
         /// <returns>Következő lehetséges ID</returns>
         public int getNextRacerId()
         {
-            return -1;
+            int maxid = -1;
+            foreach (var t in teams)
+            {
+                if (t.getMaxId() > maxid)
+                {
+                    maxid = t.getMaxId();
+                }
+            }
+                if (maxid == 0)
+                {
+                    maxid = 1;
+                }
+            
+            return maxid+1;
         }
 
         /// <summary>
@@ -50,7 +80,17 @@ namespace Forma1.repository
         /// <param name="newRacer">Az új versenyző</param>
         /// <exception cref="F1Exception">Ha nem találja az adott nevű csapatot</exception>
         public void addRacerToTeam(string teamName, Racer newRacer)
-        {            
+        {
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    t.addRacer(newRacer);
+                    return;
+                }
+            }
+            throw new F1Exception("Nincs ilyen csapat!");
+
         }
 
         /// <summary>
@@ -63,7 +103,21 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">Ha az adott nevű csapat nem létezik</exception>
         public int getRacerId(string teamName, string racerName)
         {
-            return -1;
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    try
+                    {
+                        return t.getRacerId(racerName);
+                    }
+                    catch (Exception e)
+                    {
+                        throw new Exception(e.Message);
+                    }
+                }
+            }
+            throw new F1Exception("Nincs ilyen nevű csapat!");
         }
 
         /// <summary>
@@ -75,7 +129,17 @@ namespace Forma1.repository
         /// <param name="newRacer">Az új versenyző</param>
         /// <exception cref="F1Exception">Ha az adott nevű csapat nem létezik</exception>
         public void updateReacerInTeam(string teamName, string oldRacerName, Racer newRacer)
-        {        
+        {
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    t.updateRacer(oldRacerName, newRacer);
+                }
+
+            }
+
+            throw new F1Exception("Nincs ilyen nevű csapat!");
         }
 
         /// <summary>
@@ -87,7 +151,17 @@ namespace Forma1.repository
         /// <param name="racerAge">A törlendő versenyző életkora</param>
         /// <exception cref="F1Exception">Ha az adott nevű csapat nem létezik</exception>
         public void deleteRacerInTeam(string teamName, string racerName, int racerAge)
-        {            
+        {
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    t.deleteRacer(racerName, racerAge);
+                }
+            }
+
+            throw new F1Exception("Nincs ilyen nevű csapat!");
+
         }
 
         public int getTeamSalary(string teamName)
