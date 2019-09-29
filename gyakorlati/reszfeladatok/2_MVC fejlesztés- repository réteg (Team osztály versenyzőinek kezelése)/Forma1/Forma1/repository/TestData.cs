@@ -22,6 +22,8 @@ namespace Forma1.repository
             Team t2 = new Team("Ferrari");
 
             t1.addRacer(r1);
+
+
             t1.addRacer(r3);
             t2.addRacer(r2);
             t2.addRacer(r4);

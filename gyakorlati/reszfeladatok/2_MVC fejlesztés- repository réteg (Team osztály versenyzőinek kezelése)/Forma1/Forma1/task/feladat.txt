@@ -8,3 +8,117 @@
         public bool isRacerExist(string racerName, int racerAge)
         public int getRacerId(string racerName)
         public int getMaxId()
+
+Megoldások:
+1,
+  public List<Racer> getRacers()
+        {
+
+            return racers;
+        }
+//A csapat versenyzőinek listáját adja vissza.
+
+2,
+       public int getNumberOfRacers()
+        {
+            return racers.Count;
+        }
+//A versenyzők számát adja össze.
+
+3, 
+public void addRacer(Racer r)
+        {
+            racers.Add(r);
+        }
+		Racer listház hozzáadok egy racer versenyzőt.
+
+4,
+public void addRacer(Racer r)
+        {
+            foreach (var racer in racers)
+            {
+                if (r.getId()==racer.getId() && r.getName()== racer.getName() &&  r.getSalary() == racer.getSalary() && r.getAge() == racer.getAge())
+                {
+                    throw new TeamException("Két úgyanolyan versenyző nem lehet a listában!!");
+                }
+                else
+                {
+                    racers.Add(r);
+                }
+
+            }           
+        }
+
+5,
+public void updateRacer(string name, Racer newRacer)
+        {
+            foreach (var r in racers)
+            {
+                if (r.getName() == name)
+                {
+                    r.update(newRacer);
+                }
+                else
+                {
+                    throw new TeamException("Nincs meg a versenyző!");
+                }
+            }
+        }
+
+6,
+  public Racer serchRacerByName(string racerName)
+        {
+            foreach (var r in racers)
+            {
+                if (r.getName() == racerName)
+                {
+                    return r;
+                }
+            }
+
+            return null;
+        }
+
+7,
+public bool isRacerExist(string racerName, int racerAge)
+        {
+            foreach (var r in racers)
+            {
+                if (r.getName() == racerName && r.getAge() == racerAge)
+                {
+                    return true;
+                }
+            }
+
+
+            return false;
+        }
+
+8,
+public int getRacerId(string racerName)
+        {
+            foreach (var r in racers)
+            {
+                if (r.getName() == racerName)
+                {
+                    return r.getId();
+
+                }
+
+            }
+            return -1;
+        }
+
+9, //MAXIMUM keresés tétele
+public int getMaxId()
+        {
+            int max = 0;
+
+            foreach (var r in racers) //Max keresés tétele
+            {
+                if (r.getId() > max)
+                    max = r.getId();
+            }
+
+            return max;
+        }
