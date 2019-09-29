@@ -16,7 +16,8 @@ namespace Forma1.repository
         /// Forma 1 konstruktor
         /// </summary>
         public F1()
-        {           
+        {
+            teams = new List<Team>();
         }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace Forma1.repository
         /// <returns>A csapat nevek listája</returns>
         public List<Team> getTeams()
         {
+            //Listának a get-tere
             return teams;
         }
 
@@ -33,7 +35,8 @@ namespace Forma1.repository
         /// </summary>
         /// <param name="t">A csapat</param>
         public void add(Team t)
-        {            
+        {
+            teams.Add(t);
         }
 
         /// <summary>
@@ -43,7 +46,21 @@ namespace Forma1.repository
         /// <param name="teamName">A törlendő csapat neve</param>
         /// <exception cref="F1Exception">A csapat nem lézetik</exception>
         public void delete(string teamName)
-        {           
+        {
+            foreach (var t in teams )
+            {
+                if (t.getName() == teamName)
+                {
+                    t.deleteAllRacersInTeam();
+                    teams.Remove(t);
+                }
+                else
+                {
+                    throw new F1Exception("A csapat nem létezik");
+                }
+
+            }
+
         }
 
         /// <summary>
@@ -55,6 +72,17 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">A csapat nem lézetik</exception>
         public void update(string teamName, string newTeamName)
         {
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    t.update(newTeamName);
+                    return;
+                }
+
+            }
+
+            throw new F1Exception("A csapat nem lézetik");
         }
      
         /// <summary>
@@ -64,6 +92,14 @@ namespace Forma1.repository
         /// <returns>true ha van és false ha nincs</returns>
         public bool existTeamName(string teamName)
         {
+            foreach ( var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return true;
+                }
+
+            }
             return false;
         }
 
@@ -75,7 +111,26 @@ namespace Forma1.repository
         /// <returns>true ha van és false ha nincs</returns>
         public bool existRacer(string racerName, int racerAge)
         {
-            return false;
+            // Versenyzőre kérdezünk rá, hogy van-e bármely csapatban?
+
+            // F1 osztályban vagyunk, itt nincsen Racer lista. De van heklyette Team lista. Teamen keresztül elérem a Racerek!
+
+            foreach (var t in teams) // 1. lépés: végigmegyünk a csapatokon
+            {
+             /* A csapat osztályban már van üzleti logika arra hogy van-e önmagában (csapatban) ez a versenyző,
+              * amit az F1-ben lévő existRacer függvény paraméterei szerint kereshető*/
+
+                if (t.isRacerExist(racerName, racerAge)) // 2. lépésben ezt akkor emghívjuk és átpasszoljuk neki a paraméterek és ő majd elvégzi a piszkos melót
+                {
+                    // t.isRacerExist(racerName, racerAge) ez bool függvény, vagy true vagy false amit visszaad
+                    // if ág igaz ág: itt csak akkor megy bele a program végrehajtás (blokkba) ha a t.isRacerExist(racerName, racerAge) true-t ad vissza
+                    // Ekkor belép ide a blokkba tehát létezik ilyen versenyző, így az F1 existRacer függvénye is igaz, adjunk vissza igaza: return true;
+                    // Ha false-szal tér vissza a t.isRacerExist(racerName, racerAge), akkor az if ágba nem fut bele, és tovább pörög a foreach ciklus
+                    return true;
+                }
+            }
+
+            return false; // Ha totál nem talál ilyen versenyzőt, akkor végső elkeseredésében már csak hamissal tud visszatérni (mert nem talált semmit)
         }
 
         /// <summary>
@@ -88,7 +143,15 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">A csapat nem lézetik adott nevű versenyzője</exception>
         public Racer searchRacerByName(string teamName, string racerName)
         {
-            return null;
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return t.serchRacerByName(racerName); // ez olyan mintha return null -> ha nincs meg név alapján
+                }
+
+            }
+            throw new F1Exception("A csapat nem lézetik adott nevű versenyzője");
         }
 
         /// <summary>
