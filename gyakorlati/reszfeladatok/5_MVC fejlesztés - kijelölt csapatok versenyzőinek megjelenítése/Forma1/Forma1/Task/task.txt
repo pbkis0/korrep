@@ -3,4 +3,36 @@ A teszt adatok közül a Forma1 csapatok nevei megjelennek a megfelelő listába
 Feladat, hogy jelenítse meg a kiválasztott csapathoz tartozó versenyzőket.
 A következő lépéseket valósítsa meg:
  - user intefacen a csapat nevének kiválasztására esemény, amely megjeleníti a csapat nevét, és a csapathoz tartozó versenyzőket
- - controller régetben public string getTeamName() és public List<string> getRacerNames(string teamName)
+ - controller régetben public string getTeamNames() és public List<string> getRacerNames(string teamName)
+
+ Megoldás:
+
+ 1,
+ UserInterface: Form1.Form.cs
+ ListBOX-> SelectedIndex esemény
+
+
+GUI: Forma1Form.cs
+     private void ListBoxTeam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string teamname = listBoxTeam.SelectedItem.ToString();
+            listBoxRacer.DataSource = controller.getRacerNames(teamname);
+        }
+
+Controller réteg: F1Controller.cs
+
+        public List<string> getRacerNames(string teamName)
+        {
+            List<Team> teams = service.getTeams();
+            List<string> racersNamesList = new List<string>();
+
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    racersNamesList = t.getRacerNames();
+                }
+            }
+
+            return racersNamesList;
+        }

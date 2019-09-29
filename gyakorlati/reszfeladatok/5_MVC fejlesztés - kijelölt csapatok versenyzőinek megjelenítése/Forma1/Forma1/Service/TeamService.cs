@@ -24,7 +24,5 @@ namespace Forma1.Service
         {
             return forma1Repository.getTeam();
         }
-
-        
     }
 }

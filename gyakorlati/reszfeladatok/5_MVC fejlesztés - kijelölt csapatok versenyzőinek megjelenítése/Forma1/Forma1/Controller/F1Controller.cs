@@ -25,15 +25,29 @@ namespace Forma1.Controller
         public List<string> getTeamNames()
         {
             List<Team> teams = service.getTeams();
-            List<string> teamNames=new List<string>();
-            foreach(Team t in teams)
+            List<string> teamNames = new List<string>();
+            foreach (Team t in teams)
             {
                 teamNames.Add(t.getName());
             }
             return teamNames;
-            
+
         }
 
+        public List<string> getRacerNames(string teamName)
+        {
+            List<Team> teams = service.getTeams();
+            List<string> racersNamesList = new List<string>();
 
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    racersNamesList = t.getRacerNames();
+                }
+            }
+
+            return racersNamesList;
+        }
     }
 }
