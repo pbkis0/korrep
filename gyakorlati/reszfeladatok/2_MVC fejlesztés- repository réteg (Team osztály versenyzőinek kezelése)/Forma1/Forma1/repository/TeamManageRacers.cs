@@ -128,6 +128,14 @@ namespace Forma1.repository
 
 
             return false;
+
+            //Racer r = serchRacerByName(racerName);
+            //if (r != null)
+            //    if (r.getAge() == racerAge)
+            //        return true;
+            //return false;
+
+
         }
         
         /// <summary>
