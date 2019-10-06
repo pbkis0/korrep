@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Forma1.validation;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Forma1.repository
 {
-    partial class Team : ITeam
+    partial class Team : ITeam, ITeamSalary
     {
         private string name;
         private List<Racer> racers;
@@ -17,7 +19,20 @@ namespace Forma1.repository
         /// <param name="name">Az új csapat neve</param>
         public Team(string name)
         {
+            try
+            {
+                NameValidator nv = new NameValidator(name);
+                nv.validation();
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+
+            this.name = name;
+            racers = new List<Racer>();
         }
+
         /// <summary>
         /// getter
         /// </summary>
@@ -32,15 +47,15 @@ namespace Forma1.repository
         /// </summary>
         public void deleteAllRacersInTeam()
         {
-            
-        }        
+            racers.Clear();
+        }
         /// <summary>
         /// Módosítja a csapat nevét
         /// </summary>
         /// <param name="newName">Csapat új neve</param>
         public void update(string newName)
         {
-            
+            this.name = newName;
         }
         /// <summary>
         /// A csapat versenyzőinek listáját adja vissza
@@ -48,7 +63,19 @@ namespace Forma1.repository
         /// <returns>A versenyzők neveinek listája</returns>
         public List<Racer> getRacers()
         {
-            return null;
+            return racers;
+        }
+
+        public int getTeamSalary()
+        {
+            int osszeg = 0;
+
+            foreach (var r in racers)
+            {
+                osszeg += r.getSalary();
+            }
+
+            return osszeg;
         }
     }
 }
