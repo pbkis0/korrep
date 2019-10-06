@@ -1,8 +1,71 @@
 ﻿Feladatok:
 - Keresse meg a validation mappában lévő NameValidator osztályt. Az osztályban TDD módszerrel (előbb teszt, majd függvény) fejezze be az isFistLetterNotUppercase és isEmtyName függvények tesztjeit és a magukat a függvényeket
 - A Racer osztály konstuktorában a NameValidation osztállyal végezzen név ellenőrzést
+
+ public Racer(int id, string name, int age, int salary)
+        {
+            NameValidator nv = new NameValidator(name);
+
+            try
+            {
+                nv.validation();
+            }
+            catch (Exception)
+            {
+                throw new RacerException("Név nem jó!");
+            }
+
+            this.id = id;
+            this.name = name;
+            this.age = age;
+            this.salary = salary;
+        }
+
 - A ropository rétegben fejlessze ki az F1 osztályban ott található existTeamName metódust, amely feladata megállapítani, hogy az adott nevű csapat létezik-e
+
+        /// <summary>
+        /// Van-e adott nevű csapat
+        /// </summary>
+        /// <param name="teamName">A keresett csapat neve</param>
+        /// <returns>true ha van és false ha nincs</returns>
+        public bool existTeamName(string teamName)
+        {
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
 - A repository rétegben az F1 osztályban írja meg az ott található void update(string teamName, string newTeamName) metódust a kódban található leírás alapján
+
+
+
+        /// <summary>
+        /// Adott nevű csapat nevének módosítása
+        /// Keresse meg az adott nevű teamet
+        /// A Team osztály metódusa segítségével módosítsa nevét
+        /// Kivétel dobás, ha a csapat nem létezik
+        /// </summary>
+        /// <param name="teamName">A csapat régi neve</param>
+        /// <param name="newTeamName">A csapat új neve</param>
+        public void update(string teamName, string newTeamName)
+        {
+            foreach (var t in teams)
+            {
+                if (t.getName()==teamName)
+                {
+                    t.update(newTeamName);
+                }
+            }
+        }
+
+
+
 - A service rétegben található addTeam(string teamName) metódus megírása a kódban található leírás alapján
 - Az F1 osztályban a getNumberOfRacers metódus befejezése. Ha a csapat létezik, akkor Team osztály segítségével adja meg hány tagja van. Ha nincs dobja a következő hibaüzenetet: teamName + " nevű csapat nem létezik, nem lehet megállapítani, hány versenyzője van."
 - A service rétegben a deleteTeam metódus megírása a kódban található leírás alapján

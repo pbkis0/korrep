@@ -20,16 +20,20 @@ namespace Forma1.validation.Tests
                 nv.validation();
             }
             catch
-            { 
+            {
+                return;
             }
-            Assert.Fail("Üres névre nem dob kivételt!");                            
+
+            Assert.Fail("Üres névre nem dob kivételt!");
         }
+
         [TestMethod()]
         public void validationTestNameNotBeginWithUpperCase()
         {
             try
             {
-                NameValidator nv = new NameValidator("nemecsek");               
+                NameValidator nv = new NameValidator("nemecsek");
+                nv.validation();
             }
             catch
             {
@@ -38,6 +42,7 @@ namespace Forma1.validation.Tests
         [TestMethod()]
         public void validationTestNameValid()
         {            
+
         }
     }
 }

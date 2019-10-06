@@ -8,7 +8,7 @@ using Forma1.myexeption;
 
 namespace Forma1.repository
 {
-    partial class F1 : IF1
+   partial class F1 : IF1
     {
         List<Team> teams;
 
@@ -59,7 +59,14 @@ namespace Forma1.repository
         /// <param name="teamName">A csapat régi neve</param>
         /// <param name="newTeamName">A csapat új neve</param>
         public void update(string teamName, string newTeamName)
-        {          
+        {
+            foreach (var t in teams)
+            {
+                if (t.getName()==teamName)
+                {
+                    t.update(newTeamName);
+                }
+            }
         }
 
         /// <summary>
@@ -92,6 +99,14 @@ namespace Forma1.repository
         /// <returns>true ha van és false ha nincs</returns>
         public bool existTeamName(string teamName)
         {
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return true;
+                }
+            }
+
             return false;
         }
 

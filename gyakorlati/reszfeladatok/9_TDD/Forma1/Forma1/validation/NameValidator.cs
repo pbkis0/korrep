@@ -24,11 +24,27 @@ namespace Forma1.validation
 
         private bool isFistLetterNotUppercase()
         {
+            // return !char.IsUpper(name[0]);
+
+
+            if (!char.IsUpper(name[0]))
+            {
+                return true;
+            }
+
             return false;
         }
 
         private bool isEmtyName()
         {
+            // return string.IsNullOrEmpty(name);
+
+
+            if (string.IsNullOrEmpty(name))
+            {
+                return true;
+            }
+
             return false;
         }
     }

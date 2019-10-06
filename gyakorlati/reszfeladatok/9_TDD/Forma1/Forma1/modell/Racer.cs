@@ -26,8 +26,19 @@ namespace Forma1.repository
         /// <exception cref="RacerException">A név üres</exception>
         /// <exception cref="RacerException">A név első betűje nem nagybetű</exception>
         /// <exception cref=""
-        public Racer(int id, string name, int age,int salary)
+        public Racer(int id, string name, int age, int salary)
         {
+            NameValidator nv = new NameValidator(name);
+
+            try
+            {
+                nv.validation();
+            }
+            catch (Exception)
+            {
+                throw new RacerException("Név nem jó!");
+            }
+
             this.id = id;
             this.name = name;
             this.age = age;

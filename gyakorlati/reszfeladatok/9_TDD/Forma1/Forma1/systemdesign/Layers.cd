@@ -3,7 +3,7 @@
   <Class Name="Forma1.Form1Form" Collapsed="true">
     <Position X="4" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>BACBAAAAQCCCAgEAoAiUCACCFEAwAAAiFABAAQgMAEA=</HashCode>
+      <HashCode>BIiBAIAAQCCCA0kIoACUKACCFAIYAQAmFgBABTgMAEI=</HashCode>
       <FileName>Form1Form.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -13,7 +13,7 @@
   <Class Name="Forma1.controller.F1Controller" Collapsed="true">
     <Position X="4" Y="1.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAAAAAAQAIAAAAAAAAAAEAAAAAAAAAACA=</HashCode>
+      <HashCode>AAAAgCEAFFAAACAgAQAIAABAAAAAAAAAAAAAAAFAACA=</HashCode>
       <FileName>controller\F1Controller.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -25,7 +25,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAAAAAEAAAQAAEEAAAAAAAAAIAA=</HashCode>
+      <HashCode>AEACgCAEBAABACEAAAAAAABAAgQAAECAAAIAgABAIAA=</HashCode>
       <FileName>service\TeamService.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -40,10 +40,10 @@
       <FileName>repository\TestData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Forma1.repository.Team" Collapsed="true">
+  <Class Name="Forma1.repository.Team">
     <Position X="3" Y="5.25" Width="4" />
     <TypeIdentifier>
-      <HashCode>CAAAAAEAAAAAAAAAAAAAAQAAAAAEAAAAAAAEgAAGAAA=</HashCode>
+      <HashCode>AAAAAAEwAAAgAAEAAAAggAAAAQAEAEQAAQAEgAAEAAA=</HashCode>
       <FileName>repository\Team.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -59,7 +59,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAACAAAAAAAQEAAAAAAEEAAAAAAAAGAAA=</HashCode>
+      <HashCode>AEAAAAAAEAgBACEAAAAAAQBAAQAABEAAAAIAgABGAAA=</HashCode>
       <FileName>repository\F1.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -67,10 +67,10 @@
     </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Forma1.repository.Racer" Collapsed="true">
+  <Class Name="Forma1.repository.Racer">
     <Position X="4.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAgQAKkAAAAAAAAAAAEAABEAAAEAAAEAgA=</HashCode>
+      <HashCode>AgAAAEAAAAAgQAIkAAAAAAAAAAAEAABEAAAEAAAEAgA=</HashCode>
       <FileName>modell\Racer.cs</FileName>
     </TypeIdentifier>
   </Class>
