@@ -26,7 +26,14 @@ namespace Forma1.service
         /// <param name="newRacer">Az új versenyző</param>
         public void addReacerToTeam(string teamName, Racer newRacer)
         {
-            f1Repository.addRacerToTeam(teamName, newRacer);
+            try
+            {
+                f1Repository.addRacerToTeam(teamName, newRacer);
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message); // LOGOLÁS
+            }
         }
 
         /// <summary>
