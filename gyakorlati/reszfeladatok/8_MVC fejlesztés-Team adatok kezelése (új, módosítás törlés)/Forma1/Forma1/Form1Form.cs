@@ -38,7 +38,7 @@ namespace Forma1
 
         private void listBoxRacer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxTeam.SelectedIndex < 0 || listBoxRacer.SelectedIndex<0)
+            if (listBoxTeam.SelectedIndex < 0 || listBoxRacer.SelectedIndex < 0)
                 return;
             string teamName = listBoxTeam.SelectedItem.ToString();
             string racerName = listBoxRacer.SelectedItem.ToString();
@@ -46,6 +46,37 @@ namespace Forma1
             textBoxRacerName.Text = selectedRacer.getName();
             textBoxRacerAge.Text = selectedRacer.getAge().ToString();
             textBoxRacerSalary.Text = selectedRacer.getSalary().ToString();
+        }
+
+        private void ButtonAddTeam_Click(object sender, EventArgs e)
+        {
+            string teamName = textBoxTeamName.Text; // Kinyertük a csapat nevét
+
+            controller.addTeam(teamName);
+
+            listBoxTeam.DataSource = null;
+            listBoxTeam.DataSource = controller.getTeamNames();
+        }
+
+        private void ButtonUpdateTeam_Click(object sender, EventArgs e)
+        {
+            string nameToModify = listBoxTeam.SelectedItem.ToString();
+            string teamName = textBoxTeamName.Text;
+
+            controller.updateTeam(nameToModify, teamName);
+
+            listBoxTeam.DataSource = null;
+            listBoxTeam.DataSource = controller.getTeamNames();
+        }
+
+        private void ButtonDeleteTeam_Click(object sender, EventArgs e)
+        {
+            string teamName = listBoxTeam.SelectedItem.ToString();
+
+            controller.deleteTeam(teamName);
+
+            listBoxTeam.DataSource = null;
+            listBoxTeam.DataSource = controller.getTeamNames();
         }
     }
 }

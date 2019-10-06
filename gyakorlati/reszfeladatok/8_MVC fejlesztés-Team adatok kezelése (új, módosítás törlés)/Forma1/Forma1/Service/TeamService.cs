@@ -35,5 +35,38 @@ namespace Forma1.Service
         {
             return forma1Repository.searchRacerByName(teamName, racerName);
         }
+
+        public bool isExistingTeam(string teamName)
+        {
+            return forma1Repository.isExistingTeam(teamName); // return true;  --> return false;
+        }
+
+        internal void addTeam(string teamName)
+        {
+            if (isExistingTeam(teamName))
+            {
+                throw new Exception("HÜLYE VAGY!");
+            }
+
+            Team team = new Team(teamName);
+            forma1Repository.add(team);
+        }
+
+        internal void updateTeam(string nameToModify, string teamName)
+        {
+            if (isExistingTeam(teamName))
+            {
+                throw new Exception("HÜLYE VAGY!");
+            }
+            forma1Repository.update(nameToModify, teamName);
+        }
+
+        internal void deleteTeam(string teamName)
+        {
+            if (isExistingTeam(teamName))
+            {
+                forma1Repository.delete(teamName);
+            }
+        }
     }
 }

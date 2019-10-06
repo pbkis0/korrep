@@ -26,12 +26,12 @@ namespace Forma1.Controller
         public List<string> getTeamNames()
         {
             List<Team> teams = service.getTeams();
-            List<string> teamNames=new List<string>();
-            foreach(Team t in teams)
+            List<string> teamNames = new List<string>();
+            foreach (Team t in teams)
             {
                 teamNames.Add(t.getName());
             }
-            return teamNames;            
+            return teamNames;
         }
 
         public List<string> getRacerNames(string teamName)
@@ -49,6 +49,21 @@ namespace Forma1.Controller
         public Racer searchRacerByName(string teamName, string racerName)
         {
             return service.searchRacerByName(teamName, racerName);
+        }
+
+        internal void addTeam(string teamName)
+        {
+            service.addTeam(teamName);
+        }
+
+        internal void updateTeam(string nameToModify, string teamName)
+        {
+            service.updateTeam(nameToModify, teamName);
+        }
+
+        internal void deleteTeam(string teamName)
+        {
+            service.deleteTeam(teamName);
         }
     }
 }
