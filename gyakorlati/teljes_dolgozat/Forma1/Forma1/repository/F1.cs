@@ -8,7 +8,7 @@ using Forma1.myexeption;
 
 namespace Forma1.repository
 {
-    partial class F1 : IF1
+    partial class F1 : IF1, IF1Salary
     {
         List<Team> teams;
 
@@ -17,7 +17,7 @@ namespace Forma1.repository
         /// </summary>
         public F1()
         {
-            
+            teams = new List<Team>();
         }
 
         /// <summary>
@@ -37,6 +37,20 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">Az adott nevű csapat nem létezik.</exception>
         public void delete(string teamName)
         {
+            int index = 0;
+
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    teams.RemoveAt(index);
+                    return;
+                }
+
+                index++;
+            }
+
+            throw new F1Exception("Az adott nevű csapat nem létezik.");
         }
 
         /// <summary>
@@ -48,6 +62,16 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">Az adott nevű csapat nem létezik.</exception>
         public void update(string teamName, string newTeamName)
         {
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    t.update(newTeamName);
+                    return;
+                }
+            }
+
+            throw new F1Exception(">Az adott nevű csapat nem létezik.");
         }
 
         /// <summary>
@@ -70,6 +94,31 @@ namespace Forma1.repository
                 if (t.getName() == teamName)
                     return true;
             return false;
+        }
+
+        public int getF1Salary()
+        {
+            int osszeg = 0;
+
+            foreach (var t in teams)
+            {
+                osszeg += t.getTeamSalary();
+            }
+
+            return osszeg;
+        }
+
+        public int getTeamSalary(string teamName)
+        {
+            foreach (var t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return t.getTeamSalary();
+                }
+            }
+
+            throw new F1Exception("Nincs ilyen csapat");
         }
     }
 }
