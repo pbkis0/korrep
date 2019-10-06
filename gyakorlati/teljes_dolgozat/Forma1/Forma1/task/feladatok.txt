@@ -29,7 +29,7 @@
   - deleteTeam
 7. TeamServiceRacerManagment
    -moveToTeam
-8. Sajtá fejlesztés
+8. Saját fejlesztés
  - SalaryValidator és AgeValidator osztály kifejlesztése TDD módszerrel
  - A két validátor bekötése a Racer osztály konstruktorába és set metódusaiba
 9. F1Controller
