@@ -15,6 +15,15 @@ namespace Forma1.repository
         /// <exception cref="TeamException">Két úgyan olyan versenyző nem lehet</exception>
         public void addRacer(Racer r)
         {
+            foreach (var racer in racers)
+            {
+                if (r.getId() == racer.getId() && r.getName() == racer.getName() && r.getAge() == racer.getAge() && r.getSalary() == racer.getSalary())
+                {
+                    throw new TeamException("Van ilyen versenyző");
+                }
+            }
+
+            racers.Add(r);
         }
 
         /// <summary>
@@ -25,6 +34,20 @@ namespace Forma1.repository
         /// <exception cref="TeamException">A versenyző a csapatnak nem tagja, nem lehet törlni</exception>
         public void deleteRacer(string name, int age)
         {
+            int index = 0;
+
+            foreach (var r in racers)
+            {
+                if (r.getName() == name && r.getAge() == age)
+                {
+                    racers.RemoveAt(index); // lista indexe
+                    return;
+                }
+
+                index++;
+            }
+
+            throw new TeamException("A versenyző a csapatnak nem tagja, nem lehet törlni");
         }
 
         /// <summary>
@@ -32,9 +55,19 @@ namespace Forma1.repository
         /// </summary>
         /// <param name="name">Módosítanidó versenyző</param>
         /// <param name="newRacer">A módosított versenyző adatai</param>
-        /// <exception cref="">A módosítandó versenyzőt nem találjuk, nem lehet módosítani</exception>
+        /// <exception cref="TeamException">A módosítandó versenyzőt nem találjuk, nem lehet módosítani</exception>
         public void updateRacer(string name, Racer newRacer)
-        {            
+        {
+            foreach (var r in racers)
+            {
+                if (r.getName() == name)
+                {
+                    r.update(newRacer);
+                    return;
+                }
+            }
+
+            throw new TeamException("A módosítandó versenyzőt nem találjuk, nem lehet módosítani");
         }
 
         /// <summary>
@@ -44,7 +77,7 @@ namespace Forma1.repository
         public int getNumberOfRacers()
         {
             return racers.Count();     
-        }       
+        }
 
         /// <summary>
         /// Megkeresi az adott nevű versenyzőt
@@ -53,6 +86,14 @@ namespace Forma1.repository
         /// <returns>Ha van, akkor a versenyző, ha nincs akkor null</returns>
         public Racer serchRacerByName(string racerName)
         {
+            foreach (var r in racers)
+            {
+                if (r.getName() == racerName)
+                {
+                    return r;
+                }
+            }
+
             return null;
         }
 
@@ -64,6 +105,14 @@ namespace Forma1.repository
         /// <returns>Ha létezik, akkor true, ha nem akkor false</returns>
         public bool isRacerExist(string racerName, int racerAge)
         {
+            foreach (var r in racers)
+            {
+                if (r.getName() == racerName && r.getAge() == racerAge)
+                {
+                    return true;
+                }
+            }
+
             return false;
         }
         
