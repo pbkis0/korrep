@@ -137,6 +137,7 @@
             this.buttonDeleteRacer.TabIndex = 22;
             this.buttonDeleteRacer.Text = "Töröl";
             this.buttonDeleteRacer.UseVisualStyleBackColor = true;
+            this.buttonDeleteRacer.Click += new System.EventHandler(this.ButtonDeleteRacer_Click);
             // 
             // buttonUpdateRacer
             // 
@@ -146,6 +147,7 @@
             this.buttonUpdateRacer.TabIndex = 21;
             this.buttonUpdateRacer.Text = "Módosít";
             this.buttonUpdateRacer.UseVisualStyleBackColor = true;
+            this.buttonUpdateRacer.Click += new System.EventHandler(this.ButtonUpdateRacer_Click);
             // 
             // buttonAddRacer
             // 
@@ -155,6 +157,7 @@
             this.buttonAddRacer.TabIndex = 20;
             this.buttonAddRacer.Text = "Hozzáad";
             this.buttonAddRacer.UseVisualStyleBackColor = true;
+            this.buttonAddRacer.Click += new System.EventHandler(this.ButtonAddRacer_Click);
             // 
             // labelRecer
             // 
