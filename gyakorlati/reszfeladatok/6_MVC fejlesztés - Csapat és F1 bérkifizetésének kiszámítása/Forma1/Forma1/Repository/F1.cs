@@ -42,15 +42,15 @@ namespace Forma1.Repository
                 }
                 index = index + 1;
             }
-            throw new RepositoryException(teamName+" csapat nem létezik, nem lehet törölni");
+            throw new RepositoryException(teamName + " csapat nem létezik, nem lehet törölni");
 
         }
 
         public List<Racer> getRacers(string teamName)
         {
-            foreach(Team t in teams)
+            foreach (Team t in teams)
             {
-                if (t.getName()==teamName)
+                if (t.getName() == teamName)
                     return t.getRacers();
             }
             return null;
@@ -59,7 +59,7 @@ namespace Forma1.Repository
         public int getF1Salary()
         {
             int f1Salary = 0;
-            foreach(Team t in teams)
+            foreach (Team t in teams)
             {
                 f1Salary = f1Salary + t.getTeamSalary();
             }
@@ -75,6 +75,18 @@ namespace Forma1.Repository
                     t.update(newTeamName);
                 }
             }
+        }
+
+        public int getTeamSalary(string teamName)
+        {
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return t.getTeamSalary();
+                }
+            }
+            throw new Exception(teamName + " nevű csapat nem létezik, nem lehet bérköltséget számolni.");
         }
     }
 }

@@ -39,5 +39,27 @@ namespace Forma1
             //listBoxRacerbe->kiválasztott csapat versenyzőinek neve
             listBoxRacer.DataSource = controller.getRacerNames(teamName);
         }
+
+        /// <summary>
+        /// Adott feladathoz kapcsolódó eseményeket le kell generálni!!!
+        /// </summary>
+        private void ButtonComputeF1Salary_Click(object sender, EventArgs e)
+        {
+            textBoxF1Salary.Text = controller.getF1Salary();
+        }
+
+        /// <summary>
+        /// Adott feladathoz kapcsolódó eseményeket le kell generálni!!!
+        /// </summary>
+        private void ButtonComputeTeamSalary_Click(object sender, EventArgs e)
+        {
+            if (listBoxTeam.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            string teamName = listBoxTeam.SelectedItem.ToString(); // Belementődik a kijelölt csapat neve a ListBoxból
+            textBoxTeamSalary.Text = controller.getTeamSalary(teamName); //Átadjuk szűrésre a felsőbb rétegnek
+        }
     }
 }

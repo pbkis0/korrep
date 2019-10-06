@@ -2,3 +2,15 @@
 Feladat:
  - A F1 összes bérkifizetésének meghatározása
  - A kiválasztott csapat összes bérkifizetésének megjelenítése
+
+
+
+ 1) Form1Form.cs // esemény generálás és controller metódus bekötés (settelés)
+
+ 2) F1Controller.cs // Itt két GUI-ba kötött metódus blokkjában Service metódusokat kérünk el és return-ölünk és ToString()-gel az integert stringgé konvertáljuk
+
+ 3) TeamService.cs // Ugyanezt a két függvényt imp,lenmentáljuk és f1 repóból elkérjük a metódusokat (itt int minden, nem kell konvertálni)!!!
+
+ 4) F1.cs  // Tegyük fel, már készek a repó metódusok és csak a Service hívja őket
+
+
