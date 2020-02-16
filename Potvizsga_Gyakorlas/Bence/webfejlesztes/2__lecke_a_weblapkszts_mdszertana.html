@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="hu" xml:lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>2.  Lecke: A weblapkészítés módszertana </title>
+<meta http-equiv="content-language" content="hu" />
+<meta name="generator" content="eXeLearning 2.0.4 - exelearning.net" />
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Show",hide:"Elrejtés",showFeedback:"Mutassa a visszajelzést",hideFeedback:"Visszajelzés elrejtése",correct:"Helyes",incorrect:"Incorrect",menu:"Menu"}</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+<script type="text/javascript" src="SCOFunctions.js"></script>
+</head>
+<body class="exe-scorm" onload="loadPage()" onunload="unloadPage()"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="outer">
+<div id="main">
+<div id="nodeDecoration"><h1 id="nodeTitle">2.  Lecke: A weblapkészítés módszertana</h1></div>
+<div class="iDevice_wrapper objectivesIdevice em_iDevice" id="id23">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_objectives.gif" /><h2 class="iDeviceTitle">Célok</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta23_22_2" class="block iDevice_content">
+<ul>
+	<li>
+	Ismerje a weblapkészítés folyamatát.<o:p></o:p>
+	</li>
+	<li>Ismerje a weblapokkal szemben támasztott alapvető
+	követelményeket.<o:p></o:p>
+	</li>
+	<li>Ismerje a weblapok fejlesztésének eszközeit.<o:p></o:p></li>
+</ul>
+<ul>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id24">
+<div class="iDevice emphasis0">
+<div id="ta24_1" class="block iDevice_content">
+<p><span size="3" style="font-size: medium;"><b>Tartalom</b></span></p>
+<ul>
+<li>A weblapkészítés folyamata: specifikáció, anyaggyűjtés, tervezés (struktúra és design), kódolás, publikálás.</li>
+<li>Követelmények a weboldalakkal szemben.<o:p></o:p></li>
+<li>A weblapok elkészítésének eszközei.</li>
+</ul>
+<p class="MsoNormal"><b><span size="3" style="font-size: medium;">A weblapkészítésre vonatkozó ajánlás</span></b></p>
+<p class="MsoNormal">A weblapkészítés egyik legnagyobb nehézsége, hogy nincs egységes szabvány, illetve szabályrendszer, ami mindenki számára kötelező érvényű. Sajnos a különböző böngészők se ugyanúgy értelmezik és jelenítik meg a leírt forráskódot. Többek között ezért hozta létre több nagy cég (Microsoft, IBM, Apple, stb.) 1994-ben a <i>W3C</i> (<b>W</b>orld <b>W</b>ide <b>W</b>eb <b>C</b>onsortium) nevű szervezetet, amely célul tűzte ki a web standardizálását. Egyik fő munkája, hogy a webes fejlesztés több területével kapcsolatban ajánlásokat (W3C Recommendations) hoztak létre, amelyek betartását javasolják a webfejlesztőknek. Ezen szabályok nyomán az utóbbi években a különbségek nagy mértékben csökkentek és remélhetőleg ez a tendencia tovább folytatódik. Emiatt az ajánlások követése minden igényes webfejlesztőnek erősen javasolt. Ez a tananyag is a W3C által adott referenciákat követi. Továbbá a tanuláshoz javasolt a szervezet által működtetett referencia webhely használata (<a href="http://w3schools.com/default.asp">http://w3schools.com/default.asp</a>). Ez a továbbtanuláshoz is komoly segítség lehet, mivel témában és mélységben is jóval túlmutat jelen tananyagon.</p>
+<p class="MsoNormal"><span size="3" style="font-size: medium;"><b>A weblapkészítés folyamata</b></span></p>
+<p class="MsoNormal">Jó és igényes weboldalak elkészítéséhez egy több lépcsős folyamaton kell keresztülmenni, melynek minden lépése komoly mértékben befolyásolja az eredmény weboldal minőségét, így mindegyiket szakértelemmel és odafigyeléssel kell végrehajtani.<o:p></o:p></p>
+<p class="MsoNormal">Általánosságban elmondható, hogy egy weboldal hatékonyságát az mutatja meg legjobban, hogy hányan látogatják és mennyi ideig tartózkodik a weboldalunkon, ezekre léteznek mérési lehetőségek (<a href="http://www.google.com/analytics/">http://www.google.com/analytics/</a>) Tehát nem az a cél, hogy a fejlesztőnek vagy akár a megrendelőnek tetsszen, hanem az internetes felhasználók millióinak kell megfelelni! Éppen ezért egy jó webfejlesztőnek tájékozottnak kell lenni az aktuális webes trendekről, felhasználói szokásokról, technikai lehetőségekről.<o:p></o:p></p>
+<p class="MsoNormal"><b><i>1. Specifikáció<o:p></o:p></i></b></p>
+<p class="MsoNormal">Akár magunknak, akár megbízásból készítünk weboldalt, fontos első lépés, hogy pontosan tisztázzuk, hogy mi a <i>cél</i>ja az oldalnak. Természetesen ez a tartalmából általában közvetlenül következik, de meghatározza az oldal komplexitását, valamint a további lépések igényét, ezáltal jobban becsülhető a szükséges idő, eszköz és egyéb források. Fontos tisztázni a <i>célközönséget</i>, amely meghatározza a tartalmi és külalaki elemeit, felépítését. Fel kell térképezni a <i>konkurenciát</i>, hasonló tartalmú, célú weboldalakat, hogy tisztába legyünk azok erősségeivel, hiányosságaival, illetve a felhasználók igényeivel.<o:p></o:p></p>
+<p class="MsoNormal"><b><i>2. Anyaggyűjtés<o:p></o:p></i></b></p>
+<p class="MsoNormal">Tisztázni kell a weboldal tartalmi elemeit. A tartalmi tervezéshez, felosztáshoz szükséges látnunk, hogy milyen és mennyi adatot, képet, stb. kell az oldalon megjeleníteni és azok milyen összetételűek, hogyan csoportosíthatóak. Meg kell ismerni az ezekhez tartozó személyiségi, szerzői és médiajogi szabályozást és ezeket szigorúan be kell tartani! Szükséges látni, hogy mely elemeket kell nekünk előállítani és azoknak milyen feltételei, hardver és szoftver igényei vannak. Gondoskodnunk kell a rendelkezésre nem álló elemek (képek, animációk, stb.) elemek elkészítéséről.<o:p></o:p></p>
+<p class="MsoNormal"><b><i>3. Tervezés<o:p></o:p></i></b></p>
+<p class="MsoNormal">A weboldalak tervezése kritikus része a folyamatnak. Egy oldal bármilyen jó lehet tartalmilag, ha áttekinthetetlen a szerkezete vagy csúnyán néz ki, senkit nem fog érdekelni. A tervezést két részre lehet bontani: <i>struktúra</i> és <i>külalak (design).</i><o:p></o:p></p>
+<p class="MsoNormal"><b><i>Struktúra<o:p></o:p></i></b></p>
+<p class="MsoNormal">Az oldalak felépítésénél van néhány alapszabály, amelyet célszerű betartani, ha jól böngészhető oldalakat akarunk készíteni:</p>
+<ul>
+<li>Mivel a felhasználók nem szeretnek görgetni, a tartalmat célszerű úgy feldarabolni, hogy egy weboldal lehetőleg 1-2, legfeljebb 3 böngészőben megjelenő oldal legyen. Ez természetesen függ a felhasználó által használt képernyőfelbontástól. Az eszközök változása és fejlődése miatt nagyon sok eltérő felbontás létezik, így olyanra célszerű optimalizálni, ami a legtöbb eszközön megfelelően jelenik meg. Továbbá egyre népszerűbbek az ún. <em>reszponzív</em> oldalak, amelyek a böngésző ablak méretéhez igazodva automatikusan átalakítják az oldal elrendezését (lásd 10. Lecke).<br />A használt felbontásokról aktuális statisztikáit érdemes követni: <a href="http://www.w3schools.com/browsers/browsers_display.asp">W3Schools Display Statistic</a><br /><o:p></o:p></li>
+</ul>
+<ul>
+<li><span style="font-size: 12pt; font-family: 'Times New Roman','serif';">Az ember szemmozgása önkéntelen, így az oldalak tervezésénél figyelembe kell venni hogy az oldal mely részeire tekint a felhasználó többször és mely részeire fordít kisebb figyelmet, hiszen az oldal tartalmi elemeit eszerint kell elhelyezni. Egy általános formát lehet megadni a weboldalak felépítésére, ez az F forma. Ez azt jelenti, hogy az oldal bal fölső sarka a legfrekventáltabb pontja az oldalnak és jobbra és lefele csökken a figyelem (3. Ábra).</span></li>
+</ul>
+<div align="center"><img src="f_shape_eyetracking.jpg" height="324" width="700" /></div>
+<div align="center"><b>3. Ábra</b>: A tekintet eloszlása weboldalakon</div>
+<div align="center">(forrás: http://www.useit.com/alertbox/f_reading_pattern_eyetracking.jpg)</div>
+<div align="center"></div>
+<div align="center"></div>
+<ul>
+<li>Felhasználási szokások valamint az említett F szabály alapját a weboldalaknak meg lehet adni egy felépítést, amely az oldalt több funkcionálisan elkülönülő részre bomlik. Ettől természetesen el lehet térni, de a felhasználók nagy része ehhez a felépítéshez szokott és a szükséges részeket a megszokott helyen keresi.</li>
+</ul>
+<div align="center"><img src="webpage_struct.gif" height="300" width="294" /></div>
+<div align="center"><b>4. Ábra</b>: Egy általános weboldal részei</div>
+<p class="MsoNormal" align="left"></p>
+<p class="MsoNormal" style="margin-left: 35.45pt;"><br /> Fontos, hogy a felhasználó azonnal lássa, amikor egy oldalra kerül, hogy milyen oldalon van, ezt az oldalt kereste. Mivel az 1 címsor figyelem szempontjából egy kiemelt rész, itt jellemzően az oldal címe, a cég logója, stb. található. Ide célszerű elhelyezni egy olyan linket is, amely a nyitóoldalunkra visz. A 2 fejlécben több funkció is helyet kaphat, mint egy menü, kereső cella, stb. Az F alak miatt a 3 rész szintén az egyik legfontosabb területe az oldalnak, így ide a lokális vezérlés kerül, azaz a menü. Mivel a 4 terület kevésbé észrevehető az emberek számára, ide olyan funkciók kerülnek, amelyek azoknak a felhasználóknak szól, akik tudatosan vannak az oldalunkon, ismerik a felépítését. Azaz ide a bejelentkezés, gyors elérésű funkciók, fórumok, blogok, stb., illetve kifelé mutató link gyűjtemény kerül. Az 5 rész természetesen az oldal fő tartalmának bemutatására való. A 6 lábléc a legkevésbé látható rész, sokszor csak akkor látható, ha a felhasználó teljesen az oldal aljára görget. Így itt csak járulékos információkat érdemes elhelyezni, mint a készítő nevét, dátumát, stb.<o:p></o:p></p>
+<p class="MsoNormal" style="margin-left: 35.45pt;">Egyre népszerűbb a függőleges irányban kiterjedő, hasábos elrendezésű weboldalak. </p>
+<p class="MsoNormal" style="margin-left: 35.45pt;">A korszerű weboldalakkal szemben egyre inkább elvárás a reszponzivitás, amely az oldal szerkezetét és elemeit a felbontáshoz igazítva alakítja át (lásd 10. lecke).</p>
+<p class="MsoNormal" align="left"> </p>
+<p class="MsoNormal"><b><i>Külalak (design)<o:p></o:p></i></b></p>
+<p class="MsoNormal">A külalak tervezése legalább annyira fontos, mint a szerkezet, hiszen ez a „csomagolása” a weboldala. A felhasználók általában 2-3 másodperc alapján megítélik a weboldalakat, mielőtt még a tartalmát fel tudnák mérni. A tervezéskor figyelembe kell venni az oldal tartalmát, a célközönséget, a színek pszichológiai hatását. Általánosságban kijelenthető, hogy sokszor a kevesebb több elv itt is érvényes. Legfeljebb 4 különböző szín javasolt az oldalon. Érdemes figyelni a színek egymáshoz való viszonyára, az olvashatóság, a nyomtathatóság, a színtévesztők szempontjából. A képek és animációk használatánál szintén az ésszerűséget szem előtt kell tartani. A túl sok média elem növeli a letöltendő anyag mennyiségét, ami lassítja a böngészést, elriasztó lehet azon felhasználóknak, akiknek kvótája van a napi böngészéshez. Ezért mindenképp kerülni kell az olyan média elemeket, amelyek funkcionális jelentőségűek az oldalon például menüpont, hogy azok is tudjanak az oldalon navigálni, akik ezeket az elemeket nem töltik le.<o:p></o:p></p>
+<p class="MsoNormal"><b><i>4. Elkészítés<o:p></o:p></i></b></p>
+<p class="MsoNormal">Ha megvan a terv és az oldal tartalmi elemei is, akkor az oldal tényeleges elkészítése van soron. A weboldalak fejlesztéséhez többfajta alkalmazás használható, amelyek 3 csoportba sorolhatók.<o:p></o:p></p>
+<p class="MsoNormal"><b>a) Szövegszerkesztők<o:p></o:p></b></p>
+<p class="MsoNormal">Ez az oldalak elkészítésének legelemibb módja, amikor a forrást az első betűtől az utolsóig nekünk kell beírni egy egyszerű szövegszerkesztőben. A kódolás előnye, hogy pontosan olyan forráskód lesz, amit mi szeretnénk, így bármit meg tudunk valósítani, amit a használt nyelvek lehetővé tesznek. <span>Hátránya, hogy nagyobb szakmai ismeret kell az ilyen webes fejlesztéshez. A egyes megjelenítők közötti eltérések miatt kivételeket speciális megoldásokat kell alkalmazni az egységes kinézet miatt, amit sok esetben web-szerkesztő alkalmazások megadnak számunkra.</span><o:p></o:p></p>
+<p class="MsoNormal"><b>b) WYSIWYG<o:p></o:p></b></p>
+<p class="MsoNormal">A <i>WhatYouSeeIsWhatYouGet</i> alkalmazások jellemzője, hogy olyan felületet tartalmaz, ahol a weboldalt egy grafikus felületen lehet szerkeszteni és úgy összeállítani az weboldalt, hogy nem ismerjük a fejlesztő nyelveket. Ilyenkor a forráskódot a program generálja le. Emellett tartalmaznak olyan felületet is, ahol a forráskódot láthatjuk és szerkeszthetjük, így ezekben az alkalmazásokban a forrást ugyanúgy szabadon lehet szerkeszteni, mint a szövegszerkesztőkben. <span>Hátránya, hogy a szerkesztő nem elég flexibilis és az egyedi megoldásokra nincsenek felkészítve.</span><o:p></o:p></p>
+<p class="MsoNormal"><b>c) Tartalomkezelő rendszerek<o:p></o:p></b></p>
+<p class="MsoNormal">A tartalomkezelő rendszerek (röviden CMS) alkalmasak egész komplex, programozást tartalmazó weboldalak elkészítésére anélkül, hogy nekünk kellene a kódolást, programozást végezni. Az oldalakat egy keretrendszerben állíthatjuk össze és különböző modulokat tudunk az oldalunkhoz hozzá kapcsolni. A teljes kódot a keretrendszer generálja le, ebbe közvetlenül beleszerkeszteni viszont már komoly web-programozási ismeret szükséges. <span>Hátránya, hogy komplexitásánál fogva, több a hibalehetőség, illetve alkalmazásához először meg kell tanulni a keretrendszer használatát.</span><o:p></o:p></p>
+<p class="MsoNormal"><b>Tesztelés<o:p></o:p></b></p>
+<p class="MsoNormal">Fontos a weboldalainkat tesztelni, ami statikus oldalak esetén azt jelenti, hogy legalább a leggyakrabban használt <i>böngészőkben</i> ki kell próbálni, a megjelenítését és funkcionalitását végig kell ellenőrizni. Érdemes több <i>felbontásban</i> is végignézni, nem szabad az oldalnak „szétesni” eltérő felbontás esetén. Továbbá a mai trend szerint fontos a <i>mobil eszközökön</i> is kipróbálni az oldalunkat. <o:p></o:p></p>
+<p class="MsoNormal"><b><i>5. Publikálás<o:p></o:p></i></b></p>
+<p class="MsoNormal">A publikálás az oldal nyilvánosságra hozást jelenti, amellyel a 12. fejezetben részletesebben fogunk foglalkozni.<o:p></o:p></p>
+<p class="MsoNormal" align="left"></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id33">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_problem.gif" /><h2 class="iDeviceTitle">Feladat</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta33_33_5" class="block iDevice_content">
+A tananyag során a feladata egy olyan komplex weboldalt elkészíteni
+lépésről lépésre, amely az ön saját weboldala lesz.<o:p></o:p>
+<p class="MsoNormal">
+Ennek a folyamatnak az ebben a leckében szereplő munkafázisaiból
+végezze el az első hármat! Azaz keressen olyan önnek tetsző és nem tetsző weboldalakat,
+amely emberek saját bemutatkozó oldala! Gyűjtse ki azokat a jellemzőket,
+amelyek tetszenek és szeretné a saját oldalán is használni, valamint nem
+tetszenek és nem szeretne átvenni! Gyűjtse össze azokat az adatokat, amelyeket
+szeretne az oldalon megjeleníteni! Gondolja végig, hogy milyen oldalfelosztást
+szeretne a tanult szempontokat figyelembe véve! Találja ki az oldal színvilágát
+és gyűjtsön, illetve készítsen hozzá média elemeket, mint képeket. Ha az
+oldalát valóban szeretné a kurzus végén publikálni, akkor mindenképp vegye
+figyelembe a szerzői jogi szabályozást (<a href="http://net.jogtar.hu/jr/gen/hjegy_doc.cgi?docid=99900076.TV">http://net.jogtar.hu/jr/gen/hjegy_doc.cgi?docid=99900076.TV</a>)!<o:p></o:p>
+</p>
+<p class="MsoNormal">
+A további leckék során szereplő feladatokkal az oldalt
+lépésről lépésre építjük fel. <o:p></o:p>
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultichoiceIdevice em_iDevice" id="id34">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Feleletválasztós teszt</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<form name="multi-choice-form-34_2" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion34_2" class="block question iDevice_content">
+Milyen elrendezést használunk a weboldal
+felépítésénél?
+<span style="font-size: 12pt; font-family: 'Times New Roman','serif'"></span>
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_5" class="sr-av"><a href="#answer-34_5">Beállítás 1</a></label><input type="radio" name="option34_2" id="i34_5" onclick="getFeedback(0,3,'34_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_5"><a name="answer-34_5"></a>
+<div id="taans34_5" class="block iDevice_content">
+Az F formáját követjük, mert ilyen az emberek figyelmének
+eloszlása az oldalon.<o:p></o:p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_108" class="sr-av"><a href="#answer-34_108">Beállítás 2</a></label><input type="radio" name="option34_2" id="i34_108" onclick="getFeedback(1,3,'34_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_108"><a name="answer-34_108"></a>
+<div id="taans34_108" class="block iDevice_content">
+Az E szabályt követve, ami az emberek szemmozgásán alapul.<o:p></o:p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_111" class="sr-av"><a href="#answer-34_111">Beállítás 3</a></label><input type="radio" name="option34_2" id="i34_111" onclick="getFeedback(2,3,'34_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_111"><a name="answer-34_111"></a>
+<div id="taans34_111" class="block iDevice_content">
+A fontos dolgokat mindig az oldal tetejére tesszük, valamint
+a bal és jobb oldali hasábba.<o:p></o:p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b34_2" class="feedback js-hidden"><a name="sa0b34_2"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b34_2" class="feedback js-hidden"><a name="sa1b34_2"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b34_2" class="feedback js-hidden"><a name="sa2b34_2"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-34_5">Correct Option</a> (<a href="#sa0b34_2">Visszajelzés</a>)</li>
+<li><a href="#answer-34_108">Rossz</a> (<a href="#sa1b34_2">Visszajelzés</a>)</li>
+<li><a href="#answer-34_111">Rossz</a> (<a href="#sa2b34_2">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-34_102" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion34_102" class="block question iDevice_content">
+Melyik állítás hamis?<o:p></o:p>
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_105" class="sr-av"><a href="#answer-34_105">Beállítás 1</a></label><input type="radio" name="option34_102" id="i34_105" onclick="getFeedback(0,3,'34_102','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_105"><a name="answer-34_105"></a>
+<div id="taans34_105" class="block iDevice_content">
+A weboldal külalakjának tervezésekor figyelembe kell venni a
+témáját jellemző színeket.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_114" class="sr-av"><a href="#answer-34_114">Beállítás 2</a></label><input type="radio" name="option34_102" id="i34_114" onclick="getFeedback(1,3,'34_102','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_114"><a name="answer-34_114"></a>
+<div id="taans34_114" class="block iDevice_content">
+A weboldal külalakjának tervezésekor célszerű sok színt
+használni a sok kontraszt eléréséhez.<o:p></o:p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_117" class="sr-av"><a href="#answer-34_117">Beállítás 3</a></label><input type="radio" name="option34_102" id="i34_117" onclick="getFeedback(2,3,'34_102','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_117"><a name="answer-34_117"></a>
+<div id="taans34_117" class="block iDevice_content">
+A weboldal külalakjának tervezésekor célszerű figyelembe
+venni a színek pszichológiai hatását.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b34_102" class="feedback js-hidden"><a name="sa0b34_102"></a>
+<p>Rossz</p>
+</div>
+<div id="sa1b34_102" class="feedback js-hidden"><a name="sa1b34_102"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa2b34_102" class="feedback js-hidden"><a name="sa2b34_102"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-34_105">Rossz</a> (<a href="#sa0b34_102">Visszajelzés</a>)</li>
+<li><a href="#answer-34_114">Correct Option</a> (<a href="#sa1b34_102">Visszajelzés</a>)</li>
+<li><a href="#answer-34_117">Rossz</a> (<a href="#sa2b34_102">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-34_120" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion34_120" class="block question iDevice_content">
+Az oldalak tartalmának felosztását úgy kell
+meghatározni, hogy
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_123" class="sr-av"><a href="#answer-34_123">Beállítás 1</a></label><input type="radio" name="option34_120" id="i34_123" onclick="getFeedback(0,3,'34_120','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_123"><a name="answer-34_123"></a>
+<div id="taans34_123" class="block iDevice_content">
+pontosan 1024*768 pixel méretű legyen.<o:p></o:p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_126" class="sr-av"><a href="#answer-34_126">Beállítás 2</a></label><input type="radio" name="option34_120" id="i34_126" onclick="getFeedback(1,3,'34_120','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_126"><a name="answer-34_126"></a>
+<div id="taans34_126" class="block iDevice_content">
+kitöltse a böngészőablakot szélességben.<o:p></o:p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_129" class="sr-av"><a href="#answer-34_129">Beállítás 3</a></label><input type="radio" name="option34_120" id="i34_129" onclick="getFeedback(2,3,'34_120','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_129"><a name="answer-34_129"></a>
+<div id="taans34_129" class="block iDevice_content">
+lehetőleg ne legyen több 1-2 görgethető oldalnál.<o:p></o:p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b34_120" class="feedback js-hidden"><a name="sa0b34_120"></a>
+<p>Rossz</p>
+</div>
+<div id="sa1b34_120" class="feedback js-hidden"><a name="sa1b34_120"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b34_120" class="feedback js-hidden"><a name="sa2b34_120"></a>
+<p>Correct Option</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-34_123">Rossz</a> (<a href="#sa0b34_120">Visszajelzés</a>)</li>
+<li><a href="#answer-34_126">Rossz</a> (<a href="#sa1b34_120">Visszajelzés</a>)</li>
+<li><a href="#answer-34_129">Correct Option</a> (<a href="#sa2b34_120">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-34_132" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion34_132" class="block question iDevice_content">
+Mit takar a WYSIWYG rövidítés?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_135" class="sr-av"><a href="#answer-34_135">Beállítás 1</a></label><input type="radio" name="option34_132" id="i34_135" onclick="getFeedback(0,3,'34_132','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_135"><a name="answer-34_135"></a>
+<div id="taans34_135" class="block iDevice_content">
+Azt az elvet, hogy olyan weboldalt kell fejleszteni, ahol a felhasználó azt látja, amit a fejlesztő.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_138" class="sr-av"><a href="#answer-34_138">Beállítás 2</a></label><input type="radio" name="option34_132" id="i34_138" onclick="getFeedback(1,3,'34_132','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_138"><a name="answer-34_138"></a>
+<div id="taans34_138" class="block iDevice_content">
+Olyan weboldalfejlesztő alkalmazást, amikor egy grafikus felületen lehet az oldalt fejleszteni és a kódot a program generálja.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_141" class="sr-av"><a href="#answer-34_141">Beállítás 3</a></label><input type="radio" name="option34_132" id="i34_141" onclick="getFeedback(2,3,'34_132','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_141"><a name="answer-34_141"></a>
+<div id="taans34_141" class="block iDevice_content">
+Egy olyan keretrendszert, amiben a weboldalakat előre elkészített modulokból lehet összeválogatni.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b34_132" class="feedback js-hidden"><a name="sa0b34_132"></a>
+<p>Rossz</p>
+</div>
+<div id="sa1b34_132" class="feedback js-hidden"><a name="sa1b34_132"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa2b34_132" class="feedback js-hidden"><a name="sa2b34_132"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-34_135">Rossz</a> (<a href="#sa0b34_132">Visszajelzés</a>)</li>
+<li><a href="#answer-34_138">Correct Option</a> (<a href="#sa1b34_132">Visszajelzés</a>)</li>
+<li><a href="#answer-34_141">Rossz</a> (<a href="#sa2b34_132">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-34_144" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion34_144" class="block question iDevice_content">
+Mire nem szükséges a tesztelést elvégezni?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_147" class="sr-av"><a href="#answer-34_147">Beállítás 1</a></label><input type="radio" name="option34_144" id="i34_147" onclick="getFeedback(0,3,'34_144','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_147"><a name="answer-34_147"></a>
+<div id="taans34_147" class="block iDevice_content">
+különböző felbontásokra
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_150" class="sr-av"><a href="#answer-34_150">Beállítás 2</a></label><input type="radio" name="option34_144" id="i34_150" onclick="getFeedback(1,3,'34_144','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_150"><a name="answer-34_150"></a>
+<div id="taans34_150" class="block iDevice_content">
+különböző böngészőprogramokra
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i34_153" class="sr-av"><a href="#answer-34_153">Beállítás 3</a></label><input type="radio" name="option34_144" id="i34_153" onclick="getFeedback(2,3,'34_144','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-34_153"><a name="answer-34_153"></a>
+<div id="taans34_153" class="block iDevice_content">
+különböző nyelvi környezetre
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b34_144" class="feedback js-hidden"><a name="sa0b34_144"></a>
+<p>Rossz</p>
+</div>
+<div id="sa1b34_144" class="feedback js-hidden"><a name="sa1b34_144"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b34_144" class="feedback js-hidden"><a name="sa2b34_144"></a>
+<p>Correct Option</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-34_147">Rossz</a> (<a href="#sa0b34_144">Visszajelzés</a>)</li>
+<li><a href="#answer-34_150">Rossz</a> (<a href="#sa1b34_144">Visszajelzés</a>)</li>
+<li><a href="#answer-34_153">Correct Option</a> (<a href="#sa2b34_144">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

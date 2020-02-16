@@ -1,0 +1,56 @@
+html{
+	width:960px;
+	margin:0 auto;
+	background-color:#d2691e;
+}
+h1{
+	text-decoration-line: underline;
+	text-decoration-style: solid;
+	text-decoration-color: #a52a2a;
+	
+}
+
+li{
+	display:inline; /*A blokszíntű list elemekből, sorszíntű elemeket csinál. */
+	min-width:50px;
+	border-right:2px solid #a52a2a;
+	padding: 6px;
+	color: white;
+}
+.hasab{
+
+	
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+h2{
+	width:96%;
+	background-color: #cd853f;
+	font-style: italic;
+}
+p{
+	text-align:justify;
+}
+img{
+	width:100px;
+	border:2px solid #a52a2a;
+	float:left;
+	margin: 0 0 0 10px;
+	
+}
+
+
+footer {
+
+
+}
+/* div = tároló, vizsa feledatokban keretnek hívják
+   border = szegély,
+   margin = margó vagy külső margó,
+   padding = belső margó, feladatokban "bélés" nek hívják
+   */
+

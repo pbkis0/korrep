@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="hu" xml:lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>9. Lecke: Elhelyezés a weboldalon, láthatóság </title>
+<meta http-equiv="content-language" content="hu" />
+<meta name="generator" content="eXeLearning 2.0.4 - exelearning.net" />
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Show",hide:"Elrejtés",showFeedback:"Mutassa a visszajelzést",hideFeedback:"Visszajelzés elrejtése",correct:"Helyes",incorrect:"Incorrect",menu:"Menu"}</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+<script type="text/javascript" src="SCOFunctions.js"></script>
+</head>
+<body class="exe-scorm" onload="loadPage()" onunload="unloadPage()"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="outer">
+<div id="main">
+<div id="nodeDecoration"><h1 id="nodeTitle">9. Lecke: Elhelyezés a weboldalon, láthatóság</h1></div>
+<div class="iDevice_wrapper objectivesIdevice em_iDevice" id="id63">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_objectives.gif" /><h2 class="iDeviceTitle">Célok</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta63_21_2" class="block iDevice_content">
+
+<ul>
+	<li>Ismerje a HTML oldal elhelyezésének elvét<o:p></o:p></li>
+	<li>Ismerje a mélységi sorrend jelentését, módosítását<o:p></o:p></li>
+	<li>Ismerje a HTML elemek láthatóságának beállítási lehetőségeit<o:p></o:p></li>
+	<li>Ismerje a lebegtetés működését<o:p></o:p></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id64">
+<div class="iDevice emphasis0">
+<div id="ta64_1" class="block iDevice_content">
+<p><span size="3" style="font-size: medium;"><b>Tartalom</b></span></p>
+<ul>
+<li>Az elemek elhelyezése az oldalon</li>
+<li>Mélységi sorrend megadása</li>
+<li>Láthatósági beállítás</li>
+<li>Lebegtetés</li>
+</ul>
+<p></p>
+<p><span size="3" style="font-size: medium;"><b>Elemek elhelyezése<br /> </b></span><br /> A weboldal elemei alapértelmezetten olyan sorrendben jelennek meg, amilyen sorrendben a forráskódban vannak megadva. Ezt a sorrendet nevezik <i>szövegfolyamnak</i>. A szövegfolyam balról jobbra és föntről lefele halad. Az sorközi elemek sorfolytonosan kerülnek az oldalra, míg a blokkos elemek mindig önállóan sortöréssel előtte és utána. Az elemek tényleges helye attól függ, hogy az előző elemek mennyi helyet foglalnak. Vízszintes és függőleges igazítással csak a szülőelemen belüli elhelyezkedést lehet változtatni, az elemek sorrendjén nem.<br /> Stílus segítségével lehet a szövegfolyamtól eltérő helyet is meghatározni az elemeknek. Ehhez először az pozícionálást kell beállítani, ami megadja a viszonyítási pontot. Ennek négy módja van.<br /> A <i>statikus </i>pozicionálás az alapértelmezett és azt jelenti, hogy az elem ott jelenik meg, ahol a szövegfolyamban szerepel és ezen a helyzeten nem is lehet változtatni. Éppen ezért ez nem is számít pozicionált elemnek.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">position : static;</span></blockquote>
+<p>A <i>relatív </i>jelentése, hogy szintén ott jelenik meg az elem, ahol a szövegfolyam definiálja, de ezen a helyzeten változtatni lehet.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">position : relative;</span></blockquote>
+<p>Ehhez a helyzethez képest el lehet tolni az elemet vízszintesen a <span face="courier new,courier" style="font-family: 'courier new', courier;">left </span>illetve <span face="courier new,courier" style="font-family: 'courier new', courier;">right </span>tulajdonsággal valamint függőlegesen a <span face="courier new,courier" style="font-family: 'courier new', courier;">top </span>és <span face="courier new,courier" style="font-family: 'courier new', courier;">bottom </span>tulajdonsággal. Az elemet mindig egy befoglaló téglalapként kell elképzelni. A <span face="courier new,courier" style="font-family: 'courier new', courier;">left </span>azt adja meg, hogy az elem az eredeti helyéhez képes hány pixellel kerül jobbra úgy, hogy a viszonyítási pont az elem bal oldala. A <span style="font-family: 'courier new', courier;">right</span> esetén a viszonyítási pont az elem jobb oldala és a viszonyítás a jobb oldalon történik. (Tehát a <span style="font-family: 'courier new', courier;">left</span> és a <span style="font-family: 'courier new', courier;">right</span> nem az eltolás irányát adja meg, hanem az eltolás viszonyítási helyét!) Hasonlóan a <span style="font-family: 'courier new', courier;">top</span> azt adja meg, hogy mennyivel kerül lejjebb. Például ha az elemet száz pixellel jobbra és 50 pixellel lejjebb akarjuk tolni, a stílus a következő:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">left : 100px;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">top : 50px;</span></blockquote>
+<p>Fontos azt megjegyezni, hogy az elmozdítás nem befolyásolja a többi elem helyét a szövegfolyamban, az elhelyezéskor úgy számol az elmozdított elemmel, mintha az eredeti helyén lenne.<br /> Az <i>abszolút </i>pozicionálás esetén fontos, hogy az elem kikerül a szövegfolyamból, először a folyamban található elemeket jeleníti meg, majd utána jelennek meg a folyamon kívül elemek. Azaz az abszolút pozicionálású elemeket a folyamban lévő elemek nem "érzékelik".<br /> Az abszolút pozicionálású elemeket is a <span face="courier new,courier" style="font-family: 'courier new', courier;">top</span>, <span face="courier new,courier" style="font-family: 'courier new', courier;">left</span>, <span face="courier new,courier" style="font-family: 'courier new', courier;">right</span>, <span face="courier new,courier" style="font-family: 'courier new', courier;">bottom </span>tulajdonsággal tudjuk elmozdítani, de ilyenkor nem a szövegfolyamban adott helyéhez képest viszonyítunk, hiszen nincs is benne a szövegfolyamban.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">position : absolute;</span></blockquote>
+<p>Ilyenkor az elemet a tárolójának a bal felső sarkához viszonyítjuk. Ehhez a tárolónak is pozicionált elemnek kell lenni (azaz nem lehet <span face="courier new,courier" style="font-family: 'courier new', courier;">static</span>). Ha egy elemnek nincs igazi tárolója, akkor a body a tároló, így az egész dokumentum bal felső sarkához viszonyít. Ebből következik, hogy az azonos tárolóban található abszolút, de nem elmozdított elemek egymáson jelennek meg.</p>
+<div align="center">
+<div style="border: 1px solid darkgray; margin: 10px 50px; padding: 20px; position: relative; min-width: 300px;">
+<script type="text/javascript">// <![CDATA[
+function changePos(pos){
+document.getElementById("div1").style.position = pos;
+document.getElementById("div2").style.position = pos;
+document.getElementById("div3").style.position = pos;
+}
+// ]]></script>
+<fieldset style="border: 1px solid gray; width: 150px; float: left; text-align: left; margin-top: 200px;"><legend>Pozicionálás</legend> <input name="posRB" id="rb1" checked="checked" onclick="changePos('static')" type="radio" /><label for="rb1">position:static</label><br /> <input name="posRB" id="rb2" onclick="changePos('relative')" type="radio" /><label for="rb2">position:relative</label><br /> <input name="posRB" id="rb3" onclick="changePos('absolute')" type="radio" /><label for="rb3">position:absolute</label></fieldset>
+<div style="border: 1px dashed black; width: 100px; height: 100px;">
+<div id="div1" style="width: 100px; height: 100px; background-color: red; position: static; left: 0px; top: 0px;"></div>
+</div>
+<div style="border: 1px dashed black; width: 100px; height: 100px;">
+<div id="div2" style="width: 100px; height: 100px; background-color: green; position: static; left: 20px; top: 20px;"></div>
+</div>
+<div style="border: 1px dashed black; width: 100px; height: 100px;">
+<div id="div3" style="width: 100px; height: 100px; background-color: blue; position: static; left: 40px; top: 40px;"></div>
+</div>
+</div>
+<b>1. Animáció</b>: Az elemek <span face="courier new,courier" style="font-family: 'courier new', courier;">position </span>tulajdonsága</div>
+<p>A fix pozicionálású elem az abszolúthoz hasonlóan kikerül a szövegfolyamból és az elmozdítása is ugyanúgy működik.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> position : fixed;</span></blockquote>
+<p>A különbség a viszonyítási pontban van. A fix elem a böngésző ablakhoz viszonyít, így az ablak weboldalt tartalmazó részének bal felső sarkához képest határozzuk meg a helyét.<br /> Tehát míg egy statikus, relatív vagy abszolút pozicionálású elem a dokumentum valamelyik részéhez viszonyít, így annak görgetésekor a dokumentummal együtt „mozog", addig a fix pozicionálású elem az ablakhoz viszonyít, így a weboldal görgetése nincs hatással rá, az ablakhoz képest elfoglalt helye nem változik.</p>
+<p>Végül létezik egy olyan pozicionálási lehetőség, ami átmenet a fix és a relatív között, attól függően, hogy a dokumentum görgetés közben hogyan helyezkedik el az ablakban. Amíg az így pozicionált elemen nem görget túl a felhasználó, addig relatív módon helyezkedik el (görgetődik az oldal többi részével), majd ha görgetés során elérjük az elemet, az átvált fixed pozicionálásra, azaz nem görgetődik tovább, hanem fixen látható az ablakban. </p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> position : sticky;</span></blockquote>
+<p><br /> <b><span size="3" style="font-size: medium;"> Mélységi sorrend<br /> </span></b><br /> Alapértelmezettként az elemek mélységi sorrendjét, azaz az elemek egymás alatt-fölötti viszonyát, a szövegfolyam határozza meg. Tehát egy később megjelenő elem a korábban megjelenő elemek "fölött" helyezkednek el. Ez csak a tárolóknál érzékelhető, ahol először a tároló jelenik meg, majd a benne lévő elemek.<br /> A szövegfolyamból kikerülő elemek így a mélységi sorrendből is kikerülnek. Tehát először a szövegfolyami elemek jelennek meg a folyam által adott sorrendben, majd az abszolút és fix pozicionálású elemek, a forrásban adott sorrend szerint.<br /> A mélységi sorrendet lehet változtatni, de csak azoknál az elemeknél, amelyek pozícináltak, azaz nem statikusak. Az elemek kapnak egy sorszámot a megjelenési sorrend szerint. Ezt a sorszámot lehet változtatni és más számot megadni.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> z-index: 100;</span></blockquote>
+<p>Természetesen egy elem sorszámát nehéz kiszámolni, így ezt a beállítást sokszor arra használjuk, hogy az elemet legalulra küldjük a -1 értékkel, így minden alá kerül, vagy egy megfelelően nagy számmal minden fölé hozunk, így változtatva a láthatóságát az elemnek. Illetve egymást követő elemek sorrendjét tudjuk cserélgetni, így változtatva, hogy melyik fedi le a másikat.</p>
+<p><br /> <b><span size="3" style="font-size: medium;"> Tartalom megjelenése<br /> </span></b><br /> Az oldal strukturális összeállításához a blokkos tárolók helyét és méretét is pontosan be kell állítani a helyes megjelenés miatt. A méret meghatározásakor nehézség az, hogy sokszor nem tudjuk a tároló tartalmának a méretét. Lehetőség van beállítani, hogy egy tároló hogy viselkedjen, ha a tartalma nem fér bele. Négy lehetőség közül tudunk választani. A <span face="courier new,courier" style="font-family: 'courier new', courier;">hidden </span>esetén a tároló megtartja a méretét és a túlnyúló tartalom nem látható. A <span face="courier new,courier" style="font-family: 'courier new', courier;">scroll </span>esetén a tároló az adott méretű lesz, de a görgetősáv kerül rá, így a tartalma görgetéssel elérhető. Ha <span face="courier new,courier" style="font-family: 'courier new', courier;">visible </span>értéket adunk meg, akkor a túlnyúló rész is látható lesz, a tartalom a tárolón kívül lesz látható. Végül <span face="courier new,courier" style="font-family: 'courier new', courier;">auto </span>értékkel a böngészőre bízzuk, hogy ha szükséges, akkor görgetősávot tesz a tárolóra.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> overflow : auto / visible / scroll / hidden;</span></blockquote>
+<p><b><span size="3" style="font-size: medium;"> Láthatóság<br /> </span></b><br /> Egy elemet kétféle módon lehet eltűntetni az oldalról.<br /> A <span face="courier new,courier" style="font-family: 'courier new', courier;">visibility </span>tulajdonsággal befolyásolni tudjuk az elem láthatóságát úgy, hogy az elem benne marad a szövegfolyamban, így ha nem látható, a helyet akkor is foglalja, azaz a többi elem úgy helyezkedik el, mintha ez az elem is ott lenne.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> visibility : visible / hidden;</span></blockquote>
+<p>A <span face="courier new,courier" style="font-family: 'courier new', courier;">display </span>tulajdonsággal az elemet úgy lehet eltűntetni, hogy az elem a szövegfolyamból is kikerül, azaz ilyenkor a többi elem elhelyezkedése is megváltozik, hiszen ezt az elemet nem számolják be a helyzetük meghatározásához.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> display : none;</span></blockquote>
+<p>Ugyanez a tulajdonság alkalmas arra, hogy megváltoztassuk, hogy egy elem blokkos vagy sorközi.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> display : block / inline / stb;</span></blockquote>
+<div align="center">
+<div style="border: 1px solid darkgray; margin: 10px 50px; padding: 20px; position: relative; min-width: 300px;">
+<script type="text/javascript">// <![CDATA[
+function changeViz(v){
+divV = document.getElementById("divViz");
+switch (v){
+case 1 : { divV.style.visibility="visible"; divV.style.display="block"; } break;
+case 2 : { divV.style.visibility="hidden"; divV.style.display="block"; } break;
+case 3 : { divV.style.visibility="visible"; divV.style.display="none"; } break;
+}
+}
+// ]]></script>
+<fieldset style="border: 1px solid gray; width: 150px; float: left; text-align: left;"><legend>Láthatóság</legend> <input name="vizRB" id="rb4" checked="checked" onclick="changeViz(1)" type="radio" /><label for="rb4">visibility:visible</label><br /> <input name="vizRB" id="rb5" onclick="changeViz(2)" type="radio" /><label for="rb5">visibility:hidden</label><br /> <input name="vizRB" id="rb6" onclick="changeViz(3)" type="radio" /><label for="rb6">display:none</label></fieldset>
+<div style="width: 100px; height: 100px; background-color: red;"></div>
+<div id="divViz" style="width: 100px; height: 100px; background-color: green;"></div>
+<div style="width: 100px; height: 100px; background-color: blue;"></div>
+</div>
+<b>2. Animáció</b>: Az elemek láthatóságának változása</div>
+<div align="center"></div>
+<p><b><span size="3" style="font-size: medium;"> Átlátszóság<br /> </span></b><br /> Az elemek alapértelmezettként nem átlátszóak, de ezt lehet változtatni fokozatosan egészen a teljes átlátszóságig. A mértékét egy nulla és egy közötti számmal adjuk meg, a nulla teljes átlátszóságot jelent.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> opacity : 0.5;</span></blockquote>
+<p>Megjegyezzük, hogy az Internet Explorer 8 és korábbi verzióiban ez nem működik, hanem helyette egy másik módon lehet beállítani. Itt a beállított érték nulla és száz közé esik és egész szám, a nulla a teljes átlátszóságot jelenti.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> filter:alpha(opacity=50);</span></blockquote>
+<p>Mivel ezt a böngésző verziót is még sokan használják (1. Lecke), így érdemes ezt a beállítási módot is megadni a stílusban.</p>
+<div align="center"><img src="atlatszosag.png" width="358" height="274" /></div>
+<div align="center"><b>26. Ábra</b>: Átlátszó elemek a weboldalon</div>
+<p>A CSS3 bevezette a rgba színmegadási lehetőséget, amely segítségével a három alapszín (piros, zöld, kék) megadása mellett meg lehet adni negyedik értékként az alfa tartományt is, amely az elem átlátszóságát határozza meg.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">background-color : rgba(0,0,0,0.5);</span></blockquote>
+<p>Az rgba és az opacity közötti különbség, hogy az utóbbi nemcsak az adott elemre vonatkozik, hanem a leszármazottaira is (azaz azokra az elemekre, amelyek ebbe vannak ágyazva).</p>
+<p><b>Lebegtetés</b></p>
+<p>A lebegtetéssel azt lehet állítani, hogy az elemet hogyan fussák körbe a rákövetkező elemek. A nem lebegtetett elem alapértelmezettként vagy blokkos vagy sorközi, ilyenkor nincs körbefuttatás. A lebegtetéssel meg lehet adni, hogy jobbról vagy balról az elem legyen körbefuttatva.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> float : none / left / right;</span></blockquote>
+<p>Ezt gyakran alkalmazzák képek gyűjteményénél, amikor minden egyes képet lebegtetjük, így azt érjük el, hogy úgy jelennek meg egymás mellett, hogy az ablak átméretezésekor a képek sorokba tördelése automatikusan igazodik az ablak méretéhez.</p>
+<div align="center">
+<div style="border: 1px solid darkgray; margin: 10px 50px; padding: 20px; position: relative; min-width: 300px; min-height: 200px;">
+<script type="text/javascript">// <![CDATA[
+function changeFloat(f){
+document.getElementById("divF1").style.cssFloat = f;
+document.getElementById("divF2").style.cssFloat = f;
+document.getElementById("divF3").style.cssFloat = f;
+}
+// ]]></script>
+<fieldset style="border: 1px solid gray; width: 400px; text-align: left; margin-left: 20px;"><legend>Lebegtetés</legend> <input name="lebRB" id="rb7" checked="checked" onclick="changeFloat('none')" type="radio" /><label for="rb7" style="margin-right: 20px;">float:none</label> <input name="lebRB" id="rb8" onclick="changeFloat('left')" type="radio" /><label for="rb8" style="margin-right: 20px;">float:left</label> <input name="lebRB" id="rb9" onclick="changeFloat('right')" type="radio" /><label for="rb9" style="margin-right: 20px;">float:right</label></fieldset>
+<div id="divF1" style="margin: 10px; width: 100px; height: 100px; background-color: red;"></div>
+<div id="divF2" style="margin: 10px; width: 100px; height: 100px; background-color: green;"></div>
+<div id="divF3" style="margin: 10px; width: 100px; height: 100px; background-color: blue;"></div>
+<p>Szöveg a lebegtetett elemek után. Szöveg a lebegtetett elemek után. Szöveg a lebegtetett elemek után. Szöveg a lebegtetett elemek után. Szöveg a lebegtetett elemek után. Szöveg a lebegtetett elemek után. Szöveg a lebegtetett elemek után. Szöveg a lebegtetett elemek után.</p>
+</div>
+<b>3. Animáció</b>: A lebegtetés</div>
+<p>A lebegtetés meg lehet törni. Azaz, ha lebegtetett elemek után egy következő elemet már nem szeretnénk lebegtetni az előzőek mellé, akkor  a clear segítségével ezt megszüntethetjük. Megadható, hogy az elem mellett balról, jobbról, vagy egyik oldalról se lehet lebegtetett elem.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">clear : both / left / right;</span></blockquote>
+<p><span size="3" style="font-size: medium;"><b>Kurzor alakja</b></span></p>
+<p>Megadható, hogy egy elem fölött a kurzor milyen formájú legyen, ezáltal pontosabb információt rendelve az elemhez.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">cursor : wait / text / pointer / ... </span></blockquote>
+<p><span size="3" style="font-size: medium;"><b>Megjelenés meghatározása különböző eszközön</b></span></p>
+<p>Bizonyos formátumok megfelelőek a weboldal képernyőn való megjelenítésére, de nem alkalmas a nyomtatásra. Például egy sötét hátterű világos szöveg esztétikus lehet a monitoron nézve, de nehezen olvasható kivetítve és alkalmatlan nyomtatásra. Így hasznos, ha bizonyos formátumokat megjelenítéstől függően eltérőnek határozunk meg. Erre van lehetőség a stílus leírásakor, külön megjelenítéshez más és más stílust rendelhetünk. A leggyakoribb megjelenítési formák:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> @media all {</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> /* stílus az összes megjelenítőre */</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> }</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> @media screen {</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> /* stílus a képernyőn való megjelenítésre */ </span><span face="courier new,courier" style="font-family: 'courier new', courier;"> }</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> @media print {</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> /* stílus nyomtatásra */</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> }</span></blockquote>
+<p>A médiatípushoz megadható valamilyen tulajdonság is, így tovább lehet finomítani a megjelenítést külön formázással. Ilyen tulajdonságok például az ablak mérete, a kijelző mérete, orientációja (álló vagy fekvő), felbontás, színmélység, stb.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">@media screen and (min-device-width : 600px) {<br />/* ahol az eszköz kijelzője legalább 600px széles */<br />}</span></blockquote>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id65">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_problem.gif" /><h2 class="iDeviceTitle">Feladat</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta65_21_5" class="block iDevice_content">
+
+<p>
+Készítse el az oldalak általános szerkezetét! A 7. lecke feladataként már készített egy általános tárolót a weboldalaknak. Most ezt egészítsük két általános elemmel, a fejléccel és a menüvel. Minden oldal tartalmazzon egy teljes szélességű tárolót (a fő tárolóhoz mérten) az oldal tetején, amely az oldal fejléce! Ebbe írja bele az oldal címét (kinek a weboldala) és formázza meg ízlése szerint! Majd legyen egy másik tároló, ami tartalmazza a menüt! A menü egy lista, amely linkekből áll. A linkekre kösse rá az eddig elkészült weboldalait! A menüt tartalmazó tárolót helyezze el a fő tároló bal oldalára a fejléc alá! Szüksége lesz egy újabb tárolóra, ami tartalmazza az eddigi tartalmát az oldalnak és amely változik a különböző oldalakon. Mindhárom tárolóhoz adjon meg megfelelő méreteket és pozíciókat, illetve formázza őket elgondolása szerint!<br />
+A 24. ábrán látható a kívánt szerkezet, a különböző színű részek jelentik a tárolókat. Természetesen a színek, szövegek és formátumok csak a szemléltetik az elemeket, a tervezett design szerint más formátumokat kell használni.
+</p>
+<div align="center">
+ <img src="feladar.png" height="392" width="531" />
+</div>
+<div align="center">
+<b>27. Ábra</b>: A feladat által definiált szerkezet
+</div>
+<div align="left">
+<p class="MsoNormal">
+Készítsen továbbá egy galériát az életében fontos képekkel,
+amelyeket formázzon megfelelően és igazítsa őket lebegtetéssel!<o:p></o:p>
+</p>
+<br />
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultichoiceIdevice em_iDevice" id="id66">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Feleletválasztós teszt</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<form name="multi-choice-form-66_2" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion66_2" class="block question iDevice_content">
+Mit jelent a szövegfolyam kifejezés?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_5" class="sr-av"><a href="#answer-66_5">Beállítás 1</a></label><input type="radio" name="option66_2" id="i66_5" onclick="getFeedback(0,3,'66_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_5"><a name="answer-66_5"></a>
+<div id="taans66_5" class="block iDevice_content">
+Az oldal elemeinek egymás után következését, sorrendjét.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_486" class="sr-av"><a href="#answer-66_486">Beállítás 2</a></label><input type="radio" name="option66_2" id="i66_486" onclick="getFeedback(1,3,'66_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_486"><a name="answer-66_486"></a>
+<div id="taans66_486" class="block iDevice_content">
+Az oldal szöveges elemeinek sorozatát.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_489" class="sr-av"><a href="#answer-66_489">Beállítás 3</a></label><input type="radio" name="option66_2" id="i66_489" onclick="getFeedback(2,3,'66_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_489"><a name="answer-66_489"></a>
+<div id="taans66_489" class="block iDevice_content">
+Az oldalon megjelenő folytonos szöveget.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b66_2" class="feedback js-hidden"><a name="sa0b66_2"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b66_2" class="feedback js-hidden"><a name="sa1b66_2"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b66_2" class="feedback js-hidden"><a name="sa2b66_2"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-66_5">Correct Option</a> (<a href="#sa0b66_2">Visszajelzés</a>)</li>
+<li><a href="#answer-66_486">Rossz</a> (<a href="#sa1b66_2">Visszajelzés</a>)</li>
+<li><a href="#answer-66_489">Rossz</a> (<a href="#sa2b66_2">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-66_492" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion66_492" class="block question iDevice_content">
+Mi a különbség a statikus és a relatív pozicionálású elem között?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_495" class="sr-av"><a href="#answer-66_495">Beállítás 1</a></label><input type="radio" name="option66_492" id="i66_495" onclick="getFeedback(0,3,'66_492','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_495"><a name="answer-66_495"></a>
+<div id="taans66_495" class="block iDevice_content">
+A relatív elmozdítható a helyéről, a statikus nem.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_498" class="sr-av"><a href="#answer-66_498">Beállítás 2</a></label><input type="radio" name="option66_492" id="i66_498" onclick="getFeedback(1,3,'66_492','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_498"><a name="answer-66_498"></a>
+<div id="taans66_498" class="block iDevice_content">
+A statikus elemet az eredeti helyéhez képest tudunk elhelyezni, a relatívat a tárolójának aktuális helyéhez képest.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_501" class="sr-av"><a href="#answer-66_501">Beállítás 3</a></label><input type="radio" name="option66_492" id="i66_501" onclick="getFeedback(2,3,'66_492','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_501"><a name="answer-66_501"></a>
+<div id="taans66_501" class="block iDevice_content">
+A statikus elem a szövegfolyamban jelenik meg, a relatív a szövegfolyam után.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b66_492" class="feedback js-hidden"><a name="sa0b66_492"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b66_492" class="feedback js-hidden"><a name="sa1b66_492"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b66_492" class="feedback js-hidden"><a name="sa2b66_492"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-66_495">Correct Option</a> (<a href="#sa0b66_492">Visszajelzés</a>)</li>
+<li><a href="#answer-66_498">Rossz</a> (<a href="#sa1b66_492">Visszajelzés</a>)</li>
+<li><a href="#answer-66_501">Rossz</a> (<a href="#sa2b66_492">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-66_504" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion66_504" class="block question iDevice_content">
+Mi a különbség az abszolút és a fix pozicionálású elem között?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_507" class="sr-av"><a href="#answer-66_507">Beállítás 1</a></label><input type="radio" name="option66_504" id="i66_507" onclick="getFeedback(0,3,'66_504','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_507"><a name="answer-66_507"></a>
+<div id="taans66_507" class="block iDevice_content">
+Az abszolút viszonyítási pontja a tárolójának helyzete, a fixé a böngésző ablaka.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_510" class="sr-av"><a href="#answer-66_510">Beállítás 2</a></label><input type="radio" name="option66_504" id="i66_510" onclick="getFeedback(1,3,'66_504','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_510"><a name="answer-66_510"></a>
+<div id="taans66_510" class="block iDevice_content">
+A fix elemet nem lehet elmozdítani a helyéről, az abszolút elemet igen.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_513" class="sr-av"><a href="#answer-66_513">Beállítás 3</a></label><input type="radio" name="option66_504" id="i66_513" onclick="getFeedback(2,3,'66_504','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_513"><a name="answer-66_513"></a>
+<div id="taans66_513" class="block iDevice_content">
+Az abszolút elem kikerül a szövegfolyamból, a fix benne marad.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b66_504" class="feedback js-hidden"><a name="sa0b66_504"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b66_504" class="feedback js-hidden"><a name="sa1b66_504"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b66_504" class="feedback js-hidden"><a name="sa2b66_504"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-66_507">Correct Option</a> (<a href="#sa0b66_504">Visszajelzés</a>)</li>
+<li><a href="#answer-66_510">Rossz</a> (<a href="#sa1b66_504">Visszajelzés</a>)</li>
+<li><a href="#answer-66_513">Rossz</a> (<a href="#sa2b66_504">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-66_516" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion66_516" class="block question iDevice_content">
+Mi a különbség a <font face="courier new,courier">visibility:hidden</font>; és a <font face="courier new,courier">display:none</font>; beállítás között?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_519" class="sr-av"><a href="#answer-66_519">Beállítás 1</a></label><input type="radio" name="option66_516" id="i66_519" onclick="getFeedback(0,3,'66_516','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_519"><a name="answer-66_519"></a>
+<div id="taans66_519" class="block iDevice_content">
+Az első csak nem láthatóvá teszi az elemet, de az foglalja a helyet, a második esetben az elemet nem jeleníti meg a böngésző.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_522" class="sr-av"><a href="#answer-66_522">Beállítás 2</a></label><input type="radio" name="option66_516" id="i66_522" onclick="getFeedback(1,3,'66_516','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_522"><a name="answer-66_522"></a>
+<div id="taans66_522" class="block iDevice_content">
+Az első esetben alapértelmezettként nem látszik az elem, csak ha fölé visszük a kurzort, a második esetben nem jelenik meg az elem.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_525" class="sr-av"><a href="#answer-66_525">Beállítás 3</a></label><input type="radio" name="option66_516" id="i66_525" onclick="getFeedback(2,3,'66_516','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_525"><a name="answer-66_525"></a>
+<div id="taans66_525" class="block iDevice_content">
+Az első eltűnteti az elemet, a második azt határozza meg, hogy nem blokként jelenik meg az elem, hanem sorköziként.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b66_516" class="feedback js-hidden"><a name="sa0b66_516"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b66_516" class="feedback js-hidden"><a name="sa1b66_516"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b66_516" class="feedback js-hidden"><a name="sa2b66_516"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-66_519">Correct Option</a> (<a href="#sa0b66_516">Visszajelzés</a>)</li>
+<li><a href="#answer-66_522">Rossz</a> (<a href="#sa1b66_516">Visszajelzés</a>)</li>
+<li><a href="#answer-66_525">Rossz</a> (<a href="#sa2b66_516">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-66_537" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion66_537" class="block question iDevice_content">
+Mit jelent a lebegtetés?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_540" class="sr-av"><a href="#answer-66_540">Beállítás 1</a></label><input type="radio" name="option66_537" id="i66_540" onclick="getFeedback(0,3,'66_537','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_540"><a name="answer-66_540"></a>
+<div id="taans66_540" class="block iDevice_content">
+Azt adja meg, hogy a lebegtetett elemet hogyan fussák körbe az utána következő elemek.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_543" class="sr-av"><a href="#answer-66_543">Beállítás 2</a></label><input type="radio" name="option66_537" id="i66_543" onclick="getFeedback(1,3,'66_537','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_543"><a name="answer-66_543"></a>
+<div id="taans66_543" class="block iDevice_content">
+Azt adja meg, hogy egy elem szerepel a szövegfolyamban, vagy kikerül belőle.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i66_546" class="sr-av"><a href="#answer-66_546">Beállítás 3</a></label><input type="radio" name="option66_537" id="i66_546" onclick="getFeedback(2,3,'66_537','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-66_546"><a name="answer-66_546"></a>
+<div id="taans66_546" class="block iDevice_content">
+Ezzel lehet képekből egy táblázatos galériát készíteni.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b66_537" class="feedback js-hidden"><a name="sa0b66_537"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b66_537" class="feedback js-hidden"><a name="sa1b66_537"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b66_537" class="feedback js-hidden"><a name="sa2b66_537"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-66_540">Correct Option</a> (<a href="#sa0b66_537">Visszajelzés</a>)</li>
+<li><a href="#answer-66_543">Rossz</a> (<a href="#sa1b66_537">Visszajelzés</a>)</li>
+<li><a href="#answer-66_546">Rossz</a> (<a href="#sa2b66_537">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

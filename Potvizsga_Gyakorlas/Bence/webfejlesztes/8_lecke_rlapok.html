@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="hu" xml:lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>8. Lecke: Űrlapok </title>
+<meta http-equiv="content-language" content="hu" />
+<meta name="generator" content="eXeLearning 2.0.4 - exelearning.net" />
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Show",hide:"Elrejtés",showFeedback:"Mutassa a visszajelzést",hideFeedback:"Visszajelzés elrejtése",correct:"Helyes",incorrect:"Incorrect",menu:"Menu"}</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+<script type="text/javascript" src="SCOFunctions.js"></script>
+</head>
+<body class="exe-scorm" onload="loadPage()" onunload="unloadPage()"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="outer">
+<div id="main">
+<div id="nodeDecoration"><h1 id="nodeTitle">8. Lecke: Űrlapok</h1></div>
+<div class="iDevice_wrapper objectivesIdevice em_iDevice" id="id59">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_objectives.gif" /><h2 class="iDeviceTitle">Célok</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta59_25_2" class="block iDevice_content">
+<ul>
+	<li>Ismerje az űrlapok szerepét a weboldalakon<o:p></o:p></li>
+	<li>Ismerje az űrlapok létrehozásának módszertanát<o:p></o:p></li>
+	<li>Ismerje és tudja létrehozni a fontosabb űrlapelemeket<o:p></o:p></li>
+	<li>Ismerje az űrlapok formázásának lehetőségeit<o:p></o:p></li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id60">
+<div class="iDevice emphasis0">
+<div id="ta60_1" class="block iDevice_content">
+<p><b><span size="3" style="font-size: medium;">Tartalom</span></b></p>
+<ul>
+<li>Űrlapok szerepe</li>
+<li>Űrlapok létrehozása</li>
+<li>Űrlap elemek</li>
+<li>Űrlapok formázása</li>
+</ul>
+<p><span size="3" style="font-size: medium;"><b><br /> Űrlapok szerepe a weboldalon<br /> </b></span><br /> Az űrlapok olyan HTML blokkok, amelynek elemeivel adatokat tud a felhasználó a weboldalon keresztül visszajuttatni. Ilyen adatok lehetnek szövegesek, számok, listából választott elemek, vagy logikai érték illetve akár feltöltendő fájl. Ezeket az adatokat fel lehet dolgozni kliens oldalon a böngészőben, illetve szerver oldalon is. Természetesen az adatok feldolgozásához már web-programozás szükséges, ami nem témája ennek a tananyagnak, de az űrlapok létrehozása és paraméterezése a webfejlesztés szerves része. Egy weboldalon több, egymástól független űrlap is lehet, ezek adatai és funkciói teljesen külön kezeltek. Például egy bejelentkezést megvalósító űrlap és egy kereső űrlap nem zavarja egymást a weboldalon.<br /> <br /> <br /> <span size="3" style="font-size: medium;"><b>Űrlapok létrehozása<br /> </b></span><br /> Fontos, hogy először az űrlapot kell létrehozni és azon belül kell definiálni az űrlapelemeket. Ha egy űrlapelem az űrlap definícióján kívül áll, akkor az önállóan működik és legfeljebb kliens oldalon lehet kezelni az adatait.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;form &gt; ... &lt;/form&gt;</span></blockquote>
+<p>Az űrlap létrehozásakor két fontos attribútumot szoktunk megadni. Az <span face="courier new,courier" style="font-family: 'courier new', courier;">action </span>attribútum szerepe, hogy definiálja azt, hogy az űrlap adatait elküldéskor hova továbbítsa a böngésző, azaz mi fogja a kitöltött adatokat feldolgozni. A <span face="courier new,courier" style="font-family: 'courier new', courier;">method </span>pedig az elküldés módját adja meg. Két küldési mód létezik, az egyik a <span face="courier new,courier" style="font-family: 'courier new', courier;">get</span>, amikor az adatok az URL-ben kerülnek átadásra, emiatt a böngésző címsorában láthatóak. Ez a módszer rövidebb, általában szöveges adatok küldésére való. A másik a <span face="courier new,courier" style="font-family: 'courier new', courier;">post</span>, amikor egy HTTP tranzakció keretében egy belső, a címsorban nem látható csatornán keresztül kerül az adat elküldésre. Az alapértelmezett érték a <span face="courier new,courier" style="font-family: 'courier new', courier;">get</span>.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;form action="feldolgozo.php" method="post"&gt; ... &lt;/form&gt;</span></blockquote>
+<p>Az URL-ben átküldött adatoknak akkor van értelme, ha lehetőséget szeretnénk biztosítani, hogy az eredményül kapott weboldalhoz könyvjelzőt rendelhessen a felhasználó, mert ilyenkor az adatok is bekerülnek a könyvjelzőbe, így annak a felhasználásával újra olyan oldalra jutunk, mintha megint kitöltöttük volna az űrlapok. Erre jó példa a kereső felületek, amikor ezzel az adatküldési móddal a keresés eredményét tudjuk elmenteni, ilyen jól látható a Google-ben kereséskor.</p>
+<div align="center"><img src="google_cimsor.png" width="800" height="104" /></div>
+<div align="center"><b>15. Ábra</b>: Egy Google keresés utáni címsor</div>
+<p></p>
+<p>A <span face="courier new,courier" style="font-family: 'courier new', courier;">post </span>beállítással való küldésnek akkor van értelme, amikor az átküldött adatok nem publikusak, például jelszavak. Így természetesen egy bejelentkező űrlapnál célszerű ezt a HTTP tranzakciós adatküldést kell választani.</p>
+<p><br /> <span size="3" style="font-size: medium;"><b>Űrlapelemek<br /> </b></span><br /> Többféle űrlapelem létezik, fontos, hogy mindig a megfelelőt válasszuk. Létezik elem rövid és hosszú szövegre, listából választásra, eldöntendő kérdésre és fájlfeltöltésre, illetve egy rejtett adatátadásra. Továbbá létezik többfajta gomb is. Amikor űrlapot tervezünk mindig az első, hogy határozzuk meg, hogy milyen jellegű adatok beolvasását szeretnénk megvalósítani és ez alapján válasszuk ki az űrlapelemeket. Fontos az elemek elhelyezése, sorrendje, csoportosítása, hogy a felhasználó kényelmesen és követhetően tudja kitölteni az űrlapot.<br /> Az <i>elemek csoportosítására</i> való a <span face="courier new,courier" style="font-family: 'courier new', courier;">fieldset </span>tag, amely összefogja a benne definiált elemeket, így azokra tudunk stílusból egyszerre hivatkozni.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;fieldset&gt;...&lt;/fieldset&gt;</span></blockquote>
+<p>Alapértelmezésként a böngésző egy keretet rajzol az egybe foglalt elemek köré. Ennek a keretnek lehet címet is adni, amely a <span face="courier new,courier" style="font-family: 'courier new', courier;">fieldset </span>első tag-jaként szoktunk megadni és csak egy lehet egy csoportnak.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;fieldset&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;legend&gt;...&lt;/legend&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> ...</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;/fieldset&gt;</span></blockquote>
+<p></p>
+<p>A legtöbb űrlap elemnek van néhány általános attribútuma, amelyek majdnem minden elemnél használhatók. Az egyik ilyen a <span face="courier new,courier" style="font-family: 'courier new', courier;">disabled, </span>amelynek megadásával az elem inaktívvá válik, azaz nem használható, bár a tartalmát megtartja, de az űrlap adatok elküldésekor ez az adat nem kerül elküldésre. Jogos kérdés lehet, hogy mi értelme van egy űrlapelemnek, amit nem lehet használni. Természetesen ezt a jellemzőt programból szokták változtatni, például egy rendelés gomb inaktív addig, amit a felhasználó nem pipálja ki, hogy elolvasta a rendelési feltételeket. <br />Egy másik fontos tulajdonsága az elemeknek a nevük, amelyet a <span face="courier new,courier" style="font-family: 'courier new', courier;">name </span>attribútummal adnunk meg, mert ezen a néven azonosíthatóak az adatok a szerver oldalon. Nem összekeverendő a már korábban is említett <span style="font-family: 'courier new', courier;">id</span> attribútummal, amelyet a CSS kijelöléshez és kliens oldali programozáshoz használunk első sorban.<br />Az űrlapelemek valamilyen értéket képviselnek, amelyet a böngésző elküld az űrlap elküldésekor. Ezt a legtöbb űrlapelemnél a <span style="font-family: 'courier new', courier;">value</span> attribútum adja meg.</p>
+<p></p>
+<p>Ahogy a későbbiekben látható lesz, több típusú űrlapelemet ugyanazzal a tag-gel kell létrehozni, az <span face="courier new,courier" style="font-family: 'courier new', courier;">input </span>tag-gel, ilyenkor a <span face="courier new,courier" style="font-family: 'courier new', courier;">type </span>attribútuma dönti el, hogy mely típusú elem lesz. Ezeknek a tag-eknek nincs lezáró párjuk, önmagukban már definiálják az űrlapelemet.</p>
+<p>Szöveget beolvasó űrlapelem több is van. Rövid szöveghez az <i>egysoros szövegbeviteli</i> mezőt ajánlatos használni:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;input type="text" name="szoveg" /&gt;</span></blockquote>
+<div align="center"><img src="urlap_text.PNG" width="405" height="141" /><br /> <b> 16. Ábra</b>: Egysoros szöveges beviteli mező</div>
+<p>Több tulajdonsága van, amelyet meg lehet adni. Definiálható a mérete a <span face="courier new,courier" style="font-family: 'courier new', courier;">size </span>attribútummal, amelyet karakterszámban kell érteni. Arra vigyázni kell, hogy ez a méret a karakter típusától, méretétől függően változhat, így például átméretezéskor az elemek elcsúszhatnak, az oldal tördelése megváltozhat. Így a méretet inkább stílusból célszerű megadni (persze ez a megoldás például karakterméret növeléskor a szövegtartalom olvashatatlanságát eredményezheti). Hasonlóan megadható a maximálisan beírható karakterek száma a <span face="courier new,courier" style="font-family: 'courier new', courier;">maxlength </span>attribútummal. Továbbá korlátozható az elem tartalmának módosíthatósága, azaz lehet csak olvashatóvá tenni a <span face="courier new,courier" style="font-family: 'courier new', courier;">readonly </span>attribútummal. Ezt nem szabad összekeverni a <span face="courier new,courier" style="font-family: 'courier new', courier;">disabled </span>tulajdonsággal, amikor az egész elem nem használható, míg ebben az esetben csak a tartalma nem változtatható, de például kimásolható és az űrlap többi adatával együtt elküldi a böngésző. Végül a <span face="courier new,courier" style="font-family: 'courier new', courier;">value</span> attribútummal megadható a mező szöveges tartalma már az oldal betöltődésekor. Tehát egy olyan 15 karakter széles egysoros szövegbeviteli mező megadása, amelybe legfeljebb tíz karakter írható és alapértelmezett tartalma az „alapszöveg", de jelenleg csak olvasható, a következő:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;input type="text" name="szoveg" size="15" maxlength="10" value="alapszöveg" readonly="readonly" /&gt;</span></blockquote>
+<p>Hasonló űrlapelem a <i>jelszó mező</i>, amelynek a tulajdonságai megegyeznek az előző szöveges mezővel, a különbség, hogy ezt jelszó beolvasásához használjuk ezért a begépelt karakterek helyett egy helyettesítő karaktert jelenít meg a böngésző.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;input type="password" name="jelszo" /&gt;</span></blockquote>
+<div style="text-align: center;"><img src="urlap_password.PNG" width="405" height="149" /></div>
+<div align="center"><b> 17. Ábra</b>: Jelszó mező</div>
+<div align="left">
+<p>Hosszabb szöveg beolvasásához <i>többsoros szöveges</i> mező szükséges.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;textarea name="szoveg"&gt;... &lt;/textarea&gt;</span></blockquote>
+<blockquote></blockquote>
+</div>
+<p>Ennek ugyanúgy létezik a <span face="courier new,courier" style="font-family: 'courier new', courier;">maxlength </span>és <span face="courier new,courier" style="font-family: 'courier new', courier;">readonly </span>tulajdonsága, mint az egysoros szöveges mezőnél. A mérete megadható szintén karakter szerint, a <span face="courier new,courier" style="font-family: 'courier new', courier;">cols </span>adja, hogy hány karakter fér el egy sorban (hány oszlopos), a <span face="courier new,courier" style="font-family: 'courier new', courier;">rows </span>pedig, hogy hány soros a mező. Természetesen, ahogy fentebb szerepel, javasolt a méretet inkább CSS segítségével megadni. A nyitó és záró tag közötti rész fog megjelenni a mezőben az oldal betöltődésekor.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;textarea cols="10" rows="5" maxlength="100" name="szoveg"&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">A mező alapszövege.</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;/textarea&gt;</span></blockquote>
+<p>Ha egy eldöntendő kérdésre szeretnénk választ kapni a felhasználótól, akkor a <i>jelölőnégyzetet </i>célszerű használni. Ennek a lényege, hogy be és ki lehet kapcsolni. Fontos azt tudni, hogy az adatok elküldésekor csak a bekapcsolt állapotot küldi el, tehát ha a jelölőnégyzet nincs bekapcsolva, az adat meg se jelenik a szerver oldalon.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;input type="checkbox" name="valaszt" /&gt;</span></blockquote>
+<div align="center"><img src="urlap_checkbox.PNG" width="409" height="146" /></div>
+<div align="center"><b>18. Ábra</b>: Jelölőnégyzet</div>
+<p> </p>
+<p>Ennek két fontosabb tulajdonsága van. Az egyik a <span face="courier new,courier" style="font-family: 'courier new', courier;">checked</span>, amely hatására a jelölőnégyzet bekapcsolt állapotba kerül (alapértelmezettként nincs bekapcsolva). A másik attribútum a <span face="courier new,courier" style="font-family: 'courier new', courier;">value</span>, amely tartalmazza azt az átadandó értéket, amelyet bekapcsolt állapotban, az elküldéskor tovább ad az űrlap. Ennek hiányában az „on" értéket adja át.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;input type="checkbox" name="ezer" checked="checked" value="1000" /&gt;</span></blockquote>
+<p> </p>
+<p>Ha adott értékek közül szeretnénk választatni a felhasználóval, akkor két elem is használható. Kevés elemnél célszerű a <i>választókapcsolót </i>(csúnyább nevén <i>rádiógombot</i>) használni. Ennek a lényege, hogy több elem közül pontosan az egyiket választhatja ki a felhasználó.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;input type="radio" name="valaszt" /&gt;</span></blockquote>
+<div align="center"><img src="urlap_radio.PNG" width="415" height="235" /></div>
+<div align="center"><b> 19. Ábra</b>: Választókapcsoló</div>
+<p>Értelemszerűen annyi ilyen elemet kell felvenni, ahány lehetőséget kínálunk választásra. Az elemek azáltal lesznek csoportosítva, hogy mi a nevük. Tehát azon elemek tartoznak össze és lehet csak egyet választani közülük, amelyeknek a <span face="courier new,courier" style="font-family: 'courier new', courier;">name </span>attribútumának értéke megegyezik. Ennek az elemnek is megadható a <span face="courier new,courier" style="font-family: 'courier new', courier;">checked</span> tulajdonság, amelyet az egyiknek célszerű is megadni, ennek hiányában egyik se lesz alapértelmezettként kiválasztva, ami ellent mond annak, hogy pontosan egyet lehet kijelölni. Továbbá itt is meg lehet adni a <span face="courier new,courier" style="font-family: 'courier new', courier;">value </span>tulajdonságot, ilyenkor adatelküldéskor a csoportból annak az egynek az értékét adja át, amelyik kiválasztott állapotban van.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;input type="radio" name="valaszt" value="1" checked="checked" /&gt;<br /> &lt;input type="radio" name="valaszt" value="2" /&gt;<br /> &lt;input type="radio" name="valaszt" value="3" /&gt;</span></blockquote>
+<p> </p>
+<p>Szintén adott értékek közül választásra való a <i>lista</i>, amelynek két formája is van: a lenyíló lista és a listadoboz. Sok listaelemnél mindenképp célszerű ezt választan. Először a listát kell létrehozni, majd azon belül a listaelemeket megadni.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;select name="lista"&gt;<br /> &lt;option&gt;1. elem&lt;/option&gt;<br /> &lt;option&gt;2. elem&lt;/option&gt;<br /> ...<br /> &lt;/select&gt;</span></blockquote>
+<div align="center"><img src="urlap_lista.png" width="421" height="212" /></div>
+<div align="center"><b> 20. Ábra</b>: Lenyíló lista</div>
+<div align="center"><img src="urlap_listbox.PNG" /></div>
+<div align="center"><b>21. Ábra</b>: Listadoboz</div>
+<p>Azt, hogy lenyíló lista vagy listadoboz lesz, a <span face="courier new,courier" style="font-family: 'courier new', courier;">size </span>attribútuma adja meg. Ha ez az érték 1, akkor lenyíló lista, ha ennél több, akkor listadoboz. A doboz sorainak a számát is ez az érték adja meg. Ha a listadoboz mérete kisebb, mint az elemeinek a száma, akkor automatikusan görgetősávot tesz rá a böngésző.<br /> A <span face="courier new,courier" style="font-family: 'courier new', courier;">multiple</span> tulajdonság megadásával a listadobozból csoportos kiválasztást is engedélyezünk, tehát egyszerre több elemet is ki lehet választani a Ctrl és Shift billentyűk segítségével. Mivel ennek a működése nem egységes, így ilyen esetben javasolt inkább több jelölőnégyzetet használni a lista helyett.<br /> A lista elemeinek a <span face="courier new,courier" style="font-family: 'courier new', courier;">value </span>attribútummal értéket lehet adni. A kiválasztott elem ezen értékét küldi el az adatátadáskor. Ha ez nincs megadva, akkor a listaelem szövegét küldi el, amely a nyitó és záró tag között található, de ez kerülendő. A <span face="courier new,courier" style="font-family: 'courier new', courier;">selected</span> tulajdonság megadásával lehet kijelölni, hogy mely listaelem legyen alapértelmezettként kiválasztva.<br /> A lista elemeit lehet csoportosítani, hogy sok elem esetén könnyebb legyen a felhasználónak közöttük keresni. A csoportnak a <span face="courier new,courier" style="font-family: 'courier new', courier;">label </span>attribútummal lehet címkét adni, amely az elválasztást megvalósítja, természetesen ezek nem választható listaelemek.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;optgroup label="elsoCsoport"&gt;<br /> &lt;option&gt;...&lt;/option&gt;<br /> ...<br /> &lt;/optgroup&gt;<br /> &lt;optgroup label="masodikCsoport"&gt;<br /> &lt;option&gt;...&lt;/option&gt;<br /> ...<br /> &lt;/optgroup&gt;</span></blockquote>
+<p>Egy példa a hét napjait tartalmazó lenyíló listára, ahol elválasztjuk a hétköznapokat és a hétvégi napokat, alapértelmezettként a kedd van kiválasztva, valamint átadásra a napok sorszáma kerül:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;select name="lista" size="1"&gt;<br /> &lt;optgroup label="Hétköznap"&gt;<br /> &lt;option value="1"&gt;Hétfő&lt;/option&gt;<br /> &lt;option value="2" selected="selected"&gt;Kedd&lt;/option&gt;<br /> &lt;option value="3"&gt;Szerda&lt;/option&gt;<br /> &lt;option value="4"&gt;Csütörtök&lt;/option&gt;<br /> &lt;option value="5"&gt;Péntek&lt;/option&gt;<br /> &lt;/optgroup&gt;<br /> &lt;optgroup label="Hétvége"&gt;<br /> &lt;option value="6"&gt;Szombat&lt;/option&gt;<br /> &lt;option value="7"&gt;Vasárnap&lt;/option&gt;<br /> &lt;/optgroup&gt;<br /> &lt;/select&gt;</span></blockquote>
+<div align="center"><img src="urlap_optgroup.PNG" width="417" height="319" /></div>
+<div align="center"><b> 22. Ábra</b>: Lista csoportosított elemekkel</div>
+<p>Az űrlapokon keresztül lehet <i>fájlokat feltölteni </i>a szerverre, természetesen csak akkor, ha ez ott engedélyezve van. Fájl feltöltésekor az adatküldés módjának <span face="courier new,courier" style="font-family: 'courier new', courier;">post </span>értéket kell választani. A fájlt egy tallózás gombbal lehet kiválasztani, a feltöltés az adatelküldéskor hajtódik végre.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;input type="file" name="fajl" /&gt;</span></blockquote>
+<div align="center"><img src="urlap_file_FF.PNG" width="396" height="154" /></div>
+<div align="center"><b> 23. Ábra</b>: Fájlfeltöltő elem Internet Explorerben és Firefoxban</div>
+<div align="center"></div>
+<div align="center"><img src="urlap_file_Chrome.PNG" width="396" height="152" /></div>
+<div align="center"><b> 24. Ábra</b>: Fájlfeltöltő kinézete Google Chrome-ban</div>
+<p>Ennek a megjelenési formája és böngészőnként változik, így a design tervezésekor ezt figyelembe kell venni!</p>
+<p>Létezik egy olyan űrlapelem, amelyik nem jelenik meg a felhasználónak az oldalon, nem is a felhasználó ad neki értéket. Ennek a <i>rejtett elemnek</i> a funkciója, hogy olyan adatot is át tudjunk adni kitöltött űrlapadatokkal, amelyet fejlesztéskor vagy programból aktuálisan határozunk meg. Ezt az adatot a <span face="courier new,courier" style="font-family: 'courier new', courier;">value </span>attribútumával tudjuk megadni. Ilyen lehet például, ha egy regisztrációs űrlap esetén átadjuk az adatokkal a kliens oldali aktuális dátumot és időt.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;input type="hidden" name="aktIdo" value="10:00" /&gt;</span></blockquote>
+<p> </p>
+<p>Magukhoz az űrlapelemekhez lehet <span face="courier new,courier" style="font-family: 'courier new', courier;">címkét </span>rendelni, amely hozzá tartozó felirat, így a felhasználó a címkére klikkelve is aktívvá tud tenni egy elemet. Ehhez az kell, hogy az elemnek azonosítót adjunk az <span face="courier new,courier" style="font-family: 'courier new', courier;">id</span> attribútumával, majd a címkében megadjuk a <span face="courier new,courier" style="font-family: 'courier new', courier;">for </span>attribútummal, hogy melyik elemhez tartozik.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;label for="login"&gt;Azonosító&lt;/label&gt;<br /> &lt;input type="text" id="login" name="login" /&gt;</span></blockquote>
+<p>Végül fontos űrlapelemek a <i>gombok</i>. A gombokat funkciójuk szerint három csoportba tudjuk sorolni. A <span face="courier new,courier" style="font-family: 'courier new', courier;">submit </span>gomb hajtja végre az adatok elküldését a <span face="courier new,courier" style="font-family: 'courier new', courier;">form action </span>attribútumában meghatározott helyre. A <span face="courier new,courier" style="font-family: 'courier new', courier;">reset </span>gomb visszaállítja az összes űrlapelemet az alapértékére. Illetve az általános <span face="courier new,courier" style="font-family: 'courier new', courier;">button </span>gombnak nincs rögzített funkciója, ehhez programmal rendelünk műveletet. Mindhárom gomb esetén a <span face="courier new,courier" style="font-family: 'courier new', courier;">value </span>tulajdonság adja meg a gomb feliratát.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;input type="submit" value="Elküld" /&gt;<br /> &lt;input type="reset" value="Alaphelyzet" /&gt;<br /> &lt;input type="button" value="Újratölt" onClick="reload()" /&gt; </span></blockquote>
+<div align="center"><img src="urlap_buttons.PNG" width="408" height="138" /></div>
+<div align="center"><b>25. Ábra</b>: Gombok</div>
+<p>Ha az űrlapon található <span face="courier new,courier" style="font-family: 'courier new', courier;">submit </span>gomb, akkor bármely űrlapelemen leütve az Enter billentyűt az adatokat elküldi, mintha a gombra klikkelt volna a felhasználó.<br /> A <span face="courier new,courier" style="font-family: 'courier new', courier;">submit </span>gomb helyett lehet képet is megadni, melynek a funkciója ugyanaz, mint a gombnak. Ennek olyan attribútumai vannak, amelyeket a képeknél (5. Lecke) már szerepeltek.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;input type="image" src="kuld.png" alt="Elküld" width="10" height="10" /&gt;<br /> </span></blockquote>
+<p>Egy általános gomb elemet lehet létrehozni a <span style="font-family: 'courier new', courier;">button</span> tag-gel. Ebben az esetben minden a gombként viselkedik, ami a nyitó és záró tag között szerepel.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;button onClick=""&gt;...&lt;/buton&gt;</span></blockquote>
+<p></p>
+<p><span size="3" style="font-size: medium;"><b>HTML5 újdonságok</b></span></p>
+<p><span size="3" style="font-size: medium;"><b></b>A HTML5 nyelvvel további speciális űrlapelemek kerültek a nyelvbe, amelyek használata egyszerűbbé teszi bizonyos értékek beolvasását, mint a naptár, színválasztó, számérték, stb. Sajnos ezek böngésző támogatottsága még nem teljes, így használatuk még nem annyira célszerű.</span></p>
+<p><span size="3" style="font-size: medium;">Új attribútumok is jelentek meg, amelyek használata jelentősen megkönnyíti az űrlapok használatát és feldolgozását. Néhány széles körben használt ezek közül:</span></p>
+<p><span size="3" style="font-size: medium;">Szöveges űrlapelemnél a böngésző utasítható, hogy jegyezze meg a korábbi kitöltéseket és ezek alapján felajánlja az automatikus kitöltést.</span></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> autocomlete="on"</span></blockquote>
+<p><span size="3" style="font-size: medium;">Szöveges mezőnél megadható egy szöveg, ami a mezőben látható lesz és segít a felhasználónak megérteni, hogy milyen tartalommal töltse ki a mezőt. Ez nem lesz a mező átadandó értéke.</span></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> placeholder="példa szöveg"</span></blockquote>
+<p><span size="3" style="font-size: medium;">Kiköthető, hogy egy úrlapelem kitöltése kötelező, azaz a böngésző automatikusan ellenőrzi az űrlap elküldésekor és figyelmezteti a felhasználót, ha nem töltötte ki a mezőt.</span></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> required</span></blockquote>
+<p><span size="3" style="font-size: medium;">Megadható a szöveges mezőkhöz egy minta (un. reguláris kifejezés), amelynek meg kell felelni a bevitt tartalomnak. Ellenkező esetben a böngésző az űrlap elküldésekor figyelmezteti a felhasználót.</span></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> pattern="[A-Za-z]"</span></blockquote>
+<p>Megadható, hogy melyik űrlapelemen legyen a fókusz az oldal betöltődésekor.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> autofocus</span></blockquote>
+<p><b style="font-size: medium; font-family: 'Times New Roman', Times, serif;">Űrlap formázása</b></p>
+<p>Az űrlap formázásához nincs semmi speciális mód. Természetesen a már megismert formázások mindegyike használható az űrlapelemekre is aszerint, hogy melyik milyen típusú elem. Általánosságban a méret, belső és külső margó, illetve a háttér megadása a legalapvetőbb formázási lehetőségek. Továbbá a szöveget tartalmazó elemeknek lehet a tartalmára az 5. Leckében megismert szövegformázásokat alkalmazni. <br /> Az elemek kijelölésénél nagy szerepet játszik a <span face="courier new,courier" style="font-family: 'courier new', courier;">fieldset</span>-ekkel való csoportosítás. Illetve, mivel több vizuálisan teljesen különböző elemet is az <span face="courier new,courier" style="font-family: 'courier new', courier;">input </span>tag-gel adunk meg, ezek közötti kijelölést nagyban segíti az értékfüggő kijelölők használata (4. Lecke).</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> input[type=text] { ... }</span></blockquote>
+<p>Az űrlapelemeknek van egy úgy nevezett fókusz állapotuk. Az elem akkor kerül fókuszba, ha a felhasználó ráklikkel, vagy a TAB billentyűvel ráváltja a fókuszt. Ezt az állapotot külön lehet formázni egy látszólagos kijelölővel:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> input:focus { ... }</span></blockquote>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id61">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_problem.gif" /><h2 class="iDeviceTitle">Feladat</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta61_27_5" class="block iDevice_content">
+Készítsen olyan oldalt, ami olyan űrlapot tartalmaz, amin keresztül az oldal látogatója üzenetet tud küldeni önnek! Természetesen az üzenet tényleges elküldéséhez már programozás szükséges, ez nem része ennek a tananyagnak. Az oldal tartalmazzon egy feladó és egy tárgy egysoros szöveges mezőt, egy többsoros szöveges mezőt az üzenetnek. Továbbá legyen egy lista, ami tartalmazza, hogy mennyire fontos az üzenet (alacsony, közepes, magas). Legyen egy jelölőnégyzet, amivel lehet kérni, hogy mindenképp válaszoljon az üzenetre! Végül legyen egy elküldés gomb (<font face="courier new,courier">submit</font>) és egy alapállapot gomb, ami kiüríti az űrlapelemeket (<font face="courier new,courier">reset</font>)!
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultichoiceIdevice em_iDevice" id="id62">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Feleletválasztós teszt</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<form name="multi-choice-form-62_2" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion62_2" class="block question iDevice_content">
+Az űrlap adatainak feldolgozásának helyé
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_5" class="sr-av"><a href="#answer-62_5">Beállítás 1</a></label><input type="radio" name="option62_2" id="i62_5" onclick="getFeedback(0,3,'62_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_5"><a name="answer-62_5"></a>
+<div id="taans62_5" class="block iDevice_content">
+a <font face="courier new,courier">form </font>tag-ben megadott <font face="courier new,courier">action </font>tulajdonság adja meg.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_429" class="sr-av"><a href="#answer-62_429">Beállítás 2</a></label><input type="radio" name="option62_2" id="i62_429" onclick="getFeedback(1,3,'62_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_429"><a name="answer-62_429"></a>
+<div id="taans62_429" class="block iDevice_content">
+a <font face="courier new,courier">submit </font>gomb <font face="courier new,courier">value </font>tulajdonsága adja meg.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_432" class="sr-av"><a href="#answer-62_432">Beállítás 3</a></label><input type="radio" name="option62_2" id="i62_432" onclick="getFeedback(2,3,'62_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_432"><a name="answer-62_432"></a>
+<div id="taans62_432" class="block iDevice_content">
+a <font face="courier new,courier">form </font>tag-ben megadott <font face="courier new,courier">method </font>tulajdonság adja meg.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b62_2" class="feedback js-hidden"><a name="sa0b62_2"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b62_2" class="feedback js-hidden"><a name="sa1b62_2"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b62_2" class="feedback js-hidden"><a name="sa2b62_2"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-62_5">Correct Option</a> (<a href="#sa0b62_2">Visszajelzés</a>)</li>
+<li><a href="#answer-62_429">Rossz</a> (<a href="#sa1b62_2">Visszajelzés</a>)</li>
+<li><a href="#answer-62_432">Rossz</a> (<a href="#sa2b62_2">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-62_435" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion62_435" class="block question iDevice_content">
+Az űrlap adatok átadásának módjai:
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_438" class="sr-av"><a href="#answer-62_438">Beállítás 1</a></label><input type="radio" name="option62_435" id="i62_438" onclick="getFeedback(0,3,'62_435','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_438"><a name="answer-62_438"></a>
+<div id="taans62_438" class="block iDevice_content">
+a <font face="courier new,courier">method </font>tulajdonság get értékével az URL-ben, a <font face="courier new,courier">post </font>értékével egy belső, nem látható HTTP csatornán.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_441" class="sr-av"><a href="#answer-62_441">Beállítás 2</a></label><input type="radio" name="option62_435" id="i62_441" onclick="getFeedback(1,3,'62_435','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_441"><a name="answer-62_441"></a>
+<div id="taans62_441" class="block iDevice_content">
+a method tulajdonság <font face="courier new,courier">post </font>értékével az URL-ben, a <font face="courier new,courier">get </font>értékével egy belső, nem látható HTTP csatornán.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_444" class="sr-av"><a href="#answer-62_444">Beállítás 3</a></label><input type="radio" name="option62_435" id="i62_444" onclick="getFeedback(2,3,'62_435','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_444"><a name="answer-62_444"></a>
+<div id="taans62_444" class="block iDevice_content">
+az action tulajdonság url értékével az URL-ben, a method értékével egy belső, nem látható HTTP csatornán.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b62_435" class="feedback js-hidden"><a name="sa0b62_435"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b62_435" class="feedback js-hidden"><a name="sa1b62_435"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b62_435" class="feedback js-hidden"><a name="sa2b62_435"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-62_438">Correct Option</a> (<a href="#sa0b62_435">Visszajelzés</a>)</li>
+<li><a href="#answer-62_441">Rossz</a> (<a href="#sa1b62_435">Visszajelzés</a>)</li>
+<li><a href="#answer-62_444">Rossz</a> (<a href="#sa2b62_435">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-62_450" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion62_450" class="block question iDevice_content">
+A <font face="courier new,courier">fieldset </font>tag szerepe:
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_453" class="sr-av"><a href="#answer-62_453">Beállítás 1</a></label><input type="radio" name="option62_450" id="i62_453" onclick="getFeedback(0,3,'62_450','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_453"><a name="answer-62_453"></a>
+<div id="taans62_453" class="block iDevice_content">
+az űrlapelemek csoportosítása, az elemek köré keretet tesz, illetve ezzel tudunk ezekre az elemekre együtt hivatkozni stílusból.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_456" class="sr-av"><a href="#answer-62_456">Beállítás 2</a></label><input type="radio" name="option62_450" id="i62_456" onclick="getFeedback(1,3,'62_450','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_456"><a name="answer-62_456"></a>
+<div id="taans62_456" class="block iDevice_content">
+az űrlapelemek csoportosítása, így különböző csoportok adatait különböző helyre küldhetjük, például bejelentkezés és keresés.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_459" class="sr-av"><a href="#answer-62_459">Beállítás 3</a></label><input type="radio" name="option62_450" id="i62_459" onclick="getFeedback(2,3,'62_450','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_459"><a name="answer-62_459"></a>
+<div id="taans62_459" class="block iDevice_content">
+ennek segítségével lehet a <font face="courier new,courier">radio </font>gombokat csoportosítani.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b62_450" class="feedback js-hidden"><a name="sa0b62_450"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b62_450" class="feedback js-hidden"><a name="sa1b62_450"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b62_450" class="feedback js-hidden"><a name="sa2b62_450"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-62_453">Correct Option</a> (<a href="#sa0b62_450">Visszajelzés</a>)</li>
+<li><a href="#answer-62_456">Rossz</a> (<a href="#sa1b62_450">Visszajelzés</a>)</li>
+<li><a href="#answer-62_459">Rossz</a> (<a href="#sa2b62_450">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-62_462" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion62_462" class="block question iDevice_content">
+A listák fajtái:
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_465" class="sr-av"><a href="#answer-62_465">Beállítás 1</a></label><input type="radio" name="option62_462" id="i62_465" onclick="getFeedback(0,3,'62_462','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_465"><a name="answer-62_465"></a>
+<div id="taans62_465" class="block iDevice_content">
+lenyíló lista és listadoboz, amit <font face="courier new,courier">a size </font>tulajdonság dönt el.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_468" class="sr-av"><a href="#answer-62_468">Beállítás 2</a></label><input type="radio" name="option62_462" id="i62_468" onclick="getFeedback(1,3,'62_462','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_468"><a name="answer-62_468"></a>
+<div id="taans62_468" class="block iDevice_content">
+a lenyíló lista, amit a <font face="courier new,courier">select </font>tag-gel adunk meg, és a listadoboz, amit az <font face="courier new,courier">optgroup </font>tag-gel.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_471" class="sr-av"><a href="#answer-62_471">Beállítás 3</a></label><input type="radio" name="option62_462" id="i62_471" onclick="getFeedback(2,3,'62_462','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_471"><a name="answer-62_471"></a>
+<div id="taans62_471" class="block iDevice_content">
+a lenyíló lista, a listadoboz és a többszörös kiválasztású lista, amit a <font face="courier new,courier">multiple </font>tulajdonság dönt el.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b62_462" class="feedback js-hidden"><a name="sa0b62_462"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b62_462" class="feedback js-hidden"><a name="sa1b62_462"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b62_462" class="feedback js-hidden"><a name="sa2b62_462"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-62_465">Correct Option</a> (<a href="#sa0b62_462">Visszajelzés</a>)</li>
+<li><a href="#answer-62_468">Rossz</a> (<a href="#sa1b62_462">Visszajelzés</a>)</li>
+<li><a href="#answer-62_471">Rossz</a> (<a href="#sa2b62_462">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-62_474" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion62_474" class="block question iDevice_content">
+A submit gomb szerepe
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_477" class="sr-av"><a href="#answer-62_477">Beállítás 1</a></label><input type="radio" name="option62_474" id="i62_477" onclick="getFeedback(0,3,'62_474','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_477"><a name="answer-62_477"></a>
+<div id="taans62_477" class="block iDevice_content">
+az űrlap adatainak elküldése.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_480" class="sr-av"><a href="#answer-62_480">Beállítás 2</a></label><input type="radio" name="option62_474" id="i62_480" onclick="getFeedback(1,3,'62_474','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_480"><a name="answer-62_480"></a>
+<div id="taans62_480" class="block iDevice_content">
+az űrlap alapállapotra állítása.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i62_483" class="sr-av"><a href="#answer-62_483">Beállítás 3</a></label><input type="radio" name="option62_474" id="i62_483" onclick="getFeedback(2,3,'62_474','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-62_483"><a name="answer-62_483"></a>
+<div id="taans62_483" class="block iDevice_content">
+egy megírt kliens oldali függvényt lehet vele meghívni.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b62_474" class="feedback js-hidden"><a name="sa0b62_474"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b62_474" class="feedback js-hidden"><a name="sa1b62_474"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b62_474" class="feedback js-hidden"><a name="sa2b62_474"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-62_477">Correct Option</a> (<a href="#sa0b62_474">Visszajelzés</a>)</li>
+<li><a href="#answer-62_480">Rossz</a> (<a href="#sa1b62_474">Visszajelzés</a>)</li>
+<li><a href="#answer-62_483">Rossz</a> (<a href="#sa2b62_474">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="hu" xml:lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>10. Lecke: Grafika, Médiaelemek, Reszponzivitás </title>
+<meta http-equiv="content-language" content="hu" />
+<meta name="generator" content="eXeLearning 2.0.4 - exelearning.net" />
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Show",hide:"Elrejtés",showFeedback:"Mutassa a visszajelzést",hideFeedback:"Visszajelzés elrejtése",correct:"Helyes",incorrect:"Incorrect",menu:"Menu"}</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+<script type="text/javascript" src="SCOFunctions.js"></script>
+</head>
+<body class="exe-scorm" onload="loadPage()" onunload="unloadPage()"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="outer">
+<div id="main">
+<div id="nodeDecoration"><h1 id="nodeTitle">10. Lecke: Grafika, Médiaelemek, Reszponzivitás</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id72">
+<div class="iDevice emphasis0">
+<div id="ta72_85" class="block iDevice_content">
+<p><span size="3" style="font-size: medium;"><b>Grafika</b></span></p>
+<p>Lehetőség van a HTML nyelvben, hogy a weboldalra nem túl bonyolult ábrák kirajzolására. Erre két mód is rendelkezésünkre áll.</p>
+<p><strong><em>Canvas</em></strong></p>
+<p>Ennek segítségével egy vásznat készíthetünk az oldalra, amelyre JavaScript segítségével lehet ábrát rajzoltatni. A rajzolás után az ábra fix és eseményeket se lehet hozzá rendelni.</p>
+<p><strong><em>SVG</em></strong></p>
+<p>Az SVG segítségével objektum alapú, vektorgrafikus ábrákat lehet a weboldalra kihelyezni, amelyek átalakíthatóak és eseményeket is lehet definiálni. Az ilyen ábrák minőségromlás nélkül átméretezhetőek és felbontásfüggetlenek.</p>
+<p>Az oldalra egy svg elemet kell beilleszteni, amelyre lehet az ábrákat ráhelyezni. Ennek a méretét lehet megadni a magasságával és szélességével.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;svg width="500" height="400"&gt; ... &lt;/svg&gt;</span></blockquote>
+<p>Különböző formájú grafikákat lehet készíteni, amelyeknek többek között az elhelyezkedését (koordinátáit), méretét (x és y irányú), kitöltését, határvonalát lehet megadni. Egyes tulajdonságait meg lehet adni attribútummal és CSS segítségével is. CSS segítségével több formázási lehetőség áll rendelkezésre.</p>
+<p><em>Téglalap </em>(HTML formázás)</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;rec x="10" y="20" width="200" height="100" fill="black" stroke="red" stroke-width="10"&gt;</span></blockquote>
+<p><em>Kör </em>(CSS formázás)</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;circle cx="50" cy="50" r="100"  style="fill:red;stroke:yellow;stroke-width:5"&gt;</span></blockquote>
+<p><em>Vonal</em></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;line x1="10" y1="10" x2="50" y2="100" style="stroke:rgb(100,100,100);stroke-width:3"&gt;</span></blockquote>
+<p><em>Szöveg</em></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;text x="10" y="30" fill="black"&gt;Kiírt szöveg&lt;/text&gt;</span></blockquote>
+<p></p>
+<p><strong>Multimédia elemek</strong></p>
+<p>A multimédiás tartalmak ma már gyakori elemei a weboldalaknak. Az internetes sávszélesség növekedésével és az eszközök hardveres erősödésével, szoftveres támogatottságával a weboldalak multimédiás tartalmai hétköznapivá váltak. Míg korábban ezek weboldalra beillesztése nem volt egyszerű, a HTML5 új tag-eket vett fel a nyelvbe, amelyek szerepe pont az ilyen elemek kezelése.</p>
+<p><em>Videó beágyazás</em></p>
+<p>Míg korábban a videót csak bővítményekkel lehetett az oldalra beágyazni, a HTML5 leegyszerűsítette ezt a folyamatot. Bevezette a <span style="font-family: 'courier new', courier;">video</span> tag-t, amelyben adható meg a <span style="font-family: 'courier new', courier;">source</span> tag segítségével a lejátszandó videó forrása, valamint egy helyettesítő szöveg, ha a felhasználó böngészője nem támogatja a <span style="font-family: 'courier new', courier;">video</span> tag-t.</p>
+<p>A HTML5 alapvetően három videó formátumot támogat: MP4, WebM, Ogg. A böngésző támogatottsága ezeknek a formátumoknak eltérő, az MP4 a legjobban támogatott. Ha lehetséges, érdemes a videót több formátumban is beilleszteni, így, ha a böngésző nem ismeri az egyik formátumot, a másikat még le tudja játszani.</p>
+<p><span style="font-family: 'Times New Roman', Times, serif;">Meg lehet adni a lejátszó méretét, ahol célszerű figyelembe venni a videó eredeti méretét. Valamint megadható, hogy a legyenek-e vezérlő gombok (</span><span style="font-family: 'courier new', courier;">controls</span><span style="font-family: 'Times New Roman', Times, serif;">), elinduljon-e automatikusan a lejátszás (</span><span style="font-family: 'courier new', courier;">autoplay</span><span style="font-family: 'Times New Roman', Times, serif;">) és ismételje-e a lejátszást, ha a videó végére ért (</span><span style="font-family: 'courier new', courier;">loop</span><span style="font-family: 'Times New Roman', Times, serif;">).</span></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;video width="600" height="400" controls autoplay loop&gt;<br />  &lt;source src="film.mp4" type="video/mp4"&gt;<br /><span>  &lt;source src="film.ogg" type="video/ogg"&gt;<br />Az ön böngészője nem támogatja ezt a videólejátszást<br /></span>&lt;/video&gt;</span></blockquote>
+<p><em>Audió beágyazás</em></p>
+<p>Hanganyag lejátszását hasonlóan kell beágyazni a weboldalra, mint a videóét. Itt az <span style="font-family: 'courier new', courier;">audio</span> tag adja a lejátszót, amibe ugyanúgy a <span style="font-family: 'courier new', courier;">source</span> tag-gel lehet a forrás hangfájlt megadni. A vezérlő gombok, az automatikus lejátszás és az ismételt lejátszás itt is beállítható ugyanazokkal az attribútumokkal. A támogatott hangfájl formátumok az MP3, wav, ogg, melyek közül az MP3 a teljesen támogatott.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;audio controls autoplay loop&gt;<br />  &lt;source src="zene.mp3" type="audio/mpeg"&gt;<br /><span>  &lt;source src="zene.ogg" type="audio/ogg"&gt;<br />Az ön böngészője nem támogatja ezt a hanglejátszást<br /></span>&lt;/audio&gt;</span></blockquote>
+<p><em>YouTube beágyazás</em></p>
+<p>Ha egy beillesztendő videó megtalálható a YouTube megosztón, akkor onnan is be lehet ágyazni, anélkül, hogy azt le kellene tölteni. Valamint, ha nem akarunk a formátumokkal bajlódni, esetleg nincs elég hely a tárterületünkön, hogy tároljuk a videót, akkor megoldás, ha azt feltöltjük a YouTube szerverére és onnan ágyazzuk be a saját oldalunkra. Ilyenkor csak a keresett videónak az azonosítóját kell ismerni, amelynek segítségével az elérési útja összeállítható. A lejátszó beillesztése pedig egy beágyazott kerettel (<span style="font-family: 'courier new', courier;">iframe</span>) történik, lásd 6. lecke).</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/xxVqDZcLSyY" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</span></blockquote>
+<p>Az egyszerűség kedvéért a YouTube le is generálja a beágyazáshoz szükséges kódot. Ha kívánt videónál a lejátszó alatt a Megosztás pontot választjuk, majd a megjelenő lehetősége közül a Beágyazást, akkor egy mezőben megjelenik a szükséges iframe forrása. Ezt a kódot kell kimásolni és beilleszteni a saját oldalunkra.</p>
+<p style="text-align: center;"><img src="youtube.PNG" width="600" height="131" /><br /><span style="font-family: 'Times New Roman', Times, serif;"><strong>28. Ábra</strong> YouTube videó beágyazásához szükséges kód generálása</span></p>
+<p>A linkhez lejátszási paramétereket lehet illeszteni az űrlapoknál megismert módon (lásd 8. lecke). Ezen paraméterek esetén az 1 érték jelenti a bekapcsolást és 0 a kikapcsolást. Az <span style="font-family: 'courier new', courier;">autoplay</span> paraméterrel bekapcsolható az az automatikus lejátszás, a <span style="font-family: 'courier new', courier;">loop</span> paraméterrel a folyamatos ismétlés a <span style="font-family: 'courier new', courier;">controls</span> paraméterrel a vezérlő gombok kihelyezése. </p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/xxVqDZcLSyY?autoplay=1&amp;controls=0&amp;loop=1"&gt;&lt;/iframe&gt;</span></blockquote>
+<p></p>
+<p><strong>Reszponzivitás</strong></p>
+<p>Mivel manapság nagyon sokféle eszközt használnak a weboldalak megtekintésére, nagyon nehéz olyan oldal elrendezést kialakítani, amelyik mindegyiken jól néz ki. Egy nagy monitoron egy kicsire méretezett oldal csúnyán néz ki, míg egy mobiltelefonon a túl aprólékos oldal nem fér el, vagy túlságosan zsúfolt, összetett lehet. Erre egy egyre népszerűbb megoldás a reszponzív oldal készítése. A reszponzivitás lényege, hogy az oldal a böngésző méretéhez képest átalakítja magát olyanra, amely megfelelően néz ki és használható az adott méretben. <span>Az oldalt alapvetően négy mérethez igazítja: mobiltelefon, tablet, kisebb monitor (laptop) és nagy monitor. </span>Ehhez első sorban az elemek átméretezését, láthatóságát (elrejtését), elmozgatását, átrendezését használja. Ehhez első sorban megfelelő tárolókat kell készíteni és azokat megfelelően kell formázni.</p>
+<p>Egy oldalt saját tudásunk szerint is kialakíthatunk ilyenre, de már léteznek keretrendszerek, amelyek már tartalmazzák a szükséges eszközöket, formátumokat a reszponzív oldal kialakításához. A két legnépszerűbb ilyen keretrendszer a <em>Bootstrap</em> és a <em>W3.CSS</em>. Mindkettő ingyenes, böngésző-független és teljes mértékben megfelel egy korszerű reszponzív oldal kialakításához. Ezen kívül mindkét keretrendszer tartalmaz rengeteg olyan előre elkészített és megformázott elemet, amelyek gyakran szükséges egy weboldalon, például panelek, menük, gombok, modális ablakok, stb. Megfelelnek az úgy nevezett <em>mobile-first</em> filozófiának, ami azt jelenti, hogy egy oldal első sorban a mobilon való megjelenítést veszi alapul és a többit ehhez képest alakítja ki.</p>
+<p><span>A Bootstrap és a W3.CSS közti legfontosabb különbség, hogy az előbbi a népszerűbb, mert több lehetőséget tartalmaz, de ehhez JavaScript  és jQuery scripteket használ. Az utóbbi csak CSS-re épül így kisebb, egyszerűbb és gyorsabb.</span></p>
+<p><span>Ezen keretrendszerek tárgyalása külön kurzust igényelne, így itt nem tárgyaljuk. Ugyanakkor erősen biztatok mindenkit, aki szeretne webes fejlesztéssel foglalkozni, hogy tanulja meg legalább az egyik keretrendszert.</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

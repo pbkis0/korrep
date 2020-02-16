@@ -1,0 +1,33 @@
+.tartalom{
+	border:2px gray;
+	padding:10px;
+
+}
+
+h1{
+	text-align:center; /*0 -alsó,felső margó; auto - bal-jobb margó */
+	text-decoration:underline; 
+	font-size:30px;
+	margin-bottom:20px;
+}
+
+
+.menu{
+	
+}
+
+#auto{
+	width:250px;
+	
+}
+.kiemelt{
+	font-weight:bold;
+	
+}
+
+.forras{
+	
+}
+p{
+	text-align: justify;	
+}

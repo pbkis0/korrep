@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="hu" xml:lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>11. Lecke: CSS3 eszközök </title>
+<meta http-equiv="content-language" content="hu" />
+<meta name="generator" content="eXeLearning 2.0.4 - exelearning.net" />
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Show",hide:"Elrejtés",showFeedback:"Mutassa a visszajelzést",hideFeedback:"Visszajelzés elrejtése",correct:"Helyes",incorrect:"Incorrect",menu:"Menu"}</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+<script type="text/javascript" src="SCOFunctions.js"></script>
+</head>
+<body class="exe-scorm" onload="loadPage()" onunload="unloadPage()"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="outer">
+<div id="main">
+<div id="nodeDecoration"><h1 id="nodeTitle">11. Lecke: CSS3 eszközök</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id73">
+<div class="iDevice emphasis0">
+<div id="ta73_85" class="block iDevice_content">
+<p><span style="font-family: 'Times New Roman', Times, serif;">A CSS3 jelentősen kibővítette a korábbi stílus megadási lehetőségeit, de a visszafele kompatibilitást megtartott. Kiterjesztette a kijelölési módokat és új formázási lehetőségeket vezetett be. Ez utóbbiból tárgyalunk néhányat.</span></p>
+<p>Azt figyelembe kell venni, hogy ezeket a formátumokat a böngészők újabb verzióival lehet használni, régebbi verziókkal vagy nem működött, vagy a formátum elé egy előtagot kellett tenni:</p>
+<ul>
+<li>Chrome és Safari esetén: -webkit- </li>
+<li>Firefox esetén: -moz-</li>
+<li>Opera esetén: -o-</li>
+<li>Explorer esetén: -ms-</li>
+</ul>
+<p><strong>Színátmenetes háttér</strong></p>
+<p>Szín megadásakor lehetőség van kettő vagy több szín közötti átmenet használatára is. Az átmenet lehet egyenes vonalú vagy sugár irányú.</p>
+<p>Egyenes vonalú átmenetet a <span style="font-family: 'courier new', courier;">linear-gradient</span> megadásával készíthetünk. Az átmenethez kettő vagy több színt kell megadni, az átmenetet a böngésző készíti el a megadott színeken keresztül:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">background : linear-gradient(red, white, green);</span></blockquote>
+<p>Megadható az átmenet iránya a színek megadása előtt. Például ha balról jobbra szeretnénk az átmenetet, akkor a "to right" szöveget kell megadni, vagy egy átlós átmenethez a "to bottom right" szöveget. </p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">background : linear-gradient(to right, red, white, green);</span></blockquote>
+<p>Százalékosan megadható, hogy egy színbe való átmenet a terület mely részénél érjen véget</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">background : linear-gradient(to right, red, white 20%, green 80%);</span></blockquote>
+<p>A sugár irányú átmenet hasonlóan működik a <span style="font-family: 'courier new', courier;">radial-gradient</span> megadásával, csak az átmenet az elem közepétől kifele a sarkai felé tart.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">background: radial-gradient(green 20%, white 60%, red 80%);</span></blockquote>
+<p></p>
+<p><strong>Árnyékolás</strong></p>
+<p>Lehetőség van egyes elemeknek árnyékot adni. Itt külön választjuk a szöveg árnyékát és a "doboz", azaz tároló árnyékát. A doboz esetén az árnyék a doboz két oldalánál jelenik meg, a szöveg esetén viszont követi a karakterek vonalát.</p>
+<p>Mindkét esetben az árnyékot ugyanúgy kell megadni: meg kell adni az árnyék méretét x és y irányban, az elmosódás mértékét és az árnyék színét.</p>
+<p>doboz árnyék</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">box-shadow : 10px 10px 5px gray;</span></blockquote>
+<p>szöveg árnyék</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">text-shadow : 50px 15px 10px gray;</span></blockquote>
+<p></p>
+<p><strong>Transzformálás</strong></p>
+<p>Az elemeken különböző transzformációt lehet végrehajtani. </p>
+<p>A kívánt átalakítást a transform tulajdonságnak kell megadni.</p>
+<p>eltolás egy vektorral</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">transform : translate(100px, 200px);</span></blockquote>
+<p>elforgatás egy szöggel</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">transform : rotate(90deg);</span></blockquote>
+<p>átméretezés szélesség és magasság szerint</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">transform : scale(2,0.5);</span></blockquote>
+<p>eltorzítás x és y irányban</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">transform : skew(10deg, 20deg);</span></blockquote>
+<p>3 dimenzióban forgatás x, y, vagy z tengely mentén</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">transform : rotateX(90deg);<br />transform : rotateY(90deg);<br />transform : rotateZ(90deg);</span></blockquote>
+<p></p>
+<p><strong>Átmenet</strong></p>
+<p>Egy elem valamilyen stílus tulajdonságát meg lehet változtatni egy átmeneten keresztül. Ha az elem valamilyen tulajdonságának az értéke változik két állapota között, akkor ez a változást végrehajthatja úgy, hogy a transition tulajdonságnak meg kell adni a tulajdonságot és, hogy mennyi idő (másodperc) alatt hajtsa végre. Egyszerre több tulajdonság is változhat átmenetesen, ha vesszővel elválasztva felsoroljuk.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">div {<br />  background-color : red;<br />  transition : background-color 2s;<br />}<br />div:hover {<br />  background-color : yellow;<br />}</span></blockquote>
+<p>Az átmenetet lehet késleltetni valamennyi másodperccel</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">transition-delay : 2s;</span></blockquote>
+<p>Változtatható az átmenet sebessége, például lehet lassan kezdni, vagy befejezni, vagy lassan kezdeni gyorsulni és lassan befejezni. </p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">transition-timing-function : ease / ease-in / ease-out / ease-in-out;</span></blockquote>
+<p></p>
+<p><strong>Animáció</strong></p>
+<p>A CSS3 segítségél az elemekhez animációkat lehet készíteni pusztán stílussal, programozás nélkül. Itt valójában egy elem bizonyos tulajdonságának (akár többnek is egyszerre) értéke közötti váltást lehet egy átmenettel elvégeztetni.</p>
+<p>Először egy általános animáció állapotait kell elkészíteni, azaz, hogy az animáció során milyen tulajdonságok milyen fázisban hogyan változzanak. Az alábbi "nyulik" nevű animációt bármely elemhez hozzá lehet később rendelni.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">@keyframes nyulik {<br />  0% { width : 100px; background-color : red; }<br />  50% { width : 200px; background-color : yellow; }<br />  100% {width : 100px; background-color : red; }<br />}</span></blockquote>
+<p>Ezt az animációt hozzá kell rendelni az animálandó elemhez. Figyelni kell arra, hogy az elem animált tulajdonsága illeszkedjen az animáció kezdő és végállapotához, különben éles váltás lesz az animáció előtt vagy után.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">animation-name : nyulik</span></blockquote>
+<p>Megadható, hogy az átmenet mennyi idő alatt hajtódjon végre másodpercben mérve.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">animation-duration : 4s;</span></blockquote>
+<p>Az animáció alapértelmezettként az oldal betöltődésekor lejátszódik. Ezt lehet késleltetni valamennyi másodperccel</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">animation-delay : 5s;</span></blockquote>
+<p>Az animációt többször is le lehet játszatni, vagy akár folyamatos ismétlődést is megadható. Ilyenkor arra figyelni kell, hogy az animáció végállapota illeszkedjen a kezdőállapotához (legjobb, ha ugyanaz), különben két lejátszás között éles váltás lesz.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">animation-iteration-count : 3;<br />animation-iteration-count : infinite;</span></blockquote>
+<p>Megadható, hogy az animáció fordított irányban játszódjon le, vagy akár oda-vissza</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">animation-direction : reverse;<br />animation-direction : alternate;</span></blockquote>
+<p>Szabályozható az animáció lejátszásának sebessége, lehet gyorsuló, lassuló, vagy lassan kezdő gyorsuló és visszalassuló a végére.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">animation-timing-function : ease-in / ease-out / ease;</span></blockquote>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

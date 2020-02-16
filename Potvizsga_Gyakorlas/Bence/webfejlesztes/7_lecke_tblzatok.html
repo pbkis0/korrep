@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="hu" xml:lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>7. Lecke: Táblázatok </title>
+<meta http-equiv="content-language" content="hu" />
+<meta name="generator" content="eXeLearning 2.0.4 - exelearning.net" />
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Show",hide:"Elrejtés",showFeedback:"Mutassa a visszajelzést",hideFeedback:"Visszajelzés elrejtése",correct:"Helyes",incorrect:"Incorrect",menu:"Menu"}</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+<script type="text/javascript" src="SCOFunctions.js"></script>
+</head>
+<body class="exe-scorm" onload="loadPage()" onunload="unloadPage()"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="outer">
+<div id="main">
+<div id="nodeDecoration"><h1 id="nodeTitle">7. Lecke: Táblázatok</h1></div>
+<div class="iDevice_wrapper objectivesIdevice em_iDevice" id="id55">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_objectives.gif" /><h2 class="iDeviceTitle">Célok</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta55_21_2" class="block iDevice_content">
+<ul>
+	<li>Ismerje a táblázatok szerepét a weboldalon<o:p></o:p></li>
+	<li>Ismerje a HTML nyelvben a táblázatok építésének elvét<o:p></o:p></li>
+	<li>Ismerje a táblázatok részeit és szerepüket<o:p></o:p></li>
+	<li>Ismerje a táblázatok formázásának eszközeit<o:p></o:p></li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id56">
+<div class="iDevice emphasis0">
+<div id="ta56_1" class="block iDevice_content">
+<p><span size="3" style="font-size: medium;"><b>Tartalom</b></span></p>
+<ul>
+<li>Táblázatok szerepe</li>
+<li>Táblázatok felépítésének elve</li>
+<li>Táblázatok formázása stílussal</li>
+</ul>
+<p><b><span size="3" style="font-size: medium;"><br /> Táblázatok szerepe a weboldalon<br /> </span></b><br /> Ahogy az előző, 6. leckében szerepelt, a táblázatokat többen használják arra, hogy az oldalon egységeket határozzanak meg, az oldalt, vagy annak valamilyen részét, felosszanak. Ez alapvetően hibás elgondolás és ma már elavultnak és kerülendőnek számít. Ahogy a 6. leckében szerepelt, az oldalfelosztás táblázattal túl bonyolult forráskódot eredményez, amiben nagy a hibalehetőség, valamint a módosítása nagyon nehéz. Illetve a táblázat szerkezetéből adódóan csak sor-oszlopos elrendezést lehet létrehozni vele. Tehát fontos, hogy a weboldalakon a táblázatokat arra használjuk, hogy adatokat táblázatban jelenítsünk meg. A táblázat celláiba bármit lehet beágyazni, szöveget, képet, akár egy másik táblázatot is.</p>
+<p><b><span size="3" style="font-size: medium;">Táblázat felépítése HTML nyelven<br /> </span></b><br /> A táblázatok helyes használatához fontos érteni, hogy milyen elemekből épül fel. Mint minden táblázat, sorból és oszlopokból áll, amelyek metszetében vannak a cellák. A HTML nyelvben először mindig a táblázatot kell definiálni, majd azon belül a sorokat és a sorokon belül a cellákat. A táblázatot megadó tag a</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;table&gt;...&lt;/table&gt;</span></blockquote>
+<p>a soroké a</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;tr&gt;...&lt;/tr&gt;</span></blockquote>
+<p>és az egyszerű celláké a</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;td&gt;...&lt;/td&gt;</span></blockquote>
+<p>továbbá létezik egy speciális, fejléc cellát megadó tag, a</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;th&gt;...&lt;/th&gt;</span></blockquote>
+<p>melynek a böngésző alapértelmezésként kiemelt formátumot ad, félkövér és középre igazított lesz a tartalma.<br /> Nagyon fontos, hogy a táblázat megadásakor ügyeljünk a helyes egymásba ágyazásra, valamint a tag-ek helyes lezárására!<br /> Az jól látható, hogy nincs oszlop megadás a nyelvben. Az oszlopok automatikusan jönnek a létre az egymás alatt lévő cellákból. Így a helyes táblázathoz úgy kell megadni a cellákat, hogy minden sorba azonos számú legyen. Példaként egy két soros és három oszlopos táblázatot a következő módon adunk meg a HTML nyelvben:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;table&gt;<br /> &lt;tr&gt;<br /> &lt;td&gt;1. sor 1. oszlop&lt;/td&gt;<br /> &lt;td&gt;1. sor 2. oszlop &lt;/td&gt;<br /> &lt;td&gt;1. sor 3. oszlop &lt;/td&gt;<br /> &lt;/tr&gt;<br /> &lt;tr&gt;<br /> &lt;td&gt;2. sor 1. oszlop &lt;/td&gt;<br /> &lt;td&gt;2. sor 2. oszlop &lt;/td&gt;<br /> &lt;td&gt;2. sor 3. oszlop &lt;/td&gt;<br /> &lt;/tr&gt;<br /> &lt;/table&gt;</span></blockquote>
+<div align="center"><img src="tablazat.PNG" width="400" height="120" /></div>
+<div align="center"><b>11. Ábra</b>: Táblázat</div>
+<div align="left"><i><b>Cella kiterjesztés (cella összevonás)</b></i><br /> Ha egy sorban például eggyel kevesebb cella van, mint a többiben, akkor a cellák bal oldalról oszloponként helyezkedik el és a sor végén hiányozni fog az oszlopból egy cella. A sor közepéről cellát kihagyni nem lehet. Így a táblázat oszlopos elrendezésű marad. Ebből következik, hogy egy táblázatban annyi oszlop van, ahány cella van a "legszélesebb" sorban.<br />
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;table&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;tr&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;td&gt;1. sor 1. oszlop&lt;/td&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;td&gt;1. sor 2. oszlop &lt;/td&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;td&gt;1. sor 3. oszlop &lt;/td&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;/tr&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;tr&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;td&gt;2. sor 1. oszlop &lt;/td&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;td&gt;2. sor 2. oszlop &lt;/td&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;/tr&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;tr&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;td&gt;3. sor 1. oszlop &lt;/td&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;/tr&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;/table&gt;</span></blockquote>
+<div align="center"><img src="tablazat_hianyzocellak.PNG" width="405" height="156" /></div>
+<div align="center"><b>12. Ábra</b>: Táblázat hiányzó cellákkal</div>
+<div align="center">
+<div align="left"><br /> A rácsos elrendezést csak sorok illetve oszlopok összevonásával lehet módosítani. Ettől természetesen megmarad a sor-oszlopos elrendezés, de a szomszédos cellákat egyben kezelhetjük, egy tartalmuk lesz. Minden cellát a tőle jobbra lévő egy vagy több cellával lehet összevonni, illetve az alatta lévő cellákkal. Igazából szemléletesebb elnevezés, hogy a cellát<i> több sorra illetve oszlopra kiterjesztjük</i>. Tehát az összevonást mindig egy cella tag-ében kell megadni és az jobbra illetve lefele lesz érvényben. <br /> Az oszlopok összevonásánál azt kell megadni, hogy hány cellát vonjon össze, azaz hány oszlopra terjessze ki a cellát:<br />
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;td colspan="2"&gt;két oszlop széles cella&lt;/td&gt;</span></blockquote>
+A sorok összevonásánál hasonlóan azt kell megadni, hogy hány cellát vonjon össze lefele, azaz hány sorra terjessze ki:<br />
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;td rowspan="2"&gt;két sor magas cella&lt;/td&gt;</span></blockquote>
+Vigyázni kell, hogy az összevont cellákat beleszámítva kell a következő sorokban illetve oszlopokban megadni a cella tag-eket. Tehát ahogy az alábbi példa mutatja, ha egy 3 soros és 3 oszlopos táblázatban egy sorban (az elsőben) két cellát összevonunk (a másodikat és a harmadikat), attól abban a sorban három oszlop van, annyival kell számolni a többi sorban is. Illetve ha egy oszlopban (az elsőben) két cellát összevonunk (a második és harmadik sorban), akkor a harmadik sorban az oszlop számának meghatározásakor bele kell számolni, hogy egy cellát már fölülről "örököltünk". <br />
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;table&gt;<br /> &lt;tr&gt;<br /> &lt;td&gt;1. sor 1. oszlop&lt;/td&gt;<br /> &lt;td colspan="2"&gt;1. sor 2. és 3. oszlop&lt;/td&gt;<br /> &lt;/tr&gt;<br /> &lt;tr&gt;<br /> &lt;td rowspan="2"&gt;2. és 3. sor 1. oszlop &lt;/td&gt;<br /> &lt;td&gt;2. sor 2. oszlop &lt;/td&gt;<br /> &lt;td&gt;2. sor 3. oszlop &lt;/td&gt;<br /> &lt;/tr&gt;<br /> &lt;tr&gt;<br /> &lt;td&gt;3. sor 2. oszlop &lt;/td&gt;<br /> &lt;td&gt;3. sor 3. oszlop &lt;/td&gt;<br /> &lt;/tr&gt;<br /> &lt;/table&gt;</span></blockquote>
+<div align="center"><img src="tablazat_cellaosszevonas.PNG" width="436" height="170" /></div>
+<div align="center"><b>13. Ábra</b>: Táblázat cellaösszevonással sor és oszlopirányban</div>
+<div align="left"><i><b> A táblázat egyéb részei</b></i><br /> A táblázathoz megadható egy <i>táblázat felirat</i>. Ez az elemhez tartozó szöveg, így azon belül is kell megadni. Pontosan a table tag után kell következnie és csak egy lehet egy táblázaton belül.<br />
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;t</span><span face="courier new,courier" style="font-family: 'courier new', courier;">able&gt;<br /> </span><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;caption&gt;A táblázat címe&lt;/caption&gt;<br /> </span><span face="courier new,courier" style="font-family: 'courier new', courier;">...<br /> </span><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;/table&gt;</span></blockquote>
+</div>
+</div>
+</div>
+</div>
+<p>A következő tag-ek szerepe, hogy a táblázatot részegységekre lehessen bontani, így ezen egységek szerint lehet rájuk hivatkozni formázáskor.<br /> Az egyik ilyen egység az oszlop. Fontos, hogy ezek nem definiálják strukturálisan az oszlopokat, csak formázáskor lehet így hivatkozni a korábban leírt módon létrehozott oszlopokra. Az oszlop tag-nek nincs lezáró párja, így önmagában kell lezárni:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;col /&gt;</span></blockquote>
+<p>Annyi oszlopot célszerű felvenni, ahány tényleges oszlop van, egyébként balról jobbra haladva értelmezi, azaz ha kevesebb col tag van, akkor az utolsó oszlopokra nem tudunk hivatkozni.<br /> Az oszlopokat, a cellákhoz hasonlóan, ki lehet terjeszteni, de ennek csak az a szerepe, hogy egyben tudjak rájuk hivatkozni.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;col span="2" /&gt;</span></blockquote>
+<p>Az oszlopokat lehet csoportosítani, így több oszlopra is lehet egyszerre stílust megadni. Az <i>oszlopcsoportok </i>mindig rögtön a <span face="courier new,courier" style="font-family: 'courier new', courier;">table </span>vagy ha van, a <span face="courier new,courier" style="font-family: 'courier new', courier;">caption </span>tag után következnek.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;table&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;caption&gt;A táblázat címe&lt;/caption&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;colgroup id="balKetto"&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;col /&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;col /&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;/colgroup&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;colgroup id="jobbKetto"&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;col /&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;col /&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;/colgroup&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">...</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;/table&gt;</span></blockquote>
+<p>A táblázat sorait is három régióra lehet csoportosítani: <i>fej, törzs és láb</i>. Ennek a szerepe ismét az, hogy ezekre a sorokra formázáskor egyszerre tudjunk hivatkozni. Továbbá ha egy táblázatnak annyi sora van, hogy nyomtatás több oldalra tördeli, akkor minden nyomtatott oldal tetejére és aljára megjeleníti a fejlécet és a láblécet. Alapvetően ezek az elemek nem hordoznak formázást, nekünk kell stílus megadásával formátumot adni nekik. A három blokkot célszerű együtt használni, de csak akkor kell kiírni, ha van olyan táblázat sor, amelyik bele tartozik a blokkba. Viszont ezeken a részeken kívüli sort ne írjunk a táblázatba, azaz minden sort soroljunk be valamelyik blokkba. A részek megadásának sorrendje mindig fej, majd láb és végül a törzs. Ez értelemszerűen közvetlenül a <span face="courier new,courier" style="font-family: 'courier new', courier;">caption </span>illetve <span face="courier new,courier" style="font-family: 'courier new', courier;">colgroup </span>(esetleg csak <span face="courier new,courier" style="font-family: 'courier new', courier;">col</span>) tag-ek után következik.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;table&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;caption&gt;A táblázat címe&lt;/caption&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;colgroup&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;col /&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">...</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;/colgroup&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">...</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;thead&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;tr&gt;...&lt;/tr&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> ...</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;/thead&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;tfoot&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;tr&gt;...&lt;/tr&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> ...</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;/tfoot&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;tbody&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;tr&gt;...&lt;/tr&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"> ...</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;/tbody&gt;</span><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;/table&gt;</span></blockquote>
+<p>Egyik részből se lehet cellát sor szerint kiterjeszteni másik részbe, azaz a fej részből a törzsbe, vagy a törzsből a lábba.</p>
+<p><i>Megjegyzés</i><br /> Azokat a cellákat, amelyeknek nincs tartalma, bizonyos böngészők nem jelenítik meg. Így, ha nem is akarunk semmit írni egy cellába, akkor is kell tartalmának lenni. Ekkor egy szóközt írunk bele, amihez a helyettesítő kódot használjuk.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;td&gt;&amp;nbsp;&lt;/td&gt;</span></blockquote>
+<p><span size="3" style="font-size: medium;"><b>Táblázat formázása<br /> </b></span><br /> Ahogy az előzőekből kitűnik, a táblázatok formázása a különböző táblázat elemek szerint történik. Ezek az elemek maga a táblázat, a táblázat felirata, a három része (fej, törzs, láb), a sorai, az oszlopai illetve az oszlopok csoportjai és a cellái.<br /> A táblázat feliratához meg lehet adni, hogy alatta vagy fölötte helyezkedjen el</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">caption_side : top / bottom;</span></blockquote>
+<p>valamint szövegigazítással (5. lecke), hogy balra, jobbra, vagy középre kerüljön.<br /> A táblázat keretének két módja van. Az egyik, amikor minden cellának külön kerete van (<span face="courier new,courier" style="font-family: 'courier new', courier;">separate</span>), ez a hagyományos HTML stílus. Valamint, amikor a cellák külön keretvonalait összevonja egy vonallá (<span face="courier new,courier" style="font-family: 'courier new', courier;">collapse</span>), ez az általános táblázatos keret megjelenési mód.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">border-collapse: separate / collapse;</span></blockquote>
+<div align="center"><img src="tablazat_keretvonal_ossszevonas.png" width="525" height="126" /></div>
+<div align="center"><b>14. Ábra</b>: A táblázat keretvonalának összevonása</div>
+<p><br /> Ezen kívül a táblázat többi részére: blokkok, sorok, oszlopok és cellák, megadható tulajdonságok a méret, keret, margó (külső és belső) és háttér (6. Lecke). A soroknak és a celláknak, illetve a táblázat három fő részének a tartalmára vonatkozó szövegformázások (5. Lecke) is megadhatóak. Van néhány feltétel, hogy mely tulajdonságot csak mely tag-nél, illetve milyen beállításnál lehet használni:</p>
+<ul>
+<li>Belső margó (<span face="courier new,courier" style="font-family: 'courier new', courier;">padding</span>) csak a celláknak adható meg, illetve a táblázatnak (a táblázat széle és a celláinak távolsága), de csak ha szétválasztott keret van megadva (<span face="courier new,courier" style="font-family: 'courier new', courier;">separate</span>).</li>
+<li>Külső margó (<span face="courier new,courier" style="font-family: 'courier new', courier;">margin</span>) csak a táblázatnak adható meg.</li>
+<li>Az oszlopoknak és oszlopcsoportoknak, valamint a fej, törzs, láb blokkoknak a keretük csak akkor formázható, ha a keret össze van vonva egy vonallá (<span face="courier new,courier" style="font-family: 'courier new', courier;">collapse</span>).</li>
+<li>Az oszlopoknak és oszlopcsoportoknak csak a keretük, hátterük, szélességük és láthatóságuk (9. Lecke) formázható.</li>
+</ul>
+<p>Vigyázat, ha egy cellának szélességet adunk, akkor az az egész oszlopra vonatkozik! Ezért nagyon kell ügyelni arra, hogy ne adjunk meg egymásnak ellentmondó adatokat. Minden tulajdonságot a neki megfelelő elemhez rendeljünk, így egy oszlop szélességét oszlophoz rendeljük a stíluslapon és ne cellához!</p>
+<p>Bizonyos tulajdonságokat megadhatunk sorra illetve oszlopra vonatkozóan (például egy cella színét). A sorra megadott tulajdonság felülírja az oszlopra megadott tulajdonságot.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id57">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_problem.gif" /><h2 class="iDeviceTitle">Feladat</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta57_23_5" class="block iDevice_content">
+Készítsen olyan oldalt, amely tartalmazza az aktuális órarendjét! Az órarend első sorába írja a napokat, első oszlopába az órákat, utolsó sorába az aznapi órák számát! A megfelelő cellákba írja be a kurzusokat, ahol szükséges vonja össze a cellákat! Formázza megfelelően a lábléc sort, fejlécsort és oszlopot! Emelje ki formázással azokat a cellákat, amelyek tartalmaznak szöveget! Használja a keret, háttér, belső margó és szövegformázásokat!  <o:p></o:p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultichoiceIdevice em_iDevice" id="id58">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Feleletválasztós teszt</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<form name="multi-choice-form-58_2" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion58_2" class="block question iDevice_content">
+A táblázatok szerkezetének definiálásának módszere:
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_5" class="sr-av"><a href="#answer-58_5">Beállítás 1</a></label><input type="radio" name="option58_2" id="i58_5" onclick="getFeedback(0,3,'58_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_5"><a name="answer-58_5"></a>
+<div id="taans58_5" class="block iDevice_content">
+Először a táblázatot adjuk meg, azon belül sorokat, azokon belül pedig a cellákat.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_375" class="sr-av"><a href="#answer-58_375">Beállítás 2</a></label><input type="radio" name="option58_2" id="i58_375" onclick="getFeedback(1,3,'58_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_375"><a name="answer-58_375"></a>
+<div id="taans58_375" class="block iDevice_content">
+Először a táblázatot adjuk meg, azon belül sorokat és oszlopokat.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_378" class="sr-av"><a href="#answer-58_378">Beállítás 3</a></label><input type="radio" name="option58_2" id="i58_378" onclick="getFeedback(2,3,'58_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_378"><a name="answer-58_378"></a>
+<div id="taans58_378" class="block iDevice_content">
+Először a táblázatot adjuk meg, azon belül oszlopokat és azokon belül a cellákat.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b58_2" class="feedback js-hidden"><a name="sa0b58_2"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b58_2" class="feedback js-hidden"><a name="sa1b58_2"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b58_2" class="feedback js-hidden"><a name="sa2b58_2"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-58_5">Correct Option</a> (<a href="#sa0b58_2">Visszajelzés</a>)</li>
+<li><a href="#answer-58_375">Rossz</a> (<a href="#sa1b58_2">Visszajelzés</a>)</li>
+<li><a href="#answer-58_378">Rossz</a> (<a href="#sa2b58_2">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-58_381" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion58_381" class="block question iDevice_content">
+Melyik állítás helytelen?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_384" class="sr-av"><a href="#answer-58_384">Beállítás 1</a></label><input type="radio" name="option58_381" id="i58_384" onclick="getFeedback(0,3,'58_381','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_384"><a name="answer-58_384"></a>
+<div id="taans58_384" class="block iDevice_content">
+Minden sorban annyi oszlop van, ahány cella szerepel.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_387" class="sr-av"><a href="#answer-58_387">Beállítás 2</a></label><input type="radio" name="option58_381" id="i58_387" onclick="getFeedback(1,3,'58_381','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_387"><a name="answer-58_387"></a>
+<div id="taans58_387" class="block iDevice_content">
+A táblázat oszlopait megadó col tag-nek csak formázás szempontjából van funkciója.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_390" class="sr-av"><a href="#answer-58_390">Beállítás 3</a></label><input type="radio" name="option58_381" id="i58_390" onclick="getFeedback(2,3,'58_381','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_390"><a name="answer-58_390"></a>
+<div id="taans58_390" class="block iDevice_content">
+A táblázatnak annyi oszlopa van, ahány cella van a legtöbb cellás sorban (összevonások nélkül).
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b58_381" class="feedback js-hidden"><a name="sa0b58_381"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b58_381" class="feedback js-hidden"><a name="sa1b58_381"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b58_381" class="feedback js-hidden"><a name="sa2b58_381"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-58_384">Correct Option</a> (<a href="#sa0b58_381">Visszajelzés</a>)</li>
+<li><a href="#answer-58_387">Rossz</a> (<a href="#sa1b58_381">Visszajelzés</a>)</li>
+<li><a href="#answer-58_390">Rossz</a> (<a href="#sa2b58_381">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-58_393" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion58_393" class="block question iDevice_content">
+Hogyan működik a cellaösszevonás?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_396" class="sr-av"><a href="#answer-58_396">Beállítás 1</a></label><input type="radio" name="option58_393" id="i58_396" onclick="getFeedback(0,3,'58_393','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_396"><a name="answer-58_396"></a>
+<div id="taans58_396" class="block iDevice_content">
+Az első cellában definiálva lehet megadni, hogy mennyi sorra vagy oszlopra terjesztjük ki.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_399" class="sr-av"><a href="#answer-58_399">Beállítás 2</a></label><input type="radio" name="option58_393" id="i58_399" onclick="getFeedback(1,3,'58_393','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_399"><a name="answer-58_399"></a>
+<div id="taans58_399" class="block iDevice_content">
+Az összevonandó cellákban adjuk meg, hogy melyiket melyikkel vonjuk össze.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_402" class="sr-av"><a href="#answer-58_402">Beállítás 3</a></label><input type="radio" name="option58_393" id="i58_402" onclick="getFeedback(2,3,'58_393','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_402"><a name="answer-58_402"></a>
+<div id="taans58_402" class="block iDevice_content">
+Minden sor <font face="courier new,courier" size="2">tr </font>tag-ében megadjuk, hogy mely cellákat vonjuk össze az adott sorban.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b58_393" class="feedback js-hidden"><a name="sa0b58_393"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b58_393" class="feedback js-hidden"><a name="sa1b58_393"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b58_393" class="feedback js-hidden"><a name="sa2b58_393"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-58_396">Correct Option</a> (<a href="#sa0b58_393">Visszajelzés</a>)</li>
+<li><a href="#answer-58_399">Rossz</a> (<a href="#sa1b58_393">Visszajelzés</a>)</li>
+<li><a href="#answer-58_402">Rossz</a> (<a href="#sa2b58_393">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-58_405" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion58_405" class="block question iDevice_content">
+Melyik állítás helytelen?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_408" class="sr-av"><a href="#answer-58_408">Beállítás 1</a></label><input type="radio" name="option58_405" id="i58_408" onclick="getFeedback(0,3,'58_405','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_408"><a name="answer-58_408"></a>
+<div id="taans58_408" class="block iDevice_content">
+Az oszlopok szélességét meg lehet határozni a táblázat teljes szélességének az oszlopokra való szétosztási arányának megadásával.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_411" class="sr-av"><a href="#answer-58_411">Beállítás 2</a></label><input type="radio" name="option58_405" id="i58_411" onclick="getFeedback(1,3,'58_405','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_411"><a name="answer-58_411"></a>
+<div id="taans58_411" class="block iDevice_content">
+Az oszlopok szélességét meg lehet határozni akármelyik cellájának szélességének megadásával.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_414" class="sr-av"><a href="#answer-58_414">Beállítás 3</a></label><input type="radio" name="option58_405" id="i58_414" onclick="getFeedback(2,3,'58_405','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_414"><a name="answer-58_414"></a>
+<div id="taans58_414" class="block iDevice_content">
+Az oszlopok szélességét meg lehet határozni a <font face="courier new,courier">col </font>tag szélességének megadásával.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b58_405" class="feedback js-hidden"><a name="sa0b58_405"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b58_405" class="feedback js-hidden"><a name="sa1b58_405"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b58_405" class="feedback js-hidden"><a name="sa2b58_405"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-58_408">Correct Option</a> (<a href="#sa0b58_405">Visszajelzés</a>)</li>
+<li><a href="#answer-58_411">Rossz</a> (<a href="#sa1b58_405">Visszajelzés</a>)</li>
+<li><a href="#answer-58_414">Rossz</a> (<a href="#sa2b58_405">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-58_417" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion58_417" class="block question iDevice_content">
+A táblázat részei és megadásának sorrendje:
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_420" class="sr-av"><a href="#answer-58_420">Beállítás 1</a></label><input type="radio" name="option58_417" id="i58_420" onclick="getFeedback(0,3,'58_417','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_420"><a name="answer-58_420"></a>
+<div id="taans58_420" class="block iDevice_content">
+<font face="courier new,courier">thead, tfoot, tbody</font>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_423" class="sr-av"><a href="#answer-58_423">Beállítás 2</a></label><input type="radio" name="option58_417" id="i58_423" onclick="getFeedback(1,3,'58_417','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_423"><a name="answer-58_423"></a>
+<div id="taans58_423" class="block iDevice_content">
+<font face="courier new,courier">table, td, th</font>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i58_426" class="sr-av"><a href="#answer-58_426">Beállítás 3</a></label><input type="radio" name="option58_417" id="i58_426" onclick="getFeedback(2,3,'58_417','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-58_426"><a name="answer-58_426"></a>
+<div id="taans58_426" class="block iDevice_content">
+<font face="courier new,courier">table, tbody, tfoot</font>
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b58_417" class="feedback js-hidden"><a name="sa0b58_417"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b58_417" class="feedback js-hidden"><a name="sa1b58_417"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b58_417" class="feedback js-hidden"><a name="sa2b58_417"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-58_420">Correct Option</a> (<a href="#sa0b58_417">Visszajelzés</a>)</li>
+<li><a href="#answer-58_423">Rossz</a> (<a href="#sa1b58_417">Visszajelzés</a>)</li>
+<li><a href="#answer-58_426">Rossz</a> (<a href="#sa2b58_417">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

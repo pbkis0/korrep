@@ -1,0 +1,510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="hu" xml:lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>1. Lecke: A web működésének és használatának alapjai </title>
+<meta http-equiv="content-language" content="hu" />
+<meta name="generator" content="eXeLearning 2.0.4 - exelearning.net" />
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Show",hide:"Elrejtés",showFeedback:"Mutassa a visszajelzést",hideFeedback:"Visszajelzés elrejtése",correct:"Helyes",incorrect:"Incorrect",menu:"Menu"}</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+<script type="text/javascript" src="SCOFunctions.js"></script>
+</head>
+<body class="exe-scorm" onload="loadPage()" onunload="unloadPage()"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="outer">
+<div id="main">
+<div id="nodeDecoration"><h1 id="nodeTitle">1. Lecke: A web működésének és használatának alapjai</h1></div>
+<div class="iDevice_wrapper objectivesIdevice em_iDevice" id="id13">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_objectives.gif" /><h2 class="iDeviceTitle">Célok</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta13_60_5" class="block iDevice_content">
+
+<ul>
+	<li><!--[if !supportLists]--><!--[endif]-->
+	A tanuló megértse a web alapvető működését.
+	</li>
+	<li>Ismerje a dinamikus és statikus weboldalak
+	jelentését, a web-programozási lehetőségeket.
+	</li>
+	<li>Ismerje a statikus weboldalak készítéséhez
+	szükséges nyelveket.
+	</li>
+	<li>Ismerje a böngészőprogramok legfontosabb
+	gombjait.
+	</li>
+	<li>Ismerjen jellemző weblapkészítési hibákat</li>
+</ul>
+<ul>
+</ul>
+<ul>
+</ul>
+<!--[if !supportLists]--><!--[endif]--><!--[if !supportLists]--><!--[endif]--><!--[if !supportLists]--><!--[endif]--><!--[if !supportLists]--><!--[endif]-->
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id19">
+<div class="iDevice emphasis0">
+<div id="ta19_1" class="block iDevice_content">
+<p><span size="3" style="font-size: medium;"><b>Tartalom</b></span></p>
+<ul>
+<li>a web működése, kliens-szerver kommunikáció</li>
+<li>statikus és dinamikus weboldalak</li>
+<li>web-programozási módok</li>
+<li>a fejlesztéshez szükséges nyelvek: HTML, CSS</li>
+<li>böngészőprogramok weblapkészítési hibák</li>
+</ul>
+<ul></ul>
+<p><b><span size="3" style="font-size: medium;"> A web működése</span></b></p>
+<p class="MsoNormal">A weblapkészítés megtanulásához szükséges, hogy értsük a web alapvető működését, azaz milyen folyamat játszódik le, amikor, mint felhasználó, ráklikkelek a böngészőben egy linkre majd megjelenik a kívánt weboldal. Ilyenkor valójában egy kétszereplős kommunikáció zajlik le. A két szereplő két alkalmazás: a <b><i>szerver</i></b>, amely a webszerver és a <b><i>kliens</i></b>, amely a böngésző. Ezek fizikailag lehetnek ugyanazon a számítógépen, de bármilyen távol lévő két számítógépen is. A folyamat fázisai (lásd 1. ábra):</p>
+<ol>
+<li>Az eseményt, például a felhasználó ráklikkel egy linkre, a kliens feldolgozza és összeállít egy kérést.<o:p></o:p></li>
+<li>A kliens a kérést elküldi a szervernek.<o:p></o:p></li>
+<li>A szerver a kérést feldolgozza és összeállítja a választ.<o:p></o:p></li>
+<li>A szerver visszaküldi a választ a kliensnek.<o:p></o:p></li>
+<li>A kliens értelmezi a választ, összeállítja a weblapot, amelyet megjelenít.</li>
+</ol>
+<div align="center"><img src="web_usage_small.gif" height="173" width="600" /></div>
+<div align="left">
+<div align="center">
+<p class="MsoNormal" style="text-align: center;" align="center"><b>1. Ábra</b>: Kliens-szerver kommunikáció<o:p></o:p></p>
+</div>
+<p>Léteznek olyan népszerű, korszerű technológiák, amelyek ezt a kommunikációt némileg módosítják. Például az Ajax segítségével a kliens tud kommunikálni a szerverrel a teljes oldal újratöltése nélkül, tehát a kommunikáció módja ugyanez, de a böngésző nem tölti újra be a weboldalt, csak az oldal egy részét módosítja.</p>
+<p class="MsoNormal"><b><span size="3" style="font-size: medium;">Web-programozás</span></b></p>
+<p class="MsoNormal">A weboldalak tartalmazhatnak programkódot, ún. <b><i>szkriptet</i></b> (kisebb utasítássorozat), amelyek befolyásolják a fenti folyamatot. A programokat két csoportra lehet bontani. Az egyik a <b><i>kliens oldali</i> program</b> (ilyen nyelv a <em>Javascript</em>), amelyet a böngésző hajt végre és az 1. és az 5. pontban fut le. Valamint a <b><i>szerver oldali program</i> </b>(ilyen nyelv például a <em>PHP</em>), amit a webszerver hajt végre a 3. pontban. Bizonyos feladatokat egyértelműen el lehet dönteni, hogy kliens vagy szerver oldalon lehet végrehajtani (pl. ha a szükséges adat szerver oldalon van adatbázisban, csak szerver oldali programozással lehet kiolvasni), másoknál a webfejlesztőnek kell dönteni. Ilyenkor több szempont szerint kell mérlegelni: hálózati terhelés csökkentése, kliens ill. szerver gépek terhelésének csökkentése,<span> </span>csak megfelelő adatok kliens oldalra küldése, stb.</p>
+<p class="MsoNormal">Ezt jól példázza egy bejelentkező weboldal. A nyitó oldalon található egy bejelentkező űrlap két beviteli mezővel (azonosító, jelszó) illetve egy bejelentkező gomb. Amikor a felhasználó ráklikkel a gombra, egy kliens oldali szkript ellenőrzi, hogy a felhasználó kitöltötte-e mindkét űrlapmezőt, különben el sem küldi a kérést a szervernek. Ha kitöltötte, akkor elmegy a kérés, amelyben szereplő azonosító és jelszó helyességét egy szerver oldali szkript ellenőrzi a szerver oldali adatbázis alapján. Az eredmény függvényében más-más weboldal állít össze válaszként (vagy a bejelentkezett weboldalt, vagy egy hiba üzenetet tartalmazó weboldalt).<o:p></o:p></p>
+<p class="MsoNormal">Az oldalak tartalmának összeállítása szerint két csoportra bontjuk a weboldalakat. A <b><i>statikus weboldalak</i></b> tartalma állandó, az oldal forráskódjában szerepel. Ilyen oldalakat olyan témára érdemes készíteni, amelyek tartalma nem változik. A másik kategória a <b><i>dinamikus weboldalak</i></b>, amelyek tartalmát legtöbbször valamilyen adatforrásból (adatbázis, fájl) program állít elő. Így ezek tényleges tartalma mindig az adatforrás aktuális tartalmától függ, percről percre változhat, például hírek, áruházak, fórumok. Míg statikus weboldalakat lehet készíteni programozási tudás nélkül, dinamikus weboldalak készítéséhez mindenképp szükséges kliens és szerver oldali programozási ismeret.</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal"><span size="3" style="font-size: medium;"><b>Nyelvek<br /> </b></span></p>
+<p class="MsoNormal">Ez a tananyag statikus weboldalak elkészítésével foglalkozik, amely nem számít programozásnak. Egy ún. jelölő nyelvet kell haszni, a <b><i>HTML</i></b> <i>(<b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage)</i> nyelvet, amely elsősorban a weboldal tartalmáért felelős. Továbbá egy másik, szintén jelölő és nem programnyelvet is használunk, a <b><i>CSS</i></b><i> (<b>C</b>ascading <b>S</b>tyle <b>S</b>heets)</i><span style="background: white none repeat scroll 0% 50%; font-size: 9pt; font-family: 'Verdana','sans-serif'; color: black; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> </span>nyelvet, amely a weboldal kinézetét határozza meg. Ezekről később részletesen lesz szó.</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal"><span size="3" style="font-size: medium;"><b>Böngésző program</b></span></p>
+<p class="MsoNormal">A böngésző programokat mindenki ismeri és használja nap, mint nap. A programok típusuk és verziójuk szerint eltérnek, de az alapvető funkció mindben egyformán megtalálható (2. Ábra).</p>
+<div class="MsoNormal" align="center"><img src="browser_buttons.gif" height="137" width="400" /></div>
+<div class="MsoNormal" align="center"><b>2. Ábra</b>: A böngészők alapvető funkciói</div>
+<p class="MsoNormal">Amikor a böngésző egy weboldalt lekér a szerverről, akkor az letöltődik és tárolódik lokálisan. Ezeket a weboldalakat felfűzi egy listába a böngésző ablakonként, illetve böngésző-laponként (fülenként). A <i>Vissza</i> (1) gomb egyet visszalép ebben a listában és az ott szereplő oldalt jeleníti meg újra. Az <i>Előre</i> (2) gomb a listában előre lép egyet és jeleníti meg az oldalt. A <i>Frissít</i> (4) gomb az utoljára elküldött kérést újra elküldi a szerverre és az eredményt újra megjeleníti. Tehát ha a kéréssel adatokat is küldtünk, aminek hatására a szerver oldalon egy művelet lefutott, akkor ez a folyamat újra megismétlődik! A <i>Leállítás</i> (5) gomb a fent részletezett folyamatot állítja le ott, ahol épp tart. Továbbá minden böngésző tartalmaz egy Címsort (3), amelyben az aktuálisan megjelenített weboldal <b><i>url</i></b>-je (<b><span>U</span></b><span>nified <b>R</b>esource <b>L</b>ocator</span>) található, azaz a felhasznált protokollt, a megjelenített weboldal teljes útvonalát (a domain, fájl elérési útvonala és a fájlnév), valamint további paramétereket. A böngészés irányítható, ha az url-t a felhasználó a címsorban közvetlenül kitölti.<o:p></o:p></p>
+<p class="MsoNormal">A jelenlegi böngésző használati statisztikák megtalálhatók itt:</p>
+<blockquote><span style="font-size: 12pt; font-family: 'Times New Roman','serif';"><a href="http://w3schools.com/browsers/browsers_stats.asp">http://w3schools.com/browsers/browsers_stats.asp</a></span></blockquote>
+<blockquote></blockquote>
+<p class="MsoNormal"><span size="3" style="font-size: medium;"><b>Weblapkészítési hibák</b></span></p>
+<p class="MsoNormal">A weblapkészítés elkezdése előtt fontos, hogy ismerjük az általános web-tervezési hibákat, milyen hibákba nem szabad esni egy oldal elkészítésekor, ha sikeres weboldalt szeretnénk készíteni.<o:p></o:p></p>
+<ol>
+<li><i>Maradjunk az általánosan elfogadott trendeknél!</i> Ne találjunk ki szerintünk érdekes és újító megoldásokat, mert ezeket a látogatók nem ismerik és csak összezavarja őket. Ha nem találják meg az oldalon a keresett tartalmat, másik oldalon fogják megkeresni.</li>
+<li><i>Ne használjunk az oldal vezérléséhez bonyolult képeket és animációkat!</i> Ezek lehetnek nagyon szépek, de az oldal használatát, áttekinthetőségét nehezítik. Továbbá a webes keresőknek nehezítik a linkek követését, a webodalak feltérképezését.</li>
+<li><i>Ne készítsünk teljes weboldalt Adobe Flash-ben!</i> Ezek az oldalak nagyon szépek tudnak lenni, de funkcionálisan rettenetesen sok problémát okoznak.</li>
+<li><i>Ne készítsünk értelmetlen nyitó oldalt</i>, ahol a felhasználónak valamit választani kell, vagy klikkelni a belépéshez! Ez megzavarja a keresőket, bosszantja a felhasználókat, ráadásul semmi haszna.</li>
+<li><i>Ne várjuk el a felhasználótól, hogy milyen böngészővel és milyen felbontásban nézze az oldalunkat!</i> Senki nem fog a kedvünkért böngészőt, vagy felbontást változtatni, inkább elnavigál az oldalunkról. Készítsük el az oldalt úgy, hogy minden böngészőben és minden felbontásban megfelelő legyen!</li>
+<li><i>Kerüljük a felugró ablakokat!</i> Minden felhasználót bosszant a felugró ablak, ráadásul általában olvasatlanul zárják be őket. Ezeket csak tényleg indokolt esetben használjuk.</li>
+<li><i>Ne indítsunk zenét az oldal betöltődéskor!</i> Ha szeretnénk zenét az oldalhoz, akkor tegyünk rá egy lejátszót és bízzuk a felhasználóra, hogy elindítsa!</li>
+<li><i>A linkek mindig jól elkülönüljenek a többi tartalomtól</i> és mindig láthatóan változzon, ha az egeret fölé viszi a felhasználó! Ezek alapvető elemei az oldalnak, fontosak a vezérléshez. Ha a felhasználó nem találja őket, nehezen fog navigálni.</li>
+<li><i>Kerüljük az extrém módon kirívó tartalmat az oldalon!</i> Az ilyen elemek a reklámokra jellemző, amit a felhasználók nagy része átugrik, így figyelmen kívül hagy. Ezzel értékes információkat fog elveszteni.</li>
+<li><i>Kerüljük az olvashatatlan tartalmat!</i> A színek kavalkádja, a speciális betűtípusok, a zavaró háttérképek nagyban ronthatják az olvashatóságát, ami elriasztja a felhasználókat az oldalunkról.</li>
+</ol>
+<p class="MsoNormal">Természetesen sok egyéb hibát is fel lehetne sorolni. Célszerű nyitott szemmel járni a weben és gyűjteni a rossz és a jó megoldásokat, így tudunk jobb és jobb weboldalakat fejleszteni.<o:p></o:p></p>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id20">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_problem.gif" /><h2 class="iDeviceTitle">Feladat</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta20_87_5" class="block iDevice_content">
+
+<p class="MsoNormal">
+Válasszon ki néhány népszerű weboldalt a következő
+kategóriákból:<o:p></o:p>
+</p>
+<ul>
+	<li>cég weboldala<o:p></o:p></li>
+	<li>szervezet vagy intézmény weboldala<o:p></o:p></li>
+	<li>hírportál<o:p></o:p></li>
+	<li>valamilyen témát bemutató weboldal<o:p></o:p></li>
+	<li>közösségi portál<o:p></o:p></li>
+	<li>webáruház</li>
+</ul>
+<p class="MsoNormal">
+Alkosson véleményt az oldalakról 2-3 másodperc alatt, majd
+elemezze ki, hogy miért ez a véleménye!<o:p></o:p><br />
+Alkosson véleményt 1-2 perc után az oldal
+használhatóságáról, majd elemezze ki, hogy miért ez a véleménye!<o:p></o:p><br />
+Gyűjtse ki kategóriánként, hogy milyen tartalmi és külalaki összetevők
+jellemzik az ilyen oldalakat, azaz miben hasonlítanak az egy kategóriába eső
+oldalak!<o:p></o:p><br />
+Állítson fel értékelési szempontokat kategóriánként és
+pontozza az oldalakat!
+</p>
+<p class="MsoNormal">
+Néhány szempont az értékelésekhez:
+</p>
+<ul>
+	<li>Milyen oldalakból áll a webhely? Mit tartalmaznak az egyes
+	oldalak?<o:p></o:p></li>
+	<li>Milyen funkciókat tartalmaz a webhely?<o:p></o:p></li>
+	<li>Az oldalon hol helyezkednek el a funkciók?<o:p></o:p></li>
+	<li>Mennyire áttekinthető az oldal?<o:p></o:p></li>
+	<li>Mennyi médiaelem található az oldalon (kép, hang, animáció,
+	stb)?<o:p></o:p></li>
+	<li>Milyen szín-összeállítású az oldal, hogyan kapcsolódik a
+	tartalmához?<o:p></o:p></li>
+	<li>Mennyi színt használ és azok milyen hatást keltenek a
+	felhasználóban?<o:p></o:p></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultichoiceIdevice em_iDevice" id="id21">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Feleletválasztós teszt</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<form name="multi-choice-form-21_2" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion21_2" class="block question iDevice_content">
+A web működése egy kétoldalú kommunikáción alapul. Mi a két szereplő?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_5" class="sr-av"><a href="#answer-21_5">Beállítás 1</a></label><input type="radio" name="option21_2" id="i21_5" onclick="getFeedback(0,3,'21_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_5"><a name="answer-21_5"></a>
+<div id="taans21_5" class="block iDevice_content">
+A webet használó személy és a számítógép. 
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_48" class="sr-av"><a href="#answer-21_48">Beállítás 2</a></label><input type="radio" name="option21_2" id="i21_48" onclick="getFeedback(1,3,'21_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_48"><a name="answer-21_48"></a>
+<div id="taans21_48" class="block iDevice_content">
+A kliens, ami a böngésző, és a szerver, ami a webszerver
+alkalmazás.<o:p></o:p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_51" class="sr-av"><a href="#answer-21_51">Beállítás 3</a></label><input type="radio" name="option21_2" id="i21_51" onclick="getFeedback(2,3,'21_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_51"><a name="answer-21_51"></a>
+<div id="taans21_51" class="block iDevice_content">
+A kliens, aki a webet használó személy, és a szerver, ami
+egy távoli számítógép.<o:p></o:p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b21_2" class="feedback js-hidden"><a name="sa0b21_2"></a>
+<p>Rossz</p>
+</div>
+<div id="sa1b21_2" class="feedback js-hidden"><a name="sa1b21_2"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa2b21_2" class="feedback js-hidden"><a name="sa2b21_2"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-21_5">Rossz</a> (<a href="#sa0b21_2">Visszajelzés</a>)</li>
+<li><a href="#answer-21_48">Correct Option</a> (<a href="#sa1b21_2">Visszajelzés</a>)</li>
+<li><a href="#answer-21_51">Rossz</a> (<a href="#sa2b21_2">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-21_54" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion21_54" class="block question iDevice_content">
+Mi a különbség a statikus és a dinamikus weboldalak között? 
+<span style="font-size: 12pt; font-family: 'Times New Roman','serif'"></span>
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_57" class="sr-av"><a href="#answer-21_57">Beállítás 1</a></label><input type="radio" name="option21_54" id="i21_57" onclick="getFeedback(0,3,'21_54','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_57"><a name="answer-21_57"></a>
+<div id="taans21_57" class="block iDevice_content">
+<!--[if !supportLists]--><span style="font-family: Symbol"><span><span style="font-family: 'Times New Roman'; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal"></span></span></span>A statikus a helyi számítógépen van, a dinamikus
+pedig egy távoli gépen.<o:p></o:p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_60" class="sr-av"><a href="#answer-21_60">Beállítás 2</a></label><input type="radio" name="option21_54" id="i21_60" onclick="getFeedback(1,3,'21_54','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_60"><a name="answer-21_60"></a>
+<div id="taans21_60" class="block iDevice_content">
+A statikus oldal mindig egy helyen van, a dinamikust pedig
+időnként átmozgatják egy másik számítógépre.<o:p></o:p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_63" class="sr-av"><a href="#answer-21_63">Beállítás 3</a></label><input type="radio" name="option21_54" id="i21_63" onclick="getFeedback(2,3,'21_54','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_63"><a name="answer-21_63"></a>
+<div id="taans21_63" class="block iDevice_content">
+A statikus oldal tartalma állandó és a forrásba bele van
+írva, a dinamikus oldal tartalma változó, valamilyen programmal állítják el.<o:p></o:p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b21_54" class="feedback js-hidden"><a name="sa0b21_54"></a>
+<p>Rossz</p>
+</div>
+<div id="sa1b21_54" class="feedback js-hidden"><a name="sa1b21_54"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b21_54" class="feedback js-hidden"><a name="sa2b21_54"></a>
+<p>Correct Option</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-21_57">Rossz</a> (<a href="#sa0b21_54">Visszajelzés</a>)</li>
+<li><a href="#answer-21_60">Rossz</a> (<a href="#sa1b21_54">Visszajelzés</a>)</li>
+<li><a href="#answer-21_63">Correct Option</a> (<a href="#sa2b21_54">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-21_66" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion21_66" class="block question iDevice_content">
+Mi a HTML?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_69" class="sr-av"><a href="#answer-21_69">Beállítás 1</a></label><input type="radio" name="option21_66" id="i21_69" onclick="getFeedback(0,3,'21_66','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_69"><a name="answer-21_69"></a>
+<div id="taans21_69" class="block iDevice_content">
+Egy  olyan nyelv , amivel weboldalakat lehet leírni.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_72" class="sr-av"><a href="#answer-21_72">Beállítás 2</a></label><input type="radio" name="option21_66" id="i21_72" onclick="getFeedback(1,3,'21_66','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_72"><a name="answer-21_72"></a>
+<div id="taans21_72" class="block iDevice_content">
+Olyan programnyelv,  amivel weboldalakat lehet programozni.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_75" class="sr-av"><a href="#answer-21_75">Beállítás 3</a></label><input type="radio" name="option21_66" id="i21_75" onclick="getFeedback(2,3,'21_66','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_75"><a name="answer-21_75"></a>
+<div id="taans21_75" class="block iDevice_content">
+Olyan programnyelv, amivel  a weboldalak kinézetét lehet meghatározni.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b21_66" class="feedback js-hidden"><a name="sa0b21_66"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b21_66" class="feedback js-hidden"><a name="sa1b21_66"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b21_66" class="feedback js-hidden"><a name="sa2b21_66"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-21_69">Correct Option</a> (<a href="#sa0b21_66">Visszajelzés</a>)</li>
+<li><a href="#answer-21_72">Rossz</a> (<a href="#sa1b21_66">Visszajelzés</a>)</li>
+<li><a href="#answer-21_75">Rossz</a> (<a href="#sa2b21_66">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-21_78" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion21_78" class="block question iDevice_content">
+Mi a CSS?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_81" class="sr-av"><a href="#answer-21_81">Beállítás 1</a></label><input type="radio" name="option21_78" id="i21_81" onclick="getFeedback(0,3,'21_78','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_81"><a name="answer-21_81"></a>
+<div id="taans21_81" class="block iDevice_content">
+Olyan programnyelv, amivel a weboldalak kinézetét lehet leírni.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_84" class="sr-av"><a href="#answer-21_84">Beállítás 2</a></label><input type="radio" name="option21_78" id="i21_84" onclick="getFeedback(1,3,'21_78','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_84"><a name="answer-21_84"></a>
+<div id="taans21_84" class="block iDevice_content">
+Olyan nyelv, amivel weboldalakat lehet készíteni, a HTML  utódja.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_87" class="sr-av"><a href="#answer-21_87">Beállítás 3</a></label><input type="radio" name="option21_78" id="i21_87" onclick="getFeedback(2,3,'21_78','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_87"><a name="answer-21_87"></a>
+<div id="taans21_87" class="block iDevice_content">
+Olyan nyelv, amivel leírható, hogy az oldal hogyan nézzen ki.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b21_78" class="feedback js-hidden"><a name="sa0b21_78"></a>
+<p>Rossz</p>
+</div>
+<div id="sa1b21_78" class="feedback js-hidden"><a name="sa1b21_78"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b21_78" class="feedback js-hidden"><a name="sa2b21_78"></a>
+<p>Correct Option</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-21_81">Rossz</a> (<a href="#sa0b21_78">Visszajelzés</a>)</li>
+<li><a href="#answer-21_84">Rossz</a> (<a href="#sa1b21_78">Visszajelzés</a>)</li>
+<li><a href="#answer-21_87">Correct Option</a> (<a href="#sa2b21_78">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-21_90" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion21_90" class="block question iDevice_content">
+Mire való a böngésző Vissza és Előre gombja? 
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_93" class="sr-av"><a href="#answer-21_93">Beállítás 1</a></label><input type="radio" name="option21_90" id="i21_93" onclick="getFeedback(0,3,'21_90','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_93"><a name="answer-21_93"></a>
+<div id="taans21_93" class="block iDevice_content">
+A már látogatott és a lokálisan eltárolt oldalak láncában
+lehet előre és vissza mozogni, és az oldalakat újra betölteni.<o:p></o:p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_96" class="sr-av"><a href="#answer-21_96">Beállítás 2</a></label><input type="radio" name="option21_90" id="i21_96" onclick="getFeedback(1,3,'21_90','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_96"><a name="answer-21_96"></a>
+<div id="taans21_96" class="block iDevice_content">
+A Vissza gombbal a böngészőben beállított kezdőoldalra lehet
+lépni, az Előre gombbal pedig az oldal elejére.<o:p></o:p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i21_99" class="sr-av"><a href="#answer-21_99">Beállítás 3</a></label><input type="radio" name="option21_90" id="i21_99" onclick="getFeedback(2,3,'21_90','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-21_99"><a name="answer-21_99"></a>
+<div id="taans21_99" class="block iDevice_content">
+Az Előre gombbal a legutoljára látogatott oldalra lehet
+lépni, a Vissza gombbal pedig vissza az aktuális oldalra.<o:p></o:p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b21_90" class="feedback js-hidden"><a name="sa0b21_90"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b21_90" class="feedback js-hidden"><a name="sa1b21_90"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b21_90" class="feedback js-hidden"><a name="sa2b21_90"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-21_93">Correct Option</a> (<a href="#sa0b21_90">Visszajelzés</a>)</li>
+<li><a href="#answer-21_96">Rossz</a> (<a href="#sa1b21_90">Visszajelzés</a>)</li>
+<li><a href="#answer-21_99">Rossz</a> (<a href="#sa2b21_90">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

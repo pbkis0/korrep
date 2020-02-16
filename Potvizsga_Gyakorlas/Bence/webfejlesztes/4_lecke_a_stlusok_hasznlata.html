@@ -1,0 +1,503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="hu" xml:lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>4. Lecke: A Stílusok használata </title>
+<meta http-equiv="content-language" content="hu" />
+<meta name="generator" content="eXeLearning 2.0.4 - exelearning.net" />
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Show",hide:"Elrejtés",showFeedback:"Mutassa a visszajelzést",hideFeedback:"Visszajelzés elrejtése",correct:"Helyes",incorrect:"Incorrect",menu:"Menu"}</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+<script type="text/javascript" src="SCOFunctions.js"></script>
+</head>
+<body class="exe-scorm" onload="loadPage()" onunload="unloadPage()"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="outer">
+<div id="main">
+<div id="nodeDecoration"><h1 id="nodeTitle">4. Lecke: A Stílusok használata</h1></div>
+<div class="iDevice_wrapper objectivesIdevice em_iDevice" id="id41">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_objectives.gif" /><h2 class="iDeviceTitle">Célok</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta41_25_2" class="block iDevice_content">
+
+<ul>
+	<li>Ismerje a stílusformázás előnyeit<o:p></o:p></li>
+	<li>Ismerje a stílusok használatának módjait és precedenciáját<o:p></o:p></li>
+	<li>Ismerje a CSS nyelv szintaktikáját<o:p></o:p></li>
+	<li>Ismerje a kijelölők fajtáit és használatát<o:p></o:p></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id42">
+<div class="iDevice emphasis0">
+<div id="ta42_1" class="block iDevice_content">
+<p><b><span size="3" style="font-size: medium;">Tartalom</span></b></p>
+<ul>
+<li>A stílusformázás előnyei</li>
+<li>Stílus csatolásának módjai a weboldalhoz</li>
+<li>A CSS nyelv és szintaktikája</li>
+<li>A kijelölők fajtái</li>
+<li>A kijelölők kombinálási lehetőségei</li>
+</ul>
+<p> </p>
+<p><b><span size="3" style="font-size: medium;">A stílusformázás előnyei<br /> </span></b><br /> Hagyományosan a HTML nyelv tartalmaz formázási tag-eket illetve attribútumokat. Az oldal megjelenési formáját ezek határozták meg. Ahogy a weboldalak egyre összetettebbek lettek illetve egyre több elemet tartalmaztak, az oldalak forrása túl bonyolulttá vált, egyre nehezebb volt értelmezni a kódot. Az oldalak formátumának módosítása nagyon nehézkes volt és sok hibalehetőséget hordozott magában. Ráadásul bizonyos formázási műveleteket nem lehetett elvégeznia HTML eszközkészletével. Ezért alakult ki az a tendencia, hogy a weboldal külalakjának definiálása váljon el az oldal szerkezetétől. Erre egy külön nyelvet alakítottak ki, a <b>CSS</b> (Cascading Style Sheets) nyelvet, melynek az aktuális verziója a <strong>CSS3</strong>. Innentől kezdve a webfejlesztés ajánlott módszertana, hogy a HTML nyelvet arra használjuk, hogy megadjuk az oldalt felépítő elemeket és az oldal kinézetét stílusok használatával adjuk meg. Ennek több előnye is van:</p>
+<ul>
+<li>A <i>forrás áttekinthetőbb</i>, könnyebb tájékozódni az oldal felépítését illetve az oldal kinézetét meghatározó szempontok szerint.</li>
+<li>A formátumokat <i>egyszer kell megadni</i> és nem annyiszor, ahányszor előfordul.</li>
+<li>A formátumok <i>hordozhatóak</i>, azaz bizonyos stílus formátumokat több weboldalon is használhatunk a stíluslap több weboldalhoz rendelésével.</li>
+<li>Jóval <i>több formázási eszközt</i> használhatunk, mint a HTML nyelvvel.</li>
+<li>Az oldal formátuma <i>könnyebben átalakítható</i>, mivel „csak" a stílusokat kell átdolgozni, amelyet csak egy helyen kell elvégezni és érvényes lesz az összes oldalra, amihez hozzá van rendelve.</li>
+</ul>
+<div align="center"><img src="weboldal_stilusnelkul.jpg" height="396" width="700" /></div>
+<div align="center">A weboldal nyersen, stílus nélkü...</div>
+<div align="center"></div>
+<div align="center"></div>
+<div align="center"><img src="weboldal_stilussal.jpg" height="401" width="700" /></div>
+<div align="center">... és stílussal.</div>
+<div align="center"><b>6. Ábra</b>: Egy példa weboldal stílus nélkül és csatolt stílussal</div>
+<p align="left"><span size="3" style="font-size: medium;"><b> Stílus megadása a weboldalhoz</b></span></p>
+<p align="left">Stílust háromféleképp lehet a weboldalhoz megadni. Lehet közvetlenül a tag-ben, ún. szövegközi stílus, amely csak arra a tag-re vonatkozik.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;<em>tag</em> style="..." &gt;...</span></blockquote>
+<p align="left">(Természetesen a tag szó helyére a kívánt tag elnevezése helyettesítendő. Ezt a jelölés a későbbiekben is ilyen értelemben szerepel a tananyagban.)<br /> Ez csak nagyon indokolt esetben alkalmazandó, használata nehézkes, mert a stílust minden helyen meg kell adni, ahol használni szeretnénk és belefolyik a HTML kódba.</p>
+<p>A másik, amikor az oldal fej részében adjuk meg a stílusleírásokat, az ún. beágyazott stílust, ez az egész oldalra vonatkozik.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;style type="text/css"&gt; ... &lt;/style&gt;</span></blockquote>
+<p align="left">Figyelni kell arra, hogy ebben a részben már a CSS szintaktika érvényes!<br /> A harmadik lehetőség, ha külső állományban írjuk le a stílusokat, majd az állományt az oldalunkhoz csatoljuk, ahogy az előző leckében már szerepelt:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;link href="stilus.css" type="text/css" rel="stylesheet" /&gt;</span></blockquote>
+<p align="left">Ilyenkor természetesen a stílus az összes olyan oldalra vonatkozik, amelyhez a stíluslapot hozzácsatoltuk.</p>
+<p><b><span size="3" style="font-size: medium;"> A CSS nyelv<br /> </span></b><br /> A CSS nyelv szerepe, hogy meghatározza, hogy mely HTML elemek hogyan nézzenek ki. A nyelv kis-nagybetű érzékeny, tehát mindent egységesen kis-nagybetű helyesen kell írni. A formátumok megadása blokkokban történik, amelynek szintaktikája a következő:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> kijelölő{<br /> tulajdonság : érték;<br /> ...<br /> }</span></blockquote>
+<p>A kijelölő határozza meg, hogy az oldalon mely tag-ekre vonatkozik a formátum, amelyet kapcsos zárójelek között adunk meg pontosvesszővel elválasztva. A tulajdonság és értéke között kettőspont található. Mivel több kijelölő is vonatkozhat ugyanarra a tag-re, így fontos a blokkok sorrendjére ügyelni, a később szereplő blokk formátuma felüldefiniálja a korábbi blokkot.<br /> <i>Megjegyzés</i><br /> Érdemes azokat a blokkokat, amelyek ugyanazokat az elemeket jelölik ki, egymás után szerepeltetni. Természetesen, ha lehetséges. Egyik gyakori kezdő hiba, amikor az történik, hogy szeretnénk megváltoztatni egy elem tulajdonságát, de nincs hatása a változtatásnak. Ennek az az oka, hogy valahol később szerepel a stílusban egy másik blokk, ami ugyanerre az elemre vonatkozik és az a stílus felüldefiniálja minden itteni beállításunkat.</p>
+<p>A stílus forrásába is lehet megjegyzéseket fűzni, amelyet nem értelmez a böngésző. Ennek szintaktikája:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> /* megjegyzés */</span></blockquote>
+<p><span size="2" style="font-size: small;"><b> A kijelölők típusai</b></span><br /> A kijelölők mindig egy vagy több tag-et határoznak meg a weboldalon. A pontos hivatkozás eléréséhez a kijelölőknek több típusa létezik:<br /> <br /> <b><i>Univerzális kijelölő</i></b><br /> Ez az oldal összes tag-jét jelenti.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> * { ... }</span></blockquote>
+<p>Az univerzális kijelölőt olyan formátumra szoktuk használni, ami általánosan szinte minden elemre megadható. Például az elemek margóját (6. Lecke) a böngészők másként használják alapértelmezettként, így gyakran kezdjük azzal a stílusleírást, hogy megadjuk minden elemre a nulla margót.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> * { margin : 0px; }</span></blockquote>
+<p><i><b> Elemkijelölő</b></i><br /> Ez mindig egy tag neve, amely hivatkozik az oldalon szereplő összes ilyen tag-re. Például a bekezdést jelentő &lt;p&gt;...&lt;/p&gt; tag-ekre egyben tudok formátumot megadni a</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> p { ... }</span></blockquote>
+<p>elemkijelölő használatával.<br /> Gyakori, hogy elemkijelölővel bizonyos tag-eknek adunk azonos formátumokat, például az összes bekezdés szövegének megadjuk a betűtípusát.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> p { font-family : arial, sans-serif; }</span></blockquote>
+<p><i><b> Osztálykijelölő</b></i><br /> Ha különböző típusú tag-eket szeretnék csoportosítani és azonos formátumot adni nekik, akkor osztályokat képezünk, amelyekbe belesoroljuk a kívánt tag-eket. A stílusban az osztálykijelölők mindig ponttal kezdődnek:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> .osztaly { ... }</span></blockquote>
+<p>A HTML kódban a tag-eknél meg kell adni, hogy mely osztályba tartoznak, amelyre a class attribútumot használjuk:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;tag class="osztaly" ...&gt;...</span></blockquote>
+<p>Egy tag több osztályba is tartozhat, ilyenkor a class attribútumnál az összes osztály nevét felsoroljuk szóközzel elválasztva:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;tag class="osztaly1 osztály2" ...&gt;...</span></blockquote>
+<p>Ha egy hosszabb szövegben szerepelhetnek tulajdonnevek a szövegben, akkor ezeknek közös formátumot adunk, ami különbözik a többi szövegtől. Ehhez létrehozunk egy tulnev osztályt, majd ezeket a szövegrészeket betesszük ebbe az osztályba.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> .tulnev { font-style : italic; }</span></blockquote>
+<p><i><b> Azonosító kijelölő</b></i><br /> Ha egy tag-re az oldalon egyedileg akarunk hivatkozni, akkor azonosító kijelölőt használunk. Ez a stílusban mindig # karakterrel kezdődik:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> #azon { ... }</span></blockquote>
+<p>A HTML kódban a tag-en belül meg kell adni, hogy mi az azonosítója, erre az id attribútumot használjuk. Fontos, hogy egy oldalon belül az azonosító egyedi, azaz nem lehet két elem ugyanolyan azonosítóval.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;tag id="azon" ...&gt; ...</span></blockquote>
+<p>Fontos azt látni, hogy ugyan egy oldalon belül csak egy adott azonosítóval rendelkező elem lehet, de egy stíluslap több oldalhoz is tartozhat, amelyeken lehetnek ugyanazzal a névvel azonosított elemek, amelyek formázását célszerű így összevonni.<br /> Például minden oldalon szerepelhet egy aláírás az oldal alján. Mivel ebből csak egy van az oldalon, erre tudunk azonosítóval hivatkozni és például jobbra rendezni. Ha ezt külső stílusállományban tesszük, akkor ezt a formátumot csak egyszer kell megadni.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> #alairas { text-align : right; }</span></blockquote>
+<p><i><b> Látszólagos kijelölő (pszeudo kijelölő)</b></i><br /> A látszólagos kijelölők lényege, hogy nem tag-et jelöl ki, hanem a tag-nek egy részét, vagy egy állapotát. Gyakorlatilag egy másik kijelölőhöz csatlakozik egy kettősponttal. Így az eredetileg hivatkozott tag-eknek csak egy állapotát vagy csak részét jelentik.<br /> A tag-ek egy állapotának formázását elsősorban a linkek esetén alkalmazzuk. A linkeknek négy állapota létezik:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> a:link { ... }</span></blockquote>
+<p>a link alapállapotát jelenti, amikor az oldal megnyílik a böngészőben;</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> a:visited { ... }</span></blockquote>
+<p>a link látogatott állapota, amit a böngésző egyszer már megnyitott, így az oldal már letöltődött és eltárolt kliens oldalon;</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> a:active { ... }</span></blockquote>
+<p>pedig az az állapot, amikor a felhasználó épp klikkel a linkre, azaz lenyomta a bal egérgombot, de még nem engedte fel;</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> a:hover { ... }</span></blockquote>
+<p>az az állapot, amikor a felhasználó a link fölé viszi az egérkurzort. Ezt az állapotot szoktuk leggyakrabban linkeken kívül más elemekre is alkalmazni, például képekre.</p>
+<p class="MsoNormal" style="margin-left: 3pt; text-align: center;" align="left"><img src="link.jpg" height="227" width="499" /> </p>
+<p class="MsoNormal" style="margin-left: 3pt; text-align: center;" align="left"><b>7. Ábra</b>: Link állapota, ha fölé visszük a kurzort</p>
+<p>Az űrlapok esetén az űrlapelemek tudnak ún. fókusz állapotba kerülni, azaz melyik elem az aktuálisan szerkeszthető. Ezt az állapotot ki lehet jelölni:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">input:focus { ... }</span></blockquote>
+<p>A CSS3 óta megkülönböztetünk pszeudo osztály és pszeudo elem kijelölőt. Az előbbi egy létező elem valamilyen állapotát jelenti, ahogy az eddig ismertetett kijelölők. Az utóbbi egy önmagában nem valós html elem kijelölését jelenti. Ebben az esetben a kijelölő két kettősponttal kapcsolódik az alap kijelölőhöz. Erre példa egy bekezdés első betűje illetve első sora:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> p::first-letter { ... }</span></blockquote>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> p::first-line { ... }</span></blockquote>
+<p>illetve egy bekezdés felhasználó által kijelölt része:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">p::selection { ... }</span></blockquote>
+<p><i style="font-size: 12pt; font-family: 'Times New Roman', Times, serif;"><b>Attributum- és értékfüggő kijelölő</b></i></p>
+<p>Ennek a kijelölőnek a lényege, hogy azon tag-ekre hivatkozik, amelyeknek bizonyos attribútuma meg van adva .</p>
+<p><span face="courier new,courier" style="font-family: 'courier new', courier;">elem[attributum] { ... }</span></p>
+<p>Illetve olyan tag-eket, amelyeknek nemcsak, hogy egy adott egy attributuma, hanem annak az értéke is megegyezik a kívánt értékkel:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> elem[attributum=érték] { ... }</span></blockquote>
+<p>Például az űrlapok (8. Lecke) esetén az input tag type attribútuma határozza meg az elem típusát. Így ha formázni akarjuk, akkor a type attribútum értékétől függően adunk formátumot. Így a szöveges beviteli mezőknek a szélességét meg tudjuk adni ennek segítségével.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> input[type=text] { width : 200px; }</span></blockquote>
+<p><b style="font-size: 12pt; font-family: 'Times New Roman', Times, serif;">A kijelölők kombinálása</b></p>
+<p>Több kijelölő kombinálásával a tag-ekre való hivatkozás még speciálisabbá tehető, még több lehetőség használható. Természetesen a kombinált kijelölők az előbb említett típusok közül bármelyik lehet.<br /> <br /> <b><i>Csoportosítás</i></b><br /> Ha több kijelölt vesszővel elválasztva felsorolunk, azzal az összes olyan tag-et kijelöljük, amelyekre a felsorolt kijelölők hivatkoztak. Így például egyben tudjuk megadni a betűtípust az oldal fő- és alcímeinek:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> h1, h2 { font-family : Arial, Sans-Serif; }</span></blockquote>
+<p><i><b>Helyzetérzékeny kijelölés</b></i><br /> Ha a kijelölőket szóközzel választjuk el, akkor a kijelölt tag-ek egymásba ágyazását definiáljuk. Mindig a sorban utolsó kijelölő által hivatkozott tag-eket jelenti, de csak azokat, amelyek a sorban előző kijelölő által meghatározott tag-ekbe vannak beágyazva.<br /> Például az oldalon több féle link lehet, amelyeknek különböző a formátuma, ha menüpont, vagy a folyószövegben található. Így ha formázni akarjuk a folyószöveges linkeket, akkor megadhatjuk, hogy csak a bekezdésekben található linkek színét változtassuk pirosra.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> p a { color : red; }</span></blockquote>
+<p>Tehát azon a tag-ekre vonatkozik, amelyek p tag-ben vannak.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;p&gt; ... &lt;a&gt;...&lt;/a&gt; ... &lt;/p&gt;</span></blockquote>
+<p><i><b>Szűkítő kijelölés</b></i><br /> Ezt első sorban osztály kijelölővel használjuk. Ha egy kijelölővel egy osztálykijelölőt egybe írunk, annak a jelentése, hogy az első kijelölő által hivatkozott tag-ek közül csak azokat jelöljük ki, amelyek beletartoznak a megadott osztályba.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> p.fontos { ... }</span></blockquote>
+<p>jelenti a</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;p class="fontos"&gt; ... &lt;/p&gt;</span></blockquote>
+<p>tag-et, de nem jelenti a</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;p&gt; ... &lt;/p&gt; és &lt;p class="masosztaly"&gt; ... &lt;/p&gt;</span></blockquote>
+<p>tag-eket.</p>
+<p><em>Megjegyzés:</em> Ezeken kívül léteznek még speciális kijelölők, valamint további pontosabb, hasznos kombinálási lehetőségek, amelyek ebben a tananyagban nem tárgyaltak, de javasolt az önálló munkával ezeknek is utánanézni és megtanulni.</p>
+<p><b><span size="3" style="font-size: medium;">Precedencia</span></b></p>
+<p align="left">Ha egy elemnek nem adunk meg stílust, akkor a böngésző által meghatározott formátumot kapja. Ezt a felhasználó a böngészőben módosítani tudja. A fejlesztő által megadott pontos stílussal felül tudja definiálna, ezáltal pontosan meghatározva, hogy az egyes elemek hogyan jelenjenek meg az oldalon.</p>
+<p align="left">Az alap kijelölők között egy erősorrend (precedencia) áll fenn. Egy tag-et több kijelölővel is meghatározhatunk, ilyenkor fontos tudni, hogy melyik formátum lesz rá érvényes, azaz melyik kijelölő a "legerősebb". Ez a sorrend a az általánostól halad a speciális fele. Azaz a "leggyengébb" az elemkijelölő, ezt felüldefiniálja az osztálykijelölő, amelynél erősebb az azonosítókijelölő. Ugyanakkor az azonos szintű kijelölők között a sorrend érvényes, azaz az utoljára megadott formátum lesz az érvényes.</p>
+<p align="left">Gyakori hiba egy komplex weblapnál, ahol a css forráskód hosszú, hogy egy tag formátumát véletlenül felüldefiniáljuk egy másik kijelölővel, így nemvárt helyen elrontva a weboldalt. Ezért nagyon fontos a forráskódot megfelelően tagoljuk, a kijelölők a lehető legpontosabban hivatkozzanak a kívánt tag-ekre, ezáltal elkerülve a nem-kívánt formázásokat. Érdemes betartani azt a szabályt, hogy a stílusmegadáskor az általánostól haladunk a speciális felé. Ha több stíluslap van, akkor legyen egy általános és legyenek speciálisak és ezeket ilyen sorrendben kapcsoljuk a html oldalhoz, így a speciális tudja felüldefiniálni az általánost. A beágyazott stílust (ha szükséges) a stíluslapok kapcsolása után szerepeljenek, hiszen azok csak az adott oldalra jellemző speciális definíciókat tartalmazzák. A szövegközi stílus a legegyedibb, csak egy tag-re vonatkozik, így az minden egyéb definíciót felülír.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id44">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_problem.gif" /><h2 class="iDeviceTitle">Feladat</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta44_22_5" class="block iDevice_content">
+Ebben a leckében kicsit zavaró lehetett, hogy a CSS
+használatának alapjai szerepelnek, a stílus elemekhez rendelésének módszertana
+a kijelölők segítségével úgy, hogy se HTML elemeket, se stílusformátumokat nem
+tanultunk még. Természetesen nem lehet egyiket a másik nélkül tanulni, így
+fordított sorrendben is ugyanilyen hiányérzetünk lenne. Ezért arra kérem az
+olvasót, hogy legyen türelemmel és ennek a leckének a gyakorlati alkalmazását a
+következő leckék során tudja kipróbálni és alkalmazni. Így most az egyetlen
+feladat, hogy készítsen egy egyelőre üres stílus fájlt és csatolja az
+oldalához!<o:p></o:p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultichoiceIdevice em_iDevice" id="id45">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Feleletválasztós teszt</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<form name="multi-choice-form-45_2" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion45_2" class="block question iDevice_content">
+Melyik nem tartozik a stílusok használatának előnyei közé?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_5" class="sr-av"><a href="#answer-45_5">Beállítás 1</a></label><input type="radio" name="option45_2" id="i45_5" onclick="getFeedback(0,3,'45_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_5"><a name="answer-45_5"></a>
+<div id="taans45_5" class="block iDevice_content">
+egyben megadható a tag és a formátuma
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_213" class="sr-av"><a href="#answer-45_213">Beállítás 2</a></label><input type="radio" name="option45_2" id="i45_213" onclick="getFeedback(1,3,'45_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_213"><a name="answer-45_213"></a>
+<div id="taans45_213" class="block iDevice_content">
+hordozhatóság
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_216" class="sr-av"><a href="#answer-45_216">Beállítás 3</a></label><input type="radio" name="option45_2" id="i45_216" onclick="getFeedback(2,3,'45_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_216"><a name="answer-45_216"></a>
+<div id="taans45_216" class="block iDevice_content">
+szétválik az oldal szerkezetének és tartalmának megadása a külalakjának meghatározásától
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b45_2" class="feedback js-hidden"><a name="sa0b45_2"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b45_2" class="feedback js-hidden"><a name="sa1b45_2"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b45_2" class="feedback js-hidden"><a name="sa2b45_2"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-45_5">Correct Option</a> (<a href="#sa0b45_2">Visszajelzés</a>)</li>
+<li><a href="#answer-45_213">Rossz</a> (<a href="#sa1b45_2">Visszajelzés</a>)</li>
+<li><a href="#answer-45_216">Rossz</a> (<a href="#sa2b45_2">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-45_219" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion45_219" class="block question iDevice_content">
+A webfejlesztő hol tud stílust megadni a weboldalhoz?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_222" class="sr-av"><a href="#answer-45_222">Beállítás 1</a></label><input type="radio" name="option45_219" id="i45_222" onclick="getFeedback(0,3,'45_219','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_222"><a name="answer-45_222"></a>
+<div id="taans45_222" class="block iDevice_content">
+külső stílus lapon, az oldal fej részében és a formázandó tag-ben
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_225" class="sr-av"><a href="#answer-45_225">Beállítás 2</a></label><input type="radio" name="option45_219" id="i45_225" onclick="getFeedback(1,3,'45_219','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_225"><a name="answer-45_225"></a>
+<div id="taans45_225" class="block iDevice_content">
+a böngészőben, stíluslapon és az oldalon belül
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_228" class="sr-av"><a href="#answer-45_228">Beállítás 3</a></label><input type="radio" name="option45_219" id="i45_228" onclick="getFeedback(2,3,'45_219','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_228"><a name="answer-45_228"></a>
+<div id="taans45_228" class="block iDevice_content">
+az oldal fej részében és a formázandó tag-ben
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b45_219" class="feedback js-hidden"><a name="sa0b45_219"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b45_219" class="feedback js-hidden"><a name="sa1b45_219"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b45_219" class="feedback js-hidden"><a name="sa2b45_219"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-45_222">Correct Option</a> (<a href="#sa0b45_219">Visszajelzés</a>)</li>
+<li><a href="#answer-45_225">Rossz</a> (<a href="#sa1b45_219">Visszajelzés</a>)</li>
+<li><a href="#answer-45_228">Rossz</a> (<a href="#sa2b45_219">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-45_231" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion45_231" class="block question iDevice_content">
+Mire való a kijelölő?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_234" class="sr-av"><a href="#answer-45_234">Beállítás 1</a></label><input type="radio" name="option45_231" id="i45_234" onclick="getFeedback(0,3,'45_231','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_234"><a name="answer-45_234"></a>
+<div id="taans45_234" class="block iDevice_content">
+Ez határozza meg, hogy mely tag-ekre vonatkozik a megadott stílus.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_237" class="sr-av"><a href="#answer-45_237">Beállítás 2</a></label><input type="radio" name="option45_231" id="i45_237" onclick="getFeedback(1,3,'45_231','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_237"><a name="answer-45_237"></a>
+<div id="taans45_237" class="block iDevice_content">
+Ez határozza meg, hogy melyik weboldalra vonatkozik a megadott stílus.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_240" class="sr-av"><a href="#answer-45_240">Beállítás 3</a></label><input type="radio" name="option45_231" id="i45_240" onclick="getFeedback(2,3,'45_231','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_240"><a name="answer-45_240"></a>
+<div id="taans45_240" class="block iDevice_content">
+Meghatározza, hogy az oldalon ha a felhasználó kijelöl valamit, az hogyan nézzen ki.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b45_231" class="feedback js-hidden"><a name="sa0b45_231"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b45_231" class="feedback js-hidden"><a name="sa1b45_231"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b45_231" class="feedback js-hidden"><a name="sa2b45_231"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-45_234">Correct Option</a> (<a href="#sa0b45_231">Visszajelzés</a>)</li>
+<li><a href="#answer-45_237">Rossz</a> (<a href="#sa1b45_231">Visszajelzés</a>)</li>
+<li><a href="#answer-45_240">Rossz</a> (<a href="#sa2b45_231">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-45_243" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion45_243" class="block question iDevice_content">
+Mire való az elemkijelölő?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_246" class="sr-av"><a href="#answer-45_246">Beállítás 1</a></label><input type="radio" name="option45_243" id="i45_246" onclick="getFeedback(0,3,'45_243','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_246"><a name="answer-45_246"></a>
+<div id="taans45_246" class="block iDevice_content">
+Ennek segítségével egy adott típusú összes tag-et ki tudjuk jelölni.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_249" class="sr-av"><a href="#answer-45_249">Beállítás 2</a></label><input type="radio" name="option45_243" id="i45_249" onclick="getFeedback(1,3,'45_243','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_249"><a name="answer-45_249"></a>
+<div id="taans45_249" class="block iDevice_content">
+Ezzel bármely elemet pontosan ki tudunk jelölni az oldalon.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_252" class="sr-av"><a href="#answer-45_252">Beállítás 3</a></label><input type="radio" name="option45_243" id="i45_252" onclick="getFeedback(2,3,'45_243','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_252"><a name="answer-45_252"></a>
+<div id="taans45_252" class="block iDevice_content">
+Azt az elemet jelöli ki, amelynek a tartalmára vonatkozik a stílus.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b45_243" class="feedback js-hidden"><a name="sa0b45_243"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b45_243" class="feedback js-hidden"><a name="sa1b45_243"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b45_243" class="feedback js-hidden"><a name="sa2b45_243"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-45_246">Correct Option</a> (<a href="#sa0b45_243">Visszajelzés</a>)</li>
+<li><a href="#answer-45_249">Rossz</a> (<a href="#sa1b45_243">Visszajelzés</a>)</li>
+<li><a href="#answer-45_252">Rossz</a> (<a href="#sa2b45_243">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-45_255" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion45_255" class="block question iDevice_content">
+Mire való az osztálykijelölő?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_258" class="sr-av"><a href="#answer-45_258">Beállítás 1</a></label><input type="radio" name="option45_255" id="i45_258" onclick="getFeedback(0,3,'45_255','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_258"><a name="answer-45_258"></a>
+<div id="taans45_258" class="block iDevice_content">
+Ennek segítségével csoportosítani tudjuk a különböző típusú tag-eket és azoknak együtt megadni formátumot.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_261" class="sr-av"><a href="#answer-45_261">Beállítás 2</a></label><input type="radio" name="option45_255" id="i45_261" onclick="getFeedback(1,3,'45_255','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_261"><a name="answer-45_261"></a>
+<div id="taans45_261" class="block iDevice_content">
+Ennek segítségével lehet egy adott típusú tag-eket egyszerre formázni.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i45_264" class="sr-av"><a href="#answer-45_264">Beállítás 3</a></label><input type="radio" name="option45_255" id="i45_264" onclick="getFeedback(2,3,'45_255','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-45_264"><a name="answer-45_264"></a>
+<div id="taans45_264" class="block iDevice_content">
+Ezzel a kijelölőket lehet osztályba sorolni és azok által hivatkozott tag-eket egyszerre formázni.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b45_255" class="feedback js-hidden"><a name="sa0b45_255"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b45_255" class="feedback js-hidden"><a name="sa1b45_255"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b45_255" class="feedback js-hidden"><a name="sa2b45_255"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-45_258">Correct Option</a> (<a href="#sa0b45_255">Visszajelzés</a>)</li>
+<li><a href="#answer-45_261">Rossz</a> (<a href="#sa1b45_255">Visszajelzés</a>)</li>
+<li><a href="#answer-45_264">Rossz</a> (<a href="#sa2b45_255">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

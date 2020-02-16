@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="hu" xml:lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>12. Lecke: Weboldalak publikálása </title>
+<meta http-equiv="content-language" content="hu" />
+<meta name="generator" content="eXeLearning 2.0.4 - exelearning.net" />
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Show",hide:"Elrejtés",showFeedback:"Mutassa a visszajelzést",hideFeedback:"Visszajelzés elrejtése",correct:"Helyes",incorrect:"Incorrect",menu:"Menu"}</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+<script type="text/javascript" src="SCOFunctions.js"></script>
+</head>
+<body class="exe-scorm" onload="loadPage()" onunload="unloadPage()"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="outer">
+<div id="main">
+<div id="nodeDecoration"><h1 id="nodeTitle">12. Lecke: Weboldalak publikálása</h1></div>
+<div class="iDevice_wrapper objectivesIdevice em_iDevice" id="id67">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_objectives.gif" /><h2 class="iDeviceTitle">Célok</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta67_23_2" class="block iDevice_content">
+<ul>
+	<li>Ismerje a weboldal publikálásának feltételeit</li>
+	<li>Ismerje a webkiszolgáló és tartománynév választás szempontjait</li>
+	<li>Ismerje a keresőoptimalizálás legfontosabb szabályait</li>
+	<li>Ismerje validálás lényegét és módját</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id68">
+<div class="iDevice emphasis0">
+<div id="ta68_1" class="block iDevice_content">
+<p><span size="3" style="font-size: medium;"><b>Tartalom</b></span></p>
+<ul>
+<li>A weboldal publikálásának elemei</li>
+<li>Keresőoptimalizálás szabályai</li>
+<li>Validálás</li>
+</ul>
+<p><b><span size="3" style="font-size: medium;">Weboldalak publikálása<br /> </span></b><br /> A weboldalak, néhány kivételes esettől eltekintve, arra készülnek, hogy a nyilvánosság elé kerüljenek azáltal, hogy elérhetővé teszik a weben. Ennek két fontos feltétele van: a webkiszolgáló és a tartománynév (vagy domain, azaz webcím) név.<br /> <br /> <i><b>Webkiszolgáló választása</b></i><br /> Mindenképp kell egy <i>webszerver</i> szolgáltatást futtató olyan számítógép, amely folyamatos kapcsolatban van az hálózattal. Erre az otthoni gépünk általában nem alkalmas, mivel legtöbbünknek a számítógépe nincs folyamatosan bekapcsolva. Webszerver alkalmazást ugyan lehet ingyenesen is letölteni és használni, de a megfelelő és biztonságos konfigurálása általában már komolyabb ismereteket igényel, mint amivel egy átlagos felhasználó rendelkezik. Ráadásul mivel egy szervernek stabilan kell működnie, az ilyen komolyabb szolgáltatásokra használt számítógépekkel további feladatok is járnak, mint a felügyelet, az operációs rendszer megbízható működtetése, a biztonsági mentések, stb.<br /> Természetesen, ha egy már működő szerver áll rendelkezésünkre, vagy vállaljuk (vagy vállalják mások) ezeket a plusz feladatokat, akkor a saját szerver használata abból a szempontból a legkényelmesebb, hogy szabad kezünk van, nem kell igazodni senkihez.<br /> Ugyanakkor nagyon sok esetben egy weboldalért nem éri meg szervert beállítani. Viszont sok szolgáltató cégtől lehet tárhelyet igényelni. <br /> Vannak <i>ingyenes webkiszolgálók</i>, amelyek csak abban ingyenesek, hogy nem pénzben kell fizetni érte, hanem „le kell dolgozni" a bérleti díjat úgy, hogy a szolgáltatónak reklámfelületet kell biztosítanunk a saját lapunkon, amit szabadon használhat. Természetesen ennek a lehetőségnek a legnagyobb előnye, hogy minden feltételt a szolgáltató biztosít és pénzbe sem kerül. Viszont több komoly hátránya is van. Egyrészt a szépen és átgondoltan felépített weboldalunk összhatásán sokat tud rontani egy általunk nem is ismert tartalmú és kinézetű reklám banner, amely az oldalunk megítélésére is hatással van. Másrészt az ilyen szolgáltatók általában nem vállalnak felelősséget semmiért és nem garantálnak semmit. Így az is elképzelhető, hogy egyik napról a másikra leáll a szerver és esetleg még az oldalunk forrását se kapjuk vissza.<br /> Vannak <i>bérelhető webkiszolgálók i</i>s. Ezek nagy előnye, hogy a tárhellyel együtt olyan szolgáltatásokat is együtt járnak, amelyek garantálják a biztonságos működést (szerverkarbantartás, rendszeres mentés, stb.). Amikor ilyen kiszolgálót választunk, mindig tájékozódjunk a felajánlott csomagok részleteiről, mekkora tárhelyet, milyen szolgáltatásokat és milyen feltételekkel tartalmaz. Mérjük fel, hogy a saját oldalunkhoz mire van szükség és az ennek megfelelő csomagot válasszuk. Felesleges több gigabájtos tárhelyet bérelni, ha csak 50-100 megabájt az oldalunk, vagy adatbázisszerver szolgáltatásért fizetni, ha nem használjuk ki. Általában minden szolgáltatónak van nagyon egyszerű csomagja is, ami egy alap statikus weboldalnak általában elég, illetve természetesen olyan is, amelyen egy komoly, komplex web-alkalmazáshoz szükséges.<br /> Így mindig a publikálandó weblaphoz mérten kell mérlegelni és webkiszolgálót választani. Egy egyszerűbb, magán, hobbi weboldalhoz elég lehet egy ingyenes kiszolgáló. Egy cég, vagy komolyabb szervezet weboldalát mindig célszerű komolyabb és megbízható kiszolgálóra tenni. Az adatvesztés, vagy a működésben való hosszabb leállás komolyabb károkat tud okozni, mint az éves bérleti díja egy bérelt kiszolgálóknak.<br /> <br /> <i><b>Tartománynév (Domain)</b></i><br /> Ahhoz, hogy az oldalunkat el tudják érni a web-felhasználók, természetesen szükség van egy szöveges, könnyen megjegyezhető címre, amelyen megtalálják. Ez a cím a tartománynév (a tartománynevek részletesebb bemutatás nem része ennek a tananyagnak, ugyanakkor érdemes utána olvasni:<a href="http://www.domain.hu/domain/" target="_blank"> http://www.domain.hu/domain/</a>).<br /> Ennek több módja is lehet. Az egyik legnyilvánvalóbb lehetőség, ha saját tartománynevet regisztráltatunk. Ezt külön erre a célra szakosodott szervezeteknél, cégeknél lehet megtenni, jellemzően egy vagy két éves díja van. Ebből következik, hogy a címet igazából csak béreljük és nem megvesszük. Ha nem fizetjük a díjat, egy idő után újra szabaddá válik mások számára. Egy már kibérelt címet más nem bérelhet, így természetesen az egész weben nincs két azonos tartománynév.</p>
+<blockquote><a href="http://www.jgypk.hu/" target="_blank">http://www.jgypk.hu/</a></blockquote>
+<p>Ha már van egy regisztrált címünk, akkor ehhez korlátlanul tudunk további allapokat fűzni úgy, hogy nem kell újabb tartománynevet bevezetni.</p>
+<blockquote><a href="http://www.jgypk.hu/tanszek/szamtech/" target="_blank">http://www.jgypk.hu/tanszek/szamtech/</a></blockquote>
+<p>Az ilyen típusú címekről azt feltételezik a felhasználók, hogy a fő tartománynév egy aloldaláról van szó, így ha a weboldalunk tartalma nem a fő tartománynév által hivatkozott oldal alweboldalának számít, akkor ne válasszuk ezt a lehetőséget.<br /> Egy létező tartománynévhez lehet aldomaint készíteni. Ezt bizonyos szolgáltatóknál korlátlanul tehetjük meg, másoknál csak bizonyos számú ilyen címre van lehetőségünk. Az ilyen tartománynévről az az általános feltételezés, hogy ugyan önálló weboldal, de a fő tartománynévhez kötődik valamilyen szinten. Ha az oldalunk egyáltalán nem kapcsolódik a fő tartománynéven elérhető oldalhoz, akkor szintén nem szerencsés ez a megoldás. Például a következő címben jgypk az u-szeged aldomain-jének számít.</p>
+<blockquote><a href="http://www.jgypk.u-szeged.hu/" target="_blank">http://www.jgypk.u-szeged.hu/</a></blockquote>
+<p>Tehát, ha egy teljesen önálló weboldalunk van, akkor célszerű neki teljesen független címet regisztrálni. Ez azért is hasznos, mert minél rövidebb egy cím, annál könnyebb megjegyezni. A cím választásánál vegyük azt figyelembe, hogy lehetőleg olyan elnevezést célszerű választani, ami minél inkább jellemezi az oldal tartalmát, tulajdonosát, stb. Mivel fontos, hogy a felhasználók könnyen megjegyezzék és tudják az oldalhoz kötni az elnevezést. Természetesen a címek foglaltságát figyelembe kell venni, így célszerű több verziót kidolgoznunk és egy rangsort felállítani.<br /> <br /> <b><i>Utolsó simítások</i></b><br /> Amikor a weboldalunkat a saját fejlesztési környezetünkben elkészítjük és publikálásra alkalmasnak tekintjük, majd feltöltjük a végleges tárhelyre és „bekötjük" a végleges címre, fontos, hogy egy utolsó ellenőrzést kell végeznünk. Mivel az első benyomás minden terméknél nagyon kritikus, fontos, hogy az oldalunk hibátlan legyen, amikor a felhasználók először találkoznak vele. Sose publikáljunk félkész vagy hibás oldalt!<br /> Probléma adódhat abból, hogy többek között a tárhely jogosultsági beállításai, webszerver alkalmazása más, vagy másként van konfigurálva (pl. hiába készítettünk fájlfeltöltést az oldalunkra, ha az a szerveren nincs engedélyezve és beállítva). Másrészt a más könyvtárszerkezetből adódóan bizonyos hivatkozások hibásak lehetnek „vak linket" okozva. Maga a feltöltés során is adódhatnak hibák, amelyek kavarodást okozhatnak, például a stíluslapok hiánya miatt az egész oldal elveszti a designt, vagy képek tűnhetnek el az oldalról. Sorolni lehetne még a hibalehetőségeket, a lényeg, hogy feltétlenül el kell végezni egy utolsó ellenőrzést. Ilyenkor végig kell menni az összes oldalon az oldal összes linkjét és funkcióját végigpróbálva. Figyelmesen végig kell nézni az oldalakat, hogy minden elem megfelelően jelenik meg. Ugyan a fejlesztés közben is figyelni kell rá, de érdemes a végén is ellenőrizni mindent a legfontosabb böngészőkben.<br /> <br /> <i><b>Validálás</b></i><br /> Az oldalak végső ellenőrzéséhez tartozik az ún. validálás. Ennek a szerepe, hogy egy program segítségével ellenőrizzük a kódunk helyességét. Itt kap nagy szerepet a kód elején megadott DOCTYPE, amelyben meghatározott DTD leírja a forráskód szabályrendszerét. A program valójában annyit csinál, hogy eszerint végigellenőrzi a kódot, hogy minden megfelel-e a leírtaknak. Ilyen programot természetesen nem nekünk kell írni, több helyen is működik ilyen szolgáltatás. A már korábban (2. fejezet) említett W3C szervezetnek is van ilyen oldala, így ennek a használata javasolt.</p>
+<div align="center"><img src="W3C.png" width="491" height="291" /></div>
+<div align="center"><b>29. Ábra</b>: A W3C validátora</div>
+<p align="left">A HTML kódot ellenőrző oldal a következő címen található:</p>
+<blockquote><a href="http://validator.w3.org/" target="_blank">http://validator.w3.org/</a></blockquote>
+<p align="left">Külön ellenőrző létezik a CSS kód ellenőrzésére, amely az alábbi címen található:</p>
+<blockquote><a href="http://jigsaw.w3.org/css-validator/" target="_blank">http://jigsaw.w3.org/css-validator/</a></blockquote>
+<p align="left">Mindkettő esetén elég az oldal URL címét megadni, amelyet ellenőrizni szeretnénk. Ha még nincs publikálva az oldal, akkor a forrás feltöltésével szintén lehet használni az ellenőrzést.</p>
+<p>A böngészők eltérő viselkedése komoly gondot okoz a webfejlesztőknek. Mivel a böngészők bizonyos formázásokat eltérő módon jelenítenek meg, nehéz olyan oldalt készíteni, amely minden böngészőben ugyanúgy néznek ki. Így sokszor csak azt tűzzük ki célul, hogy minden böngészőben rendezetten és helyesen jelenjen meg, de apróbb eltéréseket megengedünk. Mivel nem is csak böngésző fajták szerint, de sokszor verziók szerint is vannak eltérések, a teljes átfogó ellenőrzéshez nagyon sok böngésző programot kellene feltelepítenünk is kipróbálnunk. Hogy ettől a procedúrától mentesüljünk, található az interneten egy oldal, ahol több böngészőben is kipróbálhatjuk az oldalunkat, hogy hogyan néz ki. Az oldal használatához regisztráció szükséges.</p>
+<blockquote><a href="https://saucelabs.com/home" target="_blank">https://saucelabs.com/home</a></blockquote>
+<div align="center"><img src="saucelab.png" width="600" height="451" /> </div>
+<div align="center"><b>30. Ábra</b>: Különböző böngészőkben megjelenítést tesztelő weboldala</div>
+<p align="left"><i><b>Keresőoptimalizálás </b></i><br /> A keresőoptimalizálás (<b>S</b>earch <b>E</b>ngine <b>O</b>ptimization, röviden SEO) nem fontossági sorrend miatt került a tananyag végére, hiszen ezen szempontok ismerete alapvető minden webfejlesztő számára. A web-felhasználók nagy része keresőkön keresztül talál az oldalunkra, így fontos, hogy a keresők hatékonyan találják meg a mi weboldalunkat. Statisztikákkal kimutatták, hogy a felhasználók nagy százaléka nem lapoz a keresési találati lista második oldalára, sőt még csak nem is görget az oldal aljára. A cél, hogy a találati lista elején szerepeljünk. Mivel a keresőmotorok indexelési algoritmusa nem publikus, de vannak általánosan ismert ajánlások, szabályok, amelyek mindenképp segítik a keresőmotorok indexelési műveletét. A rangsorolást befolyásolja az oldal helyessége, az oldal célirányos tartalmi felépítése és az oldal más oldalakról való hivatkozása. Az első kettő, amely a fejlesztő rövid távú felelőssége. Ezekhez a legfontosabb szabályok a következők:</p>
+<ol>
+<li>Töltsük ki releváns tartalommal a meta adatokat: description, keywords, nyelv!</li>
+<li>Töltsük ki az oldal leíró tartalommal a title tag-et!</li>
+<li>Tegyünk címsorokat (h1, stb) az oldalra, amelyek tartalma helyesen jellemzi az oldalt!</li>
+<li>Ne használjunk kereteket!</li>
+<li>Használjunk jó, követhető menürendszert!</li>
+<li>Használjunk szöveges linkeket és minden oldalunk legyen elérhető legalább egy statikus linkkel!</li>
+<li>Használjunk jellemző képeket és minden képhez az alt tulajdonságot megfelelően leíró szöveggel töltsük fel!</li>
+<li>Az oldal lényeges részeit szövegesen írjuk le, a képeken lévő tartalomban nem lehet keresni!</li>
+<li>Az oldal szöveges részében szerepeljenek az oldal tartalmát leginkább jellemző kulcsszavak!</li>
+</ol>
+<p align="left">Természetesen nem szabad trükközni ezekkel az elvekkel, csak olyan tartalmat és adatot szabad feltenni az oldalunkra, ami ténylegesen jellemzi annak tartalmát. A „csalással" (black hat SEO) az oldalunkra irányított felhasználókban ellenérzést alakítunk ki, ami hosszú távon visszaüt.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id69">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_problem.gif" /><h2 class="iDeviceTitle">Feladat</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta69_25_5" class="block iDevice_content">
+Ellenőrizze végig a weboldalait a leckében megadott
+szempontok szerint! Nézze végig a keresőoptimalizálás szempontjából kiemelt
+jellemzőket és tegye meg a megfelelő módosításokat! Végezze el a validálást és
+a böngésző-ellenőrzést! Ha nem is szeretné valósan publikálni az oldalt, akkor
+is keressen egy webkiszolgálót, illetve egy megfelelő csomagot, ami az ön weblapjainak
+tárolására alkalmas! Keressen egy alkalmas tartománynevet és ellenőrizze le,
+hogy szabad-e ez a név! Keressen olyan céget vagy szervezetet, ahol lehet ezt a
+tartománynevet bérelni és tájékozódjon az árakról és feltételekről!<o:p></o:p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultichoiceIdevice em_iDevice" id="id70">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Feleletválasztós teszt</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<form name="multi-choice-form-70_2" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion70_2" class="block question iDevice_content">
+Mit jelent a publikálás?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_5" class="sr-av"><a href="#answer-70_5">Beállítás 1</a></label><input type="radio" name="option70_2" id="i70_5" onclick="getFeedback(0,3,'70_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_5"><a name="answer-70_5"></a>
+<div id="taans70_5" class="block iDevice_content">
+Az oldal nyilvánosságra hozását.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_549" class="sr-av"><a href="#answer-70_549">Beállítás 2</a></label><input type="radio" name="option70_2" id="i70_549" onclick="getFeedback(1,3,'70_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_549"><a name="answer-70_549"></a>
+<div id="taans70_549" class="block iDevice_content">
+Az oldal bejelentését a webes szolgáltatóknál.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_552" class="sr-av"><a href="#answer-70_552">Beállítás 3</a></label><input type="radio" name="option70_2" id="i70_552" onclick="getFeedback(2,3,'70_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_552"><a name="answer-70_552"></a>
+<div id="taans70_552" class="block iDevice_content">
+Az oldal keresőkre való felkészítését.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b70_2" class="feedback js-hidden"><a name="sa0b70_2"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b70_2" class="feedback js-hidden"><a name="sa1b70_2"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b70_2" class="feedback js-hidden"><a name="sa2b70_2"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-70_5">Correct Option</a> (<a href="#sa0b70_2">Visszajelzés</a>)</li>
+<li><a href="#answer-70_549">Rossz</a> (<a href="#sa1b70_2">Visszajelzés</a>)</li>
+<li><a href="#answer-70_552">Rossz</a> (<a href="#sa2b70_2">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-70_555" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion70_555" class="block question iDevice_content">
+Mit jelent a keresőoptimalizálás?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_558" class="sr-av"><a href="#answer-70_558">Beállítás 1</a></label><input type="radio" name="option70_555" id="i70_558" onclick="getFeedback(0,3,'70_555','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_558"><a name="answer-70_558"></a>
+<div id="taans70_558" class="block iDevice_content">
+A weboldal olyan megírását, amit a keresőmotorok jól tudnak feltérképezni és indexelni.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_561" class="sr-av"><a href="#answer-70_561">Beállítás 2</a></label><input type="radio" name="option70_555" id="i70_561" onclick="getFeedback(1,3,'70_555','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_561"><a name="answer-70_561"></a>
+<div id="taans70_561" class="block iDevice_content">
+A keresőmotorok indexelési folyamatát, amikor feltérképeznek egy weboldalt.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_564" class="sr-av"><a href="#answer-70_564">Beállítás 3</a></label><input type="radio" name="option70_555" id="i70_564" onclick="getFeedback(2,3,'70_555','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_564"><a name="answer-70_564"></a>
+<div id="taans70_564" class="block iDevice_content">
+Az oldalunkon egy kereső építését, ami segíti a felhasználót, hogy könnyebben tájékozódjon rajta.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b70_555" class="feedback js-hidden"><a name="sa0b70_555"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b70_555" class="feedback js-hidden"><a name="sa1b70_555"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b70_555" class="feedback js-hidden"><a name="sa2b70_555"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-70_558">Correct Option</a> (<a href="#sa0b70_555">Visszajelzés</a>)</li>
+<li><a href="#answer-70_561">Rossz</a> (<a href="#sa1b70_555">Visszajelzés</a>)</li>
+<li><a href="#answer-70_564">Rossz</a> (<a href="#sa2b70_555">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-70_567" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion70_567" class="block question iDevice_content">
+Mit jelent a validálás?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_570" class="sr-av"><a href="#answer-70_570">Beállítás 1</a></label><input type="radio" name="option70_567" id="i70_570" onclick="getFeedback(0,3,'70_567','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_570"><a name="answer-70_570"></a>
+<div id="taans70_570" class="block iDevice_content">
+Az oldal forrásának szabályszerűségének ellenőrzése.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_573" class="sr-av"><a href="#answer-70_573">Beállítás 2</a></label><input type="radio" name="option70_567" id="i70_573" onclick="getFeedback(1,3,'70_567','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_573"><a name="answer-70_573"></a>
+<div id="taans70_573" class="block iDevice_content">
+Az oldal helyes működésének ellenőrzése.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_576" class="sr-av"><a href="#answer-70_576">Beállítás 3</a></label><input type="radio" name="option70_567" id="i70_576" onclick="getFeedback(2,3,'70_567','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_576"><a name="answer-70_576"></a>
+<div id="taans70_576" class="block iDevice_content">
+Az oldal keresőmotorok indexelésére való felkészítését.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b70_567" class="feedback js-hidden"><a name="sa0b70_567"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b70_567" class="feedback js-hidden"><a name="sa1b70_567"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b70_567" class="feedback js-hidden"><a name="sa2b70_567"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-70_570">Correct Option</a> (<a href="#sa0b70_567">Visszajelzés</a>)</li>
+<li><a href="#answer-70_573">Rossz</a> (<a href="#sa1b70_567">Visszajelzés</a>)</li>
+<li><a href="#answer-70_576">Rossz</a> (<a href="#sa2b70_567">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-70_579" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion70_579" class="block question iDevice_content">
+Hogyan készíthetünk tartománynevet a weboldalunkhoz?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_582" class="sr-av"><a href="#answer-70_582">Beállítás 1</a></label><input type="radio" name="option70_579" id="i70_582" onclick="getFeedback(0,3,'70_579','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_582"><a name="answer-70_582"></a>
+<div id="taans70_582" class="block iDevice_content">
+Egy erre szakosodott szolgáltatótól bérelhetünk egy olyat, ami még nem foglalt.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_585" class="sr-av"><a href="#answer-70_585">Beállítás 2</a></label><input type="radio" name="option70_579" id="i70_585" onclick="getFeedback(1,3,'70_579','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_585"><a name="answer-70_585"></a>
+<div id="taans70_585" class="block iDevice_content">
+Kitalálunk egy megfelelő nevet és bejegyeztetjük a szolgáltatónál.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_588" class="sr-av"><a href="#answer-70_588">Beállítás 3</a></label><input type="radio" name="option70_579" id="i70_588" onclick="getFeedback(2,3,'70_579','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_588"><a name="answer-70_588"></a>
+<div id="taans70_588" class="block iDevice_content">
+Egy szolgáltatótól lehet megvenni a nevet.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b70_579" class="feedback js-hidden"><a name="sa0b70_579"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b70_579" class="feedback js-hidden"><a name="sa1b70_579"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b70_579" class="feedback js-hidden"><a name="sa2b70_579"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-70_582">Correct Option</a> (<a href="#sa0b70_579">Visszajelzés</a>)</li>
+<li><a href="#answer-70_585">Rossz</a> (<a href="#sa1b70_579">Visszajelzés</a>)</li>
+<li><a href="#answer-70_588">Rossz</a> (<a href="#sa2b70_579">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-70_591" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion70_591" class="block question iDevice_content">
+Melyik állítás helytelen?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_594" class="sr-av"><a href="#answer-70_594">Beállítás 1</a></label><input type="radio" name="option70_591" id="i70_594" onclick="getFeedback(0,3,'70_591','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_594"><a name="answer-70_594"></a>
+<div id="taans70_594" class="block iDevice_content">
+Az ingyenes webkiszolgáló választása megfelelő bármilyen weboldalhoz, ha kevés pénz áll rendelkezésre.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_597" class="sr-av"><a href="#answer-70_597">Beállítás 2</a></label><input type="radio" name="option70_591" id="i70_597" onclick="getFeedback(1,3,'70_591','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_597"><a name="answer-70_597"></a>
+<div id="taans70_597" class="block iDevice_content">
+A bérelt webkiszolgáló választásakor figyelembe kell venni a szolgáltatás tartalmát.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i70_600" class="sr-av"><a href="#answer-70_600">Beállítás 3</a></label><input type="radio" name="option70_591" id="i70_600" onclick="getFeedback(2,3,'70_591','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-70_600"><a name="answer-70_600"></a>
+<div id="taans70_600" class="block iDevice_content">
+Saját webkiszolgálóként használt számítógép üzemeltetéséhez megfelelően konfigurált és karbantartott, folyamatosan működő szerver szükséges.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b70_591" class="feedback js-hidden"><a name="sa0b70_591"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b70_591" class="feedback js-hidden"><a name="sa1b70_591"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b70_591" class="feedback js-hidden"><a name="sa2b70_591"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-70_594">Correct Option</a> (<a href="#sa0b70_591">Visszajelzés</a>)</li>
+<li><a href="#answer-70_597">Rossz</a> (<a href="#sa1b70_591">Visszajelzés</a>)</li>
+<li><a href="#answer-70_600">Rossz</a> (<a href="#sa2b70_591">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

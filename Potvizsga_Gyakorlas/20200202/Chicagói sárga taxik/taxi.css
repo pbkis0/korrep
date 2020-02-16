@@ -1,0 +1,54 @@
+#content{ /*13. feladat */
+    background-color: goldenrod;
+}
+
+html{  /* 14. feladat, 15. feladat*/
+    width: 960px;
+    margin: 0 auto;
+    border-left: 10px double gold;
+    border-right: 10px double gold;
+    
+}
+h1{ /* 16. feladat*/
+    text-align: center;
+    font-variant: small-caps;
+
+}
+.right{ /*17.feladat */
+    float: right;
+    height: 300px;
+
+}
+.sajat_osztaly{  /* 18.feladat* oldja meg ú j osztálykijelölo lé trehozásával, hogy a bí o osztályjelölővel
+    jelzett elem balra lebegjen, szélessége 400 képpont legyen, továbbá 3 képpont vastag folyonos
+    sárga (yeJlow) keret szegéIyezze, és a háttérszíne halványszürke legyen (riqht gray)! */
+
+    float: left;
+    width: 400px;
+    border: 3px solid yellow;
+    background-color: lightgray;
+}
+
+p{ /*19. feladat */
+    text-align: justify;
+}
+
+a:visited, a:link{
+    color: yellow;
+}
+
+a:hover{
+    color: red;
+}
+
+
+/*
+
+pseudo-elemek
+
+a:link - normál állapot
+a:active - amikor épp rá van kattintva de még nincs az egér gomb felengedve
+a:visited - meglátogatott állapot
+a:hover - épp az egeret tartod rajtad
+
+*/

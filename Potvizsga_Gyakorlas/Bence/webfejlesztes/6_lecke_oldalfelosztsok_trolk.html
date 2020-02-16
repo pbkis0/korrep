@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="hu" xml:lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>6. Lecke: Oldalfelosztások, tárolók </title>
+<meta http-equiv="content-language" content="hu" />
+<meta name="generator" content="eXeLearning 2.0.4 - exelearning.net" />
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Show",hide:"Elrejtés",showFeedback:"Mutassa a visszajelzést",hideFeedback:"Visszajelzés elrejtése",correct:"Helyes",incorrect:"Incorrect",menu:"Menu"}</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+<script type="text/javascript" src="SCOFunctions.js"></script>
+</head>
+<body class="exe-scorm" onload="loadPage()" onunload="unloadPage()"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="outer">
+<div id="main">
+<div id="nodeDecoration"><h1 id="nodeTitle">6. Lecke: Oldalfelosztások, tárolók</h1></div>
+<div class="iDevice_wrapper objectivesIdevice em_iDevice" id="id50">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_objectives.gif" /><h2 class="iDeviceTitle">Célok</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta50_23_2" class="block iDevice_content">
+<ul>
+	<li>Ismerje az oldalfelosztások lényegét, módjait<o:p></o:p></li>
+	<li>Ismerje a tároló fogalmát<o:p></o:p></li>
+	<li>Ismerje a div tag használatát<o:p></o:p></li>
+	<li>Ismerje a keretek, margók definiálását stílussal<o:p></o:p></li>
+	<li>Ismerje a háttérbeállításokat<o:p></o:p></li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id52">
+<div class="iDevice emphasis0">
+<div id="ta52_1" class="block iDevice_content">
+<p><span size="3" style="font-size: medium;"><b>Tartalom</b></span></p>
+<ul>
+<li>Oldalfelosztási módok</li>
+<li>A div tag</li>
+<li>Keretek, margók megadása</li>
+<li>Háttérbeállítások</li>
+</ul>
+<p> </p>
+<p><b><span size="3" style="font-size: medium;">Oldalfelosztások<br /> </span></b><br /> A HTML nyelv egyik alapvető jellemzője, hogy a tag-ek egymásba ágyazhatóak, így a tartalmazás segítségével adják meg az oldal szerkezetét. Amikor egy tag egy (vagy több) másik tag-et tartalmaz, általánosan tárolónak nevezzük. Természetesen bizonyos tag-ek nem alkalmasak tárolónak (például a kép), míg másoknak ez az elsődleges szerepük.<br /> Ahogy a második leckében szerepelt, a weboldalakat több részre bontjuk, hogy az egyes részeket egybe tudjuk formázni, megadhassuk az egymáshoz való viszonyukat. Ennek eszköze a tárolók használata és több módja létezik. A legrégebbi és mára már teljesen elavult módszer a keretek (<span face="courier new,courier" style="font-family: 'courier new', courier;">frame</span>) használata. Ez nemcsak hatékonyságban rossz, de a keresők is nehezebben indexelik az ilyen oldalakat. A keretes oldalfelosztás hátrányai:</p>
+<ul>
+<li>Nehezebb navigálni a keretes oldalakon.</li>
+<li>Nehezebb nyomtatni.</li>
+<li>Nehezebb a kódban tájékozódni, mivel több html állomány kell.</li>
+<li>Nehezen indexelik a keresőmotorok.</li>
+<li>Nehéz az oldalhoz könyvjelzőt rendelni.</li>
+</ul>
+<p>A HTML5-ből már ki is kerültek a keretekhez tartozó tag-ek.</p>
+<p><br /> Ezután a táblázatos felosztás vált általánossá. A mai oldalak összetettsége miatt túl összetett táblázatot kellett készíteni, illetve egymásba ágyazni. Valamint a sor- és oszlopösszevonások miatt túl átláthatatlan a forráskód illetve a módosítása rettenetesen nehéz. Ráadásul a táblázat szerkezetéből adódóan csak sorok és oszlopok segítésével lehetett a felosztást meghatározni, így bizonyos szerkezeteket nem lehet felépíteni.<br /> A mai általánosan elfogadott oldalfelosztás általános tároló elemek segítségével történik, amelyek blokkos megjelenésűek és teljesen szabadon, egymástól függetlenül definiálhatóak az oldalon belül és jól formázhatóak. Így ezeket formázva és egymáshoz képest elhelyezve kapjuk az oldal végső elrendezését. Ennek használata sokkal nagyobb szabadságot ad a fejlesztőnek illetve a módosítás is könnyen kezelhető stílusok segítségével. Az ilyen általános tárolók közül a legelterjedtebb és legáltalánosabb a <span style="font-family: 'courier new', courier;">div</span>. Tehát ma az oldalakat több div tároló elemmel építjük fel, ezeket általában azonosítóval különböztetjük meg egymástól.</p>
+<p><strong>HTML5-s tárolók</strong></p>
+<p>Mivel az oldalak felosztása egyre összetettebb, de vannak olyan részek, amelyek majdnem minden oldalon előfordulnak. a HTML5 nyelvben bevezettek újabb tároló elemeket, amelyek áttekinthetőbbé, strukturáltabbá teszik a HTML forráskódot, valamint könnyebbé a CSS-ből való hivatkozásokat. Ezek az elemek blokkos megjelenítésűek, de más formázást nem hordoznak. Jelentőségük, hogy az oldal meghatározott tartalmát a szerepének megfelelő tag-be lehessen foglalni. Fontos azt megjegyezni, hogy ezeket a tag-eket a böngészők újabb verziói támogatják. A legfontosabb tárolók a következők:</p>
+<table border="0" style="margin-left: 100px;"><colgroup><col width="100" /><col width="200" /></colgroup>
+<tbody>
+<tr>
+<td><span style="font-family: 'courier new', courier;">&lt;header&gt;</span></td>
+<td>fejléc</td>
+</tr>
+<tr>
+<td><span style="font-family: 'courier new', courier;">&lt;footer&gt;</span></td>
+<td>lábléc</td>
+</tr>
+<tr>
+<td><span style="font-family: 'courier new', courier;">&lt;main&gt;</span></td>
+<td>fő tartalom</td>
+</tr>
+<tr>
+<td><span style="font-family: 'courier new', courier;">&lt;nav&gt;</span></td>
+<td>menü</td>
+</tr>
+<tr>
+<td><span style="font-family: 'courier new', courier;">&lt;section&gt;</span></td>
+<td>önálló, jól körülhatárolható tartalom</td>
+</tr>
+</tbody>
+</table>
+<p><strong>A blokkos tároló elemek formázása</strong></p>
+<p>A div tag egy általános, blokk megjelenítésű tároló, amelynek formázás nélkül nincs semmi alapértelmezett formátuma. Arra használjuk, hogy egy „dobozt" definiáljuk, amelybe bármilyen elemet bele tudunk foglalni. A többi ilyen tároló elem is hasonlóan viselkedik, csak adott tartalomhoz használjuk. Így ezután a tananyagban a div tag-t használjuk a bemutatáshoz, de a többi elemre is érvényes a tárgyalt formázás.</p>
+<p>A div tároló mindig téglalap formájú, de a méretét és formáját szabadon változtathatjuk. A fő funkciója, hogy a weboldalt több blokkra tudjuk bontani és azokat szabadon tudjuk mozgatni az oldalon, meghatározhassuk az egymáshoz és az oldalhoz való viszonyát (lásd 9. lecke). A div alkalmazása a ma legjobb oldalfelosztási mód, mivel sokkal áttekinthetőbb és rugalmasabb, mint a korábbi keretes vagy táblázatos módszer. Megfelelő div-ek és stílusok használatával tetszőleges oldalfelosztás megvalósítható. A 2. Leckében található 4. ábrán a beszámozott részeket is egy-egy div-vel hozzák létre.</p>
+<p><strong>Méret</strong></p>
+<p>A tárolók használatához fontos tulajdonságok a méretük illetve az elhelyezésük. Mivel a div téglalap alakú, következik, hogy szélességet (<span face="courier new,courier" style="font-family: 'courier new', courier;">width</span>) és magasságot (<span face="courier new,courier" style="font-family: 'courier new', courier;">height</span>) adunk meg általában pixelben.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> width : 200px;<br /> height : 100px;</span></blockquote>
+<p>Természetesen bármilyen elemnek a méretét ezekkel a tulajdonságokkal kell megadni. <br /> Sokszor előfordul, hogy bizonyos elemnek nem akarunk pontos méretet adni, csak egy felső vagy alsó korlátot a szélességre, vagy magasságra. Így például a magasságra meg tudunk adni egy minimum értéket, aminél kisebb magassága nem lesz az elemnek, de ha tartalma olyan sok, akkor nagyobbra növelheti a böngésző.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> min-width : 500px;<br /> max-width : 1000px;<br /> min-height : 500px;<br /> max-height : 1000px;</span></blockquote>
+<p>Az elemek oldalon való elhelyezéséről részletesen lesz szó a 9. Leckében.</p>
+<p><span size="3" style="font-size: medium;"><b>Keretek, margók, térközök, hátterek<br /> </b></span><br /> A tárolókkal kapcsolatos leggyakoribb formázási beállítások a tároló kerete, margója, belső margója, valamint a hátterének megadása. Természetesen bármely olyan elemnek meg lehet adni ezeket a tulajdonságokat, amelyeknél van értelme a tulajdonságnak.</p>
+<p><br /> <b> Keret</b><br /> Egy elem keretét több módon meg lehet adni. Ha a keret mind a négy oldala ugyanolyanra akarunk formázni, akkor egyben meg lehet adni a keret tulajdonságait a</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> border-</span></blockquote>
+<p>kifejezéssel kezdve a tulajdonságokat.<br /> Szét is lehet választani és egyenként megadni mind a négy oldalt. Ilyenkor a</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> border-top-<br /> border-right-<br /> border-bottom-<br /> border-left-</span></blockquote>
+<p>kifejezéssel kezdve a tulajdonságot csak a fölső (<span face="courier new,courier" style="font-family: 'courier new', courier;">top</span>), jobb (<span face="courier new,courier" style="font-family: 'courier new', courier;">right</span>), alsó (<span face="courier new,courier" style="font-family: 'courier new', courier;">bottom</span>) és bal (<span face="courier new,courier" style="font-family: 'courier new', courier;">left</span>) keretvonalra érvényes a megadott formátum.<br /> A keret tulajdonságai a következők:<br /> A <i>keret stílusa</i>, amely a vonal stílusát jelenti, mint folytonos, szaggatott, stb. Például a folyamatos vonal beállítása a teljes keretre:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> border-style : solid;</span></blockquote>
+<p>A <i>keret vonalának színe</i> megadható. A szín megadásának módja ugyanúgy működik, ahogy az 5. fejezetben a szövegeknél már szerepelt. Például a fölső keretvonal színét pirosra állítása:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> border-top-color : red;</span></blockquote>
+<p>Végül a <i>keret vonalának vastagsága</i> adható meg, amelyet pixelben számolunk. Például a alsó keret vastagsága 3 pixel:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> border-bottom-width : 3px;</span></blockquote>
+<p>A keret tulajdonságokat össze lehet vonni két féle módon is. Az egyik, ha a tulajdonságokat egyben adjuk meg vastagság, stílus és szín sorrendben szóközzel elválasztva az értékeket. Tehát egy 1 pixel vastag, szaggatott, kék keretet megadhatunk a következő módon:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> border : 1px dashed blue;</span></blockquote>
+<p>A másik összevonási lehetőség, ha a keret egyes vonalaira hivatkozunk egy tulajdonság megadásával. Ennek egyik módja, ha föntről kezdve óra járásának megfelelően, azaz fölső, jobb, alsó és bal keret sorrendben adjunk meg az értékeket szóközzel elválasztva. Például a fölső keretet pirosra, a jobb oldalit zöldre, az alsót kékre és a bal oldalit sárgára színezést egyben meg lehet adni:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> border-color : red green blue yellow;</span></blockquote>
+<p>További összevonási lehetőség, ha egyben formázzuk fölső-alsó és bal-jobb kereteket, amelyek így azonos beállítást kapnak. Például ha a fölső és alsó vonal pontozott, míg a bal és a jobb dupla vonal, akkor ez megadható egyben is:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> border-style : dotted double;</span></blockquote>
+<p><b></b>A CSS3 nyev már tartalmazza az elem sarkainak lekerekítését (<span style="font-family: 'courier new', courier;">border-radius</span>). Ez valójában nem csak a keretvonalra vonatkozik, hanem úgy általában az elemre, azaz nemcsak a keretvonal, hanem az elem háttere is követi a lekerekítést. A lekerekítés megadásához az ív sugarát kell megadni. Ezt meg lehet adni külön-külön (pl <span style="font-family: 'courier new', courier;">border-top-left-radius</span>), de összevonva is.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">border-radius : 10px;</span></blockquote>
+<p><b>Margók<br /> </b><br /> A margókból két fajtát különböztetünk meg, az egyiket az elem és külső környezetének, míg a másik az elem és a tartalmának a távolságát adja meg.<br /> <br /> <i><b> Külső margó</b></i><br /> Azt adja meg, hogy az elem (például egy div) és a környezetének mi a távolsága. Ezt úgy éri el mintha az elem méretét növelné, azaz a bal oldaltól való távolság növelésével az elemet jobbra tolja, míg a jobb oldalon való távolságnövelés hatására a jobb oldali környezetet tolja messzebb. A távolságot megadhatjuk pixelben:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> margin : 10px;</span></blockquote>
+<p>vagy százalékban, amikor az elem méretéhez igazítja a távolságot:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> margin : 10%;</span></blockquote>
+<p>végül automatikus margóállítás is lehetséges:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> margin : auto;</span></blockquote>
+<p><i><b> Belső margó</b></i><br /> Azt adja meg, hogy az elem és a tartalma között mekkora a távolság. A távolság növelésével nem a tartalomnak a méretét növeli, hanem magának a formázott elemnek a méretét. Az értéke ennek is pixelben és százalékban adható meg:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> paddig : 10px;<br /> padding : 10%;</span></blockquote>
+<p>Mindkét margó esetén hasonlóan lehet bontásban és összevonva is megadni a távolságot, ahogy a keret esetében. Tehát például a bal oldali külső és belső margó megadható</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> margin-left : 25px;<br /> padding-left : 25px;</span></blockquote>
+<p>módon. Míg egy sorban is megadható fölső, jobb, alsó és bal sorrendben megadva szóközzel elválasztva</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> margin : 10px 15px 20px 25px;</span></blockquote>
+<p>Továbbá egyben megadható a fölső-alsó és bal-jobb távolság szóközzel elválasztva:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> padding: 10px 0px;</span></blockquote>
+<p>Valamint természetesen mind a négy irányban egyben megadható:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> padding : 5px;</span></blockquote>
+<div align="center"><img src="margok.gif" width="400" height="338" /></div>
+<div align="center"><b>10. Ábra</b>: Egy HTML elem margói és helyfoglalásának szélessége</div>
+<p>Egy elem tényleges helyfoglalási mérete több értékből tevődik össze. Függőlegesen az elem magassága, a fölső és alsó, külső illetve belső margója valamint a fölső és alsó keretének a vastagságának az összege. Vízszintesen hasonlóan a bal külső margója, bal keret vastagsága, bal belső margója, elem szélessége, jobb belső margója, jobb keret vastagsága, jobb külső margójának összege.</p>
+<p><i>Megjegyzés</i><br /> Mivel sok böngésző eltérő módon kezeli alapértelmezettként a margók méretét, így sokszor a stíluslapok legelején megadjuk, hogy egyik elemnek se legyen se belső, se külső margója, majd a későbbi stílusokkal minden elemnek megadjuk pontosan a megfelelő margóbeállításokat.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> * {<br /> magin : 0px;<br /> padding : 0px;<br /> }</span></blockquote>
+<p>Ma már nagyon sokféle felbontást használnak a felhasználók, így nehéz olyan weboldalt készíteni, amelyik a felbontáshoz igazodik. Ennek megoldására egyik lehetőség un. reszponzív (lásd később) oldalt készíteni, a másik ha az oldal tartalmát olyan tárolóba tesszük, amely mérete rögzített, így nem függ az ablak méretétől. Ez utóbbi esetben kis ablakméretnél a felhasználónak vízszintes irányban görgetnie kell az oldalt, így ezt a megoldást olyan weboldalakra használjuk, amely első sorban nem mobil eszközre készült.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;body&gt;<br /> &lt;div id="content"&gt;<br /> ...<br /> &lt;/div&gt;<br /> &lt;/body&gt;</span></blockquote>
+<p>Ennek a tárolónak adott méretet adunk, ami igazodik ahhoz a felbontáshoz, amihez optimalizálunk (ez ma még az 1024*768). Sokszor ezt a tárolót az oldal közepére igazítjuk, amit szintén a margóval tudunk elvégezni az auto értékkel.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> div#content {<br />  width : 900px;<br />  min-height : 500px;<br />  margin : 0px auto;<br /> }</span></blockquote>
+<p><b>Háttér</b><br /> A háttérbeállítás az egyik legalapvetőbb design jellemző, ami egy weboldalon jelentkezik. Két háttér beállítás lehet, az egyik a háttérszín, a másik a háttérkép. Természetesen mindkettőt meg lehet adni egyszerre, hiszen ha a háttérkép nem fedi le a teljes elemet, akkor a háttérszín is látszik.<br /> <br /> <i><b>Háttérszín</b></i><br /> A színek megadása ugyanúgy működik, ahogy az 5. leckében a szövegszínnél már szerepelt.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> background-color : white;</span></blockquote>
+<p><br /> <i><b>Háttérkép</b></i><br /> Bármilyen kép betölthető egy elem háttereként, természetesen vigyázni kell, hogy esetlegesen ne nyomja el az elem tartalmát, szövegnél olvasható maradjon, stb. A háttérkép lehet távoli elérésű, de ennek megvan a veszélye, hogy ha törlődik az eredeti helyről, akkor a mi weboldalunkról is eltűnik.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> background-image : url(hatterkep.png);</span></blockquote>
+<p>A kép és az elem méretének eltéréséből adódóan a kép többféle módon viselkedhet. Ha a kép kisebb, akkor a kép ismétlődését meg lehet adni, alapértelmezésként minden irányban ismétlődve kitölti a teljes elemet. Ettől függetlenül megadható a teljes ismétlődés a</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> background-repeat : repeat;</span></blockquote>
+<p>módon. Ha csak vízszintesen illetve függőlegesen szeretnénk ismétlődés, akkor a</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> background-repeat : repeat-x;<br /> background-repeat : repeat-y;</span></blockquote>
+<p>értékkel adhatjuk meg. Végül, ha egyáltalán nem szeretnénk ismétlődést, akkor a kövekező módon adhatjuk meg:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> background-repeat : no-repeat;</span></blockquote>
+<p>Amikor a háttérkép nem tölti ki az elemet és nem is ismétlődik, akkor érdekes lehet, hogy az elemen belül hol jelenjen meg. Erre szolgál a pozícionálás. Ez megadható úgy, hogy először a vízszintes elhelyezés majd a függőleges elhelyezést adjuk meg szóközzel elválasztva. Ez megtehető igazításként, a bal (left), közép (center), jobb (right), fönt (top) és lent (bottom) valamilyen kombinációjával, például jobbra és le helyezve:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> background-position : right bottom;</span></blockquote>
+<p>Valamint megadható a tároló elem méretéhez viszonyított százalékban, vagy konkrétan pixelben. Ilyenkor mindig ez elem bal fölső sarka a 0px 0px, és a kép bal fölső sarkát fogja az adott pontba helyyezni:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> background-position : 100px 50;</span></blockquote>
+<p>Amikor az elem mérete annyira nagy, hogy nem fér el a böngésző ablak látható részén, akkor érdekes beállítási lehetőség, hogy az oldal görgetésekor hogyan viselkedjen a háttérkép. Két beállítás lehetséges, amikor a kép az oldallal együtt mozog (scroll), illetve a görgetés alatt az ablakhoz viszonyított helyzete nem változik (fixed):</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> background-attachment : scroll / fixed;</span></blockquote>
+<p>CSS3-tól kezdve lehetőség van a háttérkép méretét is megadni a szélesség és magasság értékével:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">background-size : 100px 200px;</span></blockquote>
+<p>További lehetőség a <span style="font-family: 'courier new', courier;">cover</span> érték, amely estén a háttérképen úgy méretezi, hogy teljesen lefedje az adott elemet, valamint a <span style="font-family: 'courier new', courier;">contain</span> érték, amikor úgy méretezi át, hogy a háttérkép lehető legnagyobb méretben jelenjen meg úgy, hogy teljesen beleférjen a az adott elembe.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"><span>background-size : cover / contain;</span></span></blockquote>
+<p>Továbbá lehetőség van egyszerre több háttérképet is megadni, azok vesszővel elválasztott felsorolásával. Ilyenkor az összes korábbi tulajdonsághoz annyi érték adható meg, amennyi háttérkép van úgy, hogy az első érték az első képre vonatkozik, a második a másodikra, stb.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">background-image : url(hatterkep1.png), <span>url(hatterkep2.png);</span></span></blockquote>
+<p><b>Függőleges elhelyezés</b></p>
+<p>Bizonyos elemek esetén (például táblázat cellák) lehetőség van a vízszintes elhelyezkedést megadni. A három leggyakrabban használt pozíció a fent/lent/középen</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">vertical-align : top / bottom / middle;</span></blockquote>
+<p>Fontos megjegyezni, hogy nem minden elemnek lehet ezt a tulajdonságot megadni. Ezt a megjelenítési módja (<span style="font-family: 'courier new', courier;">display</span>) határozza meg, amely a tananyag későbbi részében lesz tárgyalva.</p>
+<p><span size="3" style="font-size: medium;"><b>Beágyazott keretek</b></span></p>
+<p>Ugyan keretes felosztást már nem használunk, ennek egy módozata továbbra is használatos, a beágyazott keretek. Ennek lényege, hogy az oldalra egy keretbe egy másik weboldalt ágyazunk be. A beágyazott keretnek meg kell adni a betöltendő dokumentumot, ami akár egy távoli weboldal is lehet. A nyitó és záró tag közé írt tartalom jelenik meg, ha a böngésző nem kezeli a beágyazott kereteket.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;iframe src="masikoldal.html"&gt;<br /> Az ön böngészője nem jeleníti meg a beágyazott keretet.<br /> &lt;/ifram&gt; </span></blockquote>
+<p>Használatakor figyelembe kell venni, hogy az oldalunk betöltődésekor a beágyazott dokumentum is betöltődik, így lassítja a folyamatot. Illetve magában hordozza azt a veszélyt, hogy ha a másik dokumentumot nem mi szerkesztjük, akkor kártékony weboldalt is betölthetünk a saját oldalunkra.</p>
+<p>A beágyazott keretet meg lehet adni egy linknek célként, azaz a hivatkozott oldalt a beágyazott keretbe fogja a böngésző betölteni. Ehhez a link <span style="font-family: 'courier new', courier;">target</span> attribútumának a beágyazott keret azonosítóját (<span style="font-family: 'courier new', courier;">id</span>) kell megadni.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id53">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_problem.gif" /><h2 class="iDeviceTitle">Feladat</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta53_26_5" class="block iDevice_content">
+Az eddig elkészült oldalakat egészítse ki úgy, hogy tegye be az oldal tartalmát egy általános tárolóba! Egészítse ki az általános stíluslapját az oldal háttérkép megadásával, formázza meg az általános tárolót, igazítsa középre, méretezze megfelelően és állítsa be a háttérszínét! Adjon a tárolónak keretet és formázza elgondolása szerint! Állítsa be, hogy a tároló az oldal tetejétől valamivel lejjebb kezdődjön és a szövegtartalom egyik irányból se tapadjon a tároló keretére!
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultichoiceIdevice em_iDevice" id="id54">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Feleletválasztós teszt</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<form name="multi-choice-form-54_2" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion54_2" class="block question iDevice_content">
+Melyik állítás helytelen?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_5" class="sr-av"><a href="#answer-54_5">Beállítás 1</a></label><input type="radio" name="option54_2" id="i54_5" onclick="getFeedback(0,3,'54_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_5"><a name="answer-54_5"></a>
+<div id="taans54_5" class="block iDevice_content">
+A táblázatos oldalfelosztás könnyebb a div-es oldalfelosztásnál, mivel a cellák jól meghatározott tárolók.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_321" class="sr-av"><a href="#answer-54_321">Beállítás 2</a></label><input type="radio" name="option54_2" id="i54_321" onclick="getFeedback(1,3,'54_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_321"><a name="answer-54_321"></a>
+<div id="taans54_321" class="block iDevice_content">
+A div-es oldalfelosztás korszerűbb, mint a táblázatos, mivel dinamikusabb felépítésű.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_324" class="sr-av"><a href="#answer-54_324">Beállítás 3</a></label><input type="radio" name="option54_2" id="i54_324" onclick="getFeedback(2,3,'54_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_324"><a name="answer-54_324"></a>
+<div id="taans54_324" class="block iDevice_content">
+A keretes oldalfelosztás nem hatékony, mert a keresők nehezebben indexelik az ilyen weboldalakat.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b54_2" class="feedback js-hidden"><a name="sa0b54_2"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b54_2" class="feedback js-hidden"><a name="sa1b54_2"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b54_2" class="feedback js-hidden"><a name="sa2b54_2"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-54_5">Correct Option</a> (<a href="#sa0b54_2">Visszajelzés</a>)</li>
+<li><a href="#answer-54_321">Rossz</a> (<a href="#sa1b54_2">Visszajelzés</a>)</li>
+<li><a href="#answer-54_324">Rossz</a> (<a href="#sa2b54_2">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-54_327" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion54_327" class="block question iDevice_content">
+Mire való a div?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_330" class="sr-av"><a href="#answer-54_330">Beállítás 1</a></label><input type="radio" name="option54_327" id="i54_330" onclick="getFeedback(0,3,'54_327','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_330"><a name="answer-54_330"></a>
+<div id="taans54_330" class="block iDevice_content">
+Általános blokkos tároló.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_333" class="sr-av"><a href="#answer-54_333">Beállítás 2</a></label><input type="radio" name="option54_327" id="i54_333" onclick="getFeedback(1,3,'54_327','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_333"><a name="answer-54_333"></a>
+<div id="taans54_333" class="block iDevice_content">
+Az oldalt vele lehet részekre darabolni.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_336" class="sr-av"><a href="#answer-54_336">Beállítás 3</a></label><input type="radio" name="option54_327" id="i54_336" onclick="getFeedback(2,3,'54_327','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_336"><a name="answer-54_336"></a>
+<div id="taans54_336" class="block iDevice_content">
+Szövegek egy részét lehet egységbe foglalni.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b54_327" class="feedback js-hidden"><a name="sa0b54_327"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b54_327" class="feedback js-hidden"><a name="sa1b54_327"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b54_327" class="feedback js-hidden"><a name="sa2b54_327"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-54_330">Correct Option</a> (<a href="#sa0b54_327">Visszajelzés</a>)</li>
+<li><a href="#answer-54_333">Rossz</a> (<a href="#sa1b54_327">Visszajelzés</a>)</li>
+<li><a href="#answer-54_336">Rossz</a> (<a href="#sa2b54_327">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-54_339" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion54_339" class="block question iDevice_content">
+Mire való a margin tulajdonság?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_342" class="sr-av"><a href="#answer-54_342">Beállítás 1</a></label><input type="radio" name="option54_339" id="i54_342" onclick="getFeedback(0,3,'54_339','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_342"><a name="answer-54_342"></a>
+<div id="taans54_342" class="block iDevice_content">
+Megadni az elem és a környezetének a távolságát.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_345" class="sr-av"><a href="#answer-54_345">Beállítás 2</a></label><input type="radio" name="option54_339" id="i54_345" onclick="getFeedback(1,3,'54_339','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_345"><a name="answer-54_345"></a>
+<div id="taans54_345" class="block iDevice_content">
+Megadni az elem és az oldal szélé közötti távolságot.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_348" class="sr-av"><a href="#answer-54_348">Beállítás 3</a></label><input type="radio" name="option54_339" id="i54_348" onclick="getFeedback(2,3,'54_339','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_348"><a name="answer-54_348"></a>
+<div id="taans54_348" class="block iDevice_content">
+Megadni a böngésző széle és az oldal tartalma közötti távolságot.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b54_339" class="feedback js-hidden"><a name="sa0b54_339"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b54_339" class="feedback js-hidden"><a name="sa1b54_339"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b54_339" class="feedback js-hidden"><a name="sa2b54_339"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-54_342">Correct Option</a> (<a href="#sa0b54_339">Visszajelzés</a>)</li>
+<li><a href="#answer-54_345">Rossz</a> (<a href="#sa1b54_339">Visszajelzés</a>)</li>
+<li><a href="#answer-54_348">Rossz</a> (<a href="#sa2b54_339">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-54_351" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion54_351" class="block question iDevice_content">
+Mire való a padding tulajdonság?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_354" class="sr-av"><a href="#answer-54_354">Beállítás 1</a></label><input type="radio" name="option54_351" id="i54_354" onclick="getFeedback(0,3,'54_351','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_354"><a name="answer-54_354"></a>
+<div id="taans54_354" class="block iDevice_content">
+Az elem és a tartalma közötti távolságot lehet megadni vele.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_357" class="sr-av"><a href="#answer-54_357">Beállítás 2</a></label><input type="radio" name="option54_351" id="i54_357" onclick="getFeedback(1,3,'54_351','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_357"><a name="answer-54_357"></a>
+<div id="taans54_357" class="block iDevice_content">
+A böngésző széle és az oldal tartalma közötti távolságot lehet megadni vele.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_360" class="sr-av"><a href="#answer-54_360">Beállítás 3</a></label><input type="radio" name="option54_351" id="i54_360" onclick="getFeedback(2,3,'54_351','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_360"><a name="answer-54_360"></a>
+<div id="taans54_360" class="block iDevice_content">
+Az elem és környezetének távolságát lehet megadni vele.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b54_351" class="feedback js-hidden"><a name="sa0b54_351"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b54_351" class="feedback js-hidden"><a name="sa1b54_351"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b54_351" class="feedback js-hidden"><a name="sa2b54_351"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-54_354">Correct Option</a> (<a href="#sa0b54_351">Visszajelzés</a>)</li>
+<li><a href="#answer-54_357">Rossz</a> (<a href="#sa1b54_351">Visszajelzés</a>)</li>
+<li><a href="#answer-54_360">Rossz</a> (<a href="#sa2b54_351">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-54_363" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion54_363" class="block question iDevice_content">
+Mi határozza meg egy elem szélességi helyfoglalását?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_366" class="sr-av"><a href="#answer-54_366">Beállítás 1</a></label><input type="radio" name="option54_363" id="i54_366" onclick="getFeedback(0,3,'54_363','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_366"><a name="answer-54_366"></a>
+<div id="taans54_366" class="block iDevice_content">
+Az elem szélességének, bal és jobb belső és külső margójának, bal és jobb keretének összege.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_369" class="sr-av"><a href="#answer-54_369">Beállítás 2</a></label><input type="radio" name="option54_363" id="i54_369" onclick="getFeedback(1,3,'54_363','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_369"><a name="answer-54_369"></a>
+<div id="taans54_369" class="block iDevice_content">
+Az elem width tulajdonsága.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i54_372" class="sr-av"><a href="#answer-54_372">Beállítás 3</a></label><input type="radio" name="option54_363" id="i54_372" onclick="getFeedback(2,3,'54_363','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-54_372"><a name="answer-54_372"></a>
+<div id="taans54_372" class="block iDevice_content">
+Az elem böngésző által meghatározott szélessége.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b54_363" class="feedback js-hidden"><a name="sa0b54_363"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b54_363" class="feedback js-hidden"><a name="sa1b54_363"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b54_363" class="feedback js-hidden"><a name="sa2b54_363"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-54_366">Correct Option</a> (<a href="#sa0b54_363">Visszajelzés</a>)</li>
+<li><a href="#answer-54_369">Rossz</a> (<a href="#sa1b54_363">Visszajelzés</a>)</li>
+<li><a href="#answer-54_372">Rossz</a> (<a href="#sa2b54_363">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

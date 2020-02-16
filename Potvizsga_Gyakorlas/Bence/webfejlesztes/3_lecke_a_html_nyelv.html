@@ -1,0 +1,572 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="hu" xml:lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>3. Lecke: A HTML nyelv </title>
+<meta http-equiv="content-language" content="hu" />
+<meta name="generator" content="eXeLearning 2.0.4 - exelearning.net" />
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Show",hide:"Elrejtés",showFeedback:"Mutassa a visszajelzést",hideFeedback:"Visszajelzés elrejtése",correct:"Helyes",incorrect:"Incorrect",menu:"Menu"}</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+<script type="text/javascript" src="SCOFunctions.js"></script>
+</head>
+<body class="exe-scorm" onload="loadPage()" onunload="unloadPage()"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="outer">
+<div id="main">
+<div id="nodeDecoration"><h1 id="nodeTitle">3. Lecke: A HTML nyelv</h1></div>
+<div class="iDevice_wrapper objectivesIdevice em_iDevice" id="id35">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_objectives.gif" /><h2 class="iDeviceTitle">Célok</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta35_35_2" class="block iDevice_content">
+
+<ul>
+	<li>Ismerje a HTML nyelv szintaktikáját</li>
+	<li>Ismerje az XHTML nyelv szabályait</li>
+	<li>Ismerje egy weboldal forrásának felépítését</li>
+	<li>Ismerje a weboldal forrás fej részének legfontosabb elemeit</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id37">
+<div class="iDevice emphasis0">
+<div id="ta37_1" class="block iDevice_content">
+<p><span size="3" style="font-size: medium;"><b>Tartalom</b></span></p>
+<ul>
+<li>A HTML nyelv szerepe</li>
+<li>A HTML nyelv szintaktikai szabályai</li>
+<li>Az XHTML nyelv szabályai a HTML nyelvhez képest</li>
+<li>A weboldal forrásának általános felépítése</li>
+<li>A weboldal fej részének legfontosabb elemei</li>
+</ul>
+<p></p>
+<p><b><span size="3" style="font-size: medium;">A HTML nyelv<br /> </span></b><br /> Ahogy korábban már szerepelt, a statikus weboldalak elkészítéséhez nem szükséges programozói tudás és programnyelv. A weboldal leírásához egy ún. jelölő nyelv szükséges, ez a HTML nyelv (<b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage). A nyelv első verzióját 1991-ben hozták nyilvánosságra. Az aktuális verzió a <b><i>HTML 5,</i></b> de még elterjedt a <i><b>HTML 4.01</b> </i>is. A HTML 5 legfontosabb újdonsága az elődhöz képest, hogy bizonyos elavult elemek kikerültek, illetve új elemek és új tulajdonságok bekerültek a nyelvbe. Továbbá a mai weboldalak igényeinek megfelelően jobban támogatják a fejlettebb grafikák, videók és hangok beágyazását az oldalakra.<br /> A HTML nyelv szintaktikai jellemzői, azaz formai szabályai, a következők. A nyelv alapvetően nem kis-nagybetű érzékeny, azaz az elnevezéseket mindkét módon írhatjuk. A forrás egy szöveges állomány, aminek a tartalma két részre bontható: úgy nevezett <b>tag-</b>ekre és statikus szövegre. A tag egy &lt; és &gt; jel közé írt elem, amely meghatároz egy elemét a weboldalnak, mint például egy bekezdést, egy képet, stb. A tag-nek van egy neve, ami közvetlenül a &lt; jel után következik szóköz nélkül. A tag-en belül lehetnek attribútumok, melyek a tag által meghatározott weblapelem tulajdonságait adja meg. Az attribútumnak van egy elnevezése és egyenlőség jel után adunk értéket neki. Bizonyos attribútum működik önállóan, azaz nem kell értéket adni, maga az attribútum neve adja a tulajdonságot. Például egy jelölőnégyzet bekapcsolt állapotát a <span style="font-family: 'courier new', courier;">checked</span> attribútummal adjuk meg. Egy példa tag egy attribútummal:</p>
+<style type="text/css"><!--
+<br />
+A legtöbb tag-nek van egy lezáró párja, ami azt jelenti, hogy a tag hatóköre a nyitó és záró elem közötti részre vonatkozik. A lezáró tag neve ugyanaz, mint a nyitóé, de egy / jel szerepel előtte és nincsenek attribútumai. Tehát az előző példa pontosan:<br />
+<style type="text/css"> ...
+--></style>
+<p class="MsoNormal" style="margin-left: 1cm;"><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-family: 'Courier New';">&lt;style type=”text/css”&gt;</span></span></p>
+<p class="MsoNormal">A legtöbb tag-nek van egy lezáró párja, ami azt jelenti, hogy a tag hatóköre a nyitó és záró elem közötti részre vonatkozik. A lezáró tag neve ugyanaz, mint a nyitóé, de egy / jel szerepel előtte és nincsenek attribútumai. Tehát az előző példa pontosan:<o:p></o:p></p>
+<p class="MsoNormal" style="margin-left: 1cm;"><span style="font-family: 'Courier New';"><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;style type=”text/css”&gt; … &lt;/style&gt;</span><o:p></o:p></span></p>
+<p>A tag mindig a nyitó és záró párja közötti részre vonatkozik, így jelöl ki egy tartalmat az oldalon valamilyen weblap elemmé. A nyitó és záró tag között bármi lehet, szöveg vagy további tag-ek. Ebből következik, hogy a tag-ek egymásba ágyazhatóak, így egy tartalmazási viszony alakul ki közöttük. A megfelelő tartalmazás jelentősen meghatározza a weblap felépítését, ezáltal tudjuk felépíteni a weboldal szerkezetét.</p>
+<p>Bizonyos tag-eknek nincs záró párja, ilyen például a sortörés a szövegen belül.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-family: 'Courier New';">&lt;br&gt;</span></span></blockquote>
+<blockquote><span style="font-family: 'Times New Roman', Times, serif; text-align: justify;">A HTML nyelvben is van lehetőség a kódba megjegyzések írására, amelyet a böngésző, mint értelmező, nem vesz figyelembe. Ennek szintaktikája:</span></blockquote>
+<blockquote>
+<p><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;!-- megjegyzés --&gt;</span></p>
+</blockquote>
+<p><b>HTML entitások</b></p>
+<p>A weboldal szövegtartalmában előfordulhatnak olyan karakterek, amelyek megjelenítése problémás lehet. Például azért, mert egy ilyen a karakternek speciális jelentése van a nyelvbe, mint a relációs jeleknek. Az ilyen karaktereket HTML entitásokkal helyettesítjük, így a böngésző megjeleníti a megfelelő karaktert. Entitásokat használhatunk akkor is, ha olyan karaktert kell bevinni, ami nem található meg a billentyűzeten. Az entitások mindig egy &amp; jellel kezdődnek és ; (pontosvessző) jellel zárulnak. Megadhatjuk őket kódjukkal, vagy a legfontosabbaknak nevük is van, amelyeket könnyebb megjegyezni.</p>
+<p>A legfontosabb entitások:</p>
+<table style="margin-left: 50px; width: 273px; height: 138px;" border="1">
+<tbody>
+<tr>
+<td><span face="courier new,courier" style="font-family: 'courier new', courier;">&amp;nbsp;</span></td>
+<td> nem törhető szóköz</td>
+</tr>
+<tr>
+<td><span face="courier new,courier" style="font-family: 'courier new', courier;">&amp;lt;</span></td>
+<td> &lt;</td>
+</tr>
+<tr>
+<td><span face="courier new,courier" style="font-family: 'courier new', courier;">&amp;gt;</span></td>
+<td> &gt;</td>
+</tr>
+<tr>
+<td><span face="courier new,courier" style="font-family: 'courier new', courier;">&amp;quot;</span></td>
+<td> " (idézőjel)</td>
+</tr>
+<tr>
+<td><span face="courier new,courier" style="font-family: 'courier new', courier;">&amp;apos; <br /> </span></td>
+<td> ' (aposztróf)</td>
+</tr>
+<tr>
+<td><span face="courier new,courier" style="font-family: 'courier new', courier;">&amp;amp; <br /> </span></td>
+<td> &amp;</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p><span size="3" style="font-size: medium;"><b>Az XHTML nyelv<br /> </b></span><br /> Az XHTML (E<b>X</b>tensible <b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage) nyelv 2000-ben jelent meg és gyakorlatilag a HTML nyelv szintaktikailag szigorúbb formája. Mivel a HTMT nyelv több pontatlanságot is elviselt, így az értelmezése nehézkessé illetve nem egyértelművé vált. Emiatt bevezettek néhány szigorú szabályt, amit az XHTML nyelvben megkövetelünk a weboldal forrásától. A szabályok a következők:</p>
+<ul>
+<li>Minden tag-et kötelező lezárni. Amely tag-eknek nincs záró elemük, a lezárást már a nyitó elemben jelölni kell a &gt; jel előtti / jellel.</li>
+</ul>
+<p class="MsoNormal" style="text-indent: 35.4pt;">Például <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;br /&gt;</span></p>
+<ul>
+<li>Minden tag nevet és attribútum nevet csupa kisbetűvel kell írni.</li>
+</ul>
+<ul>
+<li>Minden attribútum értéket idézőjelek vagy aposztrófok közé kell tenni.</li>
+</ul>
+<ul>
+<li>Minden tag-et helyesen kell egymásba ágyazni. Azaz ha egy tag-et egy másik tag-en belül nyitottunk, akkor belül is kell lezárni.</li>
+</ul>
+<p class="MsoNormal" style="margin-left: 35.4pt;">Így a<span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;p&gt;&lt;a&gt;…&lt;/p&gt;&lt;/a&gt;</span> beágyazás helytelen és helyesen <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;p&gt;&lt;a&gt;…&lt;/a&gt;&lt;/p&gt;</span>.<o:p></o:p></p>
+<ul>
+<li>Minden felvett attribútumnak kötelező értéket adni.</li>
+</ul>
+<ul></ul>
+<blockquote>Mivel a HTML nyelvben megengedett volt, hogy bizonyos attribútumnak ne adjunk értéket (mert már önmagában is hordozták a jelentését), az XHML nyelvben az attribútumnak a nevével megegyező értéket kell adni.<br /> Például a <span face="courier new,courier" style="font-family: 'courier new', courier;">checked </span>tulajdonsággal be lehetett kapcsolni egy jelölőnégyzetet, ez XHTML-ben helyesen <span face="courier new,courier" style="font-family: 'courier new', courier;">checked="checked"</span> (lásd 8. Lecke).</blockquote>
+<ul>
+<li>Kötelező egy ún. gyökér elemet felvenni a dokumentumba, amely magába ágyazza az összes többi tag-et. Ez a <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;html&gt; … &lt;/html&gt;</span> elem.</li>
+</ul>
+<ul>
+<li>Kötelező, hogy az oldalnak legyen fej és törzs része, ha üresen is. Ezekről még lesz szó a fejezet későbbi részében.</li>
+</ul>
+<ul>
+<li>Továbbá kötelező két olyan rész még, amelyet ebben a tananyagban nem részletezünk. Az egyik a <span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-size: 12pt; font-family: 'Courier New';">&lt;!DOCTYPE …&gt;</span><span style="font-size: 12pt; font-family: 'Times New Roman','serif';"> </span></span> a forrás első sorában, amely pontosan leírja egy definíciós állomány segítségével, hogy melyik tag-et hogyan kell használni és értelmeznie a böngészőnek. Ennek használata fontos, mert néhány böngészőben bizonyos lehetőségek csak ebben az esetben használhatók. Az XHTM nyelvben az xmlns="..." tulajdonság megadása is kötelező a <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;html&gt; </span>tag-ben. Ez a HTML nyelvben nincs benne.<br /> Például:</li>
+</ul>
+<p class="MsoNormal" style="margin-left: 35.4pt;"><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-size: 10pt; font-family: 'Courier New'; color: black; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left: 35.4pt;"><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-size: 10pt; font-family: 'Courier New'; color: black; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;<o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-left: 35.4pt;"><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-size: 10pt; font-family: 'Courier New'; color: black; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">…<o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-left: 35.4pt;"><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-size: 10pt; font-family: 'Courier New'; color: black; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">&lt;/html&gt;</span><o:p></o:p></span></p>
+<p>Ugyan a HTML nyelv nem követeli meg teljes mértékben ezeket a formai szabályokat, betartásuk javasolt az áttekinthető és korrekt kód elkészítéséhez. Emiatt a tananyag további részében ugyan a HTML5 nyelvet használjuk, betartjuk ezeket a szabályokat is. Ez alól kivétel az xmlns használata (mivel ez nincs a HTML5 nyelvben), illetve természetesen a DOCTYPE is a HTML5-nek megfelelő:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;!DOCTYPE html&gt;</span></blockquote>
+<p><b><span size="3" style="font-size: medium;"> A weboldal forrásának részei<br /> </span></b></p>
+<p class="MsoNormal">A weboldalt alapvetően két részre lehet bontani: a fejre és a törzsre. A fejet a &lt;head&gt;&lt;/head&gt; a törzset a &lt;body&gt;&lt;/body&gt; tag-ek határozzák meg. Minden esetben először a fej szerepel és csak utána a törzs. Tehát a weboldal általános felépítése HTML nyelven:<o:p></o:p></p>
+<p class="MsoNormal" style="margin-left: 1cm;"><br /> <span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-family: 'Courier New';">&lt;!DOCTYPE …&gt;<o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-left: 1cm;"><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-family: 'Courier New';">&lt;html&gt;</span></span></p>
+<p class="MsoNormal" style="margin-left: 1cm;"><span style="font-family: 'Courier New'; line-height: 20.8px;">&lt;head&gt;</span></p>
+<p class="MsoNormal" style="margin-left: 1cm; text-indent: 35.4pt;"><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-family: 'Courier New';">…<o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-left: 1cm;"><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-family: 'Courier New';">&lt;/head&gt;<o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-left: 1cm;"><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-family: 'Courier New';">&lt;body&gt;<o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-left: 1cm;"><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-family: 'Courier New';"> …<o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-left: 1cm;"><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-family: 'Courier New';">&lt;/body&gt;<o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-left: 1cm;"><span face="courier new,courier" style="font-family: 'courier new', courier;"><span style="font-family: 'Courier New';">&lt;/html&gt;<o:p></o:p></span></span></p>
+<p><br /> A fejben szereplő tag-ek a weboldal járulékos információit adják, illetve a helyes megjelenítéshez szükségesek. A törzsben szerepelnek a ténylegesen megjelenítendő tag-ek.</p>
+<p>Így elmondható, hogy a forrásban szereplő tag-ek és szövegek egy fa struktúrába rendezhetőek, amelynek gyökere a <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;html&gt;</span> és két közvetlen gyereke van, a <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;head&gt;</span> és a <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;body&gt;</span>. Minden további elem ezekből származik közvetlenül vagy közvetve.</p>
+<div align="center"></div>
+<div align="center"></div>
+<div align="center"><img src="fa.gif" width="150" height="76" /></div>
+<div align="center"><b> 5. Ábra</b>: A weboldal forrásának elemei faként ábrázolva.</div>
+<p align="left"><span size="2" style="font-size: small;"><b>A fej rész</b></span><br /> A fejben szereplő tag-ek sorrendje tetszőleges és jellemzően mindből csak egy szerepel a meta és a <span face="courier new,courier" style="font-family: 'courier new', courier;">link </span>tag-eket leszámítva. A legfontosabb elemek a következők.</p>
+<p align="left"><b><i>Cím</i></b><br /> Az oldal címét megadhatjuk a <br />
+<title>...</title>
+</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;title&gt; … &lt;/title&gt;</span><span style="font-family: 'Courier New';"><o:p></o:p></span></blockquote>
+<p align="left">tag-gel, amely megjelenik a böngésző fejlécében illetve a böngészőben az oldal „fülén". Ennek kitöltése azért is fontos, mert a keresők indexelik az oldalt a címe alapján is.<br /> <br /> <i><b>Fájl csatolások</b></i><br /> A <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;link … /&gt;</span><span style="font-size: 12pt; font-family: 'Courier New';"> </span><span style="font-size: 12pt; font-family: 'Times New Roman','serif';"><span></span></span> <link /> tag segítségével más fájlokat tudunk az oldalunkhoz csatolni, mint például egy stíluslapot (a 4. leckében lesz szó róla).<br /> <link href="stilus.css" type="text/css" rel="stylesheet" /></p>
+<p class="MsoNormal" style="margin-left: 1cm; text-align: center;" align="center"><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;link href=”stilus.css” type=”text/css” rel=”stylesheet” /&gt;</span><span style="font-family: 'Courier New';"><o:p></o:p></span></p>
+<p>Ahol a <span face="courier new,courier" style="font-family: 'courier new', courier;">href </span>adja meg a fájl elérését, a <span face="courier new,courier" style="font-family: 'courier new', courier;">type </span>a fájl típusát és a rel az ehhez az oldalhoz való viszonyát.</p>
+<p align="left"><i><b> Stílus megadása</b></i><br /> Az oldalhoz stílust lehet definiálni a fej részben a</p>
+<style type="text/css"><!--
+...
+--></style>
+<p class="MsoNormal" style="text-align: center;" align="left"><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;style type=”text/css”&gt;… &lt;/style&gt;</span><o:p></o:p></p>
+<p>tag-ek segítségével. Erről a következő fejezetben részletesen lesz szó. Fontos megjegyezni, hogy ezeken a tag-eken belül már nem a HTML nyelv szabályai érvényesek, hanem a stílust leíró CSS nyelv szabályai.</p>
+<p align="left"><i><b> Programkód megadása</b></i><br /> Az oldalon belül több helyen is meg lehet adni programkódot. A kliens oldali JavaScript kódot a <br />
+<script type="text/javascript">// <![CDATA[
+...
+// ]]></script>
+</p>
+<div align="center"><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;script type=”text/javascript”&gt;…&lt;/script&gt;</span></div>
+<p class="MsoNormal">tag-ek között lehet megadni. Fontos itt is, hogy ez a tag estében is a nyitó és záró elem között már nem a HTML nyelv érvényes, hanem már az adott programozási nyelv szabályai.<br /> <br /> <i><b> Az oldal járulékos információi<br /> </b></i>Az oldalhoz adatokat lehet megadni, amelyre a <span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;meta … /&gt;</span> tag szolgál. Ezeket a böngésző, a keresőmotorok és egyéb webes applikációk használják. Az ilyen tag-ek két csoportra bonthatóak. Az egyik, amelyek egy HTTP header információt tartalmaz, ennek a két attribútuma a <span face="courier new,courier" style="font-family: 'courier new', courier;">http-equiv=”…”</span>, amely tartalmazza az adat nevét valamint a <span face="courier new,courier" style="font-family: 'courier new', courier;">content=”…” </span>az adat értékét. Ezek közül a leggyakrabban használtak:<o:p></o:p></p>
+<ul>
+<li>A content-type tulajdonsággal megadhatjuk az oldalunk karakter-kódolását:<o:p></o:p></li>
+</ul>
+<blockquote>
+<p class="MsoNormal"><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;meta http-equiv="content-type" content="text/html; charset=”ISO-8859-2" /&gt;</span><o:p></o:p></p>
+</blockquote>
+<ul>
+<li style="list-style-type: none;">A HTML5-ben a karakterkódolás megadását leegyszerűsítették:</li>
+</ul>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;">&lt;meta charset=”ISO-8859-2" /&gt;</span></blockquote>
+<ul>
+<li>Az oldal nyelve megadható a content-language tulajdonsággal:</li>
+</ul>
+<blockquote>
+<p class="MsoNormal"><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;meta http-equiv=”content-language” content=”hu-HU” /&gt;</span><o:p></o:p></p>
+</blockquote>
+<p> </p>
+<p class="MsoNormal">A másik csoport, amely nem tartozik a HTTP header információk közé, ezekek a<span face="courier new,courier" style="font-family: 'courier new', courier;"> name=”…”</span> attribútummal adjuk meg a nevét és szintén a <span face="courier new,courier" style="font-family: 'courier new', courier;">content=”…”</span> attribútummal az értékét. Ezek közül a legfontosabbak:</p>
+<ul>
+<li>Megadható az oldal szerzője az author tulajdonsággal:<span style="font-family: 'Courier New';"></span></li>
+</ul>
+<blockquote>
+<div align="left"><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;meta name=”author” content=”Tóth Attila” /&gt;</span><span style="font-family: 'Courier New';"><o:p></o:p></span></div>
+</blockquote>
+<p><meta name="author" content="Tóth Attila" /></p>
+<ul>
+<li>Egy rövid leírás adható az oldalról a description tulajdonsággal, amely azért is fontos, mert a keresőmotorok vizsgálják az oldalt eszerint is.<span style="font-family: 'Courier New';"></span></li>
+</ul>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;meta name=”description” content=”bemutatkozó oldal” /&gt;</span><span style="font-family: 'Courier New';"><o:p></o:p></span></blockquote>
+<p><meta name="description" content="bemutatkozó oldal" /></p>
+<ul>
+<li>Nagyon fontos, hogy az oldalunkhoz kulcsszavakat adjunk meg, ami alapján a keresők indexelik az oldalunkat, így a felhasználók könnyebben fogják megtalálni. Erre szolgál a keywords tulajdonság:</li>
+</ul>
+<meta name="keywords" content="html, webfejlesztés" />
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;meta name=”keywords” content=”html, webfejlesztés” /&gt;</span><span style="font-family: 'Courier New';"><o:p></o:p></span></blockquote>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id39">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_problem.gif" /><h2 class="iDeviceTitle">Feladat</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta39_23_5" class="block iDevice_content">
+
+<p class="MsoNormal">
+Készítse el a weboldal forrásállományainak vázát, azaz
+készítsen egy olyan HTML forrásfájlt, amely tartalmazza a források általános
+szerkezetét.<o:p></o:p>
+</p>
+<ul>
+	<li>Adja meg a dokumentum típusát! Javasolt korszerű típust
+	választani, mint a HTML5 vagy az XHTML dokumentumtípust. <o:p></o:p></li>
+</ul>
+<ul>
+	<li>Adja meg a fej részének elemeit, legalább a title és
+	legfontosabb meta tag-eket!<o:p></o:p></li>
+</ul>
+<ul>
+	<li>Töltse ki a szükséges meta tag-eket a megfelelő adatokkal!<o:p></o:p></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultichoiceIdevice em_iDevice" id="id40">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Feleletválasztós teszt</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<form name="multi-choice-form-40_2" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion40_2" class="block question iDevice_content">
+Miből áll egy HTML forrásállomány?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_5" class="sr-av"><a href="#answer-40_5">Beállítás 1</a></label><input type="radio" name="option40_2" id="i40_5" onclick="getFeedback(0,3,'40_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_5"><a name="answer-40_5"></a>
+<div id="taans40_5" class="block iDevice_content">
+Tag-ekből és szövegből.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_156" class="sr-av"><a href="#answer-40_156">Beállítás 2</a></label><input type="radio" name="option40_2" id="i40_156" onclick="getFeedback(1,3,'40_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_156"><a name="answer-40_156"></a>
+<div id="taans40_156" class="block iDevice_content">
+Szövegből, képekből, linkekből.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_159" class="sr-av"><a href="#answer-40_159">Beállítás 3</a></label><input type="radio" name="option40_2" id="i40_159" onclick="getFeedback(2,3,'40_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_159"><a name="answer-40_159"></a>
+<div id="taans40_159" class="block iDevice_content">
+Tag-ekből, szövegből, képekből.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b40_2" class="feedback js-hidden"><a name="sa0b40_2"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b40_2" class="feedback js-hidden"><a name="sa1b40_2"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b40_2" class="feedback js-hidden"><a name="sa2b40_2"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-40_5">Correct Option</a> (<a href="#sa0b40_2">Visszajelzés</a>)</li>
+<li><a href="#answer-40_156">Rossz</a> (<a href="#sa1b40_2">Visszajelzés</a>)</li>
+<li><a href="#answer-40_159">Rossz</a> (<a href="#sa2b40_2">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-40_162" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion40_162" class="block question iDevice_content">
+Mi az XHTML nyelv?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_165" class="sr-av"><a href="#answer-40_165">Beállítás 1</a></label><input type="radio" name="option40_162" id="i40_165" onclick="getFeedback(0,3,'40_162','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_165"><a name="answer-40_165"></a>
+<div id="taans40_165" class="block iDevice_content">
+A HTML nyelv egy szigorúbb formai szabályokat betartó megírt változata.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_168" class="sr-av"><a href="#answer-40_168">Beállítás 2</a></label><input type="radio" name="option40_162" id="i40_168" onclick="getFeedback(1,3,'40_162','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_168"><a name="answer-40_168"></a>
+<div id="taans40_168" class="block iDevice_content">
+A stílusokat leíró nyelv.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_171" class="sr-av"><a href="#answer-40_171">Beállítás 3</a></label><input type="radio" name="option40_162" id="i40_171" onclick="getFeedback(2,3,'40_162','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_171"><a name="answer-40_171"></a>
+<div id="taans40_171" class="block iDevice_content">
+A HTML nyelv újabb verziója, ami már jobban támogatja a médiaelemeket.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b40_162" class="feedback js-hidden"><a name="sa0b40_162"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b40_162" class="feedback js-hidden"><a name="sa1b40_162"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b40_162" class="feedback js-hidden"><a name="sa2b40_162"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-40_165">Correct Option</a> (<a href="#sa0b40_162">Visszajelzés</a>)</li>
+<li><a href="#answer-40_168">Rossz</a> (<a href="#sa1b40_162">Visszajelzés</a>)</li>
+<li><a href="#answer-40_171">Rossz</a> (<a href="#sa2b40_162">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-40_174" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion40_174" class="block question iDevice_content">
+Mire való a <font face="courier new,courier">DOCTYPE</font>?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_177" class="sr-av"><a href="#answer-40_177">Beállítás 1</a></label><input type="radio" name="option40_174" id="i40_177" onclick="getFeedback(0,3,'40_174','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_177"><a name="answer-40_177"></a>
+<div id="taans40_177" class="block iDevice_content">
+Ezzel meg tudjuk adni azt a szabályrendszert, ami leírja, hogy a weboldalunk forrását hogyan értelmezze a böngésző.<o:p></o:p>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_180" class="sr-av"><a href="#answer-40_180">Beállítás 2</a></label><input type="radio" name="option40_174" id="i40_180" onclick="getFeedback(1,3,'40_174','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_180"><a name="answer-40_180"></a>
+<div id="taans40_180" class="block iDevice_content">
+Ezzel adjuk meg a weboldal karakterkódolását.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_183" class="sr-av"><a href="#answer-40_183">Beállítás 3</a></label><input type="radio" name="option40_174" id="i40_183" onclick="getFeedback(2,3,'40_174','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_183"><a name="answer-40_183"></a>
+<div id="taans40_183" class="block iDevice_content">
+Ezzel adjuk meg a weboldal nyelvét.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b40_174" class="feedback js-hidden"><a name="sa0b40_174"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b40_174" class="feedback js-hidden"><a name="sa1b40_174"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b40_174" class="feedback js-hidden"><a name="sa2b40_174"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-40_177">Correct Option</a> (<a href="#sa0b40_174">Visszajelzés</a>)</li>
+<li><a href="#answer-40_180">Rossz</a> (<a href="#sa1b40_174">Visszajelzés</a>)</li>
+<li><a href="#answer-40_183">Rossz</a> (<a href="#sa2b40_174">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-40_186" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion40_186" class="block question iDevice_content">
+Milyen fő részei vannak a weboldal forrásának?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_189" class="sr-av"><a href="#answer-40_189">Beállítás 1</a></label><input type="radio" name="option40_186" id="i40_189" onclick="getFeedback(0,3,'40_186','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_189"><a name="answer-40_189"></a>
+<div id="taans40_189" class="block iDevice_content">
+A fej (<font face="courier new,courier">head</font>) és a törzs (<font face="courier new,courier">body</font>).
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_192" class="sr-av"><a href="#answer-40_192">Beállítás 2</a></label><input type="radio" name="option40_186" id="i40_192" onclick="getFeedback(1,3,'40_186','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_192"><a name="answer-40_192"></a>
+<div id="taans40_192" class="block iDevice_content">
+A <font face="courier new,courier">html</font>, a <font face="courier new,courier">head </font>és a <font face="courier new,courier">body</font>.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_195" class="sr-av"><a href="#answer-40_195">Beállítás 3</a></label><input type="radio" name="option40_186" id="i40_195" onclick="getFeedback(2,3,'40_186','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_195"><a name="answer-40_195"></a>
+<div id="taans40_195" class="block iDevice_content">
+A <font face="courier new,courier">style</font>, a <font face="courier new,courier">script</font>, a <font face="courier new,courier">title</font>, a <font face="courier new,courier">link </font>és a <font face="courier new,courier">meta</font>.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b40_186" class="feedback js-hidden"><a name="sa0b40_186"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b40_186" class="feedback js-hidden"><a name="sa1b40_186"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b40_186" class="feedback js-hidden"><a name="sa2b40_186"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-40_189">Correct Option</a> (<a href="#sa0b40_186">Visszajelzés</a>)</li>
+<li><a href="#answer-40_192">Rossz</a> (<a href="#sa1b40_186">Visszajelzés</a>)</li>
+<li><a href="#answer-40_195">Rossz</a> (<a href="#sa2b40_186">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-40_198" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion40_198" class="block question iDevice_content">
+Mire való a <font face="courier new,courier">keywords meta </font>elem?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_201" class="sr-av"><a href="#answer-40_201">Beállítás 1</a></label><input type="radio" name="option40_198" id="i40_201" onclick="getFeedback(0,3,'40_198','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_201"><a name="answer-40_201"></a>
+<div id="taans40_201" class="block iDevice_content">
+Kulcsszavakat adhatunk meg, amely alapján a keresőmotorok indexelik az oldalunkat.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_204" class="sr-av"><a href="#answer-40_204">Beállítás 2</a></label><input type="radio" name="option40_198" id="i40_204" onclick="getFeedback(1,3,'40_198','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_204"><a name="answer-40_204"></a>
+<div id="taans40_204" class="block iDevice_content">
+Az oldal címét adjuk meg.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i40_210" class="sr-av"><a href="#answer-40_210">Beállítás 3</a></label><input type="radio" name="option40_198" id="i40_210" onclick="getFeedback(2,3,'40_198','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-40_210"><a name="answer-40_210"></a>
+<div id="taans40_210" class="block iDevice_content">
+Az oldal egy leírását adjuk meg, ami alapján a keresőmotorok is indexelnek.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b40_198" class="feedback js-hidden"><a name="sa0b40_198"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b40_198" class="feedback js-hidden"><a name="sa1b40_198"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b40_198" class="feedback js-hidden"><a name="sa2b40_198"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-40_201">Correct Option</a> (<a href="#sa0b40_198">Visszajelzés</a>)</li>
+<li><a href="#answer-40_204">Rossz</a> (<a href="#sa1b40_198">Visszajelzés</a>)</li>
+<li><a href="#answer-40_210">Rossz</a> (<a href="#sa2b40_198">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

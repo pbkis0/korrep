@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="hu" xml:lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>5. Lecke: Szövegelemek, linkek, képek, listák </title>
+<meta http-equiv="content-language" content="hu" />
+<meta name="generator" content="eXeLearning 2.0.4 - exelearning.net" />
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Show",hide:"Elrejtés",showFeedback:"Mutassa a visszajelzést",hideFeedback:"Visszajelzés elrejtése",correct:"Helyes",incorrect:"Incorrect",menu:"Menu"}</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="SCORM_API_wrapper.js"></script>
+<script type="text/javascript" src="SCOFunctions.js"></script>
+</head>
+<body class="exe-scorm" onload="loadPage()" onunload="unloadPage()"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="outer">
+<div id="main">
+<div id="nodeDecoration"><h1 id="nodeTitle">5. Lecke: Szövegelemek, linkek, képek, listák</h1></div>
+<div class="iDevice_wrapper objectivesIdevice em_iDevice" id="id46">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_objectives.gif" /><h2 class="iDeviceTitle">Célok</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta46_24_2" class="block iDevice_content">
+<ul>
+	<li>Ismerje a legfontosabb szövegelemeket</li>
+	<li>Ismerje a blokkos és a sorközi (inline) szövegelemek közötti különbséget</li>
+	<li>Ismerje az elemi támogatott szövegformázó HTML elemeket</li>
+	<li>Ismerje a fontosabb szövegformázó stílusokat</li>
+	<li>Ismerje a linkek használatát</li>
+	<li>Ismerje a képek beillesztésének és formázásának módjait</li>
+	<li>Ismerje a listák fajtáit és definiálási, formázási </li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id47">
+<div class="iDevice emphasis0">
+<div id="ta47_1" class="block iDevice_content">
+<p><span size="3" style="font-size: medium;"><b>Tartalom</b></span></p>
+<ul>
+<li>A legfontosabb blokkos és sorközi (inline) szövegelemek</li>
+<li>A szövegformázó HTML tag-ek</li>
+<li>Szövegformázás stílussal</li>
+<li>Linkek megadása és formázása</li>
+<li>Képek megadása és formázása</li>
+<li>Listák megadása és formázása</li>
+</ul>
+<p><b> Szövegelemek</b><br /> Ahogy korábban szerepelt, a HTML forrás tag-ekből és statikus szövegből áll. Ez utóbbi az oldalon megjelenő szövegtartalom. Fontos, hogy a weboldal összes szövegelemét valamilyen befoglaló tag-be kell helyezni, hogy formázáshoz tudjunk rá hivatkozni. A legnyilvánvalóbb befoglaló a szövegelem. A szövegelemeket megjelenés szempontjából két csoportra osztjuk: a blokkos és a sorközi (inline). Megjegyzendő, hogy ezek a megjelenési formák nem csak szövegekre érvényesek, a 9. fejezetben általánosan újra szóba jönnek.<br /> <br /> <i><b> Blokkos szövegelem</b></i><br /> A blokkos szövegelem mindig egy önálló egységet képez a weboldalon, így szövegkörnyezetétől elválik úgy, hogy előtte és után is sortörés illetve alapértelmezettként helyköz van. A blokkos elemek leírásakor a forrásban bárhogy tördelhetjük a szöveget white-space karakterekkel (szóköz, tabulátor, sortörés) az áttekinthetőség miatt, a weboldalon sorfolytonos szövegként jelenik meg.<br /> A legelemibb blokkos szövegelem a bekezdés. Ez önmagában nem hordoz más jelentést illetve formátumot sem.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;p&gt;...&lt;/p&gt;</span></blockquote>
+<p>A címsor szövegelemek jelölik az oldal fő-, al- és további alcímeit. Ezt hat szintig lehet lebontani, tehát hat fajta címsor szövegelem van:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;h1&gt;...&lt;/h1&gt;<br /> &lt;h2&gt;...&lt;/h2&gt;<br /> ...<br /> &lt;h6&gt;...&lt;/h6&gt;</span></blockquote>
+<p>Ezekhez a böngésző alapértelmezettként formátumot rendel, például félkövérséget, nagyobb betűméretet.<br /> Ha egy blokkos elembe sortörést szeretnénk beszúrni anélkül, hogy új elemet kezdenénk, akkor a</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;br /&gt;</span></blockquote>
+<p>tag-et kell használnuk.</p>
+<p><i><b>Sorközi (Inline) szövegelem</b></i><br /> A sorközi szövegelem általában valamilyen hosszabb szöveg része, így általában egy blokkos szövegelemen belül használjuk. Egy sorközi tag-be foglalt szövegrész nem válik el a környezetétől, sorfolytonos marad.<br /> Az általános sorközi szövegelem a span, amelynek nincs tartalmi jelentése és formátumot sem hordoz. Az a szerepe, hogy a befoglalt szövegrészre stílusformázáskor tudjunk kijelölőkkel hivatkozni.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;span&gt;...&lt;/span&gt;</span></blockquote>
+<p>A többi elemnek jelentése van, így a befoglalt szövegrészek címkézettek valamilyen tartalmi jelentéssel. Ezek a tag-ek formátumot is hordoznak, de ezeket természetesen felül lehet definiálni stílussal. A leggyakrabban előforduló ilyen tag-ek:<br /> <i> kiemelt</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;strong&gt;...&lt;/strong&gt;</span></blockquote>
+<p><i> hangsúlyos</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;em&gt;...&lt;/em&gt;</span></blockquote>
+<p><i> programkód</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;code&gt;... &lt;/code&gt;</span></blockquote>
+<p><i>idézet</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;cite&gt;...&lt;/cite&gt;</span></blockquote>
+<p>stb</p>
+<p>Fontos megjegyezni, hogy például a strong tag alapértelmezettként félkövérré alakítja a szöveget, de a funkciója nem ez. A tag-nek jelentése van, a szövegrész kiemelt, nem formázás céllal használjuk.<br /> <br /> <i><b> Szövegformázó tag-ek</b></i><br /> A korszerű weboldalaknál a formázást stílusok használatával végezzük, sok formázó tag-et és attribútumot már nem is ajánlanak (sőt a HTML5 nyelvben már nem is szerepelnek). Ettől függetlenül továbbra is vannak formázó tag-ek, bár a stílusformázás, az előző leckében leírtak alapján, hatékonyabb.<br /> A legfontosabb, még használatban lévő formázó tag-ek:<br /> <i>félkövér</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;b&gt;...&lt;/b&gt;</span></blockquote>
+<p><i>dőlt</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;i&gt;...&lt;/i&gt;</span></blockquote>
+<p><i>aláhúzott</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;u&gt;...&lt;/u&gt;</span></blockquote>
+<p><b> Szövegformázás stílussal</b><br /> Bármilyen szöveg tartalmú tag-re kijelölővel való hivatkozáskor stílussal megadható a tartalmazott szöveg formátuma. A legfontosabb szövegformázó tulajdonságok:<br /> <br /> <i> Szövegszín megadása</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> color : szín;</span></blockquote>
+<p>A színek háromféle módon adhatók meg:</p>
+<ul>
+<li>a szín angol nevével; több színhez tartozik egy sötét és egy világos árnyalat</li>
+</ul>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> color : darkblue / blue / lightblue;</span></blockquote>
+<ul>
+<li>a szín decimális RGB kódjával, ahol a három színkód sorrendben a piros, zöld és kék, melyek intenzitásértéke 0 és 255 között terjedhet.</li>
+</ul>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> color : rgb(0,0,0);</span></blockquote>
+<ul>
+<li>a szín hexadecimális kódjával, ahol az első két karakter jelenti a piros kódját, a második kettő a zöldét, a harmadik kettő a kékét (00-tól FF-ig)</li>
+</ul>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> color : #001133;</span></blockquote>
+<p><i> Karakter távolság megadása</i>, a távolságot leggyakrabban pixelben (px), karakterméretben (em), vagy pontban (pt) adhatjuk meg</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> letter-spacing : 5px;</span></blockquote>
+<p><i> Szavak távolságának megadása</i>, megadhatjuk pixelben, pontban, stb.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> word-spacing : 5px;</span></blockquote>
+<p><i> Sorok magasságának megadása</i>, megadható pixelben, százalékban, stb. (csak blokkos megjelenésű elemre)</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> line-spacing : 150%;</span></blockquote>
+<p>A többi formázást két csoportra lehet bontani, az egyik, amelyik karakterekre vonatkozik és a <span face="courier new,courier" style="font-family: 'courier new', courier;">font </span>szó vezeti be, a másik, ami szövegekre vonatkozik és a <span face="courier new,courier" style="font-family: 'courier new', courier;">text </span>szó vezeti be.<br /> <i><b><br /> Karakterre vonatkozó formázások</b></i><br /> A betűtípus megadásakor vigyázni kell arra, hogy olyan betűtípust kell megadni, amelyet minden böngésző meg tud jeleníteni. Ezért több típust is fel szoktunk sorolni a speciálistól haladva az általánosig lezárva a megfelelő betűtípus csoporttal. Három alapcsoportot különböztetünk meg: a Serif a talpas betűtípus, a Sans-Serif a nem talpas és a Monospace az egyenlő betűszélességű típus. Azokat a betűtípusokat, amelyek neve több szóból áll, idézőjelek közé kell tenni.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> font-family : "Times New Roman", Times, Serif;</span></blockquote>
+<p>Betűméret megadása, lehet pixelben, pontban, arányban és százalékban</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> font-size : 12pt;</span></blockquote>
+<p><i>Dőlt</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> font-style : italic / normal;</span></blockquote>
+<p><i>Kiskapitális</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> font-variant : small-caps;</span></blockquote>
+<p><i>Félkövér</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> font-weight : bold / normal;</span></blockquote>
+<p><i><b> Szövegre vonatkozó formázások</b></i><br /> <i>Szövegigazítás </i>(csak blokkos elemre)</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> text-align : left / right / center / justify;</span></blockquote>
+<p><i> Aláhúzás, föléhúzás, áthúzás</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> text-decoration : underline / overline / line-through / none;</span></blockquote>
+<p><i> Nagybetűssé alakítás</i></p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> text-transform : uppercase / lowercase;</span></blockquote>
+<p><i> Első sor behúzása</i> (csak blokkos elemre)</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> text-indent : 25px;</span></blockquote>
+<p><b>Méretek</b></p>
+<p>Figyeljük meg a fenti példákon, hogy a méreteket mindig úgy adjuk meg, hogy a méret és a mértékegység egybe van írva, azaz a mértékegység szóköz nélkül követi a méret értékét.</p>
+<p>Jellemző, hogy a méreteket kétféle módon tudjuk megadni: fixen és arányosítva. Fix érték a pixel (px) és a pont (pt), amely esetben az adott érték minden mástól függetlenül, fixen adott méretű. Az arányos mérték a százalék (%) és az alap betűtípus méretéhez viszonyító (em) mérték. Ebben az esetben a viszonyítási alapváltozásakor az így definiált mértékek is változnak.</p>
+<p>Ezek természetesen nem csak a szövegformázásoknál működnek így, hanem minden olyan esetben, ahol méretet kell megadni.</p>
+<p><b>Linkek</b><br /> A link az egyik alapeleme a weboldalaknak. Fontos, hogy az általános szövegtől formátumban elváljanak. A linkekhez meg kell adni a címet, amire hivatkozik, erre való a <span style="font-family: 'courier new', courier;">href</span> attribútum. A nyitó és záró tag közötti rész fog hivatkozásként viselkedni. Akármilyen megjelenő elem lehet link: szöveg, kép, stb.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;a href="http://www.jgypk.hu/"&gt; ... &lt;/a&gt;</span></blockquote>
+<p>Továbbá megadható egy cél, hogy a hivatkozott weboldal hol nyíljon meg, ezt a <span style="font-family: 'courier new', courier;">target</span> attribútummal adjuk meg. Ennek leggyakoribb használati esete, amikor egy link által hivatkozott oldalt egy másik ablakban (fülön) nyitunk meg, amikor a <span style="font-family: 'courier new', courier;">target</span> értéke <span style="font-family: 'courier new', courier;">_blank</span>. Általában hasznos, ha a minden olyan linket, amely az webhelyünkről kifele mutat (más webhelyre vezérel) átirányítjuk egy új ablakba, hogy a saját oldalunk is nyitva maradjon.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;a href="http://www.jgypk.hu/" target="_blank" &gt; ... &lt;/a&gt;</span></blockquote>
+<p>A link nem csak arra való, hogy más weboldalakra mutasson, hanem egy oldal egy adott pontjára is tud hivatkozni. Ez a pont lehet ugyanabban a dokumentumban, de egy másik oldalon is. Ezeket a hivatkozási pontokat úgy adjuk meg, hogy az adott tag-nek megadjuk a <span style="font-family: 'courier new', courier;">id</span> attributumát, amelyre majd a link hivatkozni tud. Az oldalon bármilyen pontot kijelölhetünk így.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;h1 id="eleje"&gt;Az oldal főcíme&lt;/h1&gt;</span></blockquote>
+<p>Ilyenkor a hivatkozó tag-ben a <span style="font-family: 'courier new', courier;">href</span> értéke az oldal elérése majd a pont neve # karakterrel kezdve (ha azonos oldalon belül hivatkozunk, a fájlnév elhagyható).</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;a href="index.html#eleje"&gt;...&lt;/a&gt;</span></blockquote>
+<p>Linkkel lehetőség van e-mail küldésére is. Pontosabban a linkre klikkelve a böngésző elindítja a kliens gépen az alapértelmezett levelező programot kitöltve a címzett e-mail címet (valaki@cimzett.hu).</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;a href="mailto:valaki@cimzett.hu"&gt;...&lt;/a&gt;</span></blockquote>
+<p>Ahogy a 4. Leckében már szerepelt, a linkeknek az állapotait külön lehet formázni látszólagos kijelölők használatával. Az állapotai:</p>
+<ul>
+<li>alapállapot: <span face="courier new,courier" style="font-family: 'courier new', courier;">a:link</span></li>
+<li>látogatott állapot:<span face="courier new,courier" style="font-family: 'courier new', courier;"> a:visited</span></li>
+<li>amikor a kurzor a link fölött van:<span face="courier new,courier" style="font-family: 'courier new', courier;"> a:hover</span></li>
+<li>aktív állapot, amikor a felhasználó lenyomja az egérgombot a linken, de még nem engedi fel: <span face="courier new,courier" style="font-family: 'courier new', courier;">a:active</span></li>
+</ul>
+<p>A linkek formázására az általános formázási módok érvényesek, attól függően, hogy milyen elem a link, azaz a szöveg linkre szövegformátumot adunk meg.</p>
+<p><b>Képek</b><br /> A képek a legnyilvánvalóbb médiaelemei a weboldalaknak. A mai weboldalak már elképzelhetetlenek képek nélkül, de a túl sok és túl erőteljes képek a weboldal hatékonyságának rovására mennek. Éppen ezért a megfelelő képek és megfelelő formázásuk alapvető a webes fejlesztés témakörben.<br /> A képeket beszúró tag-nek nincs lezáró párja, mivel a tag már önmagában egy elemet jelent. A legfontosabb attribútumai a kép forrását megadó <span face="courier new,courier" style="font-family: 'courier new', courier;">src</span>, és a helyettesítő szöveget megadó <span face="courier new,courier" style="font-family: 'courier new', courier;">alt</span>. A kép forrása lehet helyi tárolású, de akár teljes URL-lel megadott távoli kép is. A képekhez fontos megadni a helyettesítő szöveget, amely egyrészt akkor jelenik meg, amikor a kép nem tud betöltődni, másrészt a vakokat és gyengénlátókat segítő felolvasó szoftverek ezt a szöveget olvassák fel. Éppen ezért a korszerű weboldalak esetén a képeknek az alt tulajdonság megadása kötelező.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;img src="images/logo.png" alt="A cég logója" /&gt;</span></blockquote>
+<p>A <span face="courier new,courier" style="font-family: 'courier new', courier;">height </span>és a <span face="courier new,courier" style="font-family: 'courier new', courier;">width </span>tulajdonsággal meg lehet adni egy kép megjelenési méretét, ezek nélkül a kép eredeti méretében fog megjelenni. Ha csak az egyik értéket adjuk meg, akkor a másik értéket a böngésző hozzá igazítja a kép méretarányait megtartva. Ha mindkét érték szerepel, akkor a méretet ezek szerint állítja be, amely a kép torzulását eredményezheti. Az értéket pixelként kell érteni.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;img src="images/logo.png" alt="A cég logója" height="50" width="40" /&gt;</span></blockquote>
+<div align="center"><img src="kepmeretezes.jpg" width="507" height="187" /></div>
+<div align="center"><b>8. Ábra</b>: A kép méretezésének hatása</div>
+<div align="center"></div>
+<div align="center"></div>
+<div align="center"></div>
+<div align="center"></div>
+<div align="left"></div>
+<div align="left">A kép mérete megadható stílussal is, az értékek beállításának elve megegyezik a HTML attribútumokéval, de itt megadható százalék is:</div>
+<div align="left">
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> width : 50%;<br /> height : 50%;</span></blockquote>
+</div>
+<div align="left">A kép méretét célszerű mindig beállítani, mert ilyenkor a böngésző azonnal lefoglalja a helyet a képnek és építi tovább a weboldalt miközben a kép letöltődik.<br /> Ezeken kívül nincs speciális stílusformátum rendelve a képekhez, általánosságban a keretét, margóját (6. lecke) és az elhelyezését (9. lecke) szokták megadni.</div>
+<p><b>Listák</b><br /> Fontos, hogy ha listát akarunk az oldalon elhelyezni, akkor ne sima szövegként adjuk meg, hanem listaként vegyünk fel. A listáknak két fajtája van: a számozatlan és a sorszámozott. Mindkét esetben először a listát kell definiálni, majd a nyitó és záró tag között definiáljuk a lista elemeit.<br /> A számozatlan lista esetén minden elem elé egy bevezető karakter kerül, például egy pont.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;ul&gt;<br /> &lt;li&gt;elem1&lt;/li&gt;<br /> &lt;li&gt;elem3&lt;/li&gt;<br /> &lt;li&gt;elem3&lt;/li&gt;<br /> &lt;/ul&gt;</span></blockquote>
+<p>A sorszámozott lista elemei számokkal vagy betűkkel kezdődnek, a sorrendet automatikusan állítja a böngésző. A kezdő sorszámot a start attribútummal lehet megadni. Fontos, ez mindig szám értékű, azt jelenti, hogy sorszám (vagy betű) hányadik elemétől kezdje a számozást.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;ol start="10"&gt;<br /> &lt;li&gt;elem1&lt;/li&gt;<br /> &lt;li&gt;elem3&lt;/li&gt;<br /> &lt;li&gt;elem3&lt;/li&gt;<br /> &lt;/ol&gt;</span></blockquote>
+<p>Stílussal megadható, hogy a számozatlan listának milyen bevezető karaktere, száma vagy betűje legyen:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> list-style-type : circle; /* üres kör karakter */<br /> list-style-type : upper-roman; /* nagy római számok */</span></blockquote>
+<p>A felsorolt listának megadható egy tetszőleges kép, mint az elemeket kezdő szimbólum:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> list-style-image : url('dot.png');</span></blockquote>
+<p>Továbbá beállítható, hogy a bevezető karakterek a listaelemek általi szövegen belül, vagy kívül helyezkedjenek el:</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> list-style-position : inside / outside;</span></blockquote>
+<div align="center"><img src="lista.PNG" width="820" height="374" /></div>
+<div align="center"><b>9. Ábra</b>: Felsorolt lista list-style-position tulajdonsága</div>
+<p><b>Képtérkép</b></p>
+<p>Lehetőség van egy kép különböző részeit linkké alakítani.</p>
+<p>Ehhez létre kell hozni egy "térképet", amely megadja, hogy mely tartomány milyen címre hivatkozzon, erre való a <span face="courier new,courier" style="font-family: 'courier new', courier;">map</span> tag. A térképet el kell nevezni, mivel egy oldalon több térkép is lehet, XHTML-ben az <span face="courier new,courier" style="font-family: 'courier new', courier;">id </span>attribútumot használjuk.</p>
+<p>A térképen belül több tartományt is létrehozhatunk az <span face="courier new,courier" style="font-family: 'courier new', courier;">area</span> tag segítségével. Minden tartománynak meg kell adni az alakját a <span face="courier new,courier" style="font-family: 'courier new', courier;">shape</span> attribútummal, ami lehet téglalap (<span face="courier new,courier" style="font-family: 'courier new', courier;">rect</span>), kör (<span face="courier new,courier" style="font-family: 'courier new', courier;">circle</span>) és sorkszög (<span face="courier new,courier" style="font-family: 'courier new', courier;">poly</span>). A <span face="courier new,courier" style="font-family: 'courier new', courier;">coords</span> attribútummal adjuk meg a tartomány helyét a térképen a definiáló koordinátákkal. A téglalapnak a bal felső és jobb alsó pontját, a körnek a középpontját és sugarát, a sokszögnek a csúcspontjait kell megadni úgy, hogy a koordináta rendszer 0,0 pontja a térkép bal felső pontja és jobbra és lefele nőnek a koordináták.</p>
+<p>A tartomány ugyanúgy viselkedik, mint egy önálló link taggel megadott hivatkozás, így ugyanazok az attribútumok használhatók. Természetesen a legfontosabb a <span face="courier new,courier" style="font-family: 'courier new', courier;">href</span>, amely megadja a hivatkozott címet.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;map name="terkep" id="terkep"&gt;<br /> &lt;area shape="rect" coords="10,10,30,30" href="http://www.jgypk.u-szeged.hu/" /&gt; <br /> &lt;area shape="circle" coords="100,100,25" href="http://www.u-szeged.hu/" /&gt; <br /> &lt;/map&gt;</span></blockquote>
+<p>A képhez meg kell adni, hogy melyik térkép érvényes rá. Ezt a usemap attribútummal tesszük a térkép neve (azonosítója) segítségével.</p>
+<blockquote><span face="courier new,courier" style="font-family: 'courier new', courier;"> &lt;img src="kep.jpg" alt="példa" usemap="#terkep" /&gt; </span></blockquote>
+<p>Természetesen a térkép elkészítésekor és adott képnél felhasználáskor a kép méretének és a térképen lévő tartományok koordinátáinak összhangban kell lenniük, különben a felhasználó nem fogja megtalálni a klikkelhető részeket.</p>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice" id="id48">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_problem.gif" /><h2 class="iDeviceTitle">Feladat</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta48_21_5" class="block iDevice_content">
+Készítsen el egy olyan oldalt, amely az ön önéletrajzát tartalmazza! Kiindulásnak használja a 3. leckében megírt alapforrást! Adjon az oldalnak címet és bontsa az adatait csoportokra és használjon alcímeket azokhoz! A csoportok legyenek: <br />
+<ul>
+	<li>személyes adatok,</li>
+	<li>iskolák, </li>
+	<li>végzettségek, </li>
+	<li>érdeklődési kör. </li>
+</ul>
+Töltse ki a megfelelő részeket úgy, hogy használja a szövegelemeket és a szövegformázásokat a megfelelő kijelölésekkel! Az iskoláknál használjon sorszámozást, a végzettségnél felsorolást! Az iskolákhoz készítsen linkeket, amelyek az intézmények weboldalára mutat és új ablakban nyitja meg azokat! A személyes adatokhoz illessze be a saját képét! A érdeklődési kör részbe egy bekezdésekre tagolt hosszabb szöveget írjon, amiből kiemeli a lényegesebb kulcsszavakat és kifejezéseket!<br />
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper MultichoiceIdevice em_iDevice" id="id49">
+<div class="iDevice emphasis1" >
+<img alt="" class="iDevice_icon" src="icon_question.gif" /><h2 class="iDeviceTitle">Feleletválasztós teszt</h2><div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div class="question">
+<form name="multi-choice-form-49_2" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion49_2" class="block question iDevice_content">
+Mi a különbség a blokkos és a sorközi elemek között?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_5" class="sr-av"><a href="#answer-49_5">Beállítás 1</a></label><input type="radio" name="option49_2" id="i49_5" onclick="getFeedback(0,3,'49_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_5"><a name="answer-49_5"></a>
+<div id="taans49_5" class="block iDevice_content">
+A blokkos elem elkülönül a környezetétől azáltal, hogy elé és utána egy sortörés kerül. A sorközi elem sorfolytonos marad.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_267" class="sr-av"><a href="#answer-49_267">Beállítás 2</a></label><input type="radio" name="option49_2" id="i49_267" onclick="getFeedback(1,3,'49_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_267"><a name="answer-49_267"></a>
+<div id="taans49_267" class="block iDevice_content">
+A blokkos elem a sorközi elemeket foglalja össze egy blokkba.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_270" class="sr-av"><a href="#answer-49_270">Beállítás 3</a></label><input type="radio" name="option49_2" id="i49_270" onclick="getFeedback(2,3,'49_2','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_270"><a name="answer-49_270"></a>
+<div id="taans49_270" class="block iDevice_content">
+A blokkos elem egy téglalap formájú elem, a sorközi pedig egy tetszőleges formájú.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b49_2" class="feedback js-hidden"><a name="sa0b49_2"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b49_2" class="feedback js-hidden"><a name="sa1b49_2"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b49_2" class="feedback js-hidden"><a name="sa2b49_2"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-49_5">Correct Option</a> (<a href="#sa0b49_2">Visszajelzés</a>)</li>
+<li><a href="#answer-49_267">Rossz</a> (<a href="#sa1b49_2">Visszajelzés</a>)</li>
+<li><a href="#answer-49_270">Rossz</a> (<a href="#sa2b49_2">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-49_273" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion49_273" class="block question iDevice_content">
+Melyik a helyes állítás?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_276" class="sr-av"><a href="#answer-49_276">Beállítás 1</a></label><input type="radio" name="option49_273" id="i49_276" onclick="getFeedback(0,3,'49_273','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_276"><a name="answer-49_276"></a>
+<div id="taans49_276" class="block iDevice_content">
+A <font face="courier new,courier">&lt;b&gt;</font> és a <font face="courier new,courier">&lt;strong&gt; </font>tag formátuma ugyanolyan, de nem ugyanarra való, mert az előbbi csak formáz, az utóbbinak tartalmi jelentése van.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_279" class="sr-av"><a href="#answer-49_279">Beállítás 2</a></label><input type="radio" name="option49_273" id="i49_279" onclick="getFeedback(1,3,'49_273','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_279"><a name="answer-49_279"></a>
+<div id="taans49_279" class="block iDevice_content">
+A <font face="courier new,courier">&lt;b&gt;</font> és a <font face="courier new,courier">&lt;strong&gt;</font> tag jelentése ugyanaz, mindkettő félkövérré alakít, így nincs szükség mindkettőre, ezért az előbbit ki is vették a HTML5-ből.
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_282" class="sr-av"><a href="#answer-49_282">Beállítás 3</a></label><input type="radio" name="option49_273" id="i49_282" onclick="getFeedback(2,3,'49_273','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_282"><a name="answer-49_282"></a>
+<div id="taans49_282" class="block iDevice_content">
+A <font face="courier new,courier">&lt;b&gt;</font> és a <font face="courier new,courier">&lt;strong&gt;</font> tag formátuma ugyanaz, de mást jelent, az első kiemel a szövegből, a második címsort határoz meg.
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b49_273" class="feedback js-hidden"><a name="sa0b49_273"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b49_273" class="feedback js-hidden"><a name="sa1b49_273"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b49_273" class="feedback js-hidden"><a name="sa2b49_273"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-49_276">Correct Option</a> (<a href="#sa0b49_273">Visszajelzés</a>)</li>
+<li><a href="#answer-49_279">Rossz</a> (<a href="#sa1b49_273">Visszajelzés</a>)</li>
+<li><a href="#answer-49_282">Rossz</a> (<a href="#sa2b49_273">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-49_285" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion49_285" class="block question iDevice_content">
+Melyik a helyes megadása a linknek?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_288" class="sr-av"><a href="#answer-49_288">Beállítás 1</a></label><input type="radio" name="option49_285" id="i49_288" onclick="getFeedback(0,3,'49_285','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_288"><a name="answer-49_288"></a>
+<div id="taans49_288" class="block iDevice_content">
+<font face="courier new,courier">&lt;a href=&quot;http://www.jgypk.hu&quot;&gt;...&lt;/a&gt;</font>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_291" class="sr-av"><a href="#answer-49_291">Beállítás 2</a></label><input type="radio" name="option49_285" id="i49_291" onclick="getFeedback(1,3,'49_285','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_291"><a name="answer-49_291"></a>
+<div id="taans49_291" class="block iDevice_content">
+<font face="courier new,courier">&lt;link href=&quot;http://www.jgypk.hu&quot;&gt;...&lt;/link&gt;</font>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_294" class="sr-av"><a href="#answer-49_294">Beállítás 3</a></label><input type="radio" name="option49_285" id="i49_294" onclick="getFeedback(2,3,'49_285','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_294"><a name="answer-49_294"></a>
+<div id="taans49_294" class="block iDevice_content">
+<font face="courier new,courier">&lt;a href=http://www.jgypk.hu /&gt;</font>
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b49_285" class="feedback js-hidden"><a name="sa0b49_285"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b49_285" class="feedback js-hidden"><a name="sa1b49_285"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b49_285" class="feedback js-hidden"><a name="sa2b49_285"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-49_288">Correct Option</a> (<a href="#sa0b49_285">Visszajelzés</a>)</li>
+<li><a href="#answer-49_291">Rossz</a> (<a href="#sa1b49_285">Visszajelzés</a>)</li>
+<li><a href="#answer-49_294">Rossz</a> (<a href="#sa2b49_285">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-49_297" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion49_297" class="block question iDevice_content">
+Melyik a helyes megadása a képnek?
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_300" class="sr-av"><a href="#answer-49_300">Beállítás 1</a></label><input type="radio" name="option49_297" id="i49_300" onclick="getFeedback(0,3,'49_297','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_300"><a name="answer-49_300"></a>
+<div id="taans49_300" class="block iDevice_content">
+<font face="courier new,courier">&lt;img src=&quot;kep.png&quot; /&gt;</font>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_303" class="sr-av"><a href="#answer-49_303">Beállítás 2</a></label><input type="radio" name="option49_297" id="i49_303" onclick="getFeedback(1,3,'49_297','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_303"><a name="answer-49_303"></a>
+<div id="taans49_303" class="block iDevice_content">
+<font face="courier new,courier">&lt;img src=&quot;kep.png&quot;&gt;...&lt;/img&gt;</font>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_306" class="sr-av"><a href="#answer-49_306">Beállítás 3</a></label><input type="radio" name="option49_297" id="i49_306" onclick="getFeedback(2,3,'49_297','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_306"><a name="answer-49_306"></a>
+<div id="taans49_306" class="block iDevice_content">
+<font face="courier new,courier">&lt;img href=&quot;kep.png&quot;&gt;...&lt;/img&gt;</font>
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b49_297" class="feedback js-hidden"><a name="sa0b49_297"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b49_297" class="feedback js-hidden"><a name="sa1b49_297"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b49_297" class="feedback js-hidden"><a name="sa2b49_297"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-49_300">Correct Option</a> (<a href="#sa0b49_297">Visszajelzés</a>)</li>
+<li><a href="#answer-49_303">Rossz</a> (<a href="#sa1b49_297">Visszajelzés</a>)</li>
+<li><a href="#answer-49_306">Rossz</a> (<a href="#sa2b49_297">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+<div class="question">
+<form name="multi-choice-form-49_309" action="#" onsubmit="return false" class="activity-form">
+<h3 class="js-sr-av">Kérdés</h3>
+<div id="taquestion49_309" class="block question iDevice_content">
+Mi a helyes megadása a sorszámozott listának?<o:p></o:p>
+
+</div>
+<div class="iDevice_answers">
+<h4 class="js-sr-av">Answers</h4>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_312" class="sr-av"><a href="#answer-49_312">Beállítás 1</a></label><input type="radio" name="option49_309" id="i49_312" onclick="getFeedback(0,3,'49_309','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_312"><a name="answer-49_312"></a>
+<div id="taans49_312" class="block iDevice_content">
+<font face="courier new,courier">&lt;ol&gt;&lt;li&gt;...&lt;/li&gt;...&lt;/ol&gt;</font>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_315" class="sr-av"><a href="#answer-49_315">Beállítás 2</a></label><input type="radio" name="option49_309" id="i49_315" onclick="getFeedback(1,3,'49_309','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_315"><a name="answer-49_315"></a>
+<div id="taans49_315" class="block iDevice_content">
+<font face="courier new,courier">&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;...&lt;/ul&gt;</font>
+
+</div>
+</div>
+</div>
+<div class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i49_318" class="sr-av"><a href="#answer-49_318">Beállítás 3</a></label><input type="radio" name="option49_309" id="i49_318" onclick="getFeedback(2,3,'49_309','multi')"/>
+</p>
+<div class="iDevice_answer-content" id="answer-49_318"><a name="answer-49_318"></a>
+<div id="taans49_318" class="block iDevice_content">
+<font face="courier new,courier">&lt;ol&gt;&lt;ul&gt;...&lt;/ul&gt;...&lt;/ol&gt;</font>
+
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_feedbacks js-feedback">
+<h4 class="js-sr-av">Visszajelzés</h4>
+<div id="sa0b49_309" class="feedback js-hidden"><a name="sa0b49_309"></a>
+<p>Correct Option</p>
+</div>
+<div id="sa1b49_309" class="feedback js-hidden"><a name="sa1b49_309"></a>
+<p>Rossz</p>
+</div>
+<div id="sa2b49_309" class="feedback js-hidden"><a name="sa2b49_309"></a>
+<p>Rossz</p>
+</div>
+</div>
+</form>
+<div class="iDevice_solution feedback js-hidden">
+<h4>Solution</h4>
+<ol>
+<li><a href="#answer-49_312">Correct Option</a> (<a href="#sa0b49_309">Visszajelzés</a>)</li>
+<li><a href="#answer-49_315">Rossz</a> (<a href="#sa1b49_309">Visszajelzés</a>)</li>
+<li><a href="#answer-49_318">Rossz</a> (<a href="#sa2b49_309">Visszajelzés</a>)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
