@@ -92,6 +92,28 @@ namespace Kemia
 
             Console.WriteLine(maxEv-minEv);
 
+            /*8. feladat */
+            string ev = "";
+            int db = 0;
+
+            for (int i = 9; i < elemek.Count; i++)
+            {
+                ev = elemek[i].ev; // 1250
+
+                for (int j = 9; j < elemek.Count; j++)
+                {
+                    if (ev == elemek[j].ev)
+                    {
+                        db++;
+
+                        if (db >= 3)
+                        {
+                            Console.WriteLine(elemek[i].ev + ":" + db + " db");
+                        }
+                    }
+                }
+            }
+
             Console.ReadKey();
         }
     }
