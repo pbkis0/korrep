@@ -34,7 +34,7 @@ namespace Forma1.repository
         /// </summary>
         public void deleteAllRacersInTeam()
         {
-            
+            racers.Clear(); //3.feladat ->3. public void deleteAllRacersInTeam()
         }
         /// <summary>
         /// A csapat versenyzőinak összbére
