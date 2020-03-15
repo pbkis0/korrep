@@ -71,7 +71,26 @@ namespace Forma1.repository
         public List<string> getRacerNames()
         {
             List<string> racerNamesList = new List<string>();
+
+            //6. feladat ->6. public List<string> getRacerNames()
+            //Versenyző listán végig futni, elkérni a nevét, és felírni a listába
+
+            foreach (Racer r in racers)
+            {
+                racerNamesList.Add(r.getName());
+            }
+
             return racerNamesList;
+
+
+            //List<int> fizetesek = new List<int>();
+
+            //foreach (Racer r in racers)
+            //{
+            //    fizetesek.Add(r.getSalary());
+            //}
+
+
         }
     }
 }
