@@ -24,7 +24,7 @@ namespace Forma1.repository
         /// <returns>Csapatban lévő versenyzők száma</returns>
         public int getNumberOfRacers()
         {
-            return -1;
+            return racers.Count;
         }
 
         /// <summary>
