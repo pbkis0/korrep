@@ -73,10 +73,10 @@ namespace Forma1.repository
 
         public void update(Racer racer)
         {
-            this.id = racer.getId();
-            this.name = racer.getName();
-            this.age = racer.getAge();
-            this.salary = racer.getSalary();
+            this.id = racer.id;
+            this.name = racer.name;
+            this.age = racer.age;
+            this.salary = racer.salary;
         }
 
         public override string ToString()

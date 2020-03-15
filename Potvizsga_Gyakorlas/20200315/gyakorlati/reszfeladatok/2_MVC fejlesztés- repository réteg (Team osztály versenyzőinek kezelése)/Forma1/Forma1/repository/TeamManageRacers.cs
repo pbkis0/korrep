@@ -67,6 +67,22 @@ namespace Forma1.repository
         /// <exception cref="TeamException">Ha a módosítandó versenyzőt nem találjuk, nem lehet módosítani</exception>
         public void updateRacer(string name, Racer newRacer)
         {
+            //5. feladat ->        public void updateRacer(string name,
+            foreach (var v in racers)
+            { 
+                if(v.getName()==name) //név alapján azonosítás
+                {
+                    v.update(newRacer);
+                }
+            }
+
+            //foreach (var v in racers)
+            //{
+            //    if (v.getName()==name)
+            //    {
+            //        v.setAge(newRacer.getAge());
+            //    }
+            //}
         }
 
        
