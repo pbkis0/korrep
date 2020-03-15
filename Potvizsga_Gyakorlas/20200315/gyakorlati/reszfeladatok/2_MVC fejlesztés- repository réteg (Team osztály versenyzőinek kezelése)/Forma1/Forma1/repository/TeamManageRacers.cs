@@ -34,6 +34,7 @@ namespace Forma1.repository
         /// <exception cref="TeamException">Két úgyan olyan versenyző nem lehet a csapatban</exception>
         public void addRacer(Racer r)
         {
+            //3. feladat ->        public void addRacer(Racer r)
             this.racers.Add(r);
         }
 
@@ -44,7 +45,18 @@ namespace Forma1.repository
         /// <param name="name">Törlendő versenyző neve</param>
         /// <exception cref="TeamException">Ha a versenyző a csapatnak nem tagja, nem lehet törlni</exception>
         public void deleteRacer(string name, int age)
-        {            
+        {
+            //4. feladat ->        public void deleteRacer(string name, int age)
+            foreach (var v in racers)
+            {
+                if (v.getName() == name && v.getAge() == age)
+                {
+                    racers.Remove(v);
+                    return;
+                }
+            }
+
+            throw new TeamException("Ha a versenyző a csapatnak nem tagja, nem lehet törlni");
         }
 
         /// <summary>
