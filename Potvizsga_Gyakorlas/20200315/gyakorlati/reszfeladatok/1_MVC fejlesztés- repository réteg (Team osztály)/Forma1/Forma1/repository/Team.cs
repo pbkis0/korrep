@@ -17,6 +17,7 @@ namespace Forma1.repository
         /// <param name="name">Az új csapat neve</param>
         public Team(string name)
         {
+            this.name = name; //1.feladat 1. public Team(string name)
             racers = new List<Racer>();
         }
         /// <summary>
