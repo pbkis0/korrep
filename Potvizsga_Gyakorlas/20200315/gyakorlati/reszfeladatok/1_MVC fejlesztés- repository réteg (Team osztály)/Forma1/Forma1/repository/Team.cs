@@ -59,7 +59,9 @@ namespace Forma1.repository
         /// </summary>
         /// <param name="newName">Csapat új neve</param>
         public void update(string newName)
-        {           
+        {
+            //5. feladat ->5. public void update(string newName)
+            this.name = newName;
         }
         /// <summary>
         /// A csapat versenyzőinek nevének listája
