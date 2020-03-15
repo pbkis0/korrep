@@ -33,7 +33,8 @@ namespace Forma1.repository
         /// <param name="r">új versenyző</param>
         /// <exception cref="TeamException">Két úgyan olyan versenyző nem lehet a csapatban</exception>
         public void addRacer(Racer r)
-        {           
+        {
+            this.racers.Add(r);
         }
 
         /// <summary>
