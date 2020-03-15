@@ -8,14 +8,15 @@ namespace Forma1.repository
 {
     partial class Team : ITeamManageRacers
     {
-
+        
         /// <summary>
         /// A csapat versenyzőinek listáját adja vissza
         /// </summary>
         /// <returns>A versenyzők neveinek listája</returns>
         public List<Racer> getRacers()
         {
-            return null;
+            //1. feladat ->public List<Racer> getRacers()               
+            return racers;
         }
         /// <summary>
         /// Megadja a csapatban lévő versenyzők számát
