@@ -42,7 +42,17 @@ namespace Forma1.repository
         /// <returns>Csapat bérkifezése</returns>
         public int getTeamSalary()
         {
-            return 0;
+            //4.feladat ->4. public int getTeamSalary()
+            // Összegzés tétel
+
+            int osszeg = 0;
+
+            foreach (Racer r in racers)
+            {
+                osszeg += r.getSalary();
+            }
+
+            return osszeg;
         }
         /// <summary>
         /// Módosítja a csapat nevét
