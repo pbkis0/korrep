@@ -17,7 +17,7 @@ namespace Forma1.repository
         /// <param name="name">Az új csapat neve</param>
         public Team(string name)
         {
-            this.name = name; //1.feladat 1. public Team(string name)
+            this.name = name; //1.feladat-> 1. public Team(string name)
             racers = new List<Racer>();
         }
         /// <summary>
@@ -26,7 +26,7 @@ namespace Forma1.repository
         /// <returns>A csapat neve</returns>
         public string getName()
         {
-            return "";
+            return name; //2.feladat ->2. public string getName()
         }
         /// <summary>
         /// Csapat törlésének előkészítése
