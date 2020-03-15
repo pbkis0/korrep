@@ -61,6 +61,7 @@ namespace Forma1.repository
         public void update(string newName)
         {
             //5. feladat ->5. public void update(string newName)
+            //Az adattag nevét szeretnék beírni, tehát settelni
             this.name = newName;
         }
         /// <summary>
