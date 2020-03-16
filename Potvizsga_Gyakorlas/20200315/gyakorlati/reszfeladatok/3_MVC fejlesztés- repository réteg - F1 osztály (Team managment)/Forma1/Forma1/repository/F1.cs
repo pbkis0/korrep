@@ -126,7 +126,17 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">A csapat nem lézetik adott nevű versenyzője</exception>
         public Racer searchRacerByName(string teamName, string racerName)
         {
-            return null;
+            //8.feladat ->public Racer searchRacerByName(string teamName, string racerName)
+            foreach(Team t in teams)
+                if(t.getName()==teamName)
+                {
+                    //Racer r = t.serchRacerByName(racerName);
+                    //return r;
+
+                    return t.serchRacerByName(racerName);
+                }
+            //return null;
+            throw new F1Exception("A csapat nem lézetik adott nevű versenyzője");
         }
 
         /// <summary>
