@@ -49,7 +49,17 @@ namespace Forma1.repository
         /// <param name="teamName">A törlendő csapat neve</param>
         /// <exception cref="F1Exception">A csapat nem lézetik</exception>
         public void delete(string teamName)
-        {           
+        {
+            //4.feladat->public void delete(string teamName)
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    teams.Remove(t);
+                    return; //Ha található "void", akkor a szükséges művelet elvégzése után kell egy "return", és így nem fog lefutni a kivétel képződés.
+                }
+            }
+            throw new F1Exception("A csapat nem lézetik");
         }
 
         /// <summary>
