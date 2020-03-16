@@ -103,8 +103,16 @@ namespace Forma1.repository
         /// <param name="racerName">A keresett versenyző neve</param>
         /// <param name="racerAge">A keresett versenyző életkora</param>
         /// <returns>true ha van és false ha nincs</returns>
-        public bool existRacer(string racerName, int racerAge)
+        public bool existRacer(string racerName, int age)
         {
+            //7.feladat->public bool existRacer(string racerName, int racerAge)
+            foreach (Team t in teams)
+            {
+                if (t.isRacerExist(racerName, age))
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
