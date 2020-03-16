@@ -8,7 +8,7 @@ using Forma1.myexeption;
 
 namespace Forma1.repository
 {
-    partial class F1 : IF1
+      partial class F1 : IF1
     {
         List<Team> teams;
 
@@ -16,7 +16,9 @@ namespace Forma1.repository
         /// Forma 1 konstruktor
         /// </summary>
         public F1()
-        {           
+        {
+            //1.feladat ->public F1()
+            this.teams = new List<Team>();
         }
 
         /// <summary>
