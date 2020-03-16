@@ -94,6 +94,15 @@ namespace Forma1.repository
         /// <returns>Ha van, akkor a versenyző, ha nincs akkor null</returns>
         public Racer serchRacerByName(string racerName)
         {
+            //6. feladat -> public void updateRacer(string name, Racer newRacer)
+            foreach (Racer v in racers)
+            {
+                if (v.getName() == racerName)
+                {
+                    return v;
+                }
+            }
+
             return null;
         }
 
