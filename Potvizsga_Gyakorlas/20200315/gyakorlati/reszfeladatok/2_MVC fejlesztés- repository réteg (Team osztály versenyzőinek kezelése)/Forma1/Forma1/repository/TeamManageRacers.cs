@@ -94,7 +94,7 @@ namespace Forma1.repository
         /// <returns>Ha van, akkor a versenyző, ha nincs akkor null</returns>
         public Racer serchRacerByName(string racerName)
         {
-            //6. feladat -> public void updateRacer(string name, Racer newRacer)
+            // 7.feladat->       public Racer serchRacerByName(string racerName)
             foreach (Racer v in racers)
             {
                 if (v.getName() == racerName)
@@ -114,7 +114,7 @@ namespace Forma1.repository
         /// <returns>Ha létezik, akkor true, ha nem akkor false</returns>
         public bool isRacerExist(string racerName, int racerAge)
         {
-            //7.feladat ->public Racer serchRacerByName(string racerName)
+            //8.feladat ->public Racer serchRacerByName(string racerName)
             foreach (Racer v in racers)
                 if(v.getName()==racerName && v.getAge()==racerAge)
                 {
@@ -129,7 +129,15 @@ namespace Forma1.repository
         /// <param name="racerName">Versenyző neve</param>
         /// <returns>A versenyző azonosítója</returns>
         public int getRacerId(string racerName)
-        {           
+        {
+            //9.feladat ->public int getRacerId(string racerName)
+            foreach (Racer v in racers)
+            {
+                if (v.getName() == racerName)
+                {
+                    return v.getId();
+                }
+            }
             return -1;
         }
 
