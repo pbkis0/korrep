@@ -8,7 +8,7 @@ namespace Forma1.repository
 {
     partial class Team : ITeamManageRacers
     {
-        
+
         /// <summary>
         /// A csapat versenyzőinek listáját adja vissza
         /// </summary>
@@ -69,8 +69,8 @@ namespace Forma1.repository
         {
             //5. feladat ->        public void updateRacer(string name,
             foreach (var v in racers)
-            { 
-                if(v.getName()==name) //név alapján azonosítás
+            {
+                if (v.getName() == name) //név alapján azonosítás
                 {
                     v.update(newRacer);
                 }
@@ -85,7 +85,7 @@ namespace Forma1.repository
             //}
         }
 
-       
+
 
         /// <summary>
         /// Megkeresi az adott nevű versenyzőt
@@ -116,13 +116,13 @@ namespace Forma1.repository
         {
             //8.feladat ->public Racer serchRacerByName(string racerName)
             foreach (Racer v in racers)
-                if(v.getName()==racerName && v.getAge()==racerAge)
+                if (v.getName() == racerName && v.getAge() == racerAge)
                 {
                     return true;
                 }
             return false;
         }
-        
+
         /// <summary>
         /// Megadja az adott nevű versenyző azonosítóját
         /// </summary>
@@ -146,8 +146,20 @@ namespace Forma1.repository
         /// </summary>
         /// <returns>A legnagyobb azonosító</returns>
         public int getMaxId()
-        {           
-            return -1;
+        {
+            //10.feladat ->public int getMaxId()
+            //Maximum keresés tétel
+            int max = 0;
+
+            foreach (Racer v in racers)
+            {
+                if (max < v.getId())
+                {
+                    max = v.getId(); //max értéke mindig az aktuális legnagyobb id értékének felel meg.
+                }
+            }
+
+            return max;
         }
     }
 }
