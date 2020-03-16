@@ -27,6 +27,8 @@ namespace Forma1.repository
         /// <returns>A csapat nevek listája</returns>
         public List<Team> getTeams()
         {
+            //2.feladat->       public List<Team> getTeams() 
+            //Gyuris előre megírta
             return teams;
         }
 
