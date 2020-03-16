@@ -71,8 +71,16 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">A csapat nem lézetik</exception>
         public void update(string teamName, string newTeamName)
         {
+            //5.feladat->public void update(string teamName, string newTeamName)
+            foreach(Team t in teams)
+                if (t.getName() == teamName)
+                {
+                    t.update(newTeamName);
+                    return;
+                }
+            throw new F1Exception("A csapat nem lézetik");
         }
-     
+
         /// <summary>
         /// Van-e adott nevű csapat
         /// </summary>
