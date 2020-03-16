@@ -114,6 +114,12 @@ namespace Forma1.repository
         /// <returns>Ha létezik, akkor true, ha nem akkor false</returns>
         public bool isRacerExist(string racerName, int racerAge)
         {
+            //7.feladat ->public Racer serchRacerByName(string racerName)
+            foreach (Racer v in racers)
+                if(v.getName()==racerName && v.getAge()==racerAge)
+                {
+                    return true;
+                }
             return false;
         }
         
