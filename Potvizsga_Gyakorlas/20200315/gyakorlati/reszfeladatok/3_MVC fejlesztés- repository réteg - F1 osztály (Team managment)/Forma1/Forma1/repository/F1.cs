@@ -88,6 +88,12 @@ namespace Forma1.repository
         /// <returns>true ha van és false ha nincs</returns>
         public bool existTeamName(string teamName)
         {
+            //6.feladat->public bool existTeamName(string teamName)
+            foreach (Team t in teams)
+                if (t.getName() == teamName)
+                {
+                    return true;
+                }
             return false;
         }
 
