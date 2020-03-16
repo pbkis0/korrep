@@ -37,7 +37,9 @@ namespace Forma1.repository
         /// </summary>
         /// <param name="t">A csapat</param>
         public void add(Team t)
-        {            
+        {
+            //3.feladat->public void add(Team t)
+            teams.Add(t);
         }
 
         /// <summary>
