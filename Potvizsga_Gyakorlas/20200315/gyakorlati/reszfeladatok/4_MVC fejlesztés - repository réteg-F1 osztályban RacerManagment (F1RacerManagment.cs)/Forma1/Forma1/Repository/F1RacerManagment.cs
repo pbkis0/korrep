@@ -56,7 +56,24 @@ namespace Forma1.repository
         /// <returns>Következő lehetséges ID</returns>
         public int getNextRacerId()
         {
-            return -1;
+            //3. feladat ->public int getNextRacerId()
+            int max = 0;
+            foreach (Team t in teams)
+            {
+                if (max < t.getMaxId())
+                {
+                    max = t.getMaxId();
+                }
+            }
+
+            if (max == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return max + 1;
+            }
         }
 
         /// <summary>
