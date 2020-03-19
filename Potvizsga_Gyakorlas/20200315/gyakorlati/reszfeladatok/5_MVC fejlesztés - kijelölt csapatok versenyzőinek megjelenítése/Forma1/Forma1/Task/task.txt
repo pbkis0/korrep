@@ -4,3 +4,24 @@ Feladat, hogy jelenítse meg a kiválasztott csapathoz tartozó versenyzőket.
 A következő lépéseket valósítsa meg:
  - user intefacen a csapat nevének kiválasztására esemény, amely megjeleníti a csapat nevét, és a csapathoz tartozó versenyzőket
  - controller régetben public string getTeamName() és public List<string> getRacerNames(string teamName)
+
+
+ Megoldás lépései:
+ 
+ 1) listBoxTeam -> 2*click -> legenerálja a "ListBoxTeam_SelectedIndexChanged" eseményt, a Form1Form.cs fileba (code-behind).
+ 
+ 2) Selected index changed esemény hatására minden egyes ilyen műveletnél kinyerem egy teamName (string) változóba hogy a listboxban adott kijelölt
+ indexen milyen érték szerepel (McLaren, Renault)
+
+ 3) ListboxRacerbe (atól függően, hogy melyik csapat van kijelölve a ListBoxTeamben) - kötöm bele az adott csapat versenyzőit:
+
+ 4)  controllerbe hívok egy getTeamNames(CSAPATNÉV PARAMÉTERÜL, AMIT KISZEDTEM) metódust -ezt már lehet kötni a listBoxRacer-be (miután lenulloltam)
+ 5) controller getTeamNames(CSAPATNÉV PARAMÉTERÜL, AMIT KISZEDTEM) függvény egy string listát ad vissza a versenyzők neveivel.
+
+ 6) Controller az hívja a Service getRacers(PARAMÉTER AMIT KISZEDTEM, CONTROLLER TOVÁBBADJA) függvényt, ez a Controllerben kinyerem egy List<Racer>-be
+
+ 7) Service a repoból hívja a getRacers(PARAMÉTERT DOBOM TOVÁBB) függvényt
+ 8) Repo leszűri a paraméter alapján melyik csapat (t objektum) Racer listáját kell visszaadja
+9) Controllernek visszakerül a leszűrt csapatlista.
+10) Controller azon foreach-csel végigmegy és minden objektum nevét elkéri (t.getName()) és azt átmenti egy sima string listába amit a GUInak visszadob
+11) GUI ebbe már kötve volt a függvény, megjelennek paraméter szerint az adott versenyzők nevei.
