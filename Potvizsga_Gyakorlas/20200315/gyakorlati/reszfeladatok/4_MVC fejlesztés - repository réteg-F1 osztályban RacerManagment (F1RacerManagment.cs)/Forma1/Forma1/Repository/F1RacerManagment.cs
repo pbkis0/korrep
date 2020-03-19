@@ -18,7 +18,15 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">Ha nem találja az adott nevű csapatot</exception>
         public int getNumberOfRacers(string teamName)
         {
-            return 0;
+            //1, feladat ->public int getNumberOfRacers(string teamName)
+            foreach(Team t in teams)
+            {
+                if(t.getName()==teamName)
+                {
+                    return t.getNumberOfRacers();
+                }
+            }
+            throw new F1Exception("Ha nem találja az adott nevű csapatot");
         }
 
         /// <summary>
