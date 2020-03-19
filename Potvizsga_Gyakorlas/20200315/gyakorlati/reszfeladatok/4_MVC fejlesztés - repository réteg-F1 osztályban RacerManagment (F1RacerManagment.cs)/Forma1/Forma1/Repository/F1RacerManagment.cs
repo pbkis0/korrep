@@ -104,7 +104,13 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">Ha az adott nevű csapat nem létezik</exception>
         public int getRacerId(string teamName, string racerName)
         {
-            return -1;
+            //5. feladat->public int getRacerId(string teamName, string racerName)
+            foreach (Team t in teams)
+                if (t.getName() == teamName)
+                {
+                    return t.getRacerId(racerName);
+                }
+            throw new F1Exception("Ha az adott nevű csapat nem létezik");
         }
 
         /// <summary>
