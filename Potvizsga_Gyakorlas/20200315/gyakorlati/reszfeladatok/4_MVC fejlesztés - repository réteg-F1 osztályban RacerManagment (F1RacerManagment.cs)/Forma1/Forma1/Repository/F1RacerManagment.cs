@@ -142,7 +142,15 @@ namespace Forma1.repository
         /// <param name="racerAge">A törlendő versenyző életkora</param>
         /// <exception cref="F1Exception">Ha az adott nevű csapat nem létezik</exception>
         public void deleteRacerInTeam(string teamName, string racerName, int racerAge)
-        {            
+        {
+            //7.feladat ->public void deleteRacerInTeam(string teamName, string racerName, int racerAge)
+            foreach (Team t in teams)
+                if (t.getName() == teamName)
+                {
+                    t.deleteRacer(racerName, racerAge);
+                    return;
+                }
+            throw new F1Exception("Ha az adott nevű csapat nem létezik");
         }
 
         public int getTeamSalary(string teamName)
