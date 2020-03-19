@@ -82,8 +82,16 @@ namespace Forma1.repository
         /// <param name="teamName">A csapat neve</param>
         /// <param name="newRacer">Az új versenyző</param>
         /// <exception cref="F1Exception">Ha nem találja az adott nevű csapatot</exception>
-        public void addRacerToTeam(string teamName, Racer newRacer)
-        {            
+        public void addRacerToTeam(string teamName, Racer newRacer) 
+        {
+            //4.feladat ->public void addRacerToTeam(string teamName, Racer newRacer)
+            foreach(Team t in teams)
+                if(t.getName()==teamName)
+                {
+                    t.addRacer(newRacer);
+                    return;     //Ha "void" szerepel a függvényben, mindig az elvégzendő művelet alatt kell legyen a  "return".
+                }
+            throw new F1Exception("Ha nem találja az adott nevű csapatot");
         }
 
         /// <summary>
