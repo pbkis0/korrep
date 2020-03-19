@@ -122,7 +122,15 @@ namespace Forma1.repository
         /// <param name="newRacer">Az új versenyző</param>
         /// <exception cref="F1Exception">Ha az adott nevű csapat nem létezik</exception>
         public void updateReacerInTeam(string teamName, string oldRacerName, Racer newRacer)
-        {        
+        {
+            //6.feladat ->public void updateReacerInTeam(string teamName, string oldRacerName, Racer newRacer)
+            foreach (Team t in teams)
+                if (t.getName() == teamName)
+                {
+                    t.updateRacer(oldRacerName, newRacer);
+                    return;
+                }
+            throw new F1Exception("Ha az adott nevű csapat nem létezik");
         }
 
         /// <summary>
