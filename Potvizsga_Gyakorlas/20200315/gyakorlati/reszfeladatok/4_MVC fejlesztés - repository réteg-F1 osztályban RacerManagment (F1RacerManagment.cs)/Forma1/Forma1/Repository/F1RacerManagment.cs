@@ -36,6 +36,14 @@ namespace Forma1.repository
         /// <returns>Lista, amely tartalmazza a csapat versenyzőinek nevét</returns>
         public List<string> getRacerNameFromTheTeam(string teamName)
         {
+            //2. feladat  ->public List<string> getRacerNameFromTheTeam(string teamName)
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName) // beazonosítttaom, azt a t objektumot, akire hívhatom a versenyző stringlista gettert
+                {
+                    return t.getRacerNames(); // return stringlista
+                }
+            }
             return null;
         }
 
