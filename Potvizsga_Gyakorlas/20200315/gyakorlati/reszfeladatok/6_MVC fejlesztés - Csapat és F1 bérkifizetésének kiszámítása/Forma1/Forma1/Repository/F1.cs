@@ -58,12 +58,26 @@ namespace Forma1.Repository
 
         public int getF1Salary()
         {
+            // összegzés tétel
+            // csapat fizetése = végigfutok az összes csapaton egy ciklussal és minden körben az f1Salary (ideiglenes változó (összeg)) hez minden csapat bérkifizetését összegzi
             int f1Salary = 0;
             foreach(Team t in teams)
             {
                 f1Salary = f1Salary + t.getTeamSalary();
             }
             return f1Salary;
+        }
+
+        public int getTeamSalary(string teamName)
+        {
+            foreach (Team t in teams) // "Team" vagy "var" is szerepelhet
+            {
+                if (t.getName()== teamName)
+                {
+                    return t.getTeamSalary();
+                }
+            }
+            return 0;
         }
 
         public void update(string teamName, string newTeamName)

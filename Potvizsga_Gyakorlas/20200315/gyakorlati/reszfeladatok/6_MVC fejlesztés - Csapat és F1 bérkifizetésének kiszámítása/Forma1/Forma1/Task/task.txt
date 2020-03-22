@@ -2,3 +2,34 @@
 Feladat:
  - A F1 összes bérkifizetésének meghatározása
  - A kiválasztott csapat összes bérkifizetésének megjelenítése
+
+
+
+ F1.cs
+
+      public int getTeamSalary(string teamName)
+        {
+            foreach (Team t in teams) // "Team" vagy "var" is szerepelhet
+            {
+                if (t.getName()== teamName)
+                {
+                    return t.getTeamSalary();
+                }
+            }
+            return 0;
+        }
+
+		-----------------
+
+
+
+
+
+
+
+
+		View
+		Controller
+		Service
+		Repository
+		Model

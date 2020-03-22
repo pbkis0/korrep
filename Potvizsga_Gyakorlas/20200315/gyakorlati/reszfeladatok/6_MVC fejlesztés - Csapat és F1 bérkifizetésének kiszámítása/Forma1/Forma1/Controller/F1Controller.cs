@@ -45,5 +45,15 @@ namespace Forma1.Controller
             return racerNames;
 
         }
+
+        public int getTeamSalary(string teamName)
+        {
+            return service.getTeamSalary(teamName);
+        }
+
+        public int getF1Salary()
+        {
+            return service.getF1Salary();
+        }
     }
 }

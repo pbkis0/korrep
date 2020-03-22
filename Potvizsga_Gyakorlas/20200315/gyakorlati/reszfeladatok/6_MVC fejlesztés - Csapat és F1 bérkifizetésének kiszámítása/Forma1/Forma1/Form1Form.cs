@@ -39,5 +39,16 @@ namespace Forma1
             //listBoxRacerbe->kiválasztott csapat versenyzőinek neve
             listBoxRacer.DataSource = controller.getRacerNames(teamName);
         }
+
+        private void buttonComputeTeamSalary_Click(object sender, EventArgs e)
+        {
+            string teamName = listBoxTeam.SelectedItem.ToString(); // Listboxból kiszedtem kinek a fizetésére vagyok kíváncsi
+            textBoxTeamSalary.Text = controller.getTeamSalary(teamName).ToString(); //fizetés textboxba beleköti azt a függvényt ami meghatározza (GUI->Controller) int->toString()
+        }
+
+        private void buttonComputeF1Salary_Click(object sender, EventArgs e)
+        {
+            textBoxF1Salary.Text = controller.getF1Salary().ToString();
+        }
     }
 }
