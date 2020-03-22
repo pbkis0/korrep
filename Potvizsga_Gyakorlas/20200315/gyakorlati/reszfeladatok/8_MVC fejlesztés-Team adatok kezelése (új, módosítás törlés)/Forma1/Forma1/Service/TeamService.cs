@@ -35,5 +35,22 @@ namespace Forma1.Service
         {
             return forma1Repository.searchRacerByName(teamName, racerName);
         }
+
+        public void hozzadcsapat(string csapathozzaad) // amelyik függvény kivételt dobhat, annak aki meghívja try-catch
+        {
+            //ellenőrzés
+            if (forma1Repository.isExistingTeam(csapathozzaad)) // if (LOGIKA KIÉRTÉKELÉS) // if-> igaz ág, az else hamis ág
+            {
+                throw new Exception("VAN MÁR ILYEN NEVŰ CSAPAT! NEM ADHATOM HOZZÁ!");
+            }
+
+            Team team = new Team(csapathozzaad);
+            forma1Repository.add(team);
+        }
+
+        internal void CsapatTorles(string torlendoCsapatNeve)
+        {
+            forma1Repository.delete(torlendoCsapatNeve);
+        }
     }
 }

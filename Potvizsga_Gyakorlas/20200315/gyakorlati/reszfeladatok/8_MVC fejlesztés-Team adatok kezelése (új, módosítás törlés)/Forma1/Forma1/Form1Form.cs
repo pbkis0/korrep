@@ -38,7 +38,7 @@ namespace Forma1
 
         private void listBoxRacer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxTeam.SelectedIndex < 0 || listBoxRacer.SelectedIndex<0)
+            if (listBoxTeam.SelectedIndex < 0 || listBoxRacer.SelectedIndex < 0)
                 return;
             string teamName = listBoxTeam.SelectedItem.ToString();
             string racerName = listBoxRacer.SelectedItem.ToString();
@@ -46,6 +46,38 @@ namespace Forma1
             textBoxRacerName.Text = selectedRacer.getName();
             textBoxRacerAge.Text = selectedRacer.getAge().ToString();
             textBoxRacerSalary.Text = selectedRacer.getSalary().ToString();
+        }
+
+        private void buttonAddTeam_Click(object sender, EventArgs e)
+        {
+            string csapathozzaad = textBoxTeamName.Text;
+
+            try
+            {
+                controller.hozzadcsapat(csapathozzaad);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hibaüzenet", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            listBoxTeam.DataSource = controller.getTeamNames();
+        }
+
+        private void buttonDeleteTeam_Click(object sender, EventArgs e)
+        {
+            if (listBoxTeam.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            string torlendoCsapatNeve = ""; torlendoCsapatNeve = listBoxTeam.SelectedItem.ToString();
+
+
+            controller.CsapatTorles(torlendoCsapatNeve); //Itt tudom megadni annak a csapat nevét,
+
+            listBoxTeam.DataSource = null;
+            listBoxTeam.DataSource = controller.getTeamNames();
         }
     }
 }
