@@ -51,6 +51,18 @@ namespace Forma1.Repository
             return salary;
         }
 
+        public Racer searchRacerByName(string racerName)
+        {
+            foreach (Racer r in racers)
+            {
+                if (r.getName() == racerName)
+                {
+                    return r;
+                }
+            }
+
+            throw new Exception("Nincs meg a versenyző az alábbi névvel:" + racerName);
+        }
         /// <summary>
         /// Módosítja a csapat nevét
         /// </summary>

@@ -46,6 +46,19 @@ namespace Forma1.Repository
 
         }
 
+        public Racer searchRacerByName(string teamName, string racerName)
+        {
+            foreach (Team t in teams)
+            {
+                if (t.getName()==teamName)
+                {
+                    return t.searchRacerByName(racerName);
+                }
+            }
+
+            throw new Exception("Nincs csapat");
+        }
+
         public List<Racer> getRacers(string teamName)
         {
             foreach(Team t in teams)
