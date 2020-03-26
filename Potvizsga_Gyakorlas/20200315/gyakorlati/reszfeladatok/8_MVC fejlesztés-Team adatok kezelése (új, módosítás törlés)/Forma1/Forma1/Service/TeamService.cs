@@ -55,6 +55,16 @@ namespace Forma1.Service
 
         internal void modositCsapatNev_(string modositandoCsapatnev, string ujCsapatNeve)
         {
+            // ELLENŐRZÉS: már létező csaptnévre nem lehet egy másik casapatot átnevezni.
+            // Repository segítség: VAN MÁR ERRE KÉSZ FÜGGVÉNY, AMIT FEL KELL HSZNÁLNUK.
+
+            bool letezik = forma1Repository.isExistingTeam(ujCsapatNeve);
+
+            if (letezik) // true -> akkor belefut a blokkba, ha false, akkor nem fut bele a blokkba
+            {
+                throw new Exception("Létező csapatnév! Nem lehet módosítani!"); // exception szakítja a szekvenciális futás...
+            }
+
             forma1Repository.update(modositandoCsapatnev, ujCsapatNeve);
         }
     }
