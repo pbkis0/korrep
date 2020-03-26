@@ -67,5 +67,12 @@ namespace Forma1.Controller
         {
             service.CsapatTorles(torlendoCsapatNeve);
         }
+
+        internal void modositCsapatnev(string modositandoCsapatnev, string ujCsapatNeve)
+        {
+
+            //A "modositCsapatnev" fügvényt mi hoztuk létre, és nem azonos a 
+            service.modositCsapatNev_(modositandoCsapatnev, ujCsapatNeve);
+        }
     }
 }

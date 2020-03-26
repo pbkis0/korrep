@@ -79,5 +79,20 @@ namespace Forma1
             listBoxTeam.DataSource = null;
             listBoxTeam.DataSource = controller.getTeamNames();
         }
+
+        private void ButtonUpdateTeam_Click(object sender, EventArgs e)
+        {
+            // A "listBoxTeam" ből veszük ki az éppen aktuális kijelölt elemet. A "selectedItem"- értékét object típusban kapom meg, és ezt átkell konvertálni ToString típusuvá.
+            string modositandoCsapatnev = listBoxTeam.SelectedItem.ToString();
+
+            //A "textBoxTeamName" -ből a "text" tújajdonságát szedjük ki.
+            string ujCsapatNeve = textBoxTeamName.Text;
+
+            //Dobájluk levelé a paramétereket az üzleti logikához. A "modositCsapatnev" függvényt nevét mi adjuk meg, és a paramétereket is megkell adni.
+            controller.modositCsapatnev(modositandoCsapatnev, ujCsapatNeve);
+
+            listBoxTeam.DataSource = null; //A megjelenő adatokat "null"-ázuk.
+            listBoxTeam.DataSource = controller.getTeamNames(); //Az adatokat újra lekérdezzük.
+        }
     }
 }

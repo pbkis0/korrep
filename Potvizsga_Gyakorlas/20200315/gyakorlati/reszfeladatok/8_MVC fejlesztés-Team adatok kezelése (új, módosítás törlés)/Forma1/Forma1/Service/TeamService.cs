@@ -52,5 +52,10 @@ namespace Forma1.Service
         {
             forma1Repository.delete(torlendoCsapatNeve);
         }
+
+        internal void modositCsapatNev_(string modositandoCsapatnev, string ujCsapatNeve)
+        {
+            forma1Repository.update(modositandoCsapatnev, ujCsapatNeve);
+        }
     }
 }
