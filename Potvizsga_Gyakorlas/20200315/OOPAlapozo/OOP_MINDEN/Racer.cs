@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_MINDEN
 {
-    public class Racer : Object
+    public class Racer : Object // Model
     {
         // Adattag/mező/attribútum:
         // jellemzi az adott osztály tulajdonságait,
@@ -100,6 +100,15 @@ namespace OOP_MINDEN
         public int getSalary()
         {
             return this.salary;
+        }
+
+        public void updateRacer(Racer racer)
+        {
+            //A "this.id" -ennek az osztálynak a része, a "racer.id" -kívülső paraméterként kapom meg.
+            this.id = racer.id;
+            this.name = racer.name;
+            this.age = racer.age;
+            this.salary = racer.salary;
         }
 
 
