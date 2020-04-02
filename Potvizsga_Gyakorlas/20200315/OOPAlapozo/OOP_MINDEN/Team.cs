@@ -28,53 +28,37 @@ namespace OOP_MINDEN
             return racers;
         }
 
-        public void updateRacer(Racer racer)
-        {
-            foreach (Racer r in racers)
-            {
-                if (r.getId() == racer.getId())
-                {
-                    r.updateRacer(racer);
-                    //r.setId(racer.getId());
-                    //r.setName(racer.getName());
-                    //r.setAge(racer.getAge());
-                    //r.setSalary(racer.getSalary());
-                    return;
-                }
-            }
-
-            throw new System.Exception("Nincs meg a versenyző!");
-        }
-
-        public void deleteRacer(int id)
-        {
-            foreach (Racer r in racers)
-            {
-                if (r.getId() == id)
-                {
-                    racers.Remove(r);
-                    return;
-                }
-            }
-            throw new System.Exception("Nincs meg a versenyző");
-        }
-
         public void addRacer(Racer racer)
         {
-            racers.Add(racer); // listaNév.Add() metódus
+            racers.Add(racer);
         }
 
-        public Racer getRacerByName(string name)
+        public void deleteRacer(string name)
         {
             foreach (Racer r in racers)
             {
                 if (r.getName() == name)
                 {
-                    return r;
+                    racers.Remove(r);
+                    return;
                 }
             }
+        }
 
-            throw new System.Exception("Nincs meg a versenyző!");
+        public void updateRacer(string oldRacerName, Racer racer)
+        {
+            foreach (Racer r in racers)
+            {
+                if (r.getName() == oldRacerName)
+                {
+                    r.updateRacer(racer);
+                }
+            }
+        }
+
+        public override string ToString()
+        {
+            return name;
         }
     }
 }

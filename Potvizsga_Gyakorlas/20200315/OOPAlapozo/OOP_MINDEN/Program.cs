@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace OOP_MINDEN
 {
-
     public class Program // EGY OSZTÁLY MINDIG PUBLIC (access modifier)
     {
         public static void Main(string[] args)
@@ -58,25 +57,25 @@ namespace OOP_MINDEN
             //r1.setName("Gábor");
             //Console.WriteLine("r1 neve: " + r1.getName());
 
-            Racer r1 = new Racer(1, "Sumáher", 30, 1300);
-            Racer r2 = new Racer(2, "Bottas", 20, 1500);
-            Racer r3 = new Racer(3, "Verstappen", 18, 2000);
+            //Racer r1 = new Racer(1, "Sumáher", 30, 1300);
+            //Racer r2 = new Racer(2, "Bottas", 20, 1500);
+            //Racer r3 = new Racer(3, "Verstappen", 18, 2000);
 
-            Team team1 = new Team("Ferrari");
-            Team team2 = new Team("McLaren");
+            //Team team1 = new Team("Ferrari");
+            //Team team2 = new Team("McLaren");
 
-            team1.addRacer(r1);
-            team2.addRacer(r2);
-            team2.addRacer(r3);
+            //team1.addRacer(r1);
+            //team2.addRacer(r2);
+            //team2.addRacer(r3);
 
             //foreach (Racer r in team2.getRacers())
             //{
             //    Console.WriteLine(r.ToString());
             //}
 
-            Racer r4 = new Racer(3, "Verstappen", 19, 3000);
+            //Racer r4 = new Racer(3, "Verstappen", 19, 3000);
 
-            team2.updateRacer(r4);
+            //team2.updateRacer(r4);
 
             //Console.WriteLine("Kérek egy id-t:");
 
@@ -124,6 +123,95 @@ namespace OOP_MINDEN
             //{
             //    Console.WriteLine(nev);
             //}
+
+            TestData test = new TestData();
+
+
+
+            // ----------- TESZTDADAT --------------------
+
+            // tényleges program: CLI
+
+
+
+            F1 f1 = test.provideTestData(); // idáig van nekünk egy tesztadatokkal feltöltöt kész repository (adattár)
+
+
+            // hozzáadni, módosítani, törölni és lekérdezni adatokat...
+
+
+            // 1. feladat:
+            // hozzáadhassak csapatot az Forma1-hez (mint absztrak tárolóhoz)
+
+            Console.WriteLine("Csapatok hozzáadás előtt");
+            foreach (Team team in f1.getTeams())
+            {
+                Console.WriteLine(team);
+            }
+            Console.ReadKey();
+
+            Console.WriteLine("Csapatok hozzadás után");
+            Team newTeam = new Team("Red Bull"); // felhasználó hozza létre
+            f1.addTeam(newTeam);
+
+            foreach (Team team in f1.getTeams())
+            {
+                Console.WriteLine(team);
+            }
+            Console.ReadKey();
+
+            Console.WriteLine("Csapatok csapatnév módosítás után:");
+            // 2. feladat:
+            // módosíthassam a csapatot:
+
+            string newTeamName = "McLaren-Turbo"; // textboxból jön
+            f1.updateTeam("McLaren", newTeamName);
+            foreach (Team team in f1.getTeams())
+            {
+                Console.WriteLine(team);
+            }
+
+            Console.ReadKey();
+
+            Console.WriteLine("Csapatok törlés után:");
+
+            // 3. feladat:
+            // csapattörlés F1-ből
+
+            string textBoxLetezoCsapatnev = "Ferrari"; // listboxból kinyertem az adatot
+            f1.deleteTeam(textBoxLetezoCsapatnev);
+
+
+            foreach (Team team in f1.getTeams())
+            {
+                Console.WriteLine(team);
+            }
+
+
+
+            //4. feladat: egy adott csapathoz adhassak új versenyzőt
+            // Red Bull új versenyző:
+            Racer newRacer = new Racer(6, "Balázs Kis", 37, 1300);
+            string teamName = "Red Bull"; // listboxból jött adat
+            f1.addRacerToTeam(teamName, newRacer);
+
+            // 5. feladat: meglévő versenyző törlése
+            // név alapján lehessen törölni
+
+            // kijelöltem ListBox-ban Red Bullt, és azon belül a másik ListBoxban Balázst
+
+            string teamNameToDelete = "Red Bull";
+            string racerToDelete = "Balázs Kis";
+            //f1.deleteRacerFromTeam(teamNameToDelete, racerToDelete);
+
+            // 6. feladat: módosítsunk versenyzőt
+            string racerInTeam = "Red Bull";
+            string racerNameToUpdate = "Balázs Kis";
+
+            Racer racer = new Racer(6, "Balázs Példa Kis", 40, 1500);
+
+            f1.updateRacer(racerInTeam, racerNameToUpdate, racer);
+
 
             Console.ReadKey();
         }
