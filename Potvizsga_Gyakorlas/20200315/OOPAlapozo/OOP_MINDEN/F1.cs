@@ -23,38 +23,57 @@ namespace OOP_MINDEN
             return teams;
         }
 
-        // TODO: PARTIAL OSZTÁLYBA TEGYÜK KI!!!
-        public void addRacerToTeam(string teamName, Racer racer)
+        public void addTeam(Team team)
         {
-            foreach (Team team in teams)
-            {
-                if (team.getName() == teamName)
-                {
-                    team.addRacer(racer);
-                }
-            }
+            teams.Add(team);
         }
 
-        public void deleteRacerFromTeam(string teamName, string racerName)
+        public void updateTeam(string teamName, string newTeamName)
         {
             foreach (Team t in teams)
             {
                 if (t.getName() == teamName)
                 {
-                    t.deleteRacer(racerName);
+                    t.update(newTeamName);
                 }
             }
         }
 
-        public void updateRacer(string teamName, string oldRacerName, Racer racer)
+        public void deleteTeam(string teamName)
         {
-            foreach (Team team in teams)
+            foreach (Team t in teams)
             {
-                if (team.getName() == teamName)
+                if (t.getName() == teamName)
                 {
-                    team.updateRacer(oldRacerName, racer);
+                    teams.Remove(t);
+                    return;
                 }
             }
+        }
+
+        public int getF1Salary()
+        {
+            int f1Salary = 0;
+
+            foreach (Team t in teams)
+            {
+                f1Salary += t.getTeamSalary();
+            }
+
+            return f1Salary;
+        }
+
+        public int getTeamSalary(string teamName)
+        {
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return t.getTeamSalary();
+                }
+            }
+
+            return 0;
         }
     }
 }

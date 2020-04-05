@@ -2,7 +2,7 @@
 
 namespace OOP_MINDEN
 {
-    public class Team // Repository
+    public partial class Team // Repository
     {
         private string name;
         private List<Racer> racers;
@@ -26,34 +26,6 @@ namespace OOP_MINDEN
         public List<Racer> getRacers()
         {
             return racers;
-        }
-
-        public void addRacer(Racer racer)
-        {
-            racers.Add(racer);
-        }
-
-        public void deleteRacer(string name)
-        {
-            foreach (Racer r in racers)
-            {
-                if (r.getName() == name)
-                {
-                    racers.Remove(r);
-                    return;
-                }
-            }
-        }
-
-        public void updateRacer(string oldRacerName, Racer racer)
-        {
-            foreach (Racer r in racers)
-            {
-                if (r.getName() == oldRacerName)
-                {
-                    r.updateRacer(racer);
-                }
-            }
         }
 
         public override string ToString()

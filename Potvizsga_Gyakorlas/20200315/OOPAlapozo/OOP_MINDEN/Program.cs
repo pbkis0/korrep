@@ -133,9 +133,7 @@ namespace OOP_MINDEN
             // tényleges program: CLI
 
 
-
-            F1 f1 = test.provideTestData(); // idáig van nekünk egy tesztadatokkal feltöltöt kész repository (adattár)
-
+            Controller controller = new Controller();
 
             // hozzáadni, módosítani, törölni és lekérdezni adatokat...
 
@@ -143,35 +141,31 @@ namespace OOP_MINDEN
             // 1. feladat:
             // hozzáadhassak csapatot az Forma1-hez (mint absztrak tárolóhoz)
 
-            Console.WriteLine("Csapatok hozzáadás előtt");
-            foreach (Team team in f1.getTeams())
+            //Console.WriteLine("Csapatok hozzáadás előtt");
+            foreach (Team team in controller.getTeams())
             {
                 Console.WriteLine(team);
             }
-            Console.ReadKey();
 
             Console.WriteLine("Csapatok hozzadás után");
             Team newTeam = new Team("Red Bull"); // felhasználó hozza létre
-            f1.addTeam(newTeam);
+            controller.addTeam(newTeam);
 
-            foreach (Team team in f1.getTeams())
+            foreach (Team team in controller.getTeams())
             {
                 Console.WriteLine(team);
             }
-            Console.ReadKey();
 
             Console.WriteLine("Csapatok csapatnév módosítás után:");
             // 2. feladat:
             // módosíthassam a csapatot:
 
             string newTeamName = "McLaren-Turbo"; // textboxból jön
-            f1.updateTeam("McLaren", newTeamName);
-            foreach (Team team in f1.getTeams())
+            controller.updateTeam("McLaren", newTeamName);
+            foreach (Team team in controller.getTeams())
             {
                 Console.WriteLine(team);
             }
-
-            Console.ReadKey();
 
             Console.WriteLine("Csapatok törlés után:");
 
@@ -179,21 +173,18 @@ namespace OOP_MINDEN
             // csapattörlés F1-ből
 
             string textBoxLetezoCsapatnev = "Ferrari"; // listboxból kinyertem az adatot
-            f1.deleteTeam(textBoxLetezoCsapatnev);
+            controller.deleteTeam(textBoxLetezoCsapatnev);
 
-
-            foreach (Team team in f1.getTeams())
+            foreach (Team team in controller.getTeams())
             {
                 Console.WriteLine(team);
             }
-
-
 
             //4. feladat: egy adott csapathoz adhassak új versenyzőt
             // Red Bull új versenyző:
             Racer newRacer = new Racer(6, "Balázs Kis", 37, 1300);
             string teamName = "Red Bull"; // listboxból jött adat
-            f1.addRacerToTeam(teamName, newRacer);
+            controller.addRacerToTeam(teamName, newRacer);
 
             // 5. feladat: meglévő versenyző törlése
             // név alapján lehessen törölni
@@ -202,7 +193,7 @@ namespace OOP_MINDEN
 
             string teamNameToDelete = "Red Bull";
             string racerToDelete = "Balázs Kis";
-            //f1.deleteRacerFromTeam(teamNameToDelete, racerToDelete);
+            controller.deleteRacerFromTeam(teamNameToDelete, racerToDelete);
 
             // 6. feladat: módosítsunk versenyzőt
             string racerInTeam = "Red Bull";
@@ -210,8 +201,39 @@ namespace OOP_MINDEN
 
             Racer racer = new Racer(6, "Balázs Példa Kis", 40, 1500);
 
-            f1.updateRacer(racerInTeam, racerNameToUpdate, racer);
+            controller.updateRacer(racerInTeam, racerNameToUpdate, racer);
 
+            // plusz metódusok:
+
+            // adott csapatban hány versenyző van?
+            string teamNameHanyVersenyzos = "McLaren"; // textbox
+            string McLarenVersenyzoinekSzama = controller.getNumberOfRacers(teamNameHanyVersenyzos);
+            Console.WriteLine(McLarenVersenyzoinekSzama);
+
+            // létező versenyző-e?
+            // Verstappen létező versenyző-e?
+
+            if (controller.isExistingRacer("Verstappen", 18)) // logikai kiértékelés, akkor fut bele az if ágba, ha ez a logikai kiértékelés IGAZ
+            {
+                Console.WriteLine("Létezik Verstappen");
+            }
+            else
+            {
+                Console.WriteLine("Verstappen nem létezik");
+            }
+
+            // F1 összes bérkifizetés
+            string f1Salary = controller.getF1Salary();
+            Console.WriteLine("F1 bevétele: " + f1Salary);
+            // textBox.Text = STRING !!!
+
+            // Csapat összes bérkifizetés
+
+            string teamSalary = controller.getTeamSalary("McLaren");
+            // textBoxTeamSalary.Text = controller.getTeamSalary("McLaren"); //integerbe adja vissza a függvény, de
+            // textboxba string-et tudsz belekötni
+            // GUI az csak stringként tud mindent megjeleníteni
+            Console.WriteLine("McLaren fizetése: " + teamSalary);
 
             Console.ReadKey();
         }
