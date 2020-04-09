@@ -30,20 +30,39 @@ namespace Forma1.validation
         /// </summary>
         public void validation()
         {
-            if (isEmtyName())
-                throw new NameNotValidNameIsEmptyException("A név nem lehet üres!");
-            if (isFistLetterNotUppercase())
+            if (isNameNull())
+                throw new NullReferenceException();
+            if (isNameEmpty())
+                throw new NameNotValidNameIsEmptyException("A név nem lehet üres vagy null!");
+            if (isFirstLetterLowercase())
                 throw new NameNotValidFirstLetterProblemException("A név nagy kezdőbetűvel kell kezdőjön!");
         }
 
-
-        private bool isFistLetterNotUppercase()
+        private bool isNameNull()
         {
+            return name == null;
+        }
+
+        private bool isNameEmpty()
+        {
+            // return string.IsNullOrEmpty(name);
+
+            if (name == "")
+            {
+                return true;
+            }
+
             return false;
         }
 
-        private bool isEmtyName()
+        private bool isFirstLetterLowercase()
         {
+            // return char.IsLower(name[0]);
+            if (char.IsLower(name[0]))
+            {
+                return true;
+            }
+
             return false;
         }
     }
