@@ -16,9 +16,25 @@ namespace Forma1.repository
         private int salary;
 
 
-        public Racer(int id, string name, int age,int salary)
-        {            
+        public Racer(int id, string name, int age, int salary)
+        {
             this.id = id;
+
+            //1, NameValidator bekötése konstruktorba és set metódusban 
+            try
+            {
+                NameValidator nv = new NameValidator(name);
+                nv.validation();
+            }
+            catch (NameNotValidNameIsEmptyException ex)
+            {
+                throw new RacerException(ex.Message);
+            }
+            catch (NameNotValidFirstLetterProblemException ex)
+            {
+                throw new RacerException(ex.Message);
+            }
+
             this.name = name;
             this.age = age;
             this.salary = salary;
@@ -26,6 +42,21 @@ namespace Forma1.repository
 
         public void setName(string name)
         {
+            //1, NameValidator bekötése konstruktorba és set metódusban 
+            try
+            {
+                NameValidator nv = new NameValidator(name);
+                nv.validation();
+            }
+            catch (NameNotValidNameIsEmptyException ex)
+            {
+                throw new RacerException(ex.Message);
+            }
+            catch (NameNotValidFirstLetterProblemException ex)
+            {
+                throw new RacerException(ex.Message);
+            }
+
             this.name = name;
         }
 
