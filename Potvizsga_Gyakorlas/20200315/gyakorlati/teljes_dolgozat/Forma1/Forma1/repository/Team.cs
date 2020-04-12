@@ -58,8 +58,9 @@ namespace Forma1.repository
         /// </summary>
         public void deleteAllRacersInTeam()
         {
-            
-        }        
+            //2, deleteAllRacersInTeam
+            racers.Clear();
+        }
         /// <summary>
         /// Módosítja a csapat nevét
         /// </summary>
