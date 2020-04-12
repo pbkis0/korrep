@@ -131,7 +131,23 @@ namespace Forma1.controller
         /// </summary>
         /// <param name="teamNameToDelete">A törlendő csapat neve</param>
         public void deleteTeam(string teamNameToDelete)
-        {           
+        {
+            // //- A controller rétegben a következő metódusok kifejlesztése a kódban megtalálható leírás alapján: addTeamToF1, modifyTeamName, deleteTeam
+            if (!teamService.existTeamName(teamNameToDelete))
+            {
+                throw new ControllerException("Nem létezik a csapatnév!");
+            }
+
+            try
+            {
+                teamService.deleteTeam(teamNameToDelete);
+            }
+            catch (Exception ex)
+            {
+
+                throw new ControllerException(ex.Message);
+            }
+
         }
 
         /// <summary>
