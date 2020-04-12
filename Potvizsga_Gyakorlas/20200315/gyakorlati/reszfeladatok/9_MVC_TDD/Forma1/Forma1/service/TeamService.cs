@@ -66,11 +66,12 @@ namespace Forma1.service
         /// <summary>
         /// Ha a csapatnak nincs tagja akkor annak törlése
         /// Ellenörizze, hogy a csapatnak hány tagja van. Kérje le az adott nevű csapat versenyzőinek számát
-        /// Ha a csapatnak nincs versenyzője törölje a csapatot. Ha van a csapatnak van tagja, akkor dobjon kivételt.
+        /// Ha a csapatnak nincs versenyzője törölje a csapatot. Ha van a csapatnak van tagja, akkor dobjon kivételt..
         /// </summary>
         /// <param name="teamNameToDelete"></param>
         public void deleteTeam(string teamNameToDelete)
         {
+            //- A service rétegben a deleteTeam metódus megírása a kódban található leírás alapján
             int numberOfRacer = f1Repository.getNumberOfRacers(teamNameToDelete);
             if (numberOfRacer > 0)
                 throw new TeamServiceExeption(teamNameToDelete + " csapatnak van még versenyzője, nem lehet törölni!");
