@@ -54,7 +54,31 @@ namespace Forma1.controller
         /// <exeption>ControllerException</exeption>
 
         public void addTeamToF1(string teamName)
-        {            
+        {
+            if (teamService.existTeamName(teamName))
+            {
+                throw new ControllerException("Létező csapatnév!");
+            }
+
+            try
+            {
+                NameValidator nv = new NameValidator(teamName);
+                nv.validation();
+            }
+            catch (NullReferenceException ex)
+            {
+                throw new ControllerException(ex.Message); // "A név nem lehet null!"
+            }
+            catch (NameNotValidNameIsEmptyException ex)
+            {
+                throw new ControllerException(ex.Message); // "A név nem lehet üres vagy null!"
+            }
+            catch (NameNotValidFirstLetterProblemException ex)
+            {
+                throw new ControllerException(ex.Message); // "A név nagy kezdőbetűvel kell kezdőjön!"
+            }
+
+            teamService.addTeam(teamName);
         }
 
         /// <summary>
