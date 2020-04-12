@@ -65,7 +65,8 @@ namespace Forma1.repository
         /// <param name="newName">Csapat új neve</param>
         public void update(string newName)
         {
-            
+            //2, update és getRacers metódusok megírása
+            this.name = newName;
         }
         /// <summary>
         /// A csapat versenyzőinek listáját adja vissza
@@ -73,7 +74,8 @@ namespace Forma1.repository
         /// <returns>A versenyzők neveinek listája</returns>
         public List<Racer> getRacers()
         {
-            return null;
+            // //2, update és getRacers metódusok megírása
+            return racers;
         }
 
         public int getTeamSalary() // összegzés tétel
