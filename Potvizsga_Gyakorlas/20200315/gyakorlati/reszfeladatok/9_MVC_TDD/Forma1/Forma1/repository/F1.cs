@@ -48,7 +48,7 @@ namespace Forma1.repository
                 index = index + 1;
             }
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet törölni");
-        }        
+        }
 
         /// <summary>
         /// Adott nevű csapat nevének módosítása
@@ -59,7 +59,21 @@ namespace Forma1.repository
         /// <param name="teamName">A csapat régi neve</param>
         /// <param name="newTeamName">A csapat új neve</param>
         public void update(string teamName, string newTeamName)
-        {          
+        {
+            // A repository rétegben az F1 osztályban írja meg az ott található void update(string teamName, string newTeamName) metódust a kódban található leírás alapján
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName) // 1. Keresse meg az adott nevű teamet
+                {
+                    // itt már megvan az adott nevű team
+
+                    // 2. A Team osztály metódusa segítségével módosítsa nevét
+                    t.update(newTeamName);
+                    return; // a végrehajtott feladat után, mert 'void' metódus
+                }
+            }
+            // 3. Kivétel dobás, ha a csapat nem létezik
+            throw new TeamException("a csapat nem létezik");
         }
 
         /// <summary>
