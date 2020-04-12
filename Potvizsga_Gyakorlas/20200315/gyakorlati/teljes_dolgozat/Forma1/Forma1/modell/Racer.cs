@@ -2,6 +2,7 @@
 using Forma1.validation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,10 +29,12 @@ namespace Forma1.repository
             }
             catch (NameNotValidNameIsEmptyException ex)
             {
+                Debug.WriteLine(ex.Message); // outputra loggolás
                 throw new RacerException(ex.Message);
             }
             catch (NameNotValidFirstLetterProblemException ex)
             {
+                Debug.WriteLine(ex.Message);
                 throw new RacerException(ex.Message);
             }
 
@@ -50,10 +53,12 @@ namespace Forma1.repository
             }
             catch (NameNotValidNameIsEmptyException ex)
             {
+                Debug.WriteLine(ex.Message);
                 throw new RacerException(ex.Message);
             }
             catch (NameNotValidFirstLetterProblemException ex)
             {
+                Debug.WriteLine(ex.Message);
                 throw new RacerException(ex.Message);
             }
 
