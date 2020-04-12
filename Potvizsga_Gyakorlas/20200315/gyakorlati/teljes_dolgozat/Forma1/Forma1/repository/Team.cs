@@ -11,12 +11,17 @@ namespace Forma1.repository
         private string name;
         private List<Racer> racers;
 
+  
+
         /// <summary>
         /// Konstruktor
         /// </summary>
         /// <param name="name">Az új csapat neve</param>
         public Team(string name)
         {
+            //2, - konstruktor
+            this.name = name;
+            this.racers = new List<Racer>();
         }
         /// <summary>
         /// getter
