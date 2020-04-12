@@ -15,6 +15,7 @@ namespace Forma1.repository
         private int age;
         private int salary;
 
+
         public Racer(int id, string name, int age,int salary)
         {            
             this.id = id;
@@ -60,6 +61,12 @@ namespace Forma1.repository
 
         public void update(Racer racer)
         {            
+        }
+
+        //1,  - ToString metódus megírása
+        public override string ToString()
+        {
+            return id + " " + name + " " + age + " " + salary;
         }
     }
 }
