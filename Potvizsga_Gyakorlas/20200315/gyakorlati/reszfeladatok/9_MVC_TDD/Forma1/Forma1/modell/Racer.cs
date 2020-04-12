@@ -31,9 +31,30 @@ namespace Forma1.repository
             this.id = id;
 
             NameValidator nameValidator = new NameValidator(name);
-            nameValidator.validation();
+
+            try
+            {
+                nameValidator.validation();
+            }
+            catch (NullReferenceException ex)
+            {
+                throw new RacerException(ex.Message); // "A név nem lehet null!"
+            }
+            catch (NameNotValidNameIsEmptyException ex)
+            {
+                throw new RacerException(ex.Message); // "A név nem lehet üres vagy null!"
+            }
+            catch (NameNotValidFirstLetterProblemException ex)
+            {
+                throw new RacerException(ex.Message); // "A név nagy kezdőbetűvel kell kezdőjön!"
+            }
+            catch (Exception ex) //Ez minden kívétel dobást, eltud  elkap. A fenn felsoroltakon kívül bármi más kivételt elkap.
+            {
+                throw new RacerException(ex.Message);
+            }
 
             this.name = name;
+
             this.age = age;
             this.salary = salary;
         }

@@ -31,7 +31,7 @@ namespace Forma1.validation
         public void validation()
         {
             if (isNameNull())
-                throw new NullReferenceException();
+                throw new NullReferenceException("A név nem lehet null!");
             if (isNameEmpty())
                 throw new NameNotValidNameIsEmptyException("A név nem lehet üres vagy null!");
             if (isFirstLetterLowercase())

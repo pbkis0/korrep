@@ -92,6 +92,14 @@ namespace Forma1.repository
         /// <returns>true ha van és false ha nincs</returns>
         public bool existTeamName(string teamName)
         {
+            //4,feladat- A ropository rétegben fejlessze ki az F1 osztályban ott található existTeamName metódust, amely feladata megállapítani, hogy az adott nevű csapat létezik-e
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return true;                
+                }            
+            }
             return false;
         }
 
