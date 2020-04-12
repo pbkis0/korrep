@@ -9,12 +9,10 @@ using System.Threading.Tasks;
 
 namespace Forma1.repository
 {
-    partial class Team : ITeam
+    partial class Team : ITeam, ITeamSalary
     {
         private string name;
         private List<Racer> racers;
-
-  
 
         /// <summary>
         /// Konstruktor
@@ -76,6 +74,19 @@ namespace Forma1.repository
         public List<Racer> getRacers()
         {
             return null;
+        }
+
+        public int getTeamSalary() // összegzés tétel
+        {
+            //2,ITeamSalary interface hozzárendelése és a szükséges metódus megírása
+            int sum = 0;
+
+            foreach (Racer r in racers)
+            {
+                sum += r.getSalary();
+            }
+
+            return sum;
         }
     }
 }
