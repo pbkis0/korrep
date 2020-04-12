@@ -93,6 +93,35 @@ namespace Forma1.controller
         /// <exeption>ControllerException</exeption>
         public void modifyTeamName(string oldTeamName, string newTeamName)
         {
+            //- A controller rétegben a következő metódusok kifejlesztése a kódban megtalálható leírás alapján: addTeamToF1, modifyTeamName, deleteTeam
+            bool letezik = teamService.existTeamName(newTeamName);
+
+            if (letezik)
+            {
+                throw new ControllerException("Létező csapatnév!");
+            }
+
+            //if (teamService.existTeamName(newTeamName))
+            //{
+            //    throw new ControllerException("Létező csapatnév!");
+            //}
+
+            NameValidator nv = new NameValidator(newTeamName);
+            try
+            {
+                nv.validation();
+            }
+            catch (NameNotValidNameIsEmptyException ex)
+            {
+                throw new ControllerException(ex.Message);
+            }
+            catch (NameNotValidFirstLetterProblemException ex)
+            {
+                throw new ControllerException(ex.Message);
+            }
+
+            teamService.modifyTeamName(oldTeamName, newTeamName);
+
         }
 
         /// <summary>
