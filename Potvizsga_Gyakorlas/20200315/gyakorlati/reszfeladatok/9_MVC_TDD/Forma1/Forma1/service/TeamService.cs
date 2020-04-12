@@ -38,8 +38,13 @@ namespace Forma1.service
         /// <param name="teamName">A létrehozandó csapat neve</param>
         public void addTeam(string teamName)
         {
+            //- A service rétegben található addTeam(string teamName) metódus megírása a kódban található leírás alapján
+            Team t = new Team(teamName);
+            f1Repository.add(t);
+
+            //f1Repository.add(new Team(teamName));
         }
-        
+
         /// <summary>
         /// Adott nevű csapat átnevezése új csapat névre
         /// Repository segítségével a csapat régi nevének lecserélése az új névre
