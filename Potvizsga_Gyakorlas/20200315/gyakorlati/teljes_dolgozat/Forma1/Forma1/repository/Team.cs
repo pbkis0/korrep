@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Forma1.myexeption;
+using Forma1.validation;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +22,24 @@ namespace Forma1.repository
         /// <param name="name">Az új csapat neve</param>
         public Team(string name)
         {
+
+            //2,  - konstruktorban NameValidator (kivételdobás+outputra loggolás)
+            try
+            {
+                NameValidator nv = new NameValidator(name);
+                nv.validation();
+            }
+            catch (NameNotValidNameIsEmptyException ex)
+            {
+                Debug.WriteLine(ex.Message); // outputra loggolás
+                throw new RacerException(ex.Message);
+            }
+            catch (NameNotValidFirstLetterProblemException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw new RacerException(ex.Message);
+            }
+
             //2, - konstruktor
             this.name = name;
             this.racers = new List<Racer>();
