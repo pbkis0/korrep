@@ -11,7 +11,18 @@ namespace Forma1.repository
     {
         public int getNumberOfRacers(string teamName)
         {
-            return 0;
+            //- Az F1 osztályban a getNumberOfRacers metódus befejezése.
+            //Ha a csapat létezik, akkor Team osztály segítségével adja meg hány tagja van.
+            //Ha nincs dobja a következő hibaüzenetet: teamName + " nevű csapat nem létezik, nem lehet megállapítani,
+            //hány versenyzője van."
+
+            foreach (Team t in teams)
+                if (t.getName() == teamName)
+                {
+                    return t.getNumberOfRacers();
+                }
+            throw new F1Exception("nevű csapat nem létezik, nem lehet megállapítani,hány versenyzője van!");
+            //return 0;
         }
 
         public List<Racer> getRacersFromTheTeam(string teamName)
