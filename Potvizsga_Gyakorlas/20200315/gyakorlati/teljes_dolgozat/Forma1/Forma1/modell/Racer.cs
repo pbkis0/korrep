@@ -59,8 +59,20 @@ namespace Forma1.repository
             return id;
         }
 
+        //1,  -  - update metódus
         public void update(Racer racer)
-        {            
+        {
+            this.id = racer.id;
+            this.name = racer.name;
+            this.age = racer.age;
+            this.salary = racer.salary;
+
+            //this.id = racer.getId();
+            //this.name = racer.getName();
+            //this.age = racer.getAge();
+            //this.salary = racer.getSalary();
+
+
         }
 
         //1,  - ToString metódus megírása
