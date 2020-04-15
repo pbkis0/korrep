@@ -13,7 +13,7 @@ namespace Forma1.repository
         /// Új versenyző hozzáadása
         /// </summary>
         /// <param name="r">új versenyző</param>
-        /// <exception cref="TeamException">Két úgyan olyan versenyző nem lehet</exception>
+        /// <exception cref="RacerException">Két úgyan olyan versenyző nem lehet</exception>
         public void addRacer(Racer r)
         {
             if (isRacerExist(r.getName(), r.getAge()))

@@ -18,32 +18,10 @@ namespace Forma1.repository
             Racer r3 = new Racer(3, "Bottas", 27, 50);
             Racer r4 = new Racer(4, "Vettel", 31, 182);
             Racer r5 = new Racer(5, "Verstappen", 21, 70);
-
-            Racer r6 = null;
-            try
-            {
-                r6 = new Racer(5, "fittipaldi", 88, 70);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-
-            Racer r7 = new Racer(5, "Verstappen", 21, 70);
-            Racer r8 = new Racer(5, "Csaba", 78, 10);
+            Racer r6 = new Racer(6, "Csaba", 78, 10);
 
             Team t1 = new Team("Mc Laren");
             Team t2 = new Team("Ferrari");
-
-            Team t3 = null;
-            try
-            {
-                t3 = new Team("trabant");
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
             
             t1.addRacer(r1);
             t1.addRacer(r3);
@@ -51,7 +29,6 @@ namespace Forma1.repository
             t2.addRacer(r4);
             t2.addRacer(r5);
             t2.addRacer(r6);
-            t2.addRacer(r8);
 
             f1.add(t1);
             f1.add(t2);

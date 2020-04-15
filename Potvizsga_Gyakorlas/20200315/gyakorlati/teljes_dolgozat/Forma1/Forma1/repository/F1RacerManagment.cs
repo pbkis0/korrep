@@ -1,6 +1,7 @@
 ﻿    using Forma1.myexeption;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,16 @@ namespace Forma1.repository
         /// <returns>A versenyzők száma</returns>
         /// <exception cref="F1Exception">A csapat nem létezik, nem lehet megállapítani, hány versenyzője van.</exception>
         public int getNumberOfRacers(string teamName)
-        {         
-            return 0;
+        {
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return t.getNumberOfRacers();
+                }
+
+            }
+            throw new F1Exception("A csapat nem létezik, nem lehet megállapítani, hány versenyzője van");
         }
         /// <summary>
         /// Az adott csapat versenyzőinek listája
@@ -26,6 +35,13 @@ namespace Forma1.repository
         /// <returns>A versenyzők listája, ha nincs csapat akkor null</returns>
         public List<Racer> getRacersFromTheTeam(string teamName)
         {
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return t.getRacers();
+                }
+            }
             return null;
         }
 
@@ -39,6 +55,27 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">A csapat nem létezik (loggolni is)</exception>
         public void addRacerToTeam(string teamName, Racer newRacer)
         {
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    try
+                    {
+                        t.addRacer(newRacer);
+                        return;
+                    }
+                    catch (RacerException e)
+                    {
+                        Debug.WriteLine(e.Message);
+                        throw new F1Exception(e.Message);
+                    }
+                }
+            }
+
+            string hibauzenet = "A csapat nem létezik";
+
+            Debug.WriteLine(hibauzenet);
+            throw new F1Exception(hibauzenet);
         }
 
         /// <summary>
@@ -50,6 +87,15 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">A csapat nem létezik, nem lehet törölni a versenyzőjét</exception>
         public void deleteRacerInTeam(string teamName, string racerName, int racerAge)
         {
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    t.deleteRacer(racerName, racerAge);
+                    return;
+                }
+            }
+            throw new F1Exception("A csapat nem létezik, nem lehet törölni a versenyzőjét");
         }
 
         /// <summary>
@@ -61,7 +107,23 @@ namespace Forma1.repository
         public int getNextRacerId()
         {
             int maxId = -1;
-            return maxId;
+
+            foreach (Team t in teams)
+            {
+                if (t.getMaxId() > maxId)
+                {
+                    maxId = t.getMaxId();
+                }
+            }
+
+            // itt már a maxId az már 6
+
+            if (maxId == -1)
+            {
+                return 1;
+            }
+
+            return maxId + 1;
         }        
 
         /// <summary>
@@ -80,7 +142,7 @@ namespace Forma1.repository
                     return t.getRacerId(racerName);
                 }
             }
-            return 0;
+            throw new F1Exception("Nem létezik a csapat.");
         }
 
 
@@ -96,7 +158,7 @@ namespace Forma1.repository
             }
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet módosítani a versenyzőjének adatait.");
         }
-        
+
         /// <summary>
         /// Van-e adott versenyző
         /// </summary>
@@ -105,6 +167,14 @@ namespace Forma1.repository
         /// <returns>true ha van és false ha nincs</returns>
         public bool existRacer(string racerName, int racerAge)
         {
+            foreach (Team t in teams)
+            {
+                if (t.isRacerExist(racerName, racerAge))
+                {
+                    return true;
+                }
+            }
+
             return false;
         }
 
@@ -117,7 +187,14 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">Az adott nevű csapat nem létezik.</exception>
         public Racer searchRacerByName(string teamName, string racerName)
         {
-            return null;
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return t.serchRacerByName(racerName);
+                }
+            }
+            throw new F1Exception("Az adott nevű csapat nem létezik");
         }
     }
 }
