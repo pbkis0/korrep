@@ -68,6 +68,21 @@ namespace Forma1.service
         /// <param name="teamNameToDelete"></param>
         public void deleteTeam(string teamNameToDelete)
         {
+            // van.-e verseynző a cspaatban?
+            if (f1Repository.getNumberOfRacers(teamNameToDelete) > 0)
+            {
+                throw new TeamServiceExeption("Van a csapatnak tagja, nem lehet törölni!");
+            }
+
+            // csapattrölés, HA nincs benne versenyző
+            try
+            {
+                f1Repository.delete(teamNameToDelete);
+            }
+            catch (F1Exception e)
+            {
+                throw new TeamServiceExeption(e.Message);
+            }
         }
 
         /// <summary>
