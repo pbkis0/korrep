@@ -47,6 +47,7 @@ namespace Forma1.service
         /// </summary>
         /// <param name="oldTeamName"></param>
         /// <param name="newTeamName"></param>
+        /// <exception cref="TeamServiceExeption"></exception>
         public void modifyTeamName(string oldTeamName, string newTeamName)
         {
             try

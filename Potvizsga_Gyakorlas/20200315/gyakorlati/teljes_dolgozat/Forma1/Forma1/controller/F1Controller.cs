@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,6 +69,21 @@ namespace Forma1.controller
         /// <param name="teamName">A csapat</param>
         public void addTeamToF1(string teamName)
         {
+            try
+            {
+                NameValidator nv = new NameValidator(teamName);
+                nv.validation(); //Ez ellenörzni a csapat nevet.
+            }
+            catch (NameNotValidNameIsEmptyException e)
+            {
+                throw new ControllerException(e.Message);
+            }
+            catch (NameNotValidFirstLetterProblemException e)
+            {
+                throw new ControllerException(e.Message);
+            }
+
+            teamService.addTeam(teamName);
         }
 
         /// <summary>
@@ -81,8 +97,37 @@ namespace Forma1.controller
         /// <param name="newTeamName">A csoport új neve</param>
         public void modifyTeamName(string oldTeamName, string newTeamName)
         {
-            
-        }      
+            // Ellenörzizze, hogy a csapat létezik-e. Ha nem, dobjon kivételt, és azt loggolja
+            if (teamService.existTeamName(newTeamName))
+            {
+                Debug.WriteLine("Létező csapatnév");
+                throw new ControllerException("Létező csapatnév");
+            }
+
+            // Ellenörizze az új nevet a NameValidatorral
+            try
+            {
+                NameValidator nv = new NameValidator(newTeamName);
+                nv.validation();
+            }
+            catch (Exception e)
+            {
+                throw new ControllerException(e.Message);
+            }
+
+            /// Módosítsa a nevet, ha a név rendben van
+            /// Az alsó rétegek kivételeit is kapja el, és adja tovább
+            /// 
+            try
+            {
+                teamService.modifyTeamName(oldTeamName, newTeamName);
+            }
+            catch (Exception e)
+            {
+
+                throw new ControllerException(e.Message);
+            }
+        }
 
         /// <summary>
         /// Adott nevű csapat törlése
