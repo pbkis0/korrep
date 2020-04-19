@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Forma1.myexeption;
 using Forma1.repository;
 
 namespace Forma1.service
@@ -26,7 +26,14 @@ namespace Forma1.service
         /// <param name="newRacer">Az új versenyző</param>
         public void addReacerToTeam(string teamName, Racer newRacer)
         {
-            f1Repository.addRacerToTeam(teamName, newRacer);
+            try
+            {
+                f1Repository.addRacerToTeam(teamName, newRacer);
+            }
+            catch (F1Exception e)
+            {
+                throw new TeamServiceExeption(e.Message);
+            }
         }
 
         /// <summary>

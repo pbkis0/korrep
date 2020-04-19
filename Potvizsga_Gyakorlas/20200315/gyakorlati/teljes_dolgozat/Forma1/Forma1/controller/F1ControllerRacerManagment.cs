@@ -25,6 +25,65 @@ namespace Forma1.controller
         /// <param name="racerSalary">A versenyző bérköltsége</param>
         public void addRacerToTeam(string teamName, string racerName, string racerAge, string racerSalary)
         {
+            //int racerAgeInt = 0;
+            //int racerSalaryInt = 0;
+
+            //try
+            //{
+            //    racerAgeInt = Convert.ToInt32(racerAge);
+            //    racerSalaryInt = Convert.ToInt32(racerSalary);
+            //}
+            //catch (Exception e)
+            //{
+            //    throw new ControllerException(e.Message);
+            //}
+
+            bool sikerultKonvertalniAge = int.TryParse(racerAge, out int racerAgeInt);
+
+            if (!sikerultKonvertalniAge)
+            {
+                throw new ControllerException("Nem számot tartalmaz a karakterlánc, nem sikerül konvertálni");
+            }
+
+            bool sikerultKonvertalniSalary = int.TryParse(racerSalary, out int racerSalaryInt);
+
+            if (!sikerultKonvertalniSalary)
+            {
+                throw new ControllerException("Nem számot tartalmaz a karakterlánc, nem sikerül konvertálni");
+            }
+
+            // TODO: Age és Salary -> negatív szám VALDIÁCIÓ impl.
+
+            bool letezik = teamService.existRacer(racerName, racerAgeInt);
+
+            if (letezik)
+            {
+                throw new ControllerException("Létező versenyzőt nem lehet hozzáadni!");
+            }
+
+            /// Alsóbb rétegek segítségével kérje, le a következő versenyző ID-jét
+            /// Hozza létre az új Racert-t. Az alsóbb rétegek kivételeit kapja el, és adja tovább
+            /// Adja hozzá az új versenyzőt a csapathoz. Kapja el az elsó rétegek kivételeit és adja tovább
+
+            int nextID = teamService.getNextRacerId();
+            Racer racer;
+            try
+            {
+                racer = new Racer(nextID, racerName, racerAgeInt, racerSalaryInt);
+            }
+            catch (Exception e)
+            {
+                throw new ControllerException(e.Message);
+            }
+
+            try
+            {
+                teamService.addReacerToTeam(teamName, racer);
+            }
+            catch (TeamServiceExeption e)
+            {
+                throw new ControllerException(e.Message);
+            }
         }
 
         /// <summary>
