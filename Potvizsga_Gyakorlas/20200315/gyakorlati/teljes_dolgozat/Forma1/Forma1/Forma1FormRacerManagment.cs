@@ -27,7 +27,32 @@ namespace Forma1
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void listBoxRacer_SelectedIndexChanged(object sender, EventArgs e)
-        {         
+        {
+            // Ha nincs kijelölt elem térjen vissza
+            // 0-tól indexálódik
+            // -1 -> kijelölt elem i
+            if (listBoxRacer.SelectedIndex < 0)
+            {
+                return;
+            }
+            // LÉNYEG:
+            // Olvassa ki a ListBox-okból a csapatnevet és a versenyző nevet
+
+            string csapatneve = listBoxTeam.SelectedItem.ToString();
+            string versenyzo = listBoxRacer.SelectedItem.ToString();
+
+            // Az alsó rétegek felhasználásával keresse meg a kiolvasott adatok alapján azt a versenyzőt, amelyiket
+            // a csapat név és a versenyző név meghatároz.
+            Racer r = controller.searchRacerByName(csapatneve, versenyzo);
+
+            // Ha megtalálta írja ki az adatait a versenyző megfelelő TextBoxokba
+            // ControllerException esetén logolja a hibát
+
+            //GUI -n megnézni a textbox-ok neveit, és óda kell vissza dobni az adatokat
+            textBoxRacerName.Text = r.getName();
+            textBoxRacerAge.Text = r.getAge().ToString();
+            textBoxRacerSalary.Text = r.getSalary().ToString();
+
         }
 
         /// <summary>
@@ -39,7 +64,41 @@ namespace Forma1
         /// Ha hibát kap el hozzáadás során, jelenítse meg az error provider segítségével
         /// </summary>
         private void buttonAddRacer_Click(object sender, EventArgs e)
-        {         
+        {
+            //11.Forma1FormRacerManagment
+            //- buttonAddRacer_Click
+
+            // Törölje a hozzáadás gomb ErrorPrivert
+            errorProviderAddRacer.Clear();
+
+            // Ha nincs kijelölt csapat név térjen vissza
+            if (listBoxTeam.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            // Olvassa ki a csapat nevét, és a versenyző adatait
+            string csapatneve = listBoxTeam.SelectedItem.ToString();
+            string versenyzoneve = textBoxRacerName.Text;
+            string versenyzoeletkor = textBoxRacerAge.Text;
+            string versenyzofizetes = textBoxRacerSalary.Text;
+
+            // Alsóbb rétegek segítségével adja hozzá a versenyzőt a csapathoz
+            try
+            {
+                controller.addRacerToTeam(csapatneve, versenyzoneve, versenyzoeletkor, versenyzofizetes);
+            }
+            catch (Exception ex)
+            {
+                errorProviderAddRacer.SetError(buttonAddRacer, ex.Message);
+            }
+
+            // Törölje és frissítse a versenyzőket megjelenítő listBox-ot
+            listBoxRacer.DataSource = null;
+            listBoxRacer.DataSource = controller.getTeamRacersName(csapatneve);
+
+            // Ha hibát kap el hozzáadás során, jelenítse meg az error provider segítségével
+
         }
 
         /// <summary>

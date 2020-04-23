@@ -168,7 +168,14 @@ namespace Forma1.controller
         public Racer searchRacerByName(string teamName, string racerName)
         {
             if (teamService.existTeamName(teamName))
-                return teamService.searchRacerByName(teamName, racerName);
+                try
+                {
+                    return teamService.searchRacerByName(teamName, racerName);
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
             return null;
         }
     }
