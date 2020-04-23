@@ -107,7 +107,9 @@ namespace Forma1
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void buttonUpdateRacer_Click(object sender, EventArgs e)
-        {          
+        {
+            errorProviderUpdateRacer.Clear();
+
             if (listBoxTeam.SelectedIndex < 0 || listBoxRacer.SelectedIndex<0)
                 return;
             string teamName = listBoxTeam.SelectedItem.ToString();
@@ -122,7 +124,8 @@ namespace Forma1
                 listBoxRacer.DataSource = controller.getTeamRacersName(teamName);
             }
             catch (ControllerException ce)
-            {                
+            {
+                errorProviderUpdateRacer.SetError(buttonUpdateRacer, ce.Message);
             }
         }
 
