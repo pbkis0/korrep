@@ -138,10 +138,15 @@ namespace Forma1.repository
 
         }
 
+        //Írja meg a ToString metódust a megfelelő komment után!
         /// <summary>
         /// A versenyző adatainak megjelenítése
         /// Általában a Debug.WriteLine-ban használható
         /// </summary>
-        /// <returns>A versenyző adatai string formátumban</returns>        
+        /// <returns>A versenyző adatai string formátumban</returns>    
+        public override string ToString()
+        {
+            return $"{id} {name} {salary} {age}";
+        }
     }
 }
