@@ -67,6 +67,8 @@ namespace Forma1.repository
             return racers;
         }
 
+        //Írja meg a getTeamSalary() metódus, amely meghatározza a csapat versenyzőinek bérét!
+        // Összegzés TÉTELE
         /// <summary>
         /// A csapat versenyzőinak összbére
         /// </summary>
@@ -74,6 +76,17 @@ namespace Forma1.repository
         /// <exception cref="TeamException">Végzetes hiba, racers lista nincs példányosítva</exception>
         public int getTeamSalary()
         {
+            if (racers == null) //Akkor dob kivételt, ha nincs példányosítva a lista.
+                throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");
+
+            int sum = 0;
+
+            foreach (Racer r in racers)
+            {
+                sum += r.getSalary();
+            }
+
+            return sum;
         }
     }
 }

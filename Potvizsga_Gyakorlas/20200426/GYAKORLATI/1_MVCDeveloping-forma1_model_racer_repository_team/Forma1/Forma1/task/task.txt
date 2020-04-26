@@ -9,3 +9,4 @@ Nyissa meg a repository rétegben a Team.cs állományt és végezze el a követ
     A deleteAllRacersInTeam metódus nem jól végzi feladatát! Adja hozzá a szükséges egy sort a kódhoz!
     Írja meg az update metódust a megfelelő komment után!
     Írja meg a getRacers metódus kódját!
+	Írja meg a getTeamSalary() metódus, amely meghatározza a csapat versenyzőinek bérét!
