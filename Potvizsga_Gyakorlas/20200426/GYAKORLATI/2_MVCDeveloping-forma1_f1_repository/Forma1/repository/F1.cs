@@ -142,6 +142,7 @@ namespace Forma1.repository
             return teams;
         }
 
+        //Írja meg az IsExsist metódus kódját!
         /// <summary>
         /// Van-e adott nevű csapat
         /// </summary>
@@ -150,6 +151,17 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">Végzetes hiba, teams lista nincs példányosítva</exception>
         public bool IsExist(string teamName)
         {
+            if (teams == null)
+                throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
+
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         /// <summary>
