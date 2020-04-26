@@ -31,6 +31,7 @@ namespace Forma1.repository
             return name;
         }
 
+        //A deleteAllRacersInTeam metódus nem jól végzi feladatát! Adja hozzá a szükséges egy sort a kódhoz!
         /// <summary>
         /// Csapat törlésének előkészítése
         /// A listából minden versenyzőt törlünk
@@ -39,7 +40,8 @@ namespace Forma1.repository
         public void deleteAllRacersInTeam()
         {
             if (racers == null)
-                throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");            
+                throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");
+            racers.Clear();
         }        
 
         /// <summary>
