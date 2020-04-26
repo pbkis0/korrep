@@ -23,17 +23,20 @@ namespace Forma1.repository
         public F1()
         {
             teams = new List<Team>(); //Lista konstruktóra.
-        }    
+        }
 
-
+        //Az add metódusban írja meg a feltételt és a kivétel dobást!
         /// <summary>
         /// Új csapat hozzáadása a Forma1-hez
         /// </summary>
         /// <param name="t">A csapat</param>
         /// <exception cref="F1Exception">Végzetes hiba, teams lista nincs példányosítva</exception>
         public void add(Team t)
-        {            
+        {
+            if (teams == null)
+                throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
             teams.Add(t);
+            
         }
 
         /// <summary>
