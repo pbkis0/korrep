@@ -101,6 +101,8 @@ namespace Forma1.repository
             throw new F1Exception("Az adott nevű csapat nem létezik, nem lehet módosítani.");
         }
 
+        //Írja meg a getF1Salary hiányzó kódját, hogy az a F1 összkiadását adja. Ügyeljen a kivételkezelésre!
+        //ÖSSzegzés tétele
         /// <summary>
         /// F1 bérköltsége
         /// </summary>
@@ -111,7 +113,21 @@ namespace Forma1.repository
         {
             if (teams == null)
                 throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
-            int sum = 0;            
+            int sum = 0;
+
+            foreach (Team t in teams)
+            {
+                try
+                {
+                    sum += t.getTeamSalary();
+                }
+                catch (TeamException e)
+                {
+                    //Debug.WriteLine(e.Message);
+                    throw new F1Exception("A csapat bérét nem sikerült kiszámolni.");
+                }
+            }
+            return sum;
         }
 
         /// <summary>
