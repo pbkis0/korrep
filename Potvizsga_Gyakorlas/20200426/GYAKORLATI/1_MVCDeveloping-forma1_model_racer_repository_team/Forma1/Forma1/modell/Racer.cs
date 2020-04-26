@@ -57,11 +57,16 @@ namespace Forma1.repository
             this.id = id;
         }
 
+        //Írja meg a setName metódust a megfelelő komment után!
         /// <summary>
         /// Versenyző nevének megadása
         /// </summary>
         /// <param name="name">A versenyző új neve</param>
-        
+        public void setName(string name)
+        {
+            this.name = name;
+        }
+
 
         /// <summary>
         /// A versenyző életkorának megadása
