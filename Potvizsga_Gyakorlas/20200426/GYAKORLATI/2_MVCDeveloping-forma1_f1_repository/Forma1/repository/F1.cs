@@ -16,10 +16,15 @@ namespace Forma1.repository
     {
         List<Team> teams;
 
+        //Írja meg az F1 class konstruktorát!
         /// <summary>
         /// F1 konstruktor
         /// </summary>
-        
+        public F1()
+        {
+            teams = new List<Team>(); //Lista konstruktóra.
+        }    
+
 
         /// <summary>
         /// Új csapat hozzáadása a Forma1-hez
