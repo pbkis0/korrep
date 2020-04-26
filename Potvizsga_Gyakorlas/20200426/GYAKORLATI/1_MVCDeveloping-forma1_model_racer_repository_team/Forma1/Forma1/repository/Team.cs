@@ -54,6 +54,7 @@ namespace Forma1.repository
             this.name = newName;
         }
 
+        //Írja meg a getRacers metódus kódját!
         /// <summary>
         /// A csapat versenyzőinek listáját adja vissza
         /// </summary>
@@ -61,6 +62,9 @@ namespace Forma1.repository
         /// <exception cref="TeamException">Végzetes hiba, racers lista nincs példányosítva</exception>
         public List<Racer> getRacers()
         {
+            if (racers == null)
+            throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");
+            return racers;
         }
 
         /// <summary>
