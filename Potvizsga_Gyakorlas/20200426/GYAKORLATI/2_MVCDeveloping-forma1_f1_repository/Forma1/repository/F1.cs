@@ -75,6 +75,7 @@ namespace Forma1.repository
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet törölni");            
         }
 
+        //Írja meg az update metódus kódját!
         /// <summary>
         /// Adott nevű csapat nevének módosítása
         /// Kivétel dobás, ha a csapat nem létezik
@@ -85,6 +86,19 @@ namespace Forma1.repository
         /// <exception cref="F1Exception">Végzetes hiba, teams lista nincs példányosítva</exception>
         public void update(string teamName, string newTeamName)
         {
+            if (teams == null)
+                throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
+
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    t.update(newTeamName);
+                    return; // a szekvenciát "kiparancsolja" a metódusból
+                }
+            }
+            
+            throw new F1Exception("Az adott nevű csapat nem létezik, nem lehet módosítani.");
         }
 
         /// <summary>
