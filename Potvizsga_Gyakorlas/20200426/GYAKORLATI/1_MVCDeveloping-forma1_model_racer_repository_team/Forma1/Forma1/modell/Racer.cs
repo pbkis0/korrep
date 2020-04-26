@@ -124,12 +124,18 @@ namespace Forma1.repository
             return salary;
         }
 
+        //Írja meg az update metódus kódját!
         /// <summary>
         /// A versenyző adatainak módosítása
         /// </summary>
         /// <param name="racer">A versenyző adatai ennek a versenyzőnek az adatait veszi fel</param>
         public void update(Racer racer)
-        {            
+        {
+            this.id = racer.id;
+            this.name = racer.name;
+            this.salary = racer.salary;
+            this.age = racer.age;
+
         }
 
         /// <summary>
