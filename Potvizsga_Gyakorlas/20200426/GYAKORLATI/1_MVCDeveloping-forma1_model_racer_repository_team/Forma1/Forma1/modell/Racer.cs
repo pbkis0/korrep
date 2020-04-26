@@ -104,10 +104,15 @@ namespace Forma1.repository
             return name;
         }
 
+        //Írja meg a getAge metódus a megfelelő komment után!
         /// <summary>
         /// A versenyző életkorának megadása
         /// </summary>
         /// <returns>A versenyző életkora</returns>
+        public int getAge()
+        {
+            return age;
+        }
         
 
         /// <summary>
