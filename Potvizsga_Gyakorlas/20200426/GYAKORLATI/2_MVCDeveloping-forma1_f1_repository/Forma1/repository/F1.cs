@@ -164,6 +164,7 @@ namespace Forma1.repository
             return false;
         }
 
+        //Írja meg az IsExsistRacer  metódus kódját!
         /// <summary>
         /// Van-e adott versenyző
         /// </summary>
@@ -175,7 +176,16 @@ namespace Forma1.repository
         public bool IsExistRacer(string racerName, int racerAge)
         {
             if (teams == null)
-                throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");           
+                throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
+
+            foreach (Team t in teams)
+            {
+                if (t.isRacerExist(racerName, racerAge))
+                {
+                    return true;
+                }
+            }
+            throw new F1Exception("A csapatnak nincs egyetlen versenyzője sem");
         }
 
         /// <summary>
