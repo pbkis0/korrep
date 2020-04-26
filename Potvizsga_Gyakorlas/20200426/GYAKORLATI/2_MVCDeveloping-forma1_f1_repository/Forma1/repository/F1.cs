@@ -123,7 +123,7 @@ namespace Forma1.repository
                 }
                 catch (TeamException e)
                 {
-                    //Debug.WriteLine(e.Message);
+                    Debug.WriteLine(e.Message);
                     throw new F1Exception("A csapat bérét nem sikerült kiszámolni.");
                 }
             }
