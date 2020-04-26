@@ -42,12 +42,17 @@ namespace Forma1.repository
             if (racers == null)
                 throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");
             racers.Clear();
-        }        
+        }
 
+        // Írja meg az update metódust a megfelelő komment után!
         /// <summary>
         /// Módosítja a csapat nevét
         /// </summary>
         /// <param name="newName">Csapat új neve</param>
+        public void update(string newName)
+        {
+            this.name = newName;
+        }
 
         /// <summary>
         /// A csapat versenyzőinek listáját adja vissza
