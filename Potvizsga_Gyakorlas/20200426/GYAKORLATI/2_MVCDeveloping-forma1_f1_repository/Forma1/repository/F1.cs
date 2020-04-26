@@ -188,6 +188,7 @@ namespace Forma1.repository
             throw new F1Exception("A csapatnak nincs egyetlen versenyzője sem");
         }
 
+        //Pótolja a searchRacerByName metódusban az elágazás feltételét!
         /// <summary>
         /// Adott csapat adott nevű versenyzőjének megkeresése
         /// </summary>
@@ -201,9 +202,10 @@ namespace Forma1.repository
         {
             if (teams == null)
                 throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
+
             foreach (Team t in teams)
             {
-                if ()
+                if (t.getName() == teamName)
                 {
                     try
                     {
@@ -214,7 +216,7 @@ namespace Forma1.repository
                         Debug.WriteLine(te.Message);
                         throw new F1Exception("A csapatnak nincs egyetlen versenyzője sem");
                     }
-            }
+                }
             }
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet " + racerName + " nevű versenyzője.");
         }
