@@ -39,6 +39,7 @@ namespace Forma1.repository
             
         }
 
+        //A delete metódusban írja meg a foreach ciklus úgy, hogy a kód elvégezze feladatát!
         /// <summary>
         /// Adott nevű csapat törlése
         /// Kivétel dobás ha a csapat nem létezik
@@ -52,7 +53,7 @@ namespace Forma1.repository
                 throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
             int index = 0;
 
-            foreach ()
+            foreach (Team t in teams)
             {
                 if (t.getName() == teamName)
                 {
@@ -65,6 +66,7 @@ namespace Forma1.repository
                         Debug.WriteLine(te.Message);
                         throw new F1Exception(teamName + " nevű csapat tagjainak törlése nem sikerült");
                     }
+
                     teams.RemoveAt(index);
                     return;
                 }
