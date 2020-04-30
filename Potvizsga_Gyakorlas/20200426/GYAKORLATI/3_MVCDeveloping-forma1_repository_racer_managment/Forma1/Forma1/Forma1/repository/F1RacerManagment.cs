@@ -138,6 +138,7 @@ namespace Forma1.repository
             throw new F1Exception("A csapat nem létezik, nem lehet módosítani a versenyzőjének adatait");
         }
 
+        //A deleteRacerInTeam feladat kódja nagyon hiányos. Az előző kódrészek segítségével pótolja a hiányzó kódot a kivételdobással!
         /// <summary>
         /// A versenyző törlése a csapatból
         /// </summary>
@@ -151,7 +152,22 @@ namespace Forma1.repository
         {
             if (teams == null)
                 throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
-            
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    try
+                    {
+                        t.deleteRacer(racerName, racerAge);
+                        return;
+                    }
+                    catch (TeamException te)
+                    {
+                        Debug.WriteLine(te.Message);
+                        throw new F1Exception(teamName + " csapatban " + racerName + " versenyző módosítása nem végrehajtható.");
+                    }
+                }
+            }
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet törölni a versenyzőjét.");
         }
 
