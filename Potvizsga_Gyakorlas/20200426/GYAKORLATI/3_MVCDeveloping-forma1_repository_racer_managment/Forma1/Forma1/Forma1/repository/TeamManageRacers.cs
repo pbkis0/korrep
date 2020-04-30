@@ -8,6 +8,7 @@ namespace Forma1.repository
 {
     partial class Team : ITeamManageRacers
     {
+        // Az addRacer metódusban egészítse ki a foreach ciklus fejlécét és fejezze be a kivétel dobást kódját!
         /// <summary>
         /// Új versenyző hozzáadása
         /// </summary>
@@ -18,14 +19,15 @@ namespace Forma1.repository
         {
             if (racers == null)
                 throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");
-            foreach()
+            foreach(Racer r in racers)
             {
                 if (r.getName() == newRacer.getName() && r.getAge() == newRacer.getAge() && r.getSalary() == newRacer.getAge())
-                    throw new 
+                    throw new TeamException("newRacer versenyző már létezik!");
             }
             racers.Add(newRacer);
         }
 
+        //A deleteRacer metódusban írja meg az elágazás törzsét, hogy a kód helyesen működjön!
         /// <summary>
         /// Törli a versenyzőt a csapatból
         /// </summary>
