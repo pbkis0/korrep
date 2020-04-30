@@ -228,6 +228,7 @@ namespace Forma1.repository
                 return 1;
         }
 
+        //A getRacerId metódus kódja nincs meg! Írja meg! 
         /// <summary>
         /// Az adott csapatban lévő versenyző ID-je
         /// Feladat a kivétel megírása, ha a csapat nem létezik
@@ -236,7 +237,18 @@ namespace Forma1.repository
         /// <param name="racerName">A versenyző neve</param>
         /// <returns>A versenyző ID-je</returns>
         public int getRacerId(string teamName, string racerName)
-        {            
+        {
+            if (teams == null)
+                throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
+
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                   return t.getRacerId(racerName);
+                }
+            }
+            throw new F1Exception("Csapat nem létezik.");
         }
 
     }
