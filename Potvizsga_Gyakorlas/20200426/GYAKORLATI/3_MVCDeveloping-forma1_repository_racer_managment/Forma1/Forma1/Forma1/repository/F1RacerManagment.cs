@@ -171,6 +171,7 @@ namespace Forma1.repository
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet törölni a versenyzőjét.");
         }
 
+        //A getTeamSalary metódus foreach ciklusából hiányzik a kivétel vizsgálattal kapcsolatos szerkezet! Írja meg! A kivétel kezeléssel is foglalkozzon!
         /// <summary>
         /// Csapat bérköltségének meghatározása
         /// </summary>
@@ -183,8 +184,15 @@ namespace Forma1.repository
             foreach (Team t in teams)
             {
                 if (t.getName() == teamName)
-                {                   
-                        return t.getTeamSalary();                                     
+                {
+                    try
+                    {
+                        return t.getTeamSalary();
+                    }
+                    catch(TeamException te)
+                    {
+                        throw new F1Exception(te.Message);
+                    }                                    
                 }
             }
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet bérköltséget számolni.");
