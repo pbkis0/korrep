@@ -198,6 +198,7 @@ namespace Forma1.repository
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet bérköltséget számolni.");
         }
 
+        //A getNextRacerId metódusból hiányzik a maximum megtalálása! Írja meg a hiányzó kódot a foreach ciklusban!
         /// <summary>
         /// Átnézi az összes csapat összes versenyzőjét és megállapítja a
         /// jelenlegi legnagyobb Racer ID-t. Eggyel nagyobbat ad vissza
@@ -209,11 +210,12 @@ namespace Forma1.repository
             if (teams == null)
                 throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
             
+            int maxId = 0;
             foreach (Team t in teams)
             {
                 try
                 {
-
+                    maxId = t.getMaxId();
                 }
                 catch (TeamException te)
                 {
