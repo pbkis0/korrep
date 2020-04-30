@@ -51,6 +51,7 @@ namespace Forma1.repository
             throw new TeamException(name + " versenyző a csapatnak nem tagja, nem lehet törlni");
         }
 
+        //Az updateRacer metódusban írja meg a ciklus törzsét, hogy az helyesen működjön!
         /// <summary>
         /// Módosítja a versenyző adatait
         /// </summary>
@@ -64,7 +65,11 @@ namespace Forma1.repository
                 throw new TeamException("Végzetes hiba, racers lista nincs példányosítva.");
             foreach (Racer r in racers)
             {
-                
+                if (r.getName() == name)
+                {
+                    r.update(newRacer);
+                    return;
+                }
             }
             throw new TeamException(name + " módosítandó versenyzőt nem találjuk, nem lehet módosítani.");
         }
