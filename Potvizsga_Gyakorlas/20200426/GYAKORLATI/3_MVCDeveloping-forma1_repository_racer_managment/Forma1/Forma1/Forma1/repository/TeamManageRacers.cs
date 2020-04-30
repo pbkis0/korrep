@@ -42,7 +42,9 @@ namespace Forma1.repository
             foreach (Racer r in racers)
             {
                 if (r.getName() == name && r.getAge()==age)
-                {                    
+                {
+                    racers.Remove(r);
+                    return;
                 }
                 
             }
