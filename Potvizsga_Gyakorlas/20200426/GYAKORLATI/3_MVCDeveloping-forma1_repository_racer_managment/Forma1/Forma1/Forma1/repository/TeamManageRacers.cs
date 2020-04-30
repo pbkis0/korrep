@@ -74,6 +74,8 @@ namespace Forma1.repository
             throw new TeamException(name + " módosítandó versenyzőt nem találjuk, nem lehet módosítani.");
         }
 
+        //Írja meg a getNumberOfRacer metódust!
+        // Megszámlálás tétele
         /// <summary>
         /// Megadja a csapatban lévő versenyzők számát
         /// </summary>
@@ -81,7 +83,10 @@ namespace Forma1.repository
         /// <exception cref="TeamException">Végzetes hiba, racers lista nincs példányosítva</exception>
         public int getNumberOfRacers()
         {
-               
+            if (racers == null)
+                throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");
+
+            return racers.Count;
         }
 
         /// <summary>
