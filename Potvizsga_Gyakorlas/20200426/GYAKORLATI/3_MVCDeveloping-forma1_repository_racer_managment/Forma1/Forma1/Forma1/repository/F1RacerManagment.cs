@@ -73,6 +73,7 @@ namespace Forma1.repository
             return null;
         }
 
+        //Az addRacerToTeam metódusban hiányzik a foreach ciklus fejléce, az elágazás feltétele és egy metódus hibás! Pótolja a hiányzó kódot!
         /// <summary>
         /// A versenyző hozzáadása a csapathoz
         /// </summary>
@@ -85,13 +86,13 @@ namespace Forma1.repository
         {
             if (teams == null)
                 throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
-            foreach ()
+            foreach (Team t in teams)
             {
-                if ()
+                if (t.getName() == teamName)
                 {
                     try
                     {
-                        t.
+                        t.addRacer(newRacer);
                         return;
                     }
                     catch (TeamException te)
