@@ -105,6 +105,7 @@ namespace Forma1.repository
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet új versenyzőt hozzáadni");
         }
 
+        //Az updateRacerInTeam metódusban hiányzik az egyik kivétel dobás! Hova kell kerüljön, és mi lesz a szövege?
         /// <summary>
         /// Versenyző adatinak frissítése
         /// </summary>
@@ -134,6 +135,7 @@ namespace Forma1.repository
                     }
                 }
             }
+            throw new F1Exception("A csapat nem létezik, nem lehet módosítani a versenyzőjének adatait");
         }
 
         /// <summary>
