@@ -144,6 +144,7 @@ namespace Forma1.repository
             return -1;
         }
 
+        //Írja meg a getMaxId metódus hiányzó kódját!
         /// <summary>
         /// Meghatározza a legnagyobb azonosítójú versenyző azonosítóját
         /// </summary>
@@ -153,7 +154,18 @@ namespace Forma1.repository
         {
             if (racers == null)
                 throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");
-           
+
+            //return racers.Max(x => x.getId());
+
+            int maxID = 0;
+            foreach (Racer r in racers)
+            {
+                if (maxID < r.getId())
+                {
+                    maxID = r.getId();
+                }
+            }
+            return maxID;
         }
     }
 }
