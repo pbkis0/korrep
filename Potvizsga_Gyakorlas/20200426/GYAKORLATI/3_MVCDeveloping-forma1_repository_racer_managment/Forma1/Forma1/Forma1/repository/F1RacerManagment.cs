@@ -11,6 +11,7 @@ namespace Forma1.repository
 {
     partial class F1 : IF1
     {
+        // Határozza meg, hogy a getNumberOfRacers metódusban mi a visszatérési érték!
         /// <summary>
         /// Visszaadja, hogy a csapatban hány versenyző van
         /// </summary>
@@ -29,7 +30,7 @@ namespace Forma1.repository
                 {
                     try
                     {
-                        return 
+                        return t.getNumberOfRacers();
                     }
                     catch (TeamException te)
                     {
