@@ -89,6 +89,7 @@ namespace Forma1.repository
             return racers.Count;
         }
 
+        //Írja meg a searchRacerByName metódust!
         /// <summary>
         /// Megkeresi az adott nevű versenyzőt
         /// </summary>
@@ -99,6 +100,14 @@ namespace Forma1.repository
         {
             if (racers == null)
                 throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");
+            foreach (Racer r in racers)
+            {
+                if (r.getName() == racerName)
+                {
+                    return r;
+                }
+            }
+            return null;
         }
 
         /// <summary>
