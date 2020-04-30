@@ -42,6 +42,7 @@ namespace Forma1.repository
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet megállapítani, hány versenyzője van.");
         }
 
+        //A getRacersFromTheTeam listából hiányzik a kivétel dobás! Mikor kerül sor a kivétel dobásra? Írja meg a hiányzó kódot!
         /// <summary>
         /// Adott csapat versenyzőinek listája
         /// </summary>
@@ -52,6 +53,7 @@ namespace Forma1.repository
         public List<Racer> getRacersFromTheTeam(string teamName)
         {
             if (teams == null)
+                throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
 
             foreach (Team t in teams)
             {
@@ -64,7 +66,7 @@ namespace Forma1.repository
                     catch (TeamException te)
                     {
                         Debug.WriteLine(te.Message);
-                        throw 
+                            throw new F1Exception("A csapatnak nincsennek versenyzői");
                     }
                 }
             }
