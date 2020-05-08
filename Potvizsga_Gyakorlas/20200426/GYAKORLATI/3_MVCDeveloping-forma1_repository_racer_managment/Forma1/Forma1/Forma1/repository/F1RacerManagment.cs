@@ -11,6 +11,7 @@ namespace Forma1.repository
 {
     partial class F1 : IF1
     {
+        // Határozza meg, hogy a getNumberOfRacers metódusban mi a visszatérési érték!
         /// <summary>
         /// Visszaadja, hogy a csapatban hány versenyző van
         /// </summary>
@@ -29,7 +30,7 @@ namespace Forma1.repository
                 {
                     try
                     {
-                        return 
+                        return t.getNumberOfRacers();
                     }
                     catch (TeamException te)
                     {
@@ -41,6 +42,7 @@ namespace Forma1.repository
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet megállapítani, hány versenyzője van.");
         }
 
+        //A getRacersFromTheTeam listából hiányzik a kivétel dobás! Mikor kerül sor a kivétel dobásra? Írja meg a hiányzó kódot!
         /// <summary>
         /// Adott csapat versenyzőinek listája
         /// </summary>
@@ -51,6 +53,7 @@ namespace Forma1.repository
         public List<Racer> getRacersFromTheTeam(string teamName)
         {
             if (teams == null)
+                throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
 
             foreach (Team t in teams)
             {
@@ -63,13 +66,14 @@ namespace Forma1.repository
                     catch (TeamException te)
                     {
                         Debug.WriteLine(te.Message);
-                        throw 
+                            throw new F1Exception("A csapatnak nincsennek versenyzői");
                     }
                 }
             }
             return null;
         }
 
+        //Az addRacerToTeam metódusban hiányzik a foreach ciklus fejléce, az elágazás feltétele és egy metódus hibás! Pótolja a hiányzó kódot!
         /// <summary>
         /// A versenyző hozzáadása a csapathoz
         /// </summary>
@@ -82,13 +86,13 @@ namespace Forma1.repository
         {
             if (teams == null)
                 throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
-            foreach ()
+            foreach (Team t in teams)
             {
-                if ()
+                if (t.getName() == teamName)
                 {
                     try
                     {
-                        t.
+                        t.addRacer(newRacer);
                         return;
                     }
                     catch (TeamException te)
@@ -101,6 +105,7 @@ namespace Forma1.repository
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet új versenyzőt hozzáadni");
         }
 
+        //Az updateRacerInTeam metódusban hiányzik az egyik kivétel dobás! Hova kell kerüljön, és mi lesz a szövege?
         /// <summary>
         /// Versenyző adatinak frissítése
         /// </summary>
@@ -130,8 +135,10 @@ namespace Forma1.repository
                     }
                 }
             }
+            throw new F1Exception("A csapat nem létezik, nem lehet módosítani a versenyzőjének adatait");
         }
 
+        //A deleteRacerInTeam feladat kódja nagyon hiányos. Az előző kódrészek segítségével pótolja a hiányzó kódot a kivételdobással!
         /// <summary>
         /// A versenyző törlése a csapatból
         /// </summary>
@@ -145,10 +152,26 @@ namespace Forma1.repository
         {
             if (teams == null)
                 throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
-            
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                    try
+                    {
+                        t.deleteRacer(racerName, racerAge);
+                        return;
+                    }
+                    catch (TeamException te)
+                    {
+                        Debug.WriteLine(te.Message);
+                        throw new F1Exception(teamName + " csapatban " + racerName + " versenyző módosítása nem végrehajtható.");
+                    }
+                }
+            }
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet törölni a versenyzőjét.");
         }
 
+        //A getTeamSalary metódus foreach ciklusából hiányzik a kivétel vizsgálattal kapcsolatos szerkezet! Írja meg! A kivétel kezeléssel is foglalkozzon!
         /// <summary>
         /// Csapat bérköltségének meghatározása
         /// </summary>
@@ -161,13 +184,21 @@ namespace Forma1.repository
             foreach (Team t in teams)
             {
                 if (t.getName() == teamName)
-                {                   
-                        return t.getTeamSalary();                                     
+                {
+                    try
+                    {
+                        return t.getTeamSalary();
+                    }
+                    catch(TeamException te)
+                    {
+                        throw new F1Exception(te.Message);
+                    }                                    
                 }
             }
             throw new F1Exception(teamName + " nevű csapat nem létezik, nem lehet bérköltséget számolni.");
         }
 
+        //A getNextRacerId metódusból hiányzik a maximum megtalálása! Írja meg a hiányzó kódot a foreach ciklusban!
         /// <summary>
         /// Átnézi az összes csapat összes versenyzőjét és megállapítja a
         /// jelenlegi legnagyobb Racer ID-t. Eggyel nagyobbat ad vissza
@@ -179,11 +210,12 @@ namespace Forma1.repository
             if (teams == null)
                 throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
             
+            int maxId = 0;
             foreach (Team t in teams)
             {
                 try
                 {
-
+                    maxId = t.getMaxId();
                 }
                 catch (TeamException te)
                 {
@@ -196,6 +228,7 @@ namespace Forma1.repository
                 return 1;
         }
 
+        //A getRacerId metódus kódja nincs meg! Írja meg! 
         /// <summary>
         /// Az adott csapatban lévő versenyző ID-je
         /// Feladat a kivétel megírása, ha a csapat nem létezik
@@ -204,7 +237,18 @@ namespace Forma1.repository
         /// <param name="racerName">A versenyző neve</param>
         /// <returns>A versenyző ID-je</returns>
         public int getRacerId(string teamName, string racerName)
-        {            
+        {
+            if (teams == null)
+                throw new F1Exception("Végzetes hiba, teams lista nincs példányosítva");
+
+            foreach (Team t in teams)
+            {
+                if (t.getName() == teamName)
+                {
+                   return t.getRacerId(racerName);
+                }
+            }
+            throw new F1Exception("Csapat nem létezik.");
         }
 
     }

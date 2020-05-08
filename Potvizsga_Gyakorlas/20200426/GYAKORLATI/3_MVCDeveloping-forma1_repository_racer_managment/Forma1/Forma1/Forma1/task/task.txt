@@ -1,4 +1,5 @@
-﻿        Az addRacer metódusban egészítse ki a foreach ciklus fejlécét és fejezze be a kivétel dobást kódját!
+﻿ Nyissa meg a repository rétegben a TeamManageRacers.cs fájlt és oldja meg a következő feladatokat:
+       Az addRacer metódusban egészítse ki a foreach ciklus fejlécét és fejezze be a kivétel dobást kódját!
         A deleteRacer metódusban írja meg az elágazás törzsét, hogy a kód helyesen működjön!
         Az updateRacer metódusban írja meg a ciklus törzsét, hogy az helyesen működjön!
         Írja meg a getNumberOfRacer metódust!

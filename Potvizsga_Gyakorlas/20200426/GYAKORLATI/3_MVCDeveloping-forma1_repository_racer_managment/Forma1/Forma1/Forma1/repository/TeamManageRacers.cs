@@ -8,6 +8,7 @@ namespace Forma1.repository
 {
     partial class Team : ITeamManageRacers
     {
+        // Az addRacer metódusban egészítse ki a foreach ciklus fejlécét és fejezze be a kivétel dobást kódját!
         /// <summary>
         /// Új versenyző hozzáadása
         /// </summary>
@@ -18,14 +19,15 @@ namespace Forma1.repository
         {
             if (racers == null)
                 throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");
-            foreach()
+            foreach(Racer r in racers)
             {
                 if (r.getName() == newRacer.getName() && r.getAge() == newRacer.getAge() && r.getSalary() == newRacer.getAge())
-                    throw new 
+                    throw new TeamException("newRacer versenyző már létezik!");
             }
             racers.Add(newRacer);
         }
 
+        //A deleteRacer metódusban írja meg az elágazás törzsét, hogy a kód helyesen működjön!
         /// <summary>
         /// Törli a versenyzőt a csapatból
         /// </summary>
@@ -40,13 +42,16 @@ namespace Forma1.repository
             foreach (Racer r in racers)
             {
                 if (r.getName() == name && r.getAge()==age)
-                {                    
+                {
+                    racers.Remove(r);
+                    return;
                 }
                 
             }
             throw new TeamException(name + " versenyző a csapatnak nem tagja, nem lehet törlni");
         }
 
+        //Az updateRacer metódusban írja meg a ciklus törzsét, hogy az helyesen működjön!
         /// <summary>
         /// Módosítja a versenyző adatait
         /// </summary>
@@ -60,11 +65,17 @@ namespace Forma1.repository
                 throw new TeamException("Végzetes hiba, racers lista nincs példányosítva.");
             foreach (Racer r in racers)
             {
-                
+                if (r.getName() == name)
+                {
+                    r.update(newRacer);
+                    return;
+                }
             }
             throw new TeamException(name + " módosítandó versenyzőt nem találjuk, nem lehet módosítani.");
         }
 
+        //Írja meg a getNumberOfRacer metódust!
+        // Megszámlálás tétele
         /// <summary>
         /// Megadja a csapatban lévő versenyzők számát
         /// </summary>
@@ -72,9 +83,13 @@ namespace Forma1.repository
         /// <exception cref="TeamException">Végzetes hiba, racers lista nincs példányosítva</exception>
         public int getNumberOfRacers()
         {
-               
+            if (racers == null)
+                throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");
+
+            return racers.Count;
         }
 
+        //Írja meg a searchRacerByName metódust!
         /// <summary>
         /// Megkeresi az adott nevű versenyzőt
         /// </summary>
@@ -85,6 +100,14 @@ namespace Forma1.repository
         {
             if (racers == null)
                 throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");
+            foreach (Racer r in racers)
+            {
+                if (r.getName() == racerName)
+                {
+                    return r;
+                }
+            }
+            return null;
         }
 
         /// <summary>
@@ -121,6 +144,7 @@ namespace Forma1.repository
             return -1;
         }
 
+        //Írja meg a getMaxId metódus hiányzó kódját!
         /// <summary>
         /// Meghatározza a legnagyobb azonosítójú versenyző azonosítóját
         /// </summary>
@@ -130,7 +154,18 @@ namespace Forma1.repository
         {
             if (racers == null)
                 throw new TeamException("Végzetes hiba, racers lista nincs példányosítva");
-           
+
+            //return racers.Max(x => x.getId());
+
+            int maxID = 0;
+            foreach (Racer r in racers)
+            {
+                if (maxID < r.getId())
+                {
+                    maxID = r.getId();
+                }
+            }
+            return maxID;
         }
     }
 }
