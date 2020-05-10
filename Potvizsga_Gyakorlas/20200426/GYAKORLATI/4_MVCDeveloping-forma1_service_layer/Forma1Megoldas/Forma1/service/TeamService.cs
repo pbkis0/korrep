@@ -140,9 +140,9 @@ namespace Forma1.service
                 List<Team> teams = f1Repository.getTeams(); //Összes csapat lekérdezése
                 List<Team> newTeamList = new List<Team>(); //Új listába mentem a csapatokat
 
-                foreach (Team team in teams)
+                foreach (Team team in teams) //Végig megyek a régi listán, és a 
                 {
-                    if (team.getName() != teamName)
+                    if (team.getName() != teamName) //Kérdezgetem a neveket, és ha nem egyezik a paraméterben megadott csapat nevével, belerakom az új csapat listába,
                         newTeamList.Add(team);
                 }
 
@@ -154,6 +154,8 @@ namespace Forma1.service
             }
         }
 
+
+        //Az isExistTeam metódusban hiányzik a kivételkezelés. Írja meg!
         /// <summary>
         /// Adott nevű csapat létezik-e
         /// </summary>
@@ -168,7 +170,11 @@ namespace Forma1.service
                     return true;
                 else
                     return false;
-            }            
+            }
+            catch (F1Exception f1ex)
+            {
+                throw new TeamServiceException(f1ex.Message);
+            }
         }
 
         /// <summary>
