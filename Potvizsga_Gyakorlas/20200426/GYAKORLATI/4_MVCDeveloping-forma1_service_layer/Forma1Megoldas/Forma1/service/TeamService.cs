@@ -82,6 +82,8 @@ namespace Forma1.service
             }
         }
 
+        //A deleteTeam metódusban az üzleti írja meg az elágazás igaz ágán az üzleti logikát: Ha nemlétezik a csapat, és ha van versenyzője akkor a
+        //csapat törlése akkor minkét esetben kivétel dobás!
         /// <summary>
         /// Csapat törlése
         /// Üzleti logika: ha létezik a csapat, és nincs versenyzője akkor a csapat törlése
@@ -93,8 +95,10 @@ namespace Forma1.service
         public void deleteTeam(string teamNameToDelete)
         {
             try
-            {                
-                    throw new TeamServiceToGUIException(teamNameToDelete + " csapat nem létezik. Nem lehet törölni!");                
+            {
+                if (isExistTeam(teamNameToDelete))
+                    throw new TeamServiceToGUIException(teamNameToDelete + " csapat nem létezik. Nem lehet törölni!");
+                else if (getRacerFromTheTeam(teamNameToDelete).Count > 0)
                     throw new TeamServiceToGUIException(teamNameToDelete + " csapatnak van még versenyzője, nem lehet törölni!");
                 else
                     f1Repository.delete(teamNameToDelete);
