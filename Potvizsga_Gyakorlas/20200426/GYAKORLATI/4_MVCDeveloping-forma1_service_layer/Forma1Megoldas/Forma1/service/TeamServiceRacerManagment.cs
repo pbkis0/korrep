@@ -151,6 +151,11 @@ namespace Forma1.service
             }
         }
 
+
+        //A moveToTeam metódusból hiányzik az üzleti logika. Írja meg!
+        //A versenyző megkeresése a csapatnév és versenyző név alapján!
+        //Az új csapathoz a megtalált versenyző hozzáadása!
+        //A régi csapatból a versenyző törlése!
         /// <summary>
         /// Versenyző átrakása egyik csapatból a másikba
         /// Üzleti logika: 
@@ -165,7 +170,14 @@ namespace Forma1.service
         public void moveToTeam(string fromTeamName, string toTeamName, string movedRacerName)
         {
             try
-            {                
+            {
+                Racer r = searchRacerByName(fromTeamName, movedRacerName);
+                f1Repository.addRacerToTeam(toTeamName, r);
+                f1Repository.deleteRacerInTeam(fromTeamName, r.getName(), r.getAge());
+            }
+            catch(TeamServiceException)
+            {
+                throw;
             }
             catch (F1Exception f1e)
             {
