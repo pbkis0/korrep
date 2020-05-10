@@ -48,6 +48,8 @@ namespace Forma1.service
             }
         }
 
+        //Az addRacerToTeam metódusban hiányzik az üzleti logika egy része: "ha nem létezik adott nevű és életkorú versenyző, akkor a versenyző
+        //hozzáadása a csapathoz, Mielőtt hozzáadjuk az új versenyzőt, új ID kérünk neki és az új ID-t megadjuk a newRacer objektumnak.Írja meg!
         /// <summary>
         /// Versenyző hozzáadása adott nevű csapathoz
         /// Üzleti logika: ha nem létezik adott nevű és életkorú versenyző, akkor a versenyző hozzáadása a csapathoz
@@ -62,7 +64,11 @@ namespace Forma1.service
             try
             {
                 if (existRacer(newRacer.getName(), newRacer.getAge()))
-                    throw new TeamServiceToGUIException("Már létezik " + newRacer.getName() + " nevű versenyző, aki " + newRacer.getAge() + " éves.");               
+                    throw new TeamServiceToGUIException("Már létezik " + newRacer.getName() + " nevű versenyző, aki " + newRacer.getAge() + " éves.");
+
+                int newId = f1Repository.getNextRacerId();
+                newRacer.setId(newId);
+                f1Repository.addRacerToTeam(teamName, newRacer);
             }
             catch (F1Exception f1e)
             {
