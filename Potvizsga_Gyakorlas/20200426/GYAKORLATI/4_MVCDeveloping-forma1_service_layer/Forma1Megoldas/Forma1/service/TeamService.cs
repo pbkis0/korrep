@@ -36,6 +36,7 @@ namespace Forma1.service
             f1Repository = testData.getTestData();
         }
 
+        //Az addTeam metódusban a kivétel dobást kell megvalósítani. Olyan kivételt dobjon ami megjelenik a GUIn!
         /// <summary>
         /// Adott nevű csapat létrehozása és hozzáadása a repository-hoz
         /// Üzleti logika: Ha nem létezik még adott nevű csapat akkor annak létrehozása
@@ -48,7 +49,7 @@ namespace Forma1.service
             try
             {
                 if (isExistTeam(teamName))
-                    throw 
+                    throw new TeamServiceToGUIException(teamName + " csapat már létezik");
                 Team t = new Team(teamName);
                 f1Repository.add(t);
             }
