@@ -126,6 +126,7 @@ namespace Forma1.service
             }
         }
 
+        //A getTeamExclude metódusban valósítsa meg az üzleti logikát: olyan csapatlista készítése, amely listába ki van hagyva egy adott nevű csapat!
         /// <summary>
         /// Üzleti logika: olyan csapatlista készítése, amely listába ki van hagyva egy adott nevű csapat
         /// </summary>
@@ -136,9 +137,16 @@ namespace Forma1.service
         {
             try
             {
-                List<Team> teams = f1Repository.getTeams();
-                List<Team> newTeamList = new List<Team>();
-                
+                List<Team> teams = f1Repository.getTeams(); //Összes csapat lekérdezése
+                List<Team> newTeamList = new List<Team>(); //Új listába mentem a csapatokat
+
+                foreach (Team team in teams)
+                {
+                    if (team.getName() != teamName)
+                        newTeamList.Add(team);
+                }
+
+                return newTeamList;
             }
             catch (F1Exception f1e)
             {
