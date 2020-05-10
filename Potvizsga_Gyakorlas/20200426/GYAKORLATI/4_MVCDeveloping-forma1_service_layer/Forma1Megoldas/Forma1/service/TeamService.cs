@@ -59,6 +59,7 @@ namespace Forma1.service
             }
         }
 
+        //A modifyTeamName metódusban a hibás résznél egy utasítást kell befejezni!
         /// <summary>
         /// Adott nevű csapat átnevezése új csapat névre
         /// Üzleti logika: ha adott nevű csapat még nem létezik akkor a régi nevet új névre cseréli
@@ -73,7 +74,7 @@ namespace Forma1.service
             {
                 if (isExistTeam(newTeamName))
                     throw new TeamServiceToGUIException(newTeamName + " csapat már létezik. Erre a névre nem lehet módosítani a nevét!");
-                f1Repository
+                f1Repository.update(oldTeamName, newTeamName);
             }
             catch (F1Exception f1e)
             {
