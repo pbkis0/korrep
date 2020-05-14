@@ -42,6 +42,7 @@ namespace Forma1.controller
             }
         }
 
+        //A getTeamNames metódusban a hibás sorban az osztály egy saját metódusát kell meghívni, hogy megjelenjenek a csapatnevek a listában. Írja be a metódus nevét és paraméterét!
         /// <summary>
         /// Csapatnevek lekérése
         /// TeamListToTeamNameList beső függvény segítségével visszatérési érték megjelenítése
@@ -54,7 +55,7 @@ namespace Forma1.controller
             try
             {
                 List<Team> teams = teamService.getTeams();
-                return ;
+                return TeamListToTeamNameList(teams);
             }
             catch (TeamServiceException tse)
             {
@@ -64,6 +65,7 @@ namespace Forma1.controller
             }
         }
 
+        //A getTeamListToTeamNameList metódusban a létrehozott listába a csapat neveket kell hozzáadni.Írja meg a hiányzó kódot!
         /// <summary>
         /// Belső függvény
         /// A team listából team név listát készít
@@ -75,7 +77,7 @@ namespace Forma1.controller
             List<string> teamNames = new List<string>();
             foreach (Team t in teams)
             {
-                teamNames.Add();
+                teamNames.Add(t.getName());
             }
             return teamNames;
         }
