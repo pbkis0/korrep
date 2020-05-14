@@ -222,6 +222,7 @@ namespace Forma1.controller
             }
         }
 
+        //A getF1Salary metódusban nincs meghatározva a metódus visszatérési értéke. Írja meg úgy a kódot, hogy a kiszámolt összeg mellet a "millió dollár" string is megjelenjen a visszatérési értékben!
         /// <summary>
         /// Forma1 összbérköltségének meghatározása
         /// Service réteg metódushívás
@@ -236,7 +237,8 @@ namespace Forma1.controller
             try
             {
                 int f1Salary = teamService.getF1Salary();
-                string f1SalaryToView = 
+                string f1SalaryToView = f1Salary + " millió dollár";
+                return f1SalaryToView; // 13 millió dollár
             }
             catch (TeamServiceException tse)
             {
