@@ -13,6 +13,7 @@ namespace Forma1.controller
 {
     partial class F1Controller
     {
+        //Az addRacerToTeam metódusban az életkor és fizetés konvertálásának kódja hiányzik. Írja meg a hiányzó kódot!
         /// <summary>
         /// Versenyző hozzáadása a csapathoz
         /// TeamName nem lehet üres, recerAgeNumber, racerSaleryNumber konvertálása, megfelelő ControlterException dobás hiba esetén
@@ -44,10 +45,10 @@ namespace Forma1.controller
             if (teamName == string.Empty)
                 throw new ControllerException("A csapat név nem lehet üres string. Előbb hozza létre a csapatot, utánna adja hozzá a versenyzőt.");
             int racerAgeNumber = 0;
-            if (!int.
+            if (!int.TryParse(racerAge, out racerAgeNumber))
                 throw new ControllerException("A megadott életkor nem megfelelő alakú szám!");
             int racerSalaryNumber = 0;
-            if (!int.
+            if (!int.TryParse(racerSalary, out racerSalaryNumber))
                 throw new ControllerException("A megadott fizetés nem megfelelő alakú szám!");
             if (racerAgeNumber <= 0)
                 throw new ControllerException("A versenyző életkora nem lehet nulla vagy negatív.");
