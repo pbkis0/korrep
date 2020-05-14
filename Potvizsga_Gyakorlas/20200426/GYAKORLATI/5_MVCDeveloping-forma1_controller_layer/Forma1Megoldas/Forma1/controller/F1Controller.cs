@@ -151,6 +151,7 @@ namespace Forma1.controller
             }
         }
 
+        //A modifyTeamName metódusban a jelzett helyen hiányzik a metódushívás. Egészítse ki a kódot!
         /// <summary>
         /// Csapat nevének módosítása
         /// NameValidator segítségével newTeamName ellenőrzés
@@ -184,7 +185,7 @@ namespace Forma1.controller
             }
             try
             {
-                ???
+                teamService.modifyTeamName(oldTeamName, newTeamName);
             }
             catch (TeamServiceToGUIException tstge)
             {
