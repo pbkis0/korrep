@@ -106,6 +106,7 @@ namespace Forma1.controller
             }
         }
 
+        //Az addTeamToF1 metódusban a validation metódus két saját kivételt dob. Nézze meg melyek ezek és egészítsék ki a catch utasításokat a szükséges kóddal! A hibakezelő a dobott kivételek üzenetét írja ki! Egészítse ki a kódot!
         /// <summary>
         /// Csapat hozzáadása a Forma1-hez
         /// NameValidator segítségével teamName ellenőrzés
@@ -125,14 +126,14 @@ namespace Forma1.controller
                 NameValidator nv = new NameValidator(teamName);
                 nv.validation();
             }
-            catch ()
+            catch (NameNotValidNameIsEmptyException e) // Elkapom a kivételt "e"-vel deklarárom a kivételt, és a hiba üzenetet továbbítom a "Debug.WriteLine(e.Message);" felé.
             {
-                Debug.WriteLine();
+                Debug.WriteLine(e.Message);
                 throw new ControllerException("Az üres név nem megfelelő csapatnév!");
             }
-            catch ()
+            catch (NameNotValidFirstLetterProblemException e)
             {
-                Debug.WriteLine();
+                Debug.WriteLine(e.Message);
                 throw new ControllerException(teamName + " nem megfelelő csapatnév, mivel az első betű nem nagybetű.");
             }
             try
