@@ -82,6 +82,7 @@ namespace Forma1.controller
             return teamNames;
         }
 
+        //A getTeamNamesListExclude metódusban hiányzik a metódushívás. A réteg melyik metódusát kell meghívni, hogy helyesen működjön a kód? Írja le a kódot!
         /// <summary>
         /// Csapatnevek lekérése egy adott csapat nevének kihagyásával
         /// TeamListToTeamNameList beső függvény segítségével visszatérési érték megjelenítése
@@ -94,7 +95,7 @@ namespace Forma1.controller
         {
             try
             {
-                List<Team> teams = teamService
+                List<Team> teams = teamService.getTeamsExclude(teamName);
                 return TeamListToTeamNameList(teams);
             }
             catch (TeamServiceException tse)
