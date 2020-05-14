@@ -92,6 +92,8 @@ namespace Forma1.controller
             }
         }
 
+
+        //Az updateRacerInTeam metódusban a kivételdobások előtt szükséges feltételek hiányoznak. Írja meg azokat!
         /// <summary>
         /// Versenyző adatainak módosítása
         /// TeamName nem lehet üres, recerAgeNumber, racerSaleryNumber konvertálása, megfelelő ControlterException dobás hiba esetén
@@ -127,9 +129,9 @@ namespace Forma1.controller
             int racerSalaryNumber = 0;
             if (!int.TryParse(racerSalary, out racerSalaryNumber))
                 throw new ControllerException("A megadott fizetés nem megfelelő alakú szám!");
-            if ()
+            if (racerAgeNumber <=0)
                 throw new ControllerException("A versenyző életkora nem lehet nulla vagy negatív.");
-            if ()
+            if (racerSalaryNumber <=0)
                 throw new ControllerException("A versenyző fizetése nem lehet nulla vagy negatív.");
 
             try
@@ -150,7 +152,7 @@ namespace Forma1.controller
 
             try
             {
-                Racer newRacer = new Racer(-1, racerName, racerAgeNumber, racerSalaryNumber);
+                Racer newRacer = new Racer(-1,racerName, racerAgeNumber, racerSalaryNumber);
                 teamService.updateReacerInTeam(teamName, oldRacerName, newRacer);
             }
             catch (TeamServiceException tse)
