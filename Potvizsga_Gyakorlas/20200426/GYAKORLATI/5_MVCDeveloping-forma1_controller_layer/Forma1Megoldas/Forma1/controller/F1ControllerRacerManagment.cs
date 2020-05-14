@@ -200,6 +200,7 @@ namespace Forma1.controller
             }
         }
 
+        //A getTeamRacerName metódusban le kell kérni a versenyzők listáját és ki kell ebből alakítani a versenyző nevekből álló listát, ami a metódus visszatérési értéke. Írja meg a szükséges kódot!
         /// <summary>
         /// Ha csapat versenyzőinek listája
         /// Service réteg segítségével versenyző törlése
@@ -211,9 +212,15 @@ namespace Forma1.controller
         {
             List<string> racersName = new List<string>();
             try
-            {                                   
-                    List<Racer> racers = teamService.
-                    return racersName;
+            {
+                List<Racer> racers = teamService.getRacerFromTheTeam(teamName);
+
+                foreach (Racer r in racers)
+                {
+                    racersName.Add(r.getName());
+                }
+
+                return racersName;
             }
             catch (TeamServiceException tse)
             {
