@@ -250,6 +250,7 @@ namespace Forma1.controller
             }
         }
 
+        //Hasonló képen a coputeTeamSalary metódusban is hiányos a kód! Adja meg a hiányzó kódot, hogy a megfelelő értéket és mögötte a megfelelő szöveget adja vissza!
         /// <summary>
         /// Adott nevű csapat bérköltségének meghatározása
         /// </summary>
@@ -259,7 +260,13 @@ namespace Forma1.controller
         {
             try
             {
+                int teamSalary = teamService.getTeamSalary(teamName);
 
+                string teamSalaryToView = teamSalary + " millió dollár";//string f1SalaryToView   int -hez hozzáfüzök egy stringet, akkor 
+
+                // string = int+string (integer kaszolódik tudtod nélkül stringre) -> int+string -> string
+
+                return teamSalaryToView; // 13 millió dollár
             }
             catch (TeamServiceException tse)
             {
