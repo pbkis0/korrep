@@ -166,6 +166,7 @@ namespace Forma1.controller
             }
         }
 
+        //A deleteRacerFromTeam metódusban hiányzik a hiba szövege! Írja le a megfelelő helyre!
         /// <summary>
         /// Adott csapatban lévő versenyző törlése
         /// TeamName nem lehet üres, megfelelő ControlterException dobás hiba esetén
@@ -182,11 +183,13 @@ namespace Forma1.controller
             if (teamName == string.Empty)
                 throw new ControllerException("A csapat név nem lehet üres string. Előbb hozza létre a csapatot, utánna törölje a versenyzőt.");
             int racerAgeNumber = 0;
+
             if (!int.TryParse(racerAge, out racerAgeNumber))
             {
-                Debug.WriteLine(???);
+                Debug.WriteLine("A megadott életkor nem megfelelő alakú szám!");
                 return;
             }
+
             try
             {
                 teamService.deleteRacerInTeam(teamName, racerName, racerAgeNumber);
