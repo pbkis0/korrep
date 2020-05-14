@@ -237,7 +237,10 @@ namespace Forma1.controller
             try
             {
                 int f1Salary = teamService.getF1Salary();
-                string f1SalaryToView = f1Salary + " millió dollár";
+                string f1SalaryToView = f1Salary + " millió dollár";//string f1SalaryToView   int -hez hozzáfüzök egy stringet, akkor 
+                
+                // string = int+string (integer kaszolódik tudtod nélkül stringre) -> int+string -> string
+                
                 return f1SalaryToView; // 13 millió dollár
             }
             catch (TeamServiceException tse)
