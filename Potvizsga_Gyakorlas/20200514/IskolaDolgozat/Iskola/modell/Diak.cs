@@ -58,12 +58,27 @@ namespace IskolaProjekt.repository
         {
             return id;
         }
+
+        //1. feladat
+        //A munkát a modell rétegben található osztállyal kezdjük.Az első feladat az osztály mezőit frissítő
+        //metódus megírása (a metódus fejléce már megtalálható a forráskódban). A második feladat a ToString
+        //osztály felülírása(a teljes metódust el kell készíteni), hogy az minden mező megjelenítését biztosítsa.
+        //A metódust a hibaüzenetek megjelenítésére használjuk majd.
         /// <summary>
         /// A diák objektum frissítése a paraméterben kapott objektum adataira
         /// </summary>
         /// <param name="diak">Ennek az objektumnak az adataira kell frissíteni az osztály mezőit</param>
         public void frissit(Diak diak)
         {
+            // egy füst alatt settelés
+            this.id = diak.id;
+            this.nev = diak.nev;
+            this.eletkor = diak.eletkor;
+            this.atlag = diak.atlag;
+        }
+        public override string ToString()
+        {
+            return id+ " " + nev +" " + eletkor +" " + atlag; // 1 Balázs 38 5.0
         }
     }
 }
