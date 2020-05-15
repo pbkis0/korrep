@@ -76,7 +76,6 @@ namespace IskolaProjekt.repository
             return atlag;
 
             //return diakok.Average(diak => diak.getAtlag());
-
         }
     }
 }

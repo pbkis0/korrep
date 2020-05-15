@@ -76,6 +76,7 @@
     <Compile Include="modell\Diak.cs" />
     <Compile Include="repository\Osztaly.cs" />
     <Compile Include="repository\OsztalyDiakokKezelese.cs" />
+    <Compile Include="myexeption\OsztalyException.cs" />
     <Compile Include="repository\TestAdatok.cs" />
     <Compile Include="service\IskolaSzolgaltatasOsztalyokKezelese.cs" />
     <Compile Include="service\IskolaSzolgaltatasDiakokKezelese.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IskolaProjekt.myexeption;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,8 +27,19 @@ namespace IskolaProjekt.repository
         /// <exception cref="OsztalyException">Két úgyan olyan adatú diák nem lehet</exception>
         public void hozzadDiak(Diak diak)
         {
+            foreach (Diak d in diakok)
+            {
+                if (d.getId() == diak.getId() && d.getNev() == diak.getNev() && d.getEletkor() == diak.getEletkor() && d.getAtlag() == diak.getAtlag())
+                {
+                    throw new OsztalyException("Két úgyan olyan adatú diák nem lehet");
+                }
+            }
+
+            diakok.Add(diak);
         }
 
+        //A torolDiak és frissitDiak metódusokban kivételdobást készítsen, ha az adott adatokkal jelölt
+        //diák nem található!
         /// <summary>
         /// Törli a diákot az osztályból
         /// </summary>
@@ -36,6 +48,15 @@ namespace IskolaProjekt.repository
         /// <exception cref="OsztalyException">A diák az osztálynak nem tagja, nem lehet törlni</exception>
         public void torolDiak(string nev, int eletkor)
         {
+            foreach (Diak diak in diakok)
+            {
+                if (diak.getNev() == nev && diak.getEletkor() == eletkor)
+                {
+                    diakok.Remove(diak);
+                    return; // adott műveletet elvégeztük, kilépünk a függvény végrehajtásából
+                }
+            }
+            throw new OsztalyException("A diák az osztálynak nem tagja, nem lehet törlni");
         }
 
         /// <summary>
@@ -46,6 +67,15 @@ namespace IskolaProjekt.repository
         /// <exception cref="OsztalyException">A megadott nevű diák nincs az osztályban, nem lehet módosítani</exception>
         public void frissitDiak(string nev, Diak ujDiak)
         {
+            foreach (Diak diak in diakok)
+            {
+                if (diak.getNev() == nev)
+                {
+                    diak.frissit(ujDiak);
+                    return;
+                }
+            }
+            throw new OsztalyException("A megadott nevű diák nincs az osztályban, nem lehet módosítani");
         }
 
         /// <summary>
@@ -55,6 +85,13 @@ namespace IskolaProjekt.repository
         /// <returns>Ha van, akkor a diák, ha nincs akkor null</returns>
         public Diak keresDiakotNevAlapjan(string diakNeve)
         {
+            foreach (Diak d in diakok)
+            {
+                if (d.getNev() == diakNeve)
+                {
+                    return d;
+                }
+            }
             return null;
         }
 
@@ -66,6 +103,13 @@ namespace IskolaProjekt.repository
         /// <returns>Ha létezik, akkor true, ha nem akkor false</returns>
         public bool vanEDiak(string diakNeve, int diakEletkora)
         {
+            foreach (Diak d in diakok)
+            {
+                if (d.getNev() == diakNeve && d.getEletkor() == diakEletkora)
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
@@ -76,7 +120,14 @@ namespace IskolaProjekt.repository
         /// <returns>A diák id-he ha a diák tagja az osztálynak, ha nem -1</returns>
         public int getDaikId(string diakNeve)
         {
-            return 0;
+            foreach (Diak d in diakok)
+            {
+                if (d.getNev() == diakNeve)
+                {
+                    return d.getId();
+                }
+            }
+            return -1;
         }
 
         /// <summary>
