@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace IskolaProjekt.repository
 {
-    partial class Osztaly : IOsztaly, IOsztalyMuveletek
+    partial class Osztaly : IOsztaly, IOsztalyMuveletek // public class Osztaly extends Ősozstály implements IOsztaly (Java)
     {
         private string azonosito;
         private List<Diak> diakok;
@@ -22,20 +23,27 @@ namespace IskolaProjekt.repository
             this.azonosito = azonosito;
             this.diakok = new List<Diak>();
         }
+
+        //Ezután az IOsztaly interfaceben lévő metódusok megírása a feladat. Módosítsa vagy írja meg
+        //a hiányzó metódusok kódját!
+        //Ezután kódolja le, hogy az osztály, az IOsztalyMuveletek interfacetől is öröklődik, és írja meg
+        //az interface által meghatározott metódusokat.A metódusok megírásában segít a kódban lévő
+        //dokumentáció!
         /// <summary>
         /// getter
         /// </summary>
         /// <returns>Az osztály azonositoja</returns>
         public string getAzonosito()
         {
-            return null;
+            return this.azonosito;
         }
         /// <summary>
-        /// Módosítja az osztály azonosítóját
+        /// Módosítja az osztály azonosítóját (set)
         /// </summary>
         /// <param name="ujAzonosito">Osztály új azonositoja</param>
-        public void modositOsztalyAzonositot(string ujAzonosito)
+        public void modositOsztalyAzonositot(string ujAzonosito) // 10.B
         {
+            this.azonosito = ujAzonosito;
         }
         /// <summary>
         /// Az osztály diákjainak listáját adja vissza
@@ -43,16 +51,32 @@ namespace IskolaProjekt.repository
         /// <returns>A diákok osztályainak listája</returns>
         public List<Diak> getDiakok()
         {
-            return null;
+            return this.diakok;
         }
 
         public void torolMindenDikotAzOsztalybol()
         {
+            // lista tartalmát teljesen kiüríteni -> Clear()
+            this.diakok.Clear();
         }
 
         public double getOsztalyAtlag()
         {
-            return 0;
+            // összegzés tétel + osztás darabszámmal
+
+            double sumAtlagok = 0;
+
+            foreach (Diak diak in diakok)
+            {
+                sumAtlagok += diak.getAtlag();
+            }
+
+            double atlag = (double)sumAtlagok / diakok.Count;
+
+            return atlag;
+
+            //return diakok.Average(diak => diak.getAtlag());
+
         }
     }
 }
