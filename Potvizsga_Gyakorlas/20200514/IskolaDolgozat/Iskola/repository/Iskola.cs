@@ -38,6 +38,9 @@ namespace IskolaProjekt.repository
             osztalyok.Add(osztaly);
         }
 
+        //Keresse meg a „torol” metódust. Ez a metódus törli az osztályt. Az osztályba még járhatnak
+        //diákok.Őket az iskola törlése előtt törölje.Erre már írt metódust a diákok kezelése során.
+        //Ennek a metódusnak a megfelelő helyen történő hívásával egészítse ki a „torol” metódust.
         /// <summary>
         /// Adott nevű osztály törlése
         /// 
@@ -53,7 +56,9 @@ namespace IskolaProjekt.repository
             {
                 if (osztaly.getAzonosito() == osztalyAzonosito)
                 {
+                    osztaly.torolMindenDikotAzOsztalybol();
                     osztalyok.RemoveAt(index);
+                    // osztalyok.Remove(osztaly);
                     return;
                 }
                 index = index + 1;
