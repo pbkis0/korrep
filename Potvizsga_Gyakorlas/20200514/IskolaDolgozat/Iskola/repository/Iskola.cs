@@ -66,6 +66,8 @@ namespace IskolaProjekt.repository
             throw new IskolaException($"{osztalyAzonosito} nevű osztály nem létezik, nem lehet törölni!");
         }
 
+        //Keresse meg a „modosit” metódust. A metódus „bug”-os, nem végzi el feladatát. Javítsa a
+        //helyes működés érdekében!
         /// <summary>
         /// Adott nevű osztály nevének módosítása
         /// Kivétel dobás, ha a osztály nem létezik
@@ -83,6 +85,7 @@ namespace IskolaProjekt.repository
                 if (o.getAzonosito() == osztalyAzonosito)
                 {
                     o.modositOsztalyAzonositot(ujOsztalyAzonosito);
+                    return;
                 }
             }
             throw new IskolaException($"{osztalyAzonosito} nevű osztály nem létezik, nem lehet módosítani");
