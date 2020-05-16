@@ -5,6 +5,7 @@ namespace IskolaProjekt.repository
 {
     partial class Iskola : IIskola
     {
+        //hozzadDiakotOsztalyhoz
         /// <summary>
         /// Az adott azonosítójú osztályhoz hozzáadja az adott diákot
         /// </summary>
@@ -13,6 +14,22 @@ namespace IskolaProjekt.repository
         /// <exception cref="IskolaException">Az adott azonosítójú osztály nem létezik, nem lehet új diákoz hozzáadni.</exception>
         public void hozzadDiakotOsztalyhoz(string osztalyAzonosito, Diak ujDiak)
         {
+            foreach (Osztaly o in osztalyok)
+            {
+                if (o.getAzonosito() == osztalyAzonosito)
+                {
+                    try
+                    {
+                        o.hozzadDiak(ujDiak);
+                        return;
+                    }
+                    catch (OsztalyException e)
+                    {
+                        throw new IskolaException(e.Message);
+                    }
+                }
+            }
+            throw new IskolaException("Az adott azonosítójú osztály nem létezik, nem lehet új diákoz hozzáadni.");
         }
 
         /// <summary>
