@@ -32,6 +32,8 @@ namespace IskolaProjekt.repository
             throw new IskolaException("Az adott azonosítójú osztály nem létezik, nem lehet új diákoz hozzáadni.");
         }
 
+
+        //modositDiakotOsztalyban
         /// <summary>
         /// Adott azonosítójú osztályban egy diák adatainak frissítése
         /// </summary>
@@ -41,6 +43,22 @@ namespace IskolaProjekt.repository
         /// <exception cref="IskolaException">Az adott azonosítójú osztály nem létezik, nem lehet módosítani a diákjának adatait.</exception>
         public void modositDiakotOsztalyban(string osztalyAzonosito, string diakRegiNeve, Diak ujDiak)
         {
+            foreach (Osztaly o in osztalyok)
+            {
+                if (o.getAzonosito() == osztalyAzonosito)
+                {
+                    try
+                    {
+                        o.frissitDiak(diakRegiNeve, ujDiak);
+                        return;
+                    }
+                    catch (OsztalyException e)
+                    {
+                        throw new IskolaException(e.Message);
+                    }
+                }
+            }
+            throw new IskolaException("Az adott azonosítójú osztály nem létezik, nem lehet módosítani a diákjának adatait.");
         }
 
         /// <summary>
