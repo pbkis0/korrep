@@ -61,6 +61,7 @@ namespace IskolaProjekt.repository
             throw new IskolaException("Az adott azonosítójú osztály nem létezik, nem lehet módosítani a diákjának adatait.");
         }
 
+        //torolDiakotOsztalybol
         /// <summary>
         /// Az adott azonosítújú osztályból törli a diákot
         /// </summary>
@@ -70,6 +71,22 @@ namespace IskolaProjekt.repository
         /// <exception cref="IskolaException">Az adott azonosítójú osztály nem létezik, nem lehet törölni a diákot.</exception>
         public void torolDiakotOsztalybol(string osztalyAzonosito, string diakNev, int diakEletkor)
         {
+            foreach (Osztaly o in osztalyok)
+            {
+                if (o.getAzonosito() == osztalyAzonosito)
+                {
+                    try
+                    {
+                        o.torolDiak(diakNev, diakEletkor);
+                        return;
+                    }
+                    catch (OsztalyException e)
+                    {
+                        throw new IskolaException(e.Message);
+                    }
+                }
+            }
+            throw new IskolaException("Az adott azonosítójú osztály nem létezik, nem lehet törölni a diákot.");
         }
 
         //DOKSI
