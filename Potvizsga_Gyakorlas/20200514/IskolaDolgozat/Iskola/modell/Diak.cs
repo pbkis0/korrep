@@ -18,7 +18,28 @@ namespace IskolaProjekt.repository
         /// <summary>Konstruktor</summary>
         public Diak(int id, string nev, int eletkor, double atlag)
         {
+            //A modell rétegben található Diak osztály konstruktorába kösse be a NevEllenorzo osztályt. Egy diák,
+            //csak akkor jöjjön létre, ha a neve megfelel, amit a NevEllenorzo osztállyal tud ellenőrizni!Kapja el a
+            //NevEllenorzo osztály összes kivételét és a hibákat loggolja az Otuputra(a programozási nyelnek van
+            //erre beépített osztálya és metódusa).
             this.id = id;
+
+            try
+            {
+                NevEllenorzo nv = new NevEllenorzo(nev);
+                nv.ellenorzes();
+            }
+            catch (NevNemMegfeleloNevUresException e)
+            {
+                Debug.WriteLine(e.Message);
+                throw e;
+            }
+            catch (NevNemMegfeleloElsoBetuNemNagyException e)
+            {
+                Debug.WriteLine(e.Message);
+                throw e;
+            }
+
             this.nev = nev;
             this.eletkor = eletkor;
             this.atlag = atlag;
