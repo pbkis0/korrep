@@ -97,6 +97,7 @@ namespace IskolaProjekt
 
         private void buttonSzamolOsztalyAtlag_Click(object sender, EventArgs e)
         {
+            // osztály átlag ...
         }
     }
 }

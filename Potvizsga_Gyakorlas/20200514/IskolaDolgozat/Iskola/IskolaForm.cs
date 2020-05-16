@@ -36,6 +36,8 @@ namespace IskolaProjekt
 
         private void buttonMeghatarozIskolaAtlag_Click(object sender, EventArgs e)
         {
+            // iskola átlag...
+            textBoxIskolaAtlag.Text = vezerlo.getIskolaAtlag();
         }
     }
 }

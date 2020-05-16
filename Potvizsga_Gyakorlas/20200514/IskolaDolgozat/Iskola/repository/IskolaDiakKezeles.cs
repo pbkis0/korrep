@@ -1,5 +1,7 @@
 ﻿using IskolaProjekt.myexeption;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace IskolaProjekt.repository
 {
@@ -32,6 +34,22 @@ namespace IskolaProjekt.repository
             throw new IskolaException("Az adott azonosítójú osztály nem létezik, nem lehet új diákoz hozzáadni.");
         }
 
+        internal double getIskolaAtlag()
+        {
+            // F1 átlaga: 0sszegezni kell az osztály/csapatok átlagát
+            //osztalyok.Average(x => x.getOsztalyAtlag());
+
+            double iskolaAtlagSum = 0;
+
+            foreach (Osztaly osztaly in osztalyok)
+            {
+                iskolaAtlagSum += osztaly.getOsztalyAtlag();
+            }
+
+            double iskolaAtlag = iskolaAtlagSum / osztalyok.Count;
+
+            return iskolaAtlag;
+        }
 
         //modositDiakotOsztalyban
         /// <summary>

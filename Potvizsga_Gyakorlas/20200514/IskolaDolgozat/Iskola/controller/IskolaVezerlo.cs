@@ -43,6 +43,12 @@ namespace IskolaProjekt.controller
             return osztalyAzonositok;
         }
 
+        internal string getIskolaAtlag()
+        {
+            double iskolaAtlag = iskolaSzolgaltatas.getIskolaAtlag();
+           return iskolaAtlag.ToString();
+        }
+
         /// <summary>
         /// Osztály azonosítók lekérése egy adott osztály nevének kihagyásával
         /// </summary>

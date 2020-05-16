@@ -42,6 +42,11 @@ namespace IskolaProjekt.service
             iskolaAdattar.hozzad(o);
         }
 
+        internal double getIskolaAtlag()
+        {
+            return iskolaAdattar.getIskolaAtlag();
+        }
+
         /// <summary>
         /// Adott nevű osztály átnevezése új osztály névre
         /// Repository segítségével az osztály régi nevének lecserélése az új névre

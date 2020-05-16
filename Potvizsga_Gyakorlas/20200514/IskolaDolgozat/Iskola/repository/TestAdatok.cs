@@ -17,10 +17,9 @@ namespace IskolaProjekt.repository
             Diak d3 = new Diak(3, "Számol Szonja", 17, 4.11);
             Diak d4 = new Diak(4, "Tornász Tibor", 18, 4.11);
             Diak d5 = new Diak(5, "Programozó Péter", 16, 3.78);
-            Diak d6 = new Diak(5, "valaki valaki", 1, 5.0);
 
-            Osztaly o2 = new Osztaly("11.a");
-            Osztaly o1 = new Osztaly("10.a");
+            Osztaly o2 = new Osztaly("11.A");
+            Osztaly o1 = new Osztaly("10.A");
 
             o1.hozzadDiak(d5);
             o1.hozzadDiak(d2);
