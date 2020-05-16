@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace IskolaProjekt.repository
 {
@@ -77,6 +78,19 @@ namespace IskolaProjekt.repository
                 }
             }
             throw new IskolaException("Az adott azonosítójú osztály nem létezik, nem lehet módosítani a diákjának adatait.");
+        }
+
+        internal double getOsztalyAtlag(string osztalyAzonosito)
+        {
+            foreach (Osztaly osztaly in osztalyok)
+            {
+                if (osztaly.getAzonosito() == osztalyAzonosito)
+                {
+                    return osztaly.getOsztalyAtlag();
+                }
+            }
+
+            return 0;
         }
 
         //torolDiakotOsztalybol

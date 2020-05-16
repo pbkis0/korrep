@@ -109,5 +109,9 @@ namespace IskolaProjekt.service
                 return false;
         }
 
+        internal double getOsztalyAtlag(string osztalyAzonosito)
+        {
+            return iskolaAdattar.getOsztalyAtlag(osztalyAzonosito);
+        }
     }
 }

@@ -122,7 +122,13 @@ namespace IskolaProjekt.controller
                 throw new ControllerException(osztalyUjAzonositoja + " nem megfelelő osztályazonosító, mivel a negyedik karakter nem kisbetű.");
             }
             iskolaSzolgaltatas.modositOsztalyNevet(regiOsztlyAzonosito, osztalyUjAzonositoja);
-        }      
+        }
+
+        internal string getOsztalyAtlag(string osztalyAzonosito)
+        {
+            double osztalyAtlag = iskolaSzolgaltatas.getOsztalyAtlag(osztalyAzonosito);
+            return osztalyAtlag.ToString();
+        }
 
         /// <summary>
         /// Adott azonosítójú osztály törlése

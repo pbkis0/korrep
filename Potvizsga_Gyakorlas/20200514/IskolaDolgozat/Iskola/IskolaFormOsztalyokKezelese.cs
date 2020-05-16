@@ -97,7 +97,19 @@ namespace IskolaProjekt
 
         private void buttonSzamolOsztalyAtlag_Click(object sender, EventArgs e)
         {
-            // osztály átlag ...
+            // ha nincs kijel0lve semmi, azaz -1-en áll a SelectedItem, akkor lépjünk ki az eseményből ...
+
+            if (listBoxOsztalyok.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            // kiszedem GUI-ról a kijel0lt osztály azonosítóját, pl. 10.B ...
+            string osztalyAzonosito = listBoxOsztalyok.SelectedItem.ToString();
+
+            // átlag kiírás:
+
+            textBoxOsztalyAtlag.Text = vezerlo.getOsztalyAtlag(osztalyAzonosito);
         }
     }
 }
