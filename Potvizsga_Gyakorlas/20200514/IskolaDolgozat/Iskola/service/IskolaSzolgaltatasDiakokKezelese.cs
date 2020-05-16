@@ -74,7 +74,13 @@ namespace IskolaProjekt.service
         {
             iskolaAdattar.torolDiakotOsztalybol(osztalyNev, diakNev, diakEletkora);
         }
-
+        // 9feladat:
+        // A szolgáltatás rétegben a feladata az „athelyezOsztalyba” metódus megírása! A metódust az
+        //„IskolaSzolgaltatasDiakokKezelese.cs” állományban találja.A feladat megoldása három egyszerű
+        //feladatból áll, amelyet az alsóbb rétegek segítségével tud megvalósítani:
+        // keresse meg az metódus paraméterei alapján az áthelyezendő diákot
+        // törölje abból az osztályból ahová járt
+        // helyezze át abba az osztályba, ahova járni fog
         /// <summary>
         /// Diák átírása egyik osztályból a másikba
         /// Az alsóbb rétegek segítségével:
@@ -87,6 +93,16 @@ namespace IskolaProjekt.service
         /// <param name="atirandoDiakNeve">A versenyző neve</param>
         public void athelyezOsztalyba(string innenOsztalyNeve, string ideOsztalyNeve, string atirandoDiakNeve)
         {
+            try
+            {
+                Diak diak = iskolaAdattar.keresDiakotNevAlapjan(innenOsztalyNeve, atirandoDiakNeve);
+                iskolaAdattar.torolDiakotOsztalybol(innenOsztalyNeve, diak.getNev(), diak.getEletkor());
+                iskolaAdattar.hozzadDiakotOsztalyhoz(ideOsztalyNeve, diak);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         /// <summary>
