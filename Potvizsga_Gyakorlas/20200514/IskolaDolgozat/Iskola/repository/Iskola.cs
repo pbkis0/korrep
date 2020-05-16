@@ -91,6 +91,9 @@ namespace IskolaProjekt.repository
             throw new IskolaException($"{osztalyAzonosito} nevű osztály nem létezik, nem lehet módosítani");
         }
 
+
+        //Keresse meg a „vanEOsztaly” metódust. Ez a metódus nincs megírva. Írja meg! A metódusok
+        //megírásában segít a kódban lévő dokumentáció!
         /// <summary>
         /// Van-e adott azonosítójú osztály
         /// </summary>
@@ -98,6 +101,13 @@ namespace IskolaProjekt.repository
         /// <returns>true ha van és false ha nincs</returns>
         public bool vanEOsztaly(string osztalyAzonosito)
         {
+            foreach (Osztaly o in osztalyok)
+            {
+                if (o.getAzonosito() == osztalyAzonosito)
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }
