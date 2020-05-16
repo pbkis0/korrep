@@ -27,16 +27,29 @@ namespace IskolaProjekt.validation
 
         private bool ellenorizNegyedikKarakterKisbetu()
         {
+            if (char.IsLower(azonosito[3]))
+            {
+                return true;
+            }
             return false;
         }
 
         private bool ellenorizHarmadikKarakterPont()
         {
+            if (azonosito[2] != '.')
+            {
+                return true;
+            }
             return false;
         }
 
-        private bool ellenorizElsoKetoKarakterSzam()
+        private bool ellenorizElsoKetoKarakterSzam() // első kettő karaketer szám?
         {
+            if (!char.IsDigit(azonosito[0]) && !char.IsDigit(azonosito[1]))
+            {
+                return true;
+            }
+
             return false;
         }
     }

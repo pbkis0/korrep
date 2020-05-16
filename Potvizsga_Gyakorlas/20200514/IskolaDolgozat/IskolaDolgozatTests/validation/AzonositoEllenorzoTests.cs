@@ -13,19 +13,54 @@ namespace IskolaProjekt.validation.Tests
     public class AzonositoEllenorzoTests
     {
         [TestMethod()]
-        public void ellenorzesTestElsoKetoKarakterSzam()
+        public void ellenorzesTestElsoKetoKarakterSzam() // függvénynév_elsőkettőkarakternemszám_kivételtkelldobjon
         {
+            try
+            {
+                // kivételtkelldobjon -> catch -> return
+                AzonositoEllenorzo azonositoEllenorzo = new AzonositoEllenorzo("AB.B");
+                azonositoEllenorzo.ellenorzes();
+            }
+            catch (Exception)
+            {
+                return;
+            }
 
+            Assert.Fail("Nem dob kivételt az első két karakterre, ami nem szám!");
         }
 
         [TestMethod()]
-        public void ellenorzesTestHarmadikKarakterPont()
+        public void ellenorzesTestHarmadikKarakterPont() // függvénynév_harmadikkarakternempont_kivételtkelldobjon
         {
+            try
+            {
+                // kivételtkelldobjon -> catch -> return
+                AzonositoEllenorzo azonositoEllenorzo = new AzonositoEllenorzo("12_B");
+                azonositoEllenorzo.ellenorzes();
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
+            Assert.Fail("Nem dob kivételt a harmadik karakteren lévő NEM pont karakterre!");
         }
 
         [TestMethod()]
         public void ellenorzesTestNegyedikKarakterKisbetu()
         {
+            try
+            {
+                // kivételtkelldobjon -> catch -> return
+                AzonositoEllenorzo azonositoEllenorzo = new AzonositoEllenorzo("12.b");
+                azonositoEllenorzo.ellenorzes();
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
+            Assert.Fail("Nem dob kivételt a negyedik karakteren lévő NEM nagybetűs karakterre!");
         }
     }
 }

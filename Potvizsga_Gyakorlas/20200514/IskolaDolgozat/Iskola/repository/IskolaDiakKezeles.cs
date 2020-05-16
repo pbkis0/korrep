@@ -90,6 +90,7 @@ namespace IskolaProjekt.repository
         }
 
         //DOKSI
+        
         public int getDiakokSzama(string osztalyAzonosito)
         {
             foreach (Osztaly t in osztalyok)
