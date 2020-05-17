@@ -43,6 +43,10 @@ namespace IskolaProjekt.controller
             }
         }
 
+        ////10. feladat A munkát a controller rétegben folytatjuk.Az „IskolaVezerloDiakKezeles” osztályba kifejlesztendő
+        //metódus a „modositDiakotOsztalyba”. Ehhez tanulmányozni kell, a már megírt
+        //„hozzaadDiakotOsztalyhoz” metódust.Az ebben lévő kódok megértése és felhasználása alapján
+        //dolgozzon!
         /// <summary>
         /// Diák adatainak módosítása
         /// </summary>
@@ -53,6 +57,31 @@ namespace IskolaProjekt.controller
         /// <param name="diakUjAtlaga">A diák új átlaga</param>
         public void modositDiakotOsztalyba(string osztalyAzonosito, string diakRegiNeve, string diakUjNeve, string diakUjEletkora, string diakUjAtlaga)
         {
+            int diakEletkoraSzam = 0;
+            if (!int.TryParse(diakUjEletkora, out diakEletkoraSzam))
+                throw new ControllerException("A megadott életkor nem megfelelő alakú szám!");
+
+            double diakAtlagaSzam = 0.0;
+            if (!double.TryParse(diakUjAtlaga, out diakAtlagaSzam))
+                throw new ControllerException("A megadott átlag nem megfelelő alakú szám!");
+
+            if (iskolaSzolgaltatas.vanEDiak(diakUjNeve, diakEletkoraSzam))
+                throw new ControllerException("Már létezik " + diakUjNeve + " nevű diák, aki " + diakEletkoraSzam + " éves.");
+
+            try
+            {
+                int id = iskolaSzolgaltatas.getDiakID(osztalyAzonosito, diakRegiNeve);
+                Diak ujDiak = new Diak(id, diakUjNeve, diakEletkoraSzam, diakAtlagaSzam);
+                iskolaSzolgaltatas.modositDiakotOsztalyba(osztalyAzonosito, diakRegiNeve, ujDiak);
+            }
+            catch (OsztalySzolgaltatasExeption e)
+            {
+                throw new ControllerException(e.Message);
+            }
+            catch (DiakException e)
+            {
+                throw new ControllerException(e.Message);
+            }
         }
 
         /// <summary>
