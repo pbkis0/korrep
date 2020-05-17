@@ -33,8 +33,30 @@ namespace IskolaProjekt
             }
         }
 
+        //        //11. feladat
+        //        A view rétegben a feladat a „buttonHozzadOsztalyt_Click” metódus megírása! A forráskódot a
+        //„Forma1FormOsztalyokKezelese.cs” állományban találja!
         private void buttonHozzadOsztalyt_Click(object sender, EventArgs e)
         {
+            try
+            {
+                errorProviderHozzadOsztalyt.Clear();
+
+                //1. kiszedem a textboxból a beírt osztály azonosítót: felhasználó beírja "09.C"
+                string osztalyAzonosito = textBoxUjOsztalyAzonosito.Text;
+
+                //2. Controller-nek továbbítanom kéne -> memóriába menti el
+                vezerlo.hozzadOsztalytIskolahoz(osztalyAzonosito);
+
+                // 3. GUI-hoz is adja hozzá
+                listBoxOsztalyok.DataSource = null;
+                listBoxOsztalyok.DataSource = vezerlo.getOsztalyAzonosito();
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.Message);
+                errorProviderHozzadOsztalyt.SetError(buttonHozzadOsztalyt, ex.Message);
+            }
         }
 
         private void buttonModositOsztalyt_Click(object sender, EventArgs e)
