@@ -38,7 +38,7 @@ namespace DHCP
                                 }
                                 else
                                 {
-                                    dd.mac
+                                    dd.mac;
                                 }
                             }
                         }
